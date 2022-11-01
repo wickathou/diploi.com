@@ -59,7 +59,8 @@
       h1,
       hr,
       input,
-      footer {
+      footer,
+      .soon {
         mix-blend-mode: exclusion;
       }
 
@@ -84,6 +85,10 @@
 
       p {
         max-width: 50ch;
+      }
+
+      .soon {
+        opacity: 0.7;
       }
 
       hr {
@@ -144,10 +149,10 @@
 
       @keyframes two {
         0% {
-          transform: translate(300px, 0px);
+          transform: translate(300px, -50px);
         }
         100% {
-          transform: translate(-200px, -100px);
+          transform: translate(-200px, 0px);
         }
       }
 
@@ -204,7 +209,7 @@
         No ops, no configuration, hands-down, straight-to-the-point efficient
         work effort every day. 🎉
       </p>
-      <p>Coming your way soon™.</p>
+      <p class="soon">Coming your way soon™.</p>
 
       <hr />
 
