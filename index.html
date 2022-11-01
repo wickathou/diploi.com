@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/svg" href="/assets/image/diploi-logo.svg" />
+    <title>Diploi</title>
+    <style>
+      :root {
+        --bg-primary: #289c6a;
+        --bg-secondary: #ef904b;
+      }
+
+      @font-face {
+        font-family: 'Soleil';
+        font-style: normal;
+        font-weight: 500;
+        src: local('Soleil Bold'),
+          url('/assets/font/SoleilBold.woff') format('woff');
+      }
+
+      @font-face {
+        font-family: 'Nunito Sans';
+        font-style: normal;
+        font-weight: 400;
+        src: url('/assets/font/NunitoSans-Regular.woff2') format('woff2');
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      main {
+        padding-right: 100px;
+      }
+
+      @media (max-width: 1250px) {
+        main {
+          padding: 0 32px;
+        }
+
+        main > img {
+          max-width: 100px;
+        }
+      }
+
+      h1,
+      hr,
+      input,
+      footer {
+        mix-blend-mode: exclusion;
+      }
+
+      h1 {
+        font-size: clamp(2rem, -0.875rem + 8.333vw, 4rem);
+        font-family: 'Soleil', sans-serif;
+        transform: translateX(-5px);
+      }
+
+      p,
+      footer,
+      input,
+      button {
+        font-family: 'Nunito Sans', sans-serif;
+      }
+
+      p,
+      input,
+      button {
+        font-size: clamp(1rem, -0.875rem + 8.333vw, 1.25rem);
+      }
+
+      p {
+        max-width: 50ch;
+      }
+
+      hr {
+        margin: 48px 0;
+        width: 50%;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      input,
+      button {
+        padding: 16px;
+        border: none;
+        border-radius: 10px;
+      }
+
+      input {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      button {
+        margin-left: 8px;
+        padding: 16px 24px;
+        background-color: var(--bg-primary);
+        color: #fff;
+      }
+
+      @media (max-width: 1250px) {
+        form > div {
+          display: flex;
+          flex-direction: column;
+        }
+
+        button {
+          margin-left: 0;
+          margin-top: 8px;
+        }
+      }
+
+      footer {
+        margin-top: 48px;
+        font-size: 0.75rem;
+        font-family: sans-serif;
+        opacity: 0.4;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      @keyframes one {
+        0% {
+          transform: translate(-300px, -100px);
+        }
+        100% {
+          transform: translate(200px, -100px);
+        }
+      }
+
+      @keyframes two {
+        0% {
+          transform: translate(300px, 100px);
+        }
+        100% {
+          transform: translate(-200px, 100px);
+        }
+      }
+
+      .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+        filter: blur(1000px);
+      }
+
+      .bg > div {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 50%;
+        aspect-ratio: 1;
+        opacity: 0.5;
+      }
+
+      @media (max-width: 600px) {
+        .bg > div {
+          width: 150%;
+        }
+      }
+
+      .bg > div:first-child {
+        background: radial-gradient(var(--bg-primary) 0%, transparent 70%);
+        animation: one 20s ease-in-out infinite alternate;
+      }
+
+      .bg > div:last-child {
+        background: radial-gradient(var(--bg-secondary) 0%, transparent 70%);
+        animation: two 15s ease-in-out infinite alternate;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="bg">
+        <div></div>
+        <div></div>
+      </div>
+
+      <img alt="diploi logo" src="/assets/image/logo.svg" />
+      <h1>Focus on development.</h1>
+      <p>
+        No ops, no configuration, hands-down, straight-to-the-point efficient
+        work effort every day. 🎉
+      </p>
+      <p>Coming your way soon™.</p>
+
+      <hr />
+
+      <form>
+        <p>
+          Piqued your interest? 🤔 Sign up and be the first to know when we get
+          going. 👇
+        </p>
+        <div>
+          <input type="email" placeholder="Your email address…" />
+          <button type="submit">Sign Up</button>
+        </div>
+      </form>
+
+      <footer>
+        Built with ❤️ by <a href="https://www.nemesys.fi/">Nemesys</a>
+      </footer>
+    </main>
+  </body>
+</html>
