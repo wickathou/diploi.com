@@ -84,13 +84,15 @@
       p,
       footer,
       input,
-      button {
+      button,
+      .button {
         font-family: 'Source Sans Pro', sans-serif;
       }
 
       p,
       input,
-      button {
+      button,
+      .button {
         font-size: clamp(1rem, -0.875rem + 8.333vw, 1.25rem);
       }
 
@@ -105,21 +107,43 @@
       }
 
       input,
-      button {
+      button,
+      .button {
         padding: 16px;
         border: none;
         border-radius: 10px;
       }
 
       input {
+        margin-right: 8px;
         background-color: rgba(0, 0, 0, 0.1);
       }
 
-      button {
-        margin-left: 8px;
+      button,
+      .button {
+        display: inline-flex;
+        align-items: center;
         padding: 16px 24px;
+        text-decoration: none;
         background-color: var(--bg-primary);
         color: #fff;
+        user-select: none;
+        cursor: pointer;
+      }
+
+      .button > svg {
+        fill: #fff;
+        opacity: 0.8;
+      }
+
+      .button > svg:first-of-type {
+        margin-left: -8px;
+        margin-right: 10px;
+      }
+
+      .button > svg:last-of-type {
+        margin-left: 10px;
+        margin-right: -8px;
       }
 
       @media (max-width: 1250px) {
@@ -222,6 +246,30 @@
         work effort every day. 🎉 Coming your way soon.
       </p>
 
+      <a class="button" href="https://docs.diploi.com/">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="26"
+          height="26"
+          viewBox="0 0 256 256"
+        >
+          <path
+            d="M208,24H72A32,32,0,0,0,40,56V224a8,8,0,0,0,8,8H192a8,8,0,0,0,0-16H56a16,16,0,0,1,16-16H208a8,8,0,0,0,8-8V32A8,8,0,0,0,208,24Zm-24,96-25.61-19.2a4,4,0,0,0-4.8,0L128,120V40h56Z"
+          ></path>
+        </svg>
+        Documentation
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="26"
+          height="26"
+          viewBox="0 0 256 256"
+        >
+          <path
+            d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+          ></path>
+        </svg>
+      </a>
+
       <hr />
 
       <form name="subscribe" method="POST" data-netlify="true">
@@ -230,8 +278,11 @@
           going.
         </p>
         <div>
-          <input type="email" placeholder="Your email address…" name="email" />
-          <button type="submit">Sign Up</button>
+          <input
+            type="email"
+            placeholder="Your email address…"
+            name="email"
+          /><button type="submit">Sign Up</button>
         </div>
       </form>
 
