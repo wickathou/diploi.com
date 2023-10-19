@@ -1,0 +1,158 @@
+---
+import icon from '../images/logo-icon.svg';
+import og from '../images/og.png';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>{title}</title>
+    <meta
+      name="description"
+      content="Single SaaS service for managing, developing and hosting your full application. "
+    />
+
+    <link rel="icon" type="image/svg" href={icon.src} />
+    <meta property="og:title" content="Diploi" />
+    <meta
+      property="og:description"
+      content="Single SaaS service for managing, developing and hosting your full application. "
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://diploi.com/" />
+    <meta property="og:image" content={og.src} />
+    <meta property="og:image:alt" content="Diploi logo" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Source+Sans+3:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta
+      name="google-site-verification"
+      content="XopKlvNBmdLaTZtElCt9bkAVDuqrRL-5Ist_6Ecth-o"
+    />
+  </head>
+  <body>
+    <slot />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-182JME5104"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-182JME5104');
+    </script>
+  </body>
+</html>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const targets = document.querySelectorAll('.on-scroll');
+
+    const observer = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((entry) => {
+          if (
+            entry.isIntersecting &&
+            entry.target.classList.contains('on-scroll')
+          ) {
+            entry.target.classList.remove('on-scroll');
+
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+
+              setTimeout(() => {
+                entry.target.classList.add('done');
+              }, 2000);
+            }, 500);
+          }
+        }),
+      {
+        threshold: 0.5,
+      }
+    );
+
+    targets.forEach((target) => observer.observe(target));
+  });
+</script>
+
+<style is:global>
+  :root {
+    --font-body: 'Source Sans 3', sans-serif;
+    --font-header: 'Montserrat', sans-serif;
+
+    --font-header-size: 3.052rem;
+
+    --color-primary: #6650fa;
+    --color-secondary: #ec609c;
+    --color-grey: #31363f;
+    --color-background: #202328;
+
+    --accent-gradient: linear-gradient(
+      45deg,
+      var(--color-primary),
+      var(--color-secondary) 30%,
+      white 60%
+    );
+  }
+
+  html {
+    padding: 0;
+    font-size: 150%;
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+  }
+
+  @media (max-width: 900px) {
+    :root {
+      --font-header-size: 2.441rem;
+    }
+
+    html {
+      font-size: 120%;
+    }
+  }
+
+  body {
+    margin: 0;
+    padding: 24px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  p {
+    opacity: 0.7;
+    max-width: 55ch;
+  }
+
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+</style>

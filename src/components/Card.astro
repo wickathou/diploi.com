@@ -1,0 +1,63 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<li>
+  <slot name="icon" />
+  <h2>
+    {title}
+  </h2>
+  <ul>
+    <slot />
+  </ul>
+</li>
+
+<style>
+  li {
+    list-style: none;
+  }
+
+  li:nth-of-type(2) {
+    margin-top: 64px;
+  }
+
+  li:nth-of-type(3) {
+    margin-top: 128px;
+  }
+
+  @media (max-width: 1000px) {
+    li:nth-of-type(2) {
+      margin-top: 0;
+    }
+
+    li:nth-of-type(3) {
+      margin-top: 0;
+    }
+  }
+
+  h2 {
+    margin: 0;
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 30px;
+    list-style-type: '→  ';
+  }
+
+  ul > :global(li) {
+    opacity: 0.7;
+  }
+
+  ul > :global(li):nth-of-type(odd) {
+    opacity: 0.7;
+  }
+</style>

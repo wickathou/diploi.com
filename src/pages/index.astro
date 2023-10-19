@@ -1,0 +1,487 @@
+---
+import {
+  Target,
+  CursorClick,
+  PlugsConnected,
+  BookBookmark,
+  SignIn,
+} from '@phosphor-icons/react';
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Logo from '../components/Logo.astro';
+import Gradient from '../components/Gradient.astro';
+import Chart from '../components/Chart.astro';
+import arrow from '../images/arrow.svg';
+import pipeline from '../images/pipeline.svg';
+import Flow from '../components/Flow.astro';
+---
+
+<Layout title="Diploi – Magical Developer Experience">
+  <main>
+    <header>
+      <Logo />
+      <h1><span class="text-gradient">Magical</span> Developer Experience</h1>
+      <p>
+        Single SaaS service for managing, developing and hosting your full
+        application.
+      </p>
+      <div>
+        <a class="button" href="https://docs.diploi.com/">
+          <BookBookmark weight="fill" />
+           Documentation →
+        </a>
+        <a class="button basic" href="https://console.diploi.com/">
+          <SignIn />
+           Login →
+        </a>
+      </div>
+
+      <Image
+        class="pipeline"
+        src={pipeline}
+        height={1024}
+        alt="background graphic representing flow"
+      />
+    </header>
+
+    <article class="flow">
+      <Flow />
+
+      <section>
+        <h2>The Problem</h2>
+        <p>
+          We believe developers today are too distracted, not by choice, but due
+          to the inherent complexity of today's systems. Our vision is to allow
+          every developer to effortlessly get into a state of flow, completely
+          free from any disruptions.
+        </p>
+      </section>
+    </article>
+
+    <Image
+      class="arrow"
+      src={arrow}
+      height={260}
+      alt="an arrow downwards with the Diploi logo in the middle"
+    />
+
+    <article class="features">
+      <section>
+        <h2>Our Solution</h2>
+        <p>
+          A single SaaS service for managing, developing and hosting your full
+          application. No more context switching, local dependencies or
+          configuration hell. Get into the flow with Diploi.
+        </p>
+      </section>
+
+      <ul>
+        <Card title="Consistent">
+          <Target
+            weight="bold"
+            size={48}
+            style={{ fill: 'url(#gradient-one)' }}
+            slot="icon"
+          />
+          <li>Consistent environments from development to production</li>
+          <li>Straightforward yet powerful user experience</li>
+          <li>Adoptable incrementally - start easy, grow later</li>
+        </Card>
+        <Card title="One-Click">
+          <CursorClick
+            weight="bold"
+            size={48}
+            style={{ fill: 'url(#gradient-two)' }}
+            slot="icon"
+          />
+          <li>Fast 30 second new developer onboarding</li>
+          <li>One-click environment setup</li>
+          <li>Instantly shareable testing environments</li>
+        </Card>
+        <Card title="Zero-Install">
+          <PlugsConnected
+            weight="bold"
+            size={48}
+            style={{ fill: 'url(#gradient-three)' }}
+            slot="icon"
+          />
+          <li>Zero-install remote development</li>
+          <li>Seamless Git integration</li>
+          <li>Versatile support for any stack pre-build or custom</li>
+        </Card>
+      </ul>
+
+      <!-- <Image src={screenshot} width={900} alt="The Diploi dashboard." /> -->
+    </article>
+
+    <hr />
+
+    <article class="statistic">
+      <section>
+        <h2>Full-Speed Ahead</h2>
+        <p>
+          We measured real-life statistics from an average web development
+          company to show how Diploi accelerates all aspects of development.
+        </p>
+      </section>
+
+      <Chart
+        title="Starting a new project"
+        description="in minutes avg"
+        bars={[
+          { title: 'Diploi', value: 7 },
+          { title: 'Containerized', value: 115, comparison: 24 },
+          { title: 'Traditional', value: 68, comparison: 14 },
+        ]}
+      />
+      <Chart
+        title="Onboarding a new developer"
+        description="in minutes avg"
+        bars={[
+          { title: 'Diploi', value: 10 },
+          { title: 'Containerized', value: 45, comparison: 4 },
+          { title: 'Traditional', value: 92, comparison: 10 },
+        ]}
+      />
+      <Chart
+        title="Creating a new test environment"
+        description="in minutes avg"
+        bars={[
+          { title: 'Diploi', value: 10 },
+          { title: 'Containerized', value: 62, comparison: 6 },
+          { title: 'Traditional', value: 115, comparison: 11 },
+        ]}
+      />
+      <Chart
+        title="Updating production"
+        description="in minutes avg"
+        bars={[
+          { title: 'Diploi', value: 3.5 },
+          { title: 'Containerized', value: 6, comparison: 2 },
+          { title: 'Traditional', value: 16, comparison: 5 },
+        ]}
+        max={16}
+      />
+
+      <p class="saved on-scroll">
+        <span>This means, that on average, Diploi saves</span>
+        <strong>300 h</strong>
+        <span>for every developer, every year.</span>
+      </p>
+    </article>
+
+    <article class="callout">
+      <section>
+        <h2>Piqued your interest?</h2>
+        <p>
+          We are currently invite-only. Sign up to have a chance of being
+          invited, and be the first to know once we go public. Development is
+          about to get <span class="text-gradient">magical</span>.
+        </p>
+
+        <form method="POST" name="subscribe">
+          <input type="hidden" name="form-name" value="subscribe" />
+
+          <input type="email" placeholder="Your email address…" name="email" />
+          <button type="submit">Sign Up</button>
+        </form>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <p>Built with ❤️ by Diploi</p>
+  </footer>
+
+  <Gradient />
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size:;
+  }
+
+  header,
+  article,
+  section,
+  footer {
+    width: 100%;
+    max-width: 900px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90vh;
+  }
+
+  header > h1 {
+    margin-bottom: 0;
+    font-size: var(--font-header-size);
+    font-weight: bold;
+    font-family: var(--font-header);
+    line-height: 1.2;
+  }
+
+  header > p {
+    margin-bottom: 64px;
+  }
+
+  header > div {
+    display: flex;
+    gap: 16px;
+  }
+
+  @media (max-width: 900px) {
+    header > div {
+      flex-direction: column;
+    }
+  }
+
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+
+  .pipeline {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(35%) rotate(-50deg) scale(0.5);
+    opacity: 0.5;
+  }
+
+  @media (max-width: 1000px) {
+    .pipeline {
+      display: none;
+    }
+  }
+
+  .features,
+  .flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+  }
+
+  .features ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 64px;
+    margin: 0;
+    margin-top: 32px;
+    padding: 0;
+  }
+
+  @media (max-width: 1000px) {
+    .features ul {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .arrow {
+    margin: 64px 0;
+  }
+
+  .flow > section {
+    position: relative;
+    margin-top: -128px;
+  }
+
+  .flow > section > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 800px) {
+    .flow > section {
+      margin-top: 0;
+    }
+  }
+
+  main > hr {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 180px 0;
+    border: none;
+    height: 2px;
+    background-color: var(--color-grey);
+    overflow: visible;
+  }
+
+  main > hr::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background-image: url(/starfield.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+  }
+
+  .statistic {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  .statistic > .saved {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    margin: 64px 0;
+    text-align: center;
+  }
+
+  .statistic > .saved > strong {
+    position: relative;
+    font-size: 9.052rem;
+    font-weight: 900;
+    line-height: 1.1;
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+
+  .statistic > .saved > strong::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/starfield.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+
+    transform: scale(1);
+    opacity: 0;
+
+    transition:
+      transform 1s ease,
+      opacity 1s ease;
+  }
+
+  .statistic > .saved.visible > strong::after {
+    transform: scale(2.8);
+    opacity: 0.2;
+  }
+
+  @media (max-width: 1000px) {
+    .statistic > .saved > strong {
+      font-size: 6.052rem;
+    }
+
+    .statistic > .saved > strong::after {
+      display: none;
+    }
+  }
+
+  .callout {
+    position: relative;
+    margin-top: 128px;
+  }
+
+  .callout h2 {
+    margin-top: 0;
+  }
+
+  .callout::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -48px;
+    left: -48px;
+    width: calc(100% + 96px);
+    height: calc(100% + 96px);
+    border-radius: 24px;
+    background-image: linear-gradient(
+      -45deg,
+      var(--color-primary),
+      var(--color-secondary)
+    );
+    opacity: 0.1;
+    z-index: -1;
+  }
+
+  .callout form {
+    display: flex;
+    gap: 16px;
+  }
+
+  @media (max-width: 900px) {
+    .callout::after {
+      display: none;
+    }
+
+    .callout form {
+      flex-direction: column;
+    }
+  }
+
+  .button,
+  button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--color-primary);
+    color: #fff;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  .button.basic,
+  button.basic {
+    background-color: var(--color-grey);
+  }
+
+  input {
+    padding: 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+  }
+
+  footer {
+    margin: auto;
+    margin-top: 128px;
+    font-size: 0.64rem;
+    text-align: center;
+    color: white;
+  }
+
+  footer p {
+    max-width: 100%;
+    opacity: 0.2;
+  }
+</style>

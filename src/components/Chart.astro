@@ -1,0 +1,163 @@
+---
+import { Info } from '@phosphor-icons/react';
+interface Props {
+  title: string;
+  description?: string;
+  bars: { title: string; value: number; comparison?: number }[];
+  max?: number;
+}
+
+const { title, description, bars, max = 120 } = Astro.props;
+
+const segmentWidth = (max / 6 / max) * 100;
+
+const segments = new Array(6)
+  .fill(null)
+  .map((_, index) => segmentWidth * index);
+---
+
+<figure>
+  <h3>{title}</h3>
+  <p><Info /> {description}</p>
+  <div class="content">
+    <div class="graph">
+      {
+        bars.map(({ title, value, comparison }) => (
+          <div class="bar" style={{ width: `${(value / max) * 100}%` }}>
+            <p class="title">{title}</p>
+            {comparison && <p class="comparison">{comparison} × worse</p>}
+          </div>
+        ))
+      }
+      {
+        segments.map((position) => (
+          <div
+            class="segment"
+            style={{ width: `${segmentWidth}%`, left: `${position}%` }}
+          >
+            <span>{Math.round(((segmentWidth + position) / 100) * max)}</span>
+          </div>
+        ))
+      }
+    </div>
+    <p>
+      <strong>{Math.max(...bars.map((bar) => bar.comparison || 0))} ×</strong
+      ><small>faster</small>
+    </p>
+  </div>
+</figure>
+
+<style>
+  figure {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  figure > h3 {
+    margin: 0;
+  }
+
+  figure > p {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    font-size: 0.64rem;
+    transform: translateY(-4px);
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    gap: 76px;
+  }
+
+  .content > p {
+    width: 80px;
+    text-align: center;
+    opacity: 1;
+  }
+
+  @media (max-width: 1000px) {
+    .content {
+      padding-left: 64px;
+      padding-right: 64px;
+    }
+
+    .content > p {
+      display: none;
+    }
+  }
+
+  .content > p > strong {
+    font-size: 1.25rem;
+  }
+
+  .content > p > small {
+    display: block;
+    font-size: 0.64rem;
+    opacity: 0.7;
+  }
+
+  .graph {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 16px 0;
+  }
+
+  .graph > .bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 18px;
+    background-color: var(--color-grey);
+    border-radius: 0 32px 32px 0;
+  }
+
+  .graph > .bar:first-of-type {
+    background-image: linear-gradient(
+      45deg,
+      var(--color-primary),
+      var(--color-secondary)
+    );
+  }
+
+  .graph > .bar > .title {
+    position: absolute;
+    left: -10px;
+    margin: 0;
+    transform: translateX(-100%);
+    font-size: 0.64rem;
+  }
+
+  .graph > .bar > .comparison {
+    position: absolute;
+    right: -10px;
+    margin: 0;
+    transform: translate(100%, 1px);
+    font-size: 0.64rem;
+  }
+
+  .graph > .segment {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    border-right: 1px solid var(--color-grey);
+    z-index: -1;
+  }
+
+  .graph > .segment > span {
+    position: absolute;
+    right: -17px;
+    bottom: -28px;
+    width: 32px;
+    text-align: center;
+    font-size: 0.64rem;
+    opacity: 0.3;
+  }
+</style>
