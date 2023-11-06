@@ -218,7 +218,7 @@ import Flow from '../components/Flow.astro';
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 90vh;
+    min-height: 90vh;
   }
 
   header > h1 {
@@ -258,6 +258,8 @@ import Flow from '../components/Flow.astro';
     right: 0;
     transform: translateX(35%) rotate(-50deg) scale(0.5);
     opacity: 0.5;
+    user-select: none;
+    pointer-events: none;
   }
 
   @media (max-width: 1000px) {
