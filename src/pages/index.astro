@@ -5,6 +5,8 @@ import {
   PlugsConnected,
   BookBookmark,
   SignIn,
+  EnvelopeOpen,
+  Envelope,
 } from '@phosphor-icons/react';
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
@@ -27,7 +29,11 @@ import Flow from '../components/Flow.astro';
         application.
       </p>
       <div>
-        <a class="button" href="https://docs.diploi.com/">
+        <a class="button" href="#invite">
+          <EnvelopeOpen weight="fill" />
+           Get an Invite →
+        </a>
+        <a class="button basic" href="https://docs.diploi.com/">
           <BookBookmark weight="fill" />
            Documentation →
         </a>
@@ -171,9 +177,9 @@ import Flow from '../components/Flow.astro';
       </p>
     </article>
 
-    <article class="callout">
+    <article id="invite" class="callout">
       <section>
-        <h2>Piqued your interest?</h2>
+        <h2><Envelope weight="bold" /> Get an Invite</h2>
         <p>
           We are currently invite-only. Sign up to have a chance of being
           invited, and be the first to know once we go public. Development is
@@ -407,7 +413,14 @@ import Flow from '../components/Flow.astro';
   }
 
   .callout h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     margin-top: 0;
+  }
+
+  .callout h2 > svg {
+    fill: url(#gradient-three);
   }
 
   .callout::after {
