@@ -1,0 +1,97 @@
+---
+import thumbnailImage from '../images/thumbnail.png';
+
+const embedUrl =
+  'https://www.youtube-nocookie.com/embed/27P-Tt50fyc?si=rWBVUxRv_aKxdJ8I&autoplay=1';
+
+const embedSrcDoc = `
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    html, body {
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    img, span {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      margin: auto;
+      opacity: 0.8;
+    }
+
+    span {
+      bottom: 0;
+      height:1.5em;
+      text-align:center;
+      font:48px/1.5 sans-serif;
+      color:white;
+      text-shadow:0 0 0.5em black
+    }
+  </style>
+  
+  <a href='${embedUrl}'>
+    <img src='${thumbnailImage.src}' alt='Diploi Introduction'>
+    <span>▶</span>
+  </a>
+`;
+---
+
+<article>
+  <iframe
+    srcdoc={embedSrcDoc}
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+    title="Diploi Introduction"></iframe>
+</article>
+
+<style>
+  article {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 178px;
+    width: 100%;
+  }
+
+  article::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/blur.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transform: scale(1.7);
+    filter: blur(100px);
+  }
+
+  iframe {
+    aspect-ratio: 16/9;
+    width: 100%;
+    transform: scale(1.3);
+    border-radius: 8px;
+  }
+
+  @media (max-width: 1600px) {
+    article {
+      margin-bottom: 64px;
+    }
+
+    article::before {
+      transform: scale(1.2);
+    }
+
+    iframe {
+      transform: scale(1);
+    }
+  }
+</style>

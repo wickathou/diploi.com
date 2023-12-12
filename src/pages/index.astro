@@ -17,6 +17,7 @@ import Chart from '../components/Chart.astro';
 import arrow from '../images/arrow.svg';
 import pipeline from '../images/pipeline.svg';
 import Flow from '../components/Flow.astro';
+import Video from '../components/Video.astro';
 ---
 
 <Layout title="Diploi – Magical Developer Experience">
@@ -52,7 +53,8 @@ import Flow from '../components/Flow.astro';
     </header>
 
     <article class="flow">
-      <Flow />
+      <Video />
+      <!-- <Flow /> -->
 
       <section>
         <h2>The Problem</h2>
@@ -303,7 +305,7 @@ import Flow from '../components/Flow.astro';
 
   .flow > section {
     position: relative;
-    margin-top: -128px;
+    /* margin-top: -128px; */
   }
 
   .flow > section > * {
