@@ -226,7 +226,12 @@ import Video from '../components/Video.astro';
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 90vh;
+    height: 90vh;
+    min-height: 800px;
+  }
+
+  header > :global(svg) {
+    flex-shrink: 0;
   }
 
   header > h1 {
