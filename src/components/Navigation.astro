@@ -1,10 +1,14 @@
 ---
 import { House, CreditCard } from '@phosphor-icons/react';
 
-const pathname = Astro.url.pathname;
+interface Props {
+  selected: 'home' | 'pricing';
+}
 
-const isHome = pathname === '/';
-const isPricing = pathname === '/pricing';
+const { selected } = Astro.props;
+
+const isHome = selected === 'home';
+const isPricing = selected === 'pricing';
 ---
 
 <header>
