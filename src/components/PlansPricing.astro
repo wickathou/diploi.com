@@ -16,7 +16,7 @@ interface Props {
 
 const { pricing } = Astro.props;
 
-const highlightedApplicationClusters = ['S', 'M', 'L'];
+const highlightedAppClusters = ['S', 'M', 'L'];
 
 const formatter = new Intl.NumberFormat('fi-FI', {
   style: 'currency',
@@ -32,18 +32,18 @@ const monthlyFormatter = new Intl.NumberFormat('fi-FI', {
 ---
 
 <p class="help above">
-  <Info /> Costs per application cluster size, starting at
+  <Info /> Costs per app cluster size, starting at
 </p>
 <ul class="clusters hourly">
   {
     pricing.coreInstancePrice
-      .filter((item) => highlightedApplicationClusters.includes(item.name))
+      .filter((item) => highlightedAppClusters.includes(item.name))
       .map((item) => (
         <li>
           <h3>{item.name}</h3>
           <div class="price">
             <p>{formatter.format(item.price + pricing.deployment)}</p>
-            <span class="help">/ application cluster / hour</span>
+            <span class="help">/ app cluster / hour</span>
           </div>
         </li>
       ))
@@ -52,7 +52,7 @@ const monthlyFormatter = new Intl.NumberFormat('fi-FI', {
 <ul class="clusters monthly">
   {
     pricing.coreInstancePrice
-      .filter((item) => highlightedApplicationClusters.includes(item.name))
+      .filter((item) => highlightedAppClusters.includes(item.name))
       .map((item) => (
         <li>
           <h3>{item.name}</h3>
@@ -69,7 +69,7 @@ const monthlyFormatter = new Intl.NumberFormat('fi-FI', {
                 dev
               </span>
             </p>
-            <span class="help">/ application cluster / month</span>
+            <span class="help">/ app cluster / month</span>
           </div>
         </li>
       ))
