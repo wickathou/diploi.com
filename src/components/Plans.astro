@@ -112,6 +112,8 @@ const { pricing } = Astro.props;
   const hourly = document.querySelectorAll('.clusters.hourly');
   const monthly = document.querySelectorAll('.clusters.monthly');
 
+  (toggle as HTMLInputElement).checked = false;
+
   toggle?.addEventListener('change', (event) => {
     let hourlyDisplay = 'flex';
     let monthlyDisplay = 'none';
