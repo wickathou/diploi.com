@@ -1,5 +1,9 @@
 ---
-import { ChatsCircle } from '@phosphor-icons/react';
+import {
+  AirplaneTakeoff,
+  ChatsCircle,
+  HandWaving,
+} from '@phosphor-icons/react';
 import Layout from '../layouts/Layout.astro';
 import Gradient from '../components/Gradient.astro';
 import Plans from '../components/Plans.astro';
@@ -26,14 +30,29 @@ if (!pricing) {
 
     <hr />
 
+    <article class="callout">
+      <section>
+        <h2><AirplaneTakeoff weight="bold" /> Ready to Get Started?</h2>
+        <p>
+          Sign up using your GitHub account and receive 50 € in free credits to
+          explore and experiment with. Development is about to get <span
+            class="text-gradient">magical</span
+          >.
+        </p>
+
+        <a class="button" href="https://console.diploi.com/"
+          ><HandWaving weight="fill" />Sign Up →</a
+        >
+      </section>
+    </article>
+
     <article id="contact-us" class="callout">
       <section>
         <h2><ChatsCircle weight="bold" /> Contact Us</h2>
         <p>
-          Sign up for a Free Trial invite on our front page! If you're
-          considering our Pro or Enterprise tiers, feel free to reach out to us
-          directly. We're here to answer your questions and assist with
-          upgrading your account.
+          If you're considering our Pro or Enterprise tiers, feel free to reach
+          out to us directly. We're here to answer your questions and assist
+          with upgrading your account.
         </p>
 
         <a href="mailto:hello@diploi.com" class="email">hello@diploi.com</a>
@@ -99,6 +118,14 @@ if (!pricing) {
   .callout form {
     display: flex;
     gap: 16px;
+  }
+
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
   }
 
   .email {
