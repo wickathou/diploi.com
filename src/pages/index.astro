@@ -7,6 +7,8 @@ import {
   SignIn,
   EnvelopeOpen,
   Envelope,
+  AirplaneTakeoff,
+  HandWaving,
 } from '@phosphor-icons/react';
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
@@ -35,9 +37,9 @@ import DiploiStructure from '../components/DiploiStructure.astro';
         application.
       </p>
       <div>
-        <a class="button" href="#invite">
-          <EnvelopeOpen weight="fill" />
-          Get an Invite →
+        <a class="button" href="https://console.diploi.com/">
+          <HandWaving weight="fill" />
+          Sign up →
         </a>
         <a class="button basic" href="https://docs.diploi.com/">
           <BookBookmark weight="fill" />
@@ -186,21 +188,19 @@ import DiploiStructure from '../components/DiploiStructure.astro';
       </p>
     </article>
 
-    <article id="invite" class="callout">
+    <article class="callout">
       <section>
-        <h2><Envelope weight="bold" /> Get an Invite</h2>
+        <h2><AirplaneTakeoff weight="bold" /> Ready to Get Started?</h2>
         <p>
-          We are currently invite-only. Sign up to have a chance of being
-          invited, and be the first to know once we go public. Development is
-          about to get <span class="text-gradient">magical</span>.
+          Sign up using your GitHub account and receive 50 € in free credits to
+          explore and experiment with. Development is about to get <span
+            class="text-gradient">magical</span
+          >.
         </p>
 
-        <form method="POST" name="subscribe">
-          <input type="hidden" name="form-name" value="subscribe" />
-
-          <input type="email" placeholder="Your email address…" name="email" />
-          <button type="submit">Sign Up</button>
-        </form>
+        <a class="button" href="https://console.diploi.com/"
+          ><HandWaving weight="fill" />Sign Up →</a
+        >
       </section>
     </article>
   </main>
