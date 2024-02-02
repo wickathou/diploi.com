@@ -9,6 +9,11 @@ import {
   Envelope,
   AirplaneTakeoff,
   HandWaving,
+  Timer,
+  AirplaneTilt,
+  Gauge,
+  Video as VideoIcon,
+  DiamondsFour,
 } from '@phosphor-icons/react';
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
@@ -22,7 +27,8 @@ import Flow from '../components/Flow.astro';
 import Video from '../components/Video.astro';
 import Navigation from '../components/Navigation.astro';
 import Divider from '../components/Divider.astro';
-import DiploiStructure from '../components/DiploiStructure.astro';
+import Illustration from '../components/Illustration.astro';
+import Spacer from '../components/Spacer.astro';
 ---
 
 <Layout title="Diploi – Magical Developer Experience">
@@ -41,13 +47,9 @@ import DiploiStructure from '../components/DiploiStructure.astro';
           <HandWaving weight="fill" />
           Sign up →
         </a>
-        <a class="button basic" href="https://docs.diploi.com/">
-          <BookBookmark weight="fill" />
-          Documentation →
-        </a>
-        <a class="button basic" href="https://console.diploi.com/">
-          <SignIn />
-          Login →
+        <a class="button basic" href="#video">
+          <VideoIcon weight="fill" />
+          Showcase Video →
         </a>
       </div>
 
@@ -59,40 +61,16 @@ import DiploiStructure from '../components/DiploiStructure.astro';
       />
     </article>
 
-    <article class="flow">
-      <Video />
-      <!-- <Flow /> -->
-
-      <section>
-        <h2>The Problem</h2>
-        <p>
-          We believe developers today are too distracted, not by choice, but due
-          to the inherent complexity of today's systems. Our vision is to allow
-          every developer to effortlessly get into a state of flow, completely
-          free from any disruptions.
-        </p>
-      </section>
+    <article class="quote">
+      <p>
+        We believe developers today are too distracted, not by choice, but due
+        to the inherent complexity of today's systems. Our vision is to allow
+        every developer to effortlessly get into a state of flow, completely
+        free from any disruptions.
+      </p>
     </article>
 
-    <Image
-      class="arrow"
-      src={arrow}
-      height={260}
-      alt="an arrow downwards with the Diploi logo in the middle"
-    />
-
     <article class="features">
-      <section>
-        <h2>Our Solution</h2>
-        <p>
-          A single SaaS service for managing, developing and hosting your full
-          application. No more context switching, local dependencies or
-          configuration hell. Get into the flow with Diploi.
-        </p>
-      </section>
-
-      <DiploiStructure />
-
       <ul>
         <Card title="Consistent">
           <Target
@@ -128,18 +106,50 @@ import DiploiStructure from '../components/DiploiStructure.astro';
           <li>Versatile support for any stack pre-build or custom</li>
         </Card>
       </ul>
+    </article>
 
-      <!-- <Image src={screenshot} width={900} alt="The Diploi dashboard." /> -->
+    <article id="video" class="flow">
+      <Video />
+      <!-- <Flow /> -->
+    </article>
+
+    <article class="features">
+      <section>
+        <h2><Gauge weight="bold" /> Full-Speed Ahead</h2>
+        <p>
+          Start out with a development cluster and add more developer, testing
+          and production clusters as your project grows.
+        </p>
+      </section>
+
+      <Spacer size="small" />
+
+      <Illustration type="structure" />
+
+      <Spacer size="large" />
+
+      <section>
+        <h2><DiamondsFour weight="bold" /> App Cluster</h2>
+        <p>
+          An app cluster hosts your full application. It can be a single web
+          server or a complicated setup with databases and microservices. Use
+          our premade templates to run your favourite stack.
+        </p>
+      </section>
+
+      <Spacer size="small" />
+
+      <Illustration type="cluster" />
     </article>
 
     <Divider />
 
     <article class="statistic">
       <section>
-        <h2>Full-Speed Ahead</h2>
+        <h2><Timer weight="bold" /> Save Time and Resources</h2>
         <p>
-          We measured real-life statistics from an average web development
-          company to show how Diploi accelerates all aspects of development.
+          These are real-life statistics from a web development company. Can you
+          afford to ignore the benefits and possible savings from using Diploi?
         </p>
       </section>
 
@@ -190,12 +200,11 @@ import DiploiStructure from '../components/DiploiStructure.astro';
 
     <article class="callout">
       <section>
-        <h2><AirplaneTakeoff weight="bold" /> Ready to Get Started?</h2>
+        <h2><AirplaneTakeoff weight="bold" /> Get Started</h2>
         <p>
           Sign up using your GitHub account and receive 50 € in free credits to
-          explore and experiment with. Development is about to get <span
-            class="text-gradient">magical</span
-          >.
+          explore and experiment with. Development is about to get
+          <span class="text-gradient">magical</span>.
         </p>
 
         <a class="button" href="https://console.diploi.com/"
@@ -226,6 +235,16 @@ import DiploiStructure from '../components/DiploiStructure.astro';
   footer {
     width: 100%;
     max-width: 900px;
+  }
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.6ch;
+  }
+
+  h2 > svg {
+    fill: url(#gradient-three);
   }
 
   .hero {
@@ -285,6 +304,34 @@ import DiploiStructure from '../components/DiploiStructure.astro';
     .pipeline {
       display: none;
     }
+  }
+
+  .quote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 48px;
+  }
+
+  .quote > p {
+    font-size: 1.17em;
+  }
+
+  .quote > p::before,
+  .quote > p::after {
+    opacity: 0.5;
+  }
+
+  .quote > p::before {
+    content: '“';
+  }
+
+  .quote > p::after {
+    content: '”';
+  }
+
+  .features {
+    margin-bottom: 64px;
   }
 
   .features,
