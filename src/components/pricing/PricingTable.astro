@@ -1,10 +1,9 @@
 ---
 import Spacer from '../Spacer.astro';
-import PricingToggle from './PricingToggle.astro';
 
 interface Props {
   pricing: {
-    deployment: number;
+    averageDaysInMonth: number;
     storagePerGiB: number;
     coreInstancePrice: {
       name: string;
@@ -18,6 +17,8 @@ interface Props {
 
 const { pricing } = Astro.props;
 
+const { averageDaysInMonth, storagePerGiB } = pricing;
+
 const formatter = new Intl.NumberFormat('fi-FI', {
   style: 'currency',
   currency: 'EUR',
@@ -25,9 +26,7 @@ const formatter = new Intl.NumberFormat('fi-FI', {
 });
 ---
 
-<table
-  data-selected-cluster-price={pricing.coreInstancePrice[0].price * 20 * 8}
->
+<table>
   <thead>
     <tr>
       <th><div class="name">Cluster Size</div></th>
@@ -40,14 +39,7 @@ const formatter = new Intl.NumberFormat('fi-FI', {
     {
       pricing.coreInstancePrice.map(core => (
         <tr>
-          <td>
-            <PricingToggle
-              name="size"
-              value={core.name}
-              label={core.name}
-              price={core.price}
-            />
-          </td>
+          <td>{core.name}</td>
           <td>{core.memoryGiB} GB</td>
           <td>{core.vCpu}</td>
           <td>
@@ -89,8 +81,12 @@ const formatter = new Intl.NumberFormat('fi-FI', {
         <span class="help">/ GB / hour</span>
       </td>
       <td>
-        <span id="storage-price-month" data-price={pricing.storagePerGiB}>
-          {formatter.format(pricing.storagePerGiB * 10 * 20 * 8)}
+        <span id="storage-price-month">
+          {
+            formatter.format(
+              pricing.storagePerGiB * 10 * averageDaysInMonth * 24
+            )
+          }
         </span>
         <span class="help"> / month</span>
       </td>
@@ -98,65 +94,12 @@ const formatter = new Intl.NumberFormat('fi-FI', {
   </tbody>
 </table>
 
-<Spacer size="small" />
-
-<table>
-  <thead>
-    <tr>
-      <th><div class="name"></div></th>
-      <th colspan="2"></th>
-      <th><div class="cost"></div></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Total</td>
-      <td colspan="2"></td>
-      <td>
-        <span id="total-hour"
-          >{
-            formatter.format(
-              pricing.storagePerGiB * 10 + pricing.coreInstancePrice[0].price
-            )
-          }</span
-        >
-        <span class="help"> / hour</span>
-      </td>
-      <td>
-        <span id="total-month"
-          >{
-            formatter.format(
-              (pricing.storagePerGiB * 10 +
-                pricing.coreInstancePrice[0].price) *
-                20 *
-                8
-            )
-          }</span
-        >
-        <span class="help"> / month</span>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<script>
-  const storageInput = document.getElementById('storage') as HTMLInputElement;
-  const storagePriceHourElement = document.getElementById(
-    'storage-price-hour'
-  ) as HTMLSpanElement;
+<script define:vars={{ averageDaysInMonth, storagePerGiB }}>
+  const storageInput = document.getElementById('storage');
+  const storagePriceHourElement = document.getElementById('storage-price-hour');
   const storagePriceMonthElement = document.getElementById(
     'storage-price-month'
-  ) as HTMLSpanElement;
-  const storagePrice = parseFloat(
-    storagePriceMonthElement.getAttribute('data-price') as string
   );
-
-  const totalHourElement = document.getElementById(
-    'total-hour'
-  ) as HTMLSpanElement;
-  const totalMonthElement = document.getElementById(
-    'total-month'
-  ) as HTMLSpanElement;
 
   const formatter = new Intl.NumberFormat('fi-FI', {
     style: 'currency',
@@ -171,24 +114,23 @@ const formatter = new Intl.NumberFormat('fi-FI', {
   });
 
   const getHours = () =>
-    parseInt(
-      document
-        .querySelector('[data-hours]')
-        ?.getAttribute('data-hours') as string
+    parseFloat(
+      document.querySelector('[data-hours]')?.getAttribute('data-hours')
     );
 
   const getStoragePrice = () => {
-    let price = parseFloat(storageInput.value) * storagePrice;
+    let price = parseFloat(storageInput.value) * storagePerGiB;
     if (isNaN(price) || price < 0) price = 0;
     return price;
   };
 
   const updateStoragePrice = () => {
-    const hours = getHours();
     const price = getStoragePrice();
 
     storagePriceHourElement.innerHTML = formatterLong.format(price);
-    storagePriceMonthElement.innerHTML = formatter.format(price * hours);
+    storagePriceMonthElement.innerHTML = formatter.format(
+      price * averageDaysInMonth * 24
+    );
   };
 
   const updateClusterPrice = () => {
@@ -196,7 +138,7 @@ const formatter = new Intl.NumberFormat('fi-FI', {
 
     document.querySelectorAll('[data-cluster-price]').forEach(element => {
       const clusterPrice = parseFloat(
-        element.getAttribute('data-cluster-price') as string
+        element.getAttribute('data-cluster-price')
       );
       element.innerHTML = formatter.format(clusterPrice * hours);
     });
@@ -216,37 +158,6 @@ const formatter = new Intl.NumberFormat('fi-FI', {
   storageInput.addEventListener('input', dispatchUpdateEvent);
   storageInput.addEventListener('change', dispatchUpdateEvent);
   storageInput.value = '10';
-
-  document
-    .querySelectorAll('input[name="size"]')
-    .forEach(element =>
-      element.addEventListener('change', dispatchUpdateEvent)
-    );
-
-  const handleTotalUpdate = () => {
-    const hours = getHours();
-    const storagePrice = getStoragePrice();
-
-    const clusterPrice = parseFloat(
-      document
-        .querySelector('input[name="size"]:checked')
-        ?.getAttribute('data-price') as string
-    );
-
-    totalHourElement.innerHTML = formatterLong.format(
-      clusterPrice + storagePrice
-    );
-    totalMonthElement.innerHTML = formatter.format(
-      (clusterPrice + storagePrice) * hours
-    );
-  };
-
-  document.addEventListener('pricing-update', handleTotalUpdate);
-
-  (document.querySelector('input[value="XS"]') as HTMLInputElement).checked =
-    true;
-
-  handleTotalUpdate();
 </script>
 
 <style>

@@ -1,6 +1,22 @@
 ---
 import { Info } from '@phosphor-icons/react';
 import PricingToggle from './PricingToggle.astro';
+
+interface Props {
+  pricing: {
+    averageDaysInMonth: number;
+    averageWorkingDaysInMonth: number;
+    averageWorkingHoursInDay: number;
+  };
+}
+
+const { pricing } = Astro.props;
+
+const {
+  averageDaysInMonth,
+  averageWorkingDaysInMonth,
+  averageWorkingHoursInDay,
+} = pricing;
 ---
 
 <fieldset data-hours={20 * 8}>
@@ -23,21 +39,23 @@ import PricingToggle from './PricingToggle.astro';
   </div>
 </fieldset>
 
-<script>
-  const developmentHours = 20 * 7;
-  const testingHours = 180;
-  const productionHours = 30 * 24;
+<script
+  define:vars={{
+    averageDaysInMonth,
+    averageWorkingDaysInMonth,
+    averageWorkingHoursInDay,
+  }}
+>
+  const developmentHours = averageWorkingDaysInMonth * averageWorkingHoursInDay;
+  const testingHours = averageDaysInMonth * 0.25 * 24;
+  const productionHours = averageDaysInMonth * 24;
 
-  const hoursElement = document.querySelector(
-    '[data-hours]'
-  ) as HTMLFieldSetElement;
-  const typeContainerElement = document.getElementById(
-    'type-container'
-  ) as HTMLDivElement;
+  const hoursElement = document.querySelector('[data-hours]');
+  const typeContainerElement = document.getElementById('type-container');
 
   const updateHours = () => {
-    const selectedType = (
-      document.querySelector('input[name="type"]:checked') as HTMLInputElement
+    const selectedType = document.querySelector(
+      'input[name="type"]:checked'
     ).value;
 
     let hours = developmentHours;
@@ -54,9 +72,7 @@ import PricingToggle from './PricingToggle.astro';
     .querySelectorAll('input[name="type"]')
     .forEach(element => element.addEventListener('change', updateHours));
 
-  (
-    document.querySelector('input[value="development"]') as HTMLInputElement
-  ).checked = true;
+  document.querySelector('input[value="development"]').checked = true;
 </script>
 
 <style>
