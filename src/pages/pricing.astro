@@ -15,7 +15,7 @@ import Spacer from '../components/Spacer.astro';
 
 const { pricing } = await fetch(
   'https://console.diploi.com/api/business/pricing'
-).then(response => response.json());
+).then((response) => response.json());
 if (!pricing) {
   throw new Error(`Failed to load pricing (${pricing.status})`);
 }
@@ -65,7 +65,10 @@ if (!pricing) {
           >.
         </p>
 
-        <a class="button" href="https://console.diploi.com/"
+        <a
+          data-event="signup_click"
+          class="button"
+          href="https://console.diploi.com/"
           ><HandWaving weight="fill" />Sign Up →</a
         >
       </section>

@@ -52,7 +52,9 @@ const { pricing } = Astro.props;
           </ul>
         </li>
         <li>
-          <a class="button" href="/#invite">Get Started</a>
+          <a data-event="getstarted_click" class="button" href="/#invite"
+            >Get Started</a
+          >
         </li>
       </ul>
     </li>
@@ -73,7 +75,9 @@ const { pricing } = Astro.props;
           </ul>
         </li>
         <li>
-          <a class="button" href="#contact-us">Upgrade to Pro</a>
+          <a data-event="pro_click" class="button" href="#contact-us"
+            >Upgrade to Pro</a
+          >
         </li>
       </ul>
     </li>
@@ -100,7 +104,11 @@ const { pricing } = Astro.props;
           </ul>
         </li>
         <li>
-          <a class="button basic" href="#contact-us">Contact Us</a>
+          <a
+            data-event="contactus_click"
+            class="button basic"
+            href="#contact-us">Contact Us</a
+          >
         </li>
       </ul>
     </li>
