@@ -14,6 +14,7 @@ import {
   Gauge,
   Video as VideoIcon,
   DiamondsFour,
+  Package,
 } from '@phosphor-icons/react';
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
@@ -29,6 +30,7 @@ import Navigation from '../components/Navigation.astro';
 import Divider from '../components/Divider.astro';
 import Illustration from '../components/Illustration.astro';
 import Spacer from '../components/Spacer.astro';
+import Templates from '../components/templates/Templates.astro';
 ---
 
 <Layout title="Diploi – Magical Developer Experience">
@@ -49,7 +51,7 @@ import Spacer from '../components/Spacer.astro';
           href="https://console.diploi.com/"
         >
           <HandWaving weight="fill" />
-          Sign up →
+          Sign Up →
         </a>
         <a class="button basic" href="#video">
           <VideoIcon weight="fill" />
@@ -144,6 +146,20 @@ import Spacer from '../components/Spacer.astro';
       <Spacer size="small" />
 
       <Illustration type="cluster" />
+    </article>
+
+    <Divider />
+
+    <article class="templates">
+      <section>
+        <h2><Package weight="bold" /> Templates</h2>
+        <p>
+          Templates in Diploi make launching different tech stacks easy. Simply
+          pick a template and you're already ready to develop. No setup
+          necessary!
+        </p>
+      </section>
+      <Templates />
     </article>
 
     <Divider />
@@ -384,6 +400,18 @@ import Spacer from '../components/Spacer.astro';
     }
   }
 
+  .templates {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+  }
+
+  .templates > section {
+    margin-bottom: 64px;
+    max-width: 900px;
+  }
+
   .statistic {
     display: flex;
     flex-direction: column;
@@ -507,6 +535,6 @@ import Spacer from '../components/Spacer.astro';
 
   footer p {
     max-width: 100%;
-    opacity: 0.2;
+    opacity: 0.5;
   }
 </style>
