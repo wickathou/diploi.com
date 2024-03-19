@@ -5,8 +5,9 @@ import Template from './Template.astro';
 
 <section>
   {
-    templates.map(template => (
+    templates.map((template) => (
       <Template
+        slug={template.slug}
         title={template.title}
         image={template.image}
         imageAlt={template.imageAlt}
