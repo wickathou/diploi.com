@@ -35,13 +35,13 @@ const { slug, title, image, imageAlt, description, links } = Astro.props;
     <p>{description}</p>
     {
       slug && (
-        <a
-          class="button basic"
+        <button
+          data-launch={slug}
+          class="basic"
           data-event={`${slug}_template_launch_click`}
-          href="/launch"
         >
           Launch Template →
-        </a>
+        </button>
       )
     }
     {
@@ -69,13 +69,13 @@ const { slug, title, image, imageAlt, description, links } = Astro.props;
     margin: 0;
   }
 
-  article a:not(.button) {
+  article a {
     position: relative;
     text-decoration: none;
     color: var(--color-primary);
   }
 
-  article a:not(.button)::after {
+  article a::after {
     content: '';
     position: absolute;
     display: block;
@@ -88,7 +88,7 @@ const { slug, title, image, imageAlt, description, links } = Astro.props;
     transform: translateY(-50%);
   }
 
-  article .button {
+  article button {
     margin-bottom: 18px;
   }
 
