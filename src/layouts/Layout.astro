@@ -5,30 +5,27 @@ import og from '../images/og.png';
 
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const defaultDescription =
+  'Single SaaS service for managing, developing and hosting your full application.';
+
+const { title, description = defaultDescription } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
 
     <title>{title}</title>
-    <meta
-      name="description"
-      content="Single SaaS service for managing, developing and hosting your full application. "
-    />
-
+    <meta name="description" content={description} />
     <link rel="icon" type="image/svg" href={icon.src} />
+
     <meta property="og:title" content="Diploi" />
-    <meta
-      property="og:description"
-      content="Single SaaS service for managing, developing and hosting your full application. "
-    />
+    <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://diploi.com/" />
     <meta property="og:image" content={og.src} />
@@ -81,8 +78,8 @@ const { title } = Astro.props;
     const targets = document.querySelectorAll('.on-scroll');
 
     const observer = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((entry) => {
+      entries =>
+        entries.forEach(entry => {
           if (
             entry.isIntersecting &&
             entry.target.classList.contains('on-scroll')
@@ -103,13 +100,13 @@ const { title } = Astro.props;
       }
     );
 
-    targets.forEach((target) => observer.observe(target));
+    targets.forEach(target => observer.observe(target));
   });
 
   window.addEventListener('DOMContentLoaded', () => {
     const events = document.querySelectorAll('[data-event]');
 
-    events.forEach((element) =>
+    events.forEach(element =>
       element.addEventListener('click', () => {
         // @ts-ignore
         gtag('event', element.getAttribute('data-event'));

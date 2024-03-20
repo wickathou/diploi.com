@@ -15,9 +15,14 @@ export function getStaticPaths() {
 const { template: slug } = Astro.params;
 
 const template = templates.find(template => template.slug === slug)!;
+
+const description = `Launch a new ${template.shortTitle} project and you will instantly have access to a development environment. No login needed.`;
 ---
 
-<Layout title="Diploi – Launch a New Project">
+<Layout
+  title={`Diploi – Launch a ${template.shortTitle} Project`}
+  description={description}
+>
   <main>
     <Navigation />
 
@@ -25,10 +30,7 @@ const template = templates.find(template => template.slug === slug)!;
       <h1>
         Launch {template.shortTitle}<small>with <Logo width={100} /></small>
       </h1>
-      <p>
-        Launch a new {template.shortTitle} project and you will instantly have access
-        to a development environment. No login needed.
-      </p>
+      <p>{description}</p>
     </article>
 
     <article class="templates">
