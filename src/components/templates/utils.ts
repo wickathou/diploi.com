@@ -4,6 +4,9 @@ export const launchTemplateWithTryOut = async (
   template: string,
   consoleUrl = CONSOLE_URL
 ) => {
+  const buttons = document.querySelectorAll(`[data-launch]`);
+  buttons.forEach((button) => button.setAttribute('disabled', 'true'));
+
   const response = await fetch(
     `${consoleUrl}/api/account/create-anonymous-trial`,
     {
@@ -25,5 +28,6 @@ export const launchTemplateWithTryOut = async (
   } else {
     // FIXME: This is too ugly...
     alert('Failed to start trial, please try again later...');
+    buttons.forEach((button) => button.removeAttribute('disabled'));
   }
 };
