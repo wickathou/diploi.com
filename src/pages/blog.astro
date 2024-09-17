@@ -1,59 +1,46 @@
 ---
-import {
-  AirplaneTakeoff,
-  Calculator,
-  ChatsCircle,
-  HandWaving,
-} from '@phosphor-icons/react';
+import { AirplaneTakeoff, HandWaving } from '@phosphor-icons/react';
 import Layout from '../layouts/Layout.astro';
-import Plans from '../components/Plans.astro';
 import Navigation from '../components/Navigation.astro';
-import PricingTable from '../components/pricing/PricingTable.astro';
-import PricingType from '../components/pricing/PricingType.astro';
-import Spacer from '../components/Spacer.astro';
 import Footer from '../components/Footer.astro';
+import Article from '../components/blog/Article.astro';
 
-const { pricing } = await fetch(
-  'https://console.diploi.com/api/business/pricing'
-).then((response) => response.json());
-if (!pricing) {
-  throw new Error(`Failed to load pricing (${pricing.status})`);
+const articles = await fetch(
+  'https://dev.to/api/articles?username=diploi'
+).then(
+  (response) =>
+    response.json() as Promise<
+      {
+        url: string;
+        title: string;
+        description: string;
+        published_timestamp: string;
+        user: { name: string };
+      }[]
+    >
+);
+if (!articles) {
+  throw new Error('Failed to load dev.to articles');
 }
 ---
 
-<Layout title="Diploi – Pricing">
+<Layout title="Diploi – Blog">
   <main>
-    <Navigation selected="pricing" />
+    <Navigation selected="blog" />
 
-    <Plans pricing={pricing} />
+    <h1 class="text-gradient">Blog</h1>
 
-    <Spacer size="medium" />
-
-    <article>
-      <section>
-        <h2><Calculator weight="bold" /> Single App Cluster Costs</h2>
-        <p>
-          A single App Cluster will run all the resources your application stack
-          needs, such as webservers, databases, Redis, etc.
-          <br />
-          You will only be charged for the hours your cluster is running.
-        </p>
-      </section>
-
-      <Spacer size="small" />
-
-      <PricingType pricing={pricing} />
-
-      <Spacer size="small" />
-
-      <PricingTable pricing={pricing} />
-    </article>
-
-    <hr />
-
-    <!-- <Table pricing={pricing} />
-
-    <hr /> -->
+    {
+      articles.map((article) => (
+        <Article
+          title={article.title}
+          description={article.description}
+          url={article.url}
+          timestamp={article.published_timestamp}
+          author={article.user.name}
+        />
+      ))
+    }
 
     <article class="callout">
       <section>
@@ -73,19 +60,6 @@ if (!pricing) {
         >
       </section>
     </article>
-
-    <article id="contact-us" class="callout">
-      <section>
-        <h2><ChatsCircle weight="bold" /> Contact Us</h2>
-        <p>
-          If you're considering our Pro or Enterprise tiers, feel free to reach
-          out to us directly. We're here to answer your questions and assist
-          with upgrading your account.
-        </p>
-
-        <a href="mailto:hello@diploi.com" class="email">hello@diploi.com</a>
-      </section>
-    </article>
   </main>
 
   <Footer />
@@ -99,19 +73,31 @@ if (!pricing) {
     color: white;
   }
 
-  h2 {
-    display: flex;
-    align-items: center;
-    gap: 0.6ch;
+  h1 {
+    position: relative;
+    margin: 80px 0;
+    font-size: var(--font-header-size);
+    font-weight: bold;
+    font-family: var(--font-header);
+    line-height: 1.2;
   }
 
-  h2 > svg {
-    fill: url(#gradient-three);
-  }
+  h1::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/starfield.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
 
-  hr {
-    margin: 48px 0;
-    border: none;
+    transform: scale(6) rotate(45deg);
+    opacity: 0.2;
   }
 
   .callout {
