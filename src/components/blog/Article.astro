@@ -1,5 +1,10 @@
 ---
-import { ArrowSquareOut, CalendarBlank, User } from '@phosphor-icons/react';
+import {
+  ArrowSquareOut,
+  CalendarBlank,
+  FileText,
+  User,
+} from '@phosphor-icons/react';
 
 type Props = {
   title: string;
@@ -12,9 +17,12 @@ type Props = {
 const { title, description, url, timestamp, author } = Astro.props;
 ---
 
-<a target="_blank" href={url}>
+<a target={url.includes('https://') ? '_blank' : undefined} href={url}>
   <article>
-    <h3><ArrowSquareOut /> {title}</h3>
+    <h3>
+      {url.includes('https://') ? <ArrowSquareOut /> : <FileText />}
+      {title}
+    </h3>
     <p>{description}</p>
     <footer>
       <p><User /> {author}</p>

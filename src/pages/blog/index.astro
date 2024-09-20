@@ -1,0 +1,177 @@
+---
+import { AirplaneTakeoff, HandWaving } from '@phosphor-icons/react';
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Footer from '../../components/Footer.astro';
+import Article from '../../components/blog/Article.astro';
+
+import { getCollection, getEntry, render } from 'astro:content';
+
+const contentArticles = await getCollection('blog');
+
+const devtoArticles = await fetch(
+  'https://dev.to/api/articles?username=diploi'
+).then(
+  (response) =>
+    response.json() as Promise<
+      {
+        url: string;
+        title: string;
+        description: string;
+        published_timestamp: string;
+        user: { name: string };
+      }[]
+    >
+);
+if (!devtoArticles) {
+  throw new Error('Failed to load dev.to articles');
+}
+
+const articles = [
+  ...contentArticles.map((article) => ({
+    title: article.data.title,
+    description: article.data.description,
+    url: `/blog/${article.slug}`,
+    timestamp: article.data.timestamp,
+    author: article.data.author,
+  })),
+  ...devtoArticles.map((article) => ({
+    title: article.title,
+    description: article.description,
+    url: article.url,
+    timestamp: article.published_timestamp,
+    author: article.user.name.split(' ')[0],
+  })),
+].sort(
+  (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+);
+---
+
+<Layout title="Diploi – Blog">
+  <main>
+    <Navigation selected="blog" />
+
+    <h1 class="text-gradient">Blog</h1>
+
+    {articles.map((article) => <Article {...article} />)}
+
+    <article class="callout">
+      <section>
+        <h2><AirplaneTakeoff weight="bold" /> Get Started</h2>
+        <p>
+          Sign up using your GitHub account and receive 50 € in free credits to
+          explore and experiment with. Development is about to get <span
+            class="text-gradient">magical</span
+          >.
+        </p>
+
+        <a
+          data-event="signup_click"
+          class="button"
+          href="https://console.diploi.com/sign-up"
+          ><HandWaving weight="fill" />Sign Up →</a
+        >
+      </section>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  }
+
+  h1 {
+    position: relative;
+    margin: 80px 0;
+    font-size: var(--font-header-size);
+    font-weight: bold;
+    font-family: var(--font-header);
+    line-height: 1.2;
+  }
+
+  h1::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/starfield.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+
+    transform: scale(6) rotate(45deg);
+    opacity: 0.2;
+  }
+
+  .callout {
+    position: relative;
+    margin-top: 128px;
+  }
+
+  .callout h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 0;
+  }
+
+  .callout h2 > svg {
+    fill: url(#gradient-three);
+  }
+
+  .callout::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -48px;
+    left: -48px;
+    width: calc(100% + 96px);
+    height: calc(100% + 96px);
+    border-radius: 24px;
+    background-image: linear-gradient(
+      -45deg,
+      var(--color-primary),
+      var(--color-secondary)
+    );
+    opacity: 0.1;
+    z-index: -1;
+  }
+
+  .callout form {
+    display: flex;
+    gap: 16px;
+  }
+
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+
+  .email {
+    text-decoration: none;
+    color: var(--color-white);
+  }
+
+  @media (max-width: 900px) {
+    .callout::after {
+      display: none;
+    }
+
+    .callout form {
+      flex-direction: column;
+    }
+  }
+</style>

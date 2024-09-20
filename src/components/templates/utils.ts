@@ -1,4 +1,4 @@
-const CONSOLE_URL = 'https://console.diploi.com';
+const CONSOLE_URL = 'https://tuomas.diploi.dev';
 
 export const launchTemplateWithTryOut = async (
   template: string,

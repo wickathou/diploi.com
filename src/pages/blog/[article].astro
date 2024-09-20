@@ -1,46 +1,43 @@
 ---
-import { AirplaneTakeoff, HandWaving } from '@phosphor-icons/react';
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-import Article from '../components/blog/Article.astro';
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import TemplateCards from '../../components/templates/TemplateCards.astro';
+import Footer from '../../components/Footer.astro';
+import { templates } from '../../components/templates/templates';
+import Divider from '../../components/Divider.astro';
+import Logo from '../../components/Logo.astro';
+import {
+  AirplaneTakeoff,
+  CursorClick,
+  HandWaving,
+  PlugsConnected,
+  Target,
+} from '@phosphor-icons/react';
+import logoImage from '../../images/diploi-logo.svg';
+import { getCollection, getEntry } from 'astro:content';
 
-const articles = await fetch(
-  'https://dev.to/api/articles?username=diploi'
-).then(
-  (response) =>
-    response.json() as Promise<
-      {
-        url: string;
-        title: string;
-        description: string;
-        published_timestamp: string;
-        user: { name: string };
-      }[]
-    >
-);
-if (!articles) {
-  throw new Error('Failed to load dev.to articles');
+export async function getStaticPaths() {
+  const articles = await getCollection('blog');
+  return articles.map((article) => ({
+    params: { article: article.slug },
+    props: { entry: article },
+  }));
 }
+
+const { entry } = Astro.props;
+
+const { Content } = await entry.render();
 ---
 
-<Layout title="Diploi – Blog">
+<Layout title={`Diploi – ${entry.data.title}`}>
   <main>
     <Navigation selected="blog" />
 
-    <h1 class="text-gradient">Blog</h1>
+    <h1 class="text-gradient">{entry.data.title}</h1>
 
-    {
-      articles.map((article) => (
-        <Article
-          title={article.title}
-          description={article.description}
-          url={article.url}
-          timestamp={article.published_timestamp}
-          author={article.user.name}
-        />
-      ))
-    }
+    <article>
+      <Content />
+    </article>
 
     <article class="callout">
       <section>
@@ -76,6 +73,8 @@ if (!articles) {
   h1 {
     position: relative;
     margin: 80px 0;
+    max-width: 16ch;
+    text-align: center;
     font-size: var(--font-header-size);
     font-weight: bold;
     font-family: var(--font-header);
