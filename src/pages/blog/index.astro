@@ -5,7 +5,7 @@ import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
 import Article from '../../components/blog/Article.astro';
 
-import { getCollection, getEntry, render } from 'astro:content';
+import { getCollection } from 'astro:content';
 
 const contentArticles = await getCollection('blog');
 
@@ -31,6 +31,7 @@ const articles = [
   ...contentArticles.map((article) => ({
     title: article.data.title,
     description: article.data.description,
+    image: article.data.image,
     url: `/blog/${article.slug}`,
     timestamp: article.data.timestamp,
     author: article.data.author,

@@ -5,20 +5,23 @@ import {
   FileText,
   User,
 } from '@phosphor-icons/react';
+import { Image } from 'astro:assets';
 
 type Props = {
   title: string;
   description: string;
+  image?: ImageMetadata;
   url: string;
   timestamp: string;
   author: string;
 };
 
-const { title, description, url, timestamp, author } = Astro.props;
+const { title, description, image, url, timestamp, author } = Astro.props;
 ---
 
 <a target={url.includes('https://') ? '_blank' : undefined} href={url}>
   <article>
+    {image && <Image src={image} width={656} alt="Article image" />}
     <h3>
       {url.includes('https://') ? <ArrowSquareOut /> : <FileText />}
       {title}
@@ -45,6 +48,11 @@ const { title, description, url, timestamp, author } = Astro.props;
     margin-bottom: 48px;
     text-decoration: none;
     color: white;
+  }
+
+  img {
+    max-width: 100%;
+    border-radius: 12px;
   }
 
   h3 {

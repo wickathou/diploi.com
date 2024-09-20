@@ -35,7 +35,7 @@ const { Content } = await entry.render();
 
     <h1 class="text-gradient">{entry.data.title}</h1>
 
-    <article>
+    <article class="article">
       <Content />
     </article>
 
@@ -73,7 +73,7 @@ const { Content } = await entry.render();
   h1 {
     position: relative;
     margin: 80px 0;
-    max-width: 16ch;
+    max-width: 14ch;
     text-align: center;
     font-size: var(--font-header-size);
     font-weight: bold;
@@ -97,6 +97,18 @@ const { Content } = await entry.render();
 
     transform: scale(6) rotate(45deg);
     opacity: 0.2;
+  }
+
+  .article {
+    p:has(img:first-child:last-child) {
+      margin: 0;
+      opacity: 1;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+    }
   }
 
   .callout {
