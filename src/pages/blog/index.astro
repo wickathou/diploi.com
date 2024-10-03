@@ -11,7 +11,7 @@ const contentArticles = await getCollection('blog');
 const devtoArticles = await fetch(
   'https://dev.to/api/articles?username=diploi'
 ).then(
-  response =>
+  (response) =>
     response.json() as Promise<
       {
         url: string;
@@ -27,7 +27,7 @@ if (!devtoArticles) {
 }
 
 const articles = [
-  ...contentArticles.map(article => ({
+  ...contentArticles.map((article) => ({
     title: article.data.title,
     description: article.data.description,
     image: article.data.image,
@@ -35,7 +35,7 @@ const articles = [
     timestamp: article.data.timestamp,
     author: article.data.author,
   })),
-  ...devtoArticles.map(article => ({
+  ...devtoArticles.map((article) => ({
     title: article.title,
     description: article.description,
     url: article.url,
@@ -51,9 +51,11 @@ const articles = [
   <main>
     <Navigation selected="blog" />
 
-    <h1 class="text-gradient">Blog</h1>
+    <div class="title">
+      <h1 class="text-gradient">Blog</h1>
+    </div>
 
-    {articles.map(article => <Article {...article} />)}
+    {articles.map((article) => <Article {...article} />)}
 
     <article class="callout">
       <section>
@@ -80,15 +82,22 @@ const articles = [
 
 <style>
   main {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
   }
 
-  h1 {
+  .title {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .title h1 {
     position: relative;
     margin: 80px 0;
+    text-align: center;
     font-size: var(--font-header-size);
     font-weight: bold;
     font-family: var(--font-header);

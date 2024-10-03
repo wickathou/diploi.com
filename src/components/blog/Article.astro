@@ -21,7 +21,7 @@ const { title, description, image, url, timestamp, author } = Astro.props;
 
 <a target={url.includes('https://') ? '_blank' : undefined} href={url}>
   <article>
-    {image && <Image src={image} width={656} alt="Article image" />}
+    {image && <Image src={image} alt="Article image" />}
     <h3>
       {url.includes('https://') ? <ArrowSquareOut /> : <FileText />}
       {title}
@@ -45,14 +45,20 @@ const { title, description, image, url, timestamp, author } = Astro.props;
 
 <style>
   a {
+    display: block;
+    width: 656px;
+    max-width: 100%;
     margin-bottom: 48px;
     text-decoration: none;
     color: white;
   }
 
   img {
+    height: 50%;
+    width: 100%;
     max-width: 100%;
     border-radius: 12px;
+    object-fit: cover;
   }
 
   h3 {
