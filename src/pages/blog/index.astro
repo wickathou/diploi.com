@@ -9,7 +9,7 @@ import Article from '../../components/blog/Article.astro';
 const contentArticles = await getCollection('blog');
 
 const devtoArticles = await fetch(
-  'https://dev.to/api/articles?username=diploi'
+  'https://dev.to/api/articles?username=diploi&state=all'
 ).then(
   (response) =>
     response.json() as Promise<
@@ -25,6 +25,11 @@ const devtoArticles = await fetch(
 if (!devtoArticles) {
   throw new Error('Failed to load dev.to articles');
 }
+
+console.log(
+  'devtoArticles',
+  devtoArticles.map((item) => item.title)
+);
 
 const articles = [
   ...contentArticles.map((article) => ({
