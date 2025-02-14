@@ -1,9 +1,9 @@
 ---
-import { House, CreditCard, SignIn, Newspaper } from '@phosphor-icons/react';
+import { House, CreditCard, SignIn, Newspaper, Briefcase } from '@phosphor-icons/react';
 import { BookBookmark } from '@phosphor-icons/react/dist/ssr';
 
 interface Props {
-  selected?: 'home' | 'pricing' | 'blog';
+  selected?: 'home' | 'pricing' | 'blog' | 'jobs';
 }
 
 const { selected } = Astro.props;
@@ -11,6 +11,7 @@ const { selected } = Astro.props;
 const isHome = selected === 'home';
 const isPricing = selected === 'pricing';
 const isBlog = selected === 'blog';
+const isJobs = selected === 'jobs';
 ---
 
 <header>
@@ -34,6 +35,9 @@ const isBlog = selected === 'blog';
       </a>
       <a data-event="blog_click" href="/blog" data-selected={`${isBlog}`}>
         <Newspaper weight={isBlog ? 'fill' : 'regular'} /> Blog
+      </a>
+      <a data-event="jobs_click" href="/jobs" data-selected={`${isJobs}`}>
+        <Briefcase weight={isJobs ? 'fill' : 'regular'} /> Jobs
       </a>
       <a data-event="login_click" href="https://console.diploi.com/login">
         <SignIn /> Login / Sign Up
@@ -93,6 +97,7 @@ const isBlog = selected === 'blog';
     gap: 8px;
     padding: 4px 18px 4px 14px;
     text-decoration: none;
+    font-size: 0.8rem;
     background-color: transparent;
     color: white;
     border-radius: 64px;
