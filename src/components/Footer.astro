@@ -31,37 +31,24 @@ import Logo from './Logo.astro';
 
         <address>
           <label>Contact</label>
-          <a href="mailto:info@diploi.com" class="mail">hello@diploi.com</a><br
-          />
+          <a href="mailto:hello@diploi.com" class="mail">hello@diploi.com</a><br />
         </address>
         <ul class="links socials">
           <label>Socials</label>
           <li>
-            <Icon
-              name="GithubLogo"
-              class="footer-social-link-icon github"
-            />
+            <Icon name="GithubLogo" class="footer-social-link-icon github" />
             <a href="https://github.com/diploi">GitHub</a>
           </li>
           <li>
-            <Icon
-              name="Butterfly"
-              class="footer-social-link-icon bluesky"
-            />
+            <Icon name="Butterfly" class="footer-social-link-icon bluesky" />
             <a href="https://bsky.app/profile/diploi.com">Bluesky</a>
           </li>
           <li>
-            <Icon
-              name="LinkedinLogo"
-              class="footer-social-link-icon linkedin"
-            />
+            <Icon name="LinkedinLogo" class="footer-social-link-icon linkedin" />
             <a href="https://www.linkedin.com/company/diploidev/">LinkedIn</a>
           </li>
           <li>
-            <Icon
-              name="DevToLogo"
-              class="footer-social-link-icon devto"
-            />
+            <Icon name="DevToLogo" class="footer-social-link-icon devto" />
             <a href="https://dev.to/diploi">Dev.to</a>
           </li>
         </ul>
@@ -174,7 +161,7 @@ import Logo from './Logo.astro';
 
     &.socials {
       margin-left: auto;
-      > li  {
+      > li {
         :global(.footer-social-link-icon) {
           fill: var(--color-text-tertiary);
         }
