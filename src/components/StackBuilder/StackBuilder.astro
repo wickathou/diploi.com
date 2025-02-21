@@ -1,0 +1,372 @@
+---
+import StackBuilderBlockButton from './StackBuilderBlockButton.astro';
+import SubSectionHeader from '../SubSectionHeader.astro';
+import ArrowLink from '../ArrowLink.astro';
+import Icon from '../Icon.astro';
+import { componentsToYamlHtml as componentsToYamlHtmlBuildTime } from './yamlFormatter';
+
+const {
+  result: { data },
+} = await fetch(`${import.meta.env.VITE_API_URL}/api/trpc/stack.listPreviewComponents`).then((response) => response.json());
+if (!data || data.status !== 'ok') {
+  throw new Error(`Failed to load pricing (${data})`);
+}
+
+const components = data.components as {
+  componentID: number;
+  type: 'component' | 'addon';
+  identifier: string;
+  name: string;
+  url: string;
+}[];
+
+const defaultComponentIds = [1, 101];
+
+const yamlHtml = componentsToYamlHtmlBuildTime({ selectedComponentIds: defaultComponentIds, components });
+---
+
+<div class="stack-builder" data-components={JSON.stringify(components)}>
+  <div class="grid">
+    <div class="header components">
+      <SubSectionHeader title="Components" description="Base blocks of your Stack. All code is editable." class="header-components" />
+    </div>
+    <div class="blocks-container components">
+      <div class="blocks components">
+        {
+          components
+            .filter((component) => component.type === 'component')
+            .map((component) => (
+              <StackBuilderBlockButton
+                {...component}
+                class={`component ${defaultComponentIds.includes(component.componentID) ? 'is-selected' : ''}`}
+              />
+            ))
+        }
+      </div>
+      <ArrowLink href={import.meta.env.VITE_API_URL} text="Browse All" />
+    </div>
+    <div class="header addons">
+      <SubSectionHeader title="Add-ons" description="Complementary services. Configurable with config." />
+    </div>
+    <div class="blocks-container addons">
+      <div class="blocks addons">
+        {
+          components
+            .filter((component) => component.type === 'addon')
+            .map((addon) => (
+              <StackBuilderBlockButton {...addon} class={`addon ${defaultComponentIds.includes(addon.componentID) ? 'is-selected' : ''}`} />
+            ))
+        }
+      </div>
+      <ArrowLink href={import.meta.env.VITE_API_URL} text="Browse All" />
+    </div>
+    <div class="code-side">
+      <article class="code-card">
+        <label>config.yaml</label>
+        <Fragment set:html={yamlHtml} />
+      </article>
+    </div>
+  </div>
+  <div class="ctas">
+    <button id="button-launch-stack" class="secondary" data-url={import.meta.env.VITE_API_URL} disabled>
+      <span class="blobs"></span>
+      <span class="text">
+        Launch Stack
+
+        <span class="rocket">
+          <Icon name="Rocket" weight="regular" />
+        </span>
+      </span>
+    </button>
+    <!-- <p class="small">Try Diploi with a single-click.</p> -->
+  </div>
+</div>
+<script>
+  let preview = document.querySelector('pre.shiki')?.parentNode as HTMLElement;
+  const buttons = document.querySelectorAll('.stack-builder-button');
+
+  const components = JSON.parse((document.querySelector('[data-components]') as HTMLElement).getAttribute('data-components') || '');
+
+  let selectedComponentIds: number[] = [...document.querySelectorAll('.stack-builder-button.is-selected')].map((element) =>
+    parseInt(element.getAttribute('data-id') || '0')
+  );
+
+  const launchButton = document.getElementById('button-launch-stack') as HTMLButtonElement;
+  launchButton.disabled = selectedComponentIds.length === 0;
+
+  const { componentsToYamlHtml } = await import('./yamlFormatter');
+
+  const toggleSelection = (currentSelectedIds: number[], id: number) => {
+    let nextSelectedIds = currentSelectedIds;
+    if (nextSelectedIds.includes(id)) {
+      nextSelectedIds = nextSelectedIds.filter((blockId) => blockId !== id);
+    } else {
+      nextSelectedIds.push(id);
+    }
+    return nextSelectedIds;
+  };
+
+  buttons.forEach((button) => {
+    const checkbox = button.querySelector('input[type="checkbox"]') as HTMLInputElement;
+    checkbox.checked = button.classList.contains('is-selected');
+
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+
+      button.classList.toggle('is-selected');
+
+      const isSelected = button.classList.contains('is-selected');
+      checkbox.checked = isSelected;
+
+      const id = parseInt(button.getAttribute('data-id') || '0');
+      selectedComponentIds = toggleSelection(selectedComponentIds, id);
+
+      preview.querySelector('.shiki')?.remove();
+      preview.insertAdjacentHTML('beforeend', componentsToYamlHtml({ selectedComponentIds, components }));
+
+      launchButton.disabled = selectedComponentIds.length === 0;
+    });
+  });
+
+  launchButton.addEventListener('click', async () => {
+    launchButton.disabled = true;
+
+    const { launchStack } = await import('./launchStack');
+
+    launchStack({ button: launchButton, componentIds: selectedComponentIds, apiUrl: launchButton.getAttribute('data-url') || '' });
+  });
+</script>
+
+<style lang="scss">
+  @use '../../styles/mixins';
+
+  .code-side {
+    grid-area: preview;
+    overflow: hidden;
+    max-height: 400px;
+    mask-image: linear-gradient(to bottom, white 80%, transparent);
+  }
+
+  .code-card {
+    @include mixins.card-desktop;
+    height: fit-content;
+    grid-area: preview;
+    background-color: var(--color-bg-secondary-20);
+
+    > label {
+      position: absolute;
+      background: var(--color-bg-secondary);
+      top: 0;
+      right: 0;
+      padding: 0 var(--space-s);
+      border-bottom-left-radius: var(--border-radius-medium);
+      line-height: 1.5rem;
+      color: var(--color-text-secondary);
+      font-weight: 400;
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+    }
+
+    :global(pre) {
+      margin: 0 !important;
+      font-size: 1rem !important;
+      white-space: pre-wrap;
+    }
+  }
+
+  .stack-builder {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxl);
+  }
+
+  #button-launch-stack {
+    padding-top: var(--space-l);
+    padding-bottom: var(--space-l);
+    font-size: 1.25rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 300ms ease;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      inset: 0px;
+      padding: 1px;
+      border-radius: inherit;
+      filter: saturate(2);
+      background: linear-gradient(to right, var(--color-accent-primary), var(--color-accent-secondary));
+      -webkit-mask:
+        linear-gradient(white 0 0) content-box,
+        linear-gradient(white 0 0);
+      mask:
+        linear-gradient(white 0 0) content-box,
+        linear-gradient(white 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      transition: opacity 300ms ease;
+    }
+
+    .text {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: var(--space-l);
+    }
+    .rocket {
+      display: flex;
+    }
+
+    @keyframes vibrate {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(2px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    > .blobs {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        height: 300%;
+        aspect-ratio: 1/1;
+        background-color: red;
+        display: block;
+        border-radius: 50%;
+        opacity: 0.25;
+        filter: blur(30px) saturate(3);
+        animation: anime 16s linear infinite;
+        transform: scale(0);
+        transition: transform 300ms ease;
+      }
+      &::before {
+        left: -50%;
+        background-color: var(--color-accent-primary);
+      }
+      &::after {
+        right: -50%;
+        background-color: var(--color-accent-secondary);
+      }
+    }
+
+    &:not(:disabled) {
+      border-color: transparent;
+      .rocket {
+        animation: vibrate 160ms ease-in-out infinite;
+      }
+      .blobs {
+        &::before,
+        &::after {
+          transform: scale(1);
+        }
+      }
+      &::after {
+        opacity: 1;
+      }
+
+      &:hover {
+        > .blobs {
+          &::before,
+          &::after {
+            transform: scale(1.5);
+          }
+        }
+        background-color: transparent;
+      }
+    }
+  }
+
+  .grid {
+    display: flex;
+    flex-direction: column;
+
+    @include mixins.respond-to('tablet') {
+      display: grid;
+      grid-column-gap: var(--space-xxl);
+      grid-row-gap: var(--space-l);
+      grid-template-columns: 1.5fr 1fr;
+      grid-template-areas:
+        'components-header .'
+        'components preview'
+        'addons-header preview'
+        'addons preview';
+    }
+  }
+
+  .header {
+    margin-bottom: var(--space-l);
+    &.components {
+      grid-area: components-header;
+    }
+    &.addons {
+      grid-area: addons-header;
+    }
+
+    @include mixins.respond-to('tablet') {
+      &.components,
+      &.addons {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .blocks-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    &.components {
+      grid-area: components;
+      margin-bottom: var(--space-xxl);
+    }
+    &.addons {
+      grid-area: addons;
+    }
+  }
+
+  .blocks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+
+    @include mixins.respond-to('tablet') {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mixins.respond-to('laptop') {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .ctas {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+
+    > div {
+      display: flex;
+      gap: var(--space-m);
+    }
+
+    p {
+      max-width: unset;
+    }
+
+    @include mixins.respond-to('tablet') {
+      align-items: center;
+    }
+  }
+</style>

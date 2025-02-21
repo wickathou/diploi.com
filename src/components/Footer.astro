@@ -1,20 +1,242 @@
+---
+import Icon from './Icon.astro';
+import Logo from './Logo.astro';
+---
+
 <footer>
-  <p>Built with ❤️ by Diploi</p>
+  <div>
+    <div class="footer-content">
+      <div class="logo-and-socials">
+        <Logo class="footer-logo" />
+      </div>
+      <div class="clickable">
+        <ul class="links">
+          <label>Product</label>
+          <li>
+            <a href="/pricing">Pricing</a>
+          </li>
+          <li>
+            <a href="/jobs">Jobs</a>
+          </li>
+          <li>
+            <a>Blog</a>
+          </li>
+          <li>
+            <a href="https://docs.diploi.com/">Documentation</a>
+          </li>
+          <li>
+            <a href="https://console.diploi.com/login">Login / Sign Up</a>
+          </li>
+        </ul>
+
+        <address>
+          <label>Contact</label>
+          <a href="mailto:info@diploi.com" class="mail">hello@diploi.com</a><br
+          />
+        </address>
+        <ul class="links socials">
+          <label>Socials</label>
+          <li>
+            <Icon
+              name="GithubLogo"
+              class="footer-social-link-icon github"
+            />
+            <a href="https://github.com/diploi">GitHub</a>
+          </li>
+          <li>
+            <Icon
+              name="Butterfly"
+              class="footer-social-link-icon bluesky"
+            />
+            <a href="https://bsky.app/profile/diploi.com">Bluesky</a>
+          </li>
+          <li>
+            <Icon
+              name="LinkedinLogo"
+              class="footer-social-link-icon linkedin"
+            />
+            <a href="https://www.linkedin.com/company/diploidev/">LinkedIn</a>
+          </li>
+          <li>
+            <Icon
+              name="DevToLogo"
+              class="footer-social-link-icon devto"
+            />
+            <a href="https://dev.to/diploi">Dev.to</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <p class="small builder">
+        <Icon sizeRem={0.875} name="Square" weight="bold" />
+        <Icon sizeRem={0.875} name="Triangle" weight="bold" />
+      </p>
+      <p class="small cp">
+        <Icon name="Copyright" size={16} weight="light" />
+        2025 Diploi Oy
+      </p>
+    </div>
+  </div>
 </footer>
 
-<style>
+<style lang="scss">
+  @use '../styles/mixins';
+
+  :global(.footer-logo) {
+    width: 6rem;
+  }
   footer {
+    border-top: 1px solid var(--color-separator);
+    display: flex;
+    flex-direction: column;
     margin: auto;
-    margin-top: 128px;
     width: 100%;
-    max-width: 900px;
-    font-size: 0.64rem;
     text-align: center;
-    color: white;
+    padding: var(--space-xxl);
+    margin-top: var(--space-huge);
+
+    > div {
+      max-width: var(--max-width-page-section);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    @include mixins.respond-to('tablet') {
+      margin-top: 6rem;
+    }
+
+    p,
+    a {
+      font-size: 1rem;
+    }
+    a:not(.mail),
+    p {
+      color: var(--color-text-primary);
+      text-decoration: none;
+    }
   }
 
-  footer p {
-    max-width: 100%;
-    opacity: 0.5;
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-huge);
+    justify-content: space-between;
+
+    @include mixins.respond-to('tablet') {
+      justify-content: space-between;
+    }
+  }
+
+  .logo-and-socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-l);
+  }
+
+  .clickable {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-huge);
+
+    @include mixins.respond-to('tablet') {
+      flex-direction: row;
+      gap: 6rem;
+    }
+  }
+
+  address {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    align-items: flex-start;
+    text-style: normal;
+    > p {
+      color: var(--color-text-primary);
+    }
+  }
+
+  label {
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    margin-bottom: var(--space-s);
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-s);
+
+    &.socials {
+      margin-left: auto;
+      > li  {
+        :global(.footer-social-link-icon) {
+          fill: var(--color-text-tertiary);
+        }
+
+        &:hover {
+          :global(.footer-social-link-icon) {
+            fill: var(--color-text-primary);
+            &.devto {
+              fill: rgb(59, 73, 223);
+            }
+            &.bluesky {
+              fill: rgb(32, 139, 254);
+            }
+            &.linkedin {
+              fill: rgb(0, 96, 151);
+            }
+            &.github {
+              fill: white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--color-text-secondary);
+    padding-top: var(--space-huge);
+    gap: var(--space-l);
+    text-align: center;
+
+    @include mixins.respond-to('tablet') {
+      flex-direction: row;
+      justify-content: space-between;
+      color: var(--color-text-tertiary);
+    }
+    p {
+      color: inherit;
+      font-size: 0.875rem;
+      text-align: center;
+    }
+
+    > .builder {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    > .cp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: inherit;
+      gap: var(--space-xs);
+      color: var(--color-text-tertiary);
+
+      > svg {
+        fill: currentColor;
+      }
+    }
   }
 </style>
