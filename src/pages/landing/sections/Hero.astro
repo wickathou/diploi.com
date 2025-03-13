@@ -1,5 +1,5 @@
 ---
-import { SparkleElement } from '../../../components';
+import { Icon, SparkleElement } from '../../../components';
 import { Canvas, BlobCanvas } from '../../../components/react';
 ---
 
@@ -22,6 +22,20 @@ import { Canvas, BlobCanvas } from '../../../components/react';
     <a href="https://console.diploi.com">
       <button>Get Started</button>
     </a>
+    <ul class="links">
+      <a target="_blank" href="https://github.com/diploi">
+        <li>
+          <Icon name="GithubLogo" sizeRem={1.275} /> GitHub
+          <Icon name="ArrowSquareOut" sizeRem={1} />
+        </li>
+      </a>
+      <a target="_blank" href="https://discord.gg/vvgQxVjC8G">
+        <li>
+          <Icon name="DiscordLogo" sizeRem={1.275} /> Discord
+          <Icon name="ArrowSquareOut" sizeRem={1} />
+        </li>
+      </a>
+    </ul>
   </div>
 </div>
 
@@ -84,6 +98,28 @@ import { Canvas, BlobCanvas } from '../../../components/react';
     line-height: 1.1;
     font-weight: 600;
     position: relative;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 24px;
+
+    a {
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      > :global(svg:last-of-type) {
+        opacity: 0.8;
+      }
+    }
   }
 
   @keyframes fadeIn {
