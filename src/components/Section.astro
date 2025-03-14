@@ -9,6 +9,7 @@ type TProps = {
   description: string;
   step?: number;
   isNarrow?: boolean;
+  id:string;
 };
 const {
   title,
@@ -17,10 +18,11 @@ const {
   descriptionStrong,
   step,
   isNarrow,
+  id,
 } = Astro.props;
 ---
 
-<section class:list={['page-section', isNarrow && 'narrow']}>
+<section id={id} class:list={['page-section', isNarrow && 'narrow']}>
   {
     !!title && (
       <SectionHeader
