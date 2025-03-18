@@ -54,12 +54,12 @@ const { title, description = defaultDescription } = Astro.props;
     <link rel="stylesheet" href="/styles/mixins/breakpoints.scss" />
 
     <meta name="google-site-verification" content="XopKlvNBmdLaTZtElCt9bkAVDuqrRL-5Ist_6Ecth-o" />
+    <script defer src="https://umami.console.diploi.com/script.js" data-website-id="745bea8d-6998-4bb9-ae81-9369864e5aaa"></script>
   </head>
   <body class="body">
     <slot />
 
     <Gradient />
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-182JME5104"></script>
     <script is:inline>
@@ -76,7 +76,7 @@ const { title, description = defaultDescription } = Astro.props;
         analytics_storage: 'denied',
       });
       function setConsent(granted) {
-        const consent = granted ? 'granted' : 'denied'
+        const consent = granted ? 'granted' : 'denied';
         gtag('consent', 'update', {
           ad_user_data: consent,
           ad_personalization: consent,
@@ -112,11 +112,11 @@ const { title, description = defaultDescription } = Astro.props;
         cursor: pointer;
       }
       .accept {
-        background:#ce055c;
+        background: #ce055c;
         color: white;
       }
       .deny {
-        background:#6650fa;
+        background: #6650fa;
         color: white;
       }
     </style>
