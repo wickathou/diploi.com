@@ -69,7 +69,62 @@ const { title, description = defaultDescription } = Astro.props;
       }
       gtag('js', new Date());
       gtag('config', 'G-182JME5104');
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+      });
+      function setConsent(granted) {
+        const consent = granted ? 'granted' : 'denied'
+        gtag('consent', 'update', {
+          ad_user_data: consent,
+          ad_personalization: consent,
+          ad_storage: consent,
+          analytics_storage: consent,
+        });
+        document.getElementById('cookie-banner').style.display = 'none';
+        localStorage.setItem('cookieConsent', consent);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        if (!localStorage.getItem('cookieConsent')) {
+          document.getElementById('cookie-banner').style.display = 'block';
+        }
+      });
     </script>
+    <style>
+      #cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #222;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        display: none;
+      }
+      #cookie-banner button {
+        margin: 5px;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+      }
+      .accept {
+        background:#ce055c;
+        color: white;
+      }
+      .deny {
+        background:#6650fa;
+        color: white;
+      }
+    </style>
+    <div id="cookie-banner">
+      This site uses cookies. Do you accept?
+      <button class="accept" onclick="setConsent(true)">Accept</button>
+      <button class="deny" onclick="setConsent(false)">Deny</button>
+    </div>
   </body>
 </html>
 
