@@ -54,12 +54,13 @@ const { title, description = defaultDescription } = Astro.props;
     <link rel="stylesheet" href="/styles/mixins/breakpoints.scss" />
 
     <meta name="google-site-verification" content="XopKlvNBmdLaTZtElCt9bkAVDuqrRL-5Ist_6Ecth-o" />
+    <!-- Umami tag -->
+    <script defer src="https://umami.console.diploi.com/script.js" data-website-id="745bea8d-6998-4bb9-ae81-9369864e5aaa"></script>
   </head>
   <body class="body">
     <slot />
 
     <Gradient />
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-182JME5104"></script>
     <script is:inline>
@@ -69,6 +70,12 @@ const { title, description = defaultDescription } = Astro.props;
       }
       gtag('js', new Date());
       gtag('config', 'G-182JME5104');
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+      });
     </script>
   </body>
 </html>
