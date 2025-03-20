@@ -43,7 +43,7 @@ const yamlHtml = componentsToYamlHtmlBuildTime({ selectedComponentIds: defaultCo
             ))
         }
       </div>
-      <ArrowLink href={import.meta.env.VITE_API_URL} text="Browse All" />
+      <!-- <ArrowLink href={import.meta.env.VITE_API_URL} text="Browse All" /> -->
     </div>
     <div class="header addons">
       <SubSectionHeader title="Add-ons" description="Complementary services. Configurable with config." />
@@ -58,7 +58,7 @@ const yamlHtml = componentsToYamlHtmlBuildTime({ selectedComponentIds: defaultCo
             ))
         }
       </div>
-      <ArrowLink href={import.meta.env.VITE_API_URL} text="Browse All" />
+      <!-- <ArrowLink href={import.meta.env.VITE_API_URL} text="Browse All" /> -->
     </div>
     <div class="code-side">
       <article class="code-card">
@@ -355,6 +355,7 @@ const yamlHtml = componentsToYamlHtmlBuildTime({ selectedComponentIds: defaultCo
     display: flex;
     flex-direction: column;
     gap: var(--space-xl);
+    margin-top: var(--space-xl);
 
     > div {
       display: flex;
