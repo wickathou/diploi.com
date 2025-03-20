@@ -8,6 +8,9 @@ import { Canvas, BlobCanvas } from '../../../components/react';
     <BlobCanvas client:load />
   </div>
   <div class="content">
+    <a class="news" target="_blank" href="https://dev.to/diploi/easily-create-complex-stacks-in-just-a-few-clicks-new-release-3gdl">
+      <Icon name="Sparkle" weight="duotone" sizeRem={1} /> Stack Builder Released <Icon name="ArrowSquareOut" sizeRem={1} />
+    </a>
     <h1 class="main-heading">
       <div class="diploi-canvas-container">
         <Canvas client:load />
@@ -78,6 +81,46 @@ import { Canvas, BlobCanvas } from '../../../components/react';
     > button {
       width: fit-content;
       cursor: pointer;
+    }
+  }
+
+  .news {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding: 6px 12px;
+    border-radius: 1000px;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    z-index: 2;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      inset: 0;
+      background:
+        linear-gradient(black, black) padding-box,
+        linear-gradient(45deg, var(--color-accent-primary), var(--color-accent-secondary)) border-box;
+      border: 1px solid transparent;
+      border-radius: 1000px;
+      filter: saturate(2);
+      z-index: -1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      inset: 1px;
+      background:
+        radial-gradient(circle at 0, var(--color-accent-primary), transparent 100px),
+        radial-gradient(circle at 100%, var(--color-accent-secondary), transparent 100px);
+      border-radius: 1000px;
+      opacity: 0.4;
+      z-index: -1;
     }
   }
 
