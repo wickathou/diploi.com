@@ -1,11 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Section, SubSection, SubSectionHeader, Icon, Navigation, Footer, PageTitle, SectionHeader } from '../components';
-// import { getCollection } from 'astro:content';
-// // import tos from '../content/legal/tos.mdx'
-// // import mdx from '@astrojs/mdx';
-// import type { CollectionEntry } from 'astro:content';
-// import Document from '../../components/legal/Document.astro';
+import { Section, Navigation, Footer, PageTitle } from '../components';
 import { getEntry } from 'astro:content';
 import { render } from 'astro:content';
 const documentTOS = await getEntry('legal', 'tos');
