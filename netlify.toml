@@ -1,3 +1,7 @@
 [[redirects]]
   from = "/survey"
   to = "https://c8t6ztfj4ah.typeform.com/to/nblWkc7m"
+
+[[redirects]]
+  from = "/yaml"
+  to = "https://docs.diploi.com/guides/diploiyaml/"
