@@ -8,7 +8,7 @@ import { Section, GetStarted, PageTitle } from '../../components';
 
 const contentArticles = await getCollection('blog');
 
-const devtoArticles = await fetch('https://dev.to/api/articles?username=diploi&state=all').then(
+const devtoArticles = await fetch('https://dev.to/api/articles?username=diploi&state=all&page=1&per_page=20').then(
   (response) =>
     response.json() as Promise<
       {
@@ -23,6 +23,8 @@ const devtoArticles = await fetch('https://dev.to/api/articles?username=diploi&s
 if (!devtoArticles) {
   throw new Error('Failed to load dev.to articles');
 }
+
+console.log(devtoArticles);
 
 const articles = [
   ...contentArticles.map((article) => ({
