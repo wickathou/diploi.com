@@ -50,13 +50,15 @@ import { Canvas, BlobCanvas } from '../../../components/react';
 <style lang="scss">
   @use '../../../styles/mixins';
   .hero {
+    position: relative;
     display: flex;
     align-items: center;
+    padding-top: 40px;
     max-width: 100vw;
-    text-align: center;
-    height: calc(100vh - var(--header-height-px) * 2);
+    height: calc(100vh - (var(--header-height-px) + var(--space-huge) + var(--main-gap) + 24px));
+    min-height: 500px;
     max-height: 1000px;
-    position: relative;
+    text-align: center;
   }
 
   .blobs {
