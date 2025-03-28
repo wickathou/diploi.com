@@ -8,7 +8,12 @@ import { Canvas, BlobCanvas } from '../../../components/react';
     <BlobCanvas client:load />
   </div>
   <div class="content">
-    <a class="news" target="_blank" href="https://dev.to/diploi/easily-create-complex-stacks-in-just-a-few-clicks-new-release-3gdl">
+    <a
+      data-event="news_stackbuilder_click"
+      class="news"
+      target="_blank"
+      href="https://dev.to/diploi/easily-create-complex-stacks-in-just-a-few-clicks-new-release-3gdl"
+    >
       <Icon name="Sparkle" weight="duotone" sizeRem={1} /> Stack Builder Released <Icon name="ArrowSquareOut" sizeRem={1} />
     </a>
     <h1 class="main-heading">
@@ -22,17 +27,17 @@ import { Canvas, BlobCanvas } from '../../../components/react';
     <p class="subtitle">
       <span>Manage, develop and host full applications.</span>
     </p>
-    <a href="https://console.diploi.com">
+    <a data-event="hero_cta_click" href="https://console.diploi.com">
       <button>Get Started</button>
     </a>
     <ul class="links">
-      <a target="_blank" href="https://github.com/diploi">
+      <a data-event="github_click" target="_blank" href="https://github.com/diploi">
         <li>
           <Icon name="GithubLogo" sizeRem={1.275} /> GitHub
           <Icon name="ArrowSquareOut" sizeRem={1} />
         </li>
       </a>
-      <a target="_blank" href="https://discord.gg/vvgQxVjC8G">
+      <a data-event="discord_click" target="_blank" href="https://discord.gg/vvgQxVjC8G">
         <li>
           <Icon name="DiscordLogo" sizeRem={1.275} /> Discord
           <Icon name="ArrowSquareOut" sizeRem={1} />

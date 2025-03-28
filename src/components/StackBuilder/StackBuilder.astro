@@ -147,6 +147,9 @@ const yamlHtml = componentsToYamlHtmlBuildTime({ selectedComponentIds: defaultCo
     const { launchStack } = await import('./launchStack');
 
     launchStack({ button: launchButton, componentIds: selectedComponentIds, apiUrl: launchButton.getAttribute('data-url') || '' });
+
+    // @ts-ignore
+    umami.track('launch', { page: location.pathname, componentIds: selectedComponentIds });
   });
 </script>
 

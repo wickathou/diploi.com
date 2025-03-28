@@ -13,19 +13,19 @@ import Logo from './Logo.astro';
         <ul class="links">
           <label>Product</label>
           <li>
-            <a href="/pricing">Pricing</a>
+            <a data-event="pricing_click" href="/pricing">Pricing</a>
           </li>
           <li>
-            <a href="/jobs">Jobs</a>
+            <a data-event="blog_click" href="/blog">Blog</a>
           </li>
           <li>
-            <a>Blog</a>
+            <a data-event="jobs_click" href="/jobs">Jobs</a>
           </li>
           <li>
-            <a href="https://docs.diploi.com/">Documentation</a>
+            <a data-event="documentation_click" href="https://docs.diploi.com/">Documentation</a>
           </li>
           <li>
-            <a href="https://console.diploi.com/login">Login / Sign Up</a>
+            <a data-event="login_click" href="https://console.diploi.com/login">Login / Sign Up</a>
           </li>
         </ul>
 
@@ -37,23 +37,23 @@ import Logo from './Logo.astro';
           <label>Socials</label>
           <li>
             <Icon name="GithubLogo" class="footer-social-link-icon github" />
-            <a href="https://github.com/diploi">GitHub</a>
+            <a data-event="github_click" href="https://github.com/diploi">GitHub</a>
           </li>
           <li>
             <Icon name="DiscordLogo" class="footer-social-link-icon discord" />
-            <a target="_blank" href="https://discord.gg/vvgQxVjC8G">Discord</a>
+            <a data-event="discord_click" target="_blank" href="https://discord.gg/vvgQxVjC8G">Discord</a>
           </li>
           <li>
             <Icon name="Butterfly" class="footer-social-link-icon bluesky" />
-            <a href="https://bsky.app/profile/diploi.com">Bluesky</a>
+            <a data-event="bluesky_click" href="https://bsky.app/profile/diploi.com">Bluesky</a>
           </li>
           <li>
             <Icon name="LinkedinLogo" class="footer-social-link-icon linkedin" />
-            <a href="https://www.linkedin.com/company/diploidev/">LinkedIn</a>
+            <a data-event="linkedin_click" href="https://www.linkedin.com/company/diploidev/">LinkedIn</a>
           </li>
           <li>
             <Icon name="DevToLogo" class="footer-social-link-icon devto" />
-            <a href="https://dev.to/diploi">Dev.to</a>
+            <a data-event="devto_click" href="https://dev.to/diploi">Dev.to</a>
           </li>
         </ul>
       </div>
