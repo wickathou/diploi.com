@@ -112,8 +112,11 @@ const { title, description = defaultDescription } = Astro.props;
 
     events.forEach((element) =>
       element.addEventListener('click', () => {
+        const event = element.getAttribute('data-event');
         // @ts-ignore
-        gtag('event', element.getAttribute('data-event'));
+        umami.track(event);
+        // @ts-ignore
+        gtag('event', event);
       })
     );
   });
