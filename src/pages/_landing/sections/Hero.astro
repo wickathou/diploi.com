@@ -27,7 +27,7 @@ import { Canvas, BlobCanvas } from '../../../components/react';
     <p class="subtitle">
       <span>Manage, develop and host full applications.</span>
     </p>
-    <a data-event="hero_cta_click" href="https://console.diploi.com">
+    <a data-event="hero_cta_click" href="#StackBuilder">
       <button>Get Started</button>
     </a>
     <ul class="links">
@@ -85,7 +85,7 @@ import { Canvas, BlobCanvas } from '../../../components/react';
       animation-delay: 500ms;
     }
 
-    > button {
+    button {
       width: fit-content;
       cursor: pointer;
     }
@@ -142,6 +142,7 @@ import { Canvas, BlobCanvas } from '../../../components/react';
     z-index: -1;
     animation: moveUpDown 8000ms ease-in-out infinite;
     animation-delay: 2000ms;
+    pointer-events: none;
   }
 
   .main-heading {
