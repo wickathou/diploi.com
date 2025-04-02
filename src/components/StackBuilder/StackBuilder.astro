@@ -150,6 +150,9 @@ const yamlHtml = componentsToYamlHtmlBuildTime({ selectedComponentIds: defaultCo
 
     // @ts-ignore
     umami.track('launch', { page: location.pathname, componentIds: selectedComponentIds });
+
+    // @ts-ignore
+    gtag('event', 'launch', { page: location.pathname, componentIds: selectedComponentIds });
   });
 </script>
 
