@@ -1,7 +1,7 @@
 ---
 title: 'Diploi Receives Pre-Seed Funding'
 description: 'Diploi has completed its first pre-seed funding round. Founded in 2024 with the ultimate goal of taking away the pain of software development by letting developers focus on their main task - to develop new and better software.'
-image: '/public/diploi-team-2024.jpg'
+image: '/diploi-team-2024.jpg'
 author: 'Patrik'
 timestamp: '2024-09-27T07:11:05.573Z'
 ---
