@@ -1,35 +1,31 @@
 ---
-import {
-  ArrowSquareOut,
-  CalendarBlank,
-  FileText,
-  User,
-} from '@phosphor-icons/react';
+import { CalendarBlank, Link, User } from '@phosphor-icons/react';
 import { Image } from 'astro:assets';
 
 type Props = {
+  id: string;
   title: string;
   description: string;
-  image?: ImageMetadata;
-  url: string;
+  image?: string | null;
+  url?: string;
   timestamp: string;
   author: string;
 };
 
-const { title, description, image, url, timestamp, author } = Astro.props;
+const { id, title, description, image, url, timestamp, author } = Astro.props;
 ---
 
-<a target={url.includes('https://') ? '_blank' : undefined} href={url}>
-  <article >
-    {image && <Image src={image} alt="Article image" />}
+<a href={`/blog/${id}`}>
+  <article>
+    {image && <Image src={image} inferSize width={500} height={300} alt="Article image" />}
     <h3>
       {title}
-      {url.includes('https://') && <ArrowSquareOut /> }
+      <!-- {url.includes('https://') && <ArrowSquareOut /> } -->
     </h3>
     <p>{description}</p>
     <footer>
-      <p class='small'><User /> {author}</p>
-      <p class='small'>
+      <p class="small"><User /> {author}</p>
+      <p class="small">
         <CalendarBlank />
         {
           new Date(timestamp).toLocaleDateString('en-US', {
@@ -39,6 +35,13 @@ const { title, description, image, url, timestamp, author } = Astro.props;
           })
         }
       </p>
+      {
+        url && (
+          <p class="small">
+            <Link /> Dev.to
+          </p>
+        )
+      }
     </footer>
   </article>
 </a>

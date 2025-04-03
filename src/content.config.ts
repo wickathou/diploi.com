@@ -1,17 +1,11 @@
-import { glob } from 'astro/loaders';
-import { z, defineCollection } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { blogLoader } from './loaders/blogLoader';
 import { componentLoader } from './loaders/componentLoader';
 
 const blogCollection = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/blog' }),
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      description: z.string(),
-      image: image().optional(),
-      author: z.string(),
-      timestamp: z.string(),
-    }),
+  loader: blogLoader({
+    apiKey: import.meta.env.DEVTO_API_KEY,
+  }),
 });
 
 const componentCollection = defineCollection({

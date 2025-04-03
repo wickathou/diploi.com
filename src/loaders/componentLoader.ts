@@ -9,8 +9,8 @@ DOMPurify.addHook('uponSanitizeElement', function (node, data) {
     const attributes = (node as any).attributes as NamedNodeMap;
     if ('src' in attributes) {
       const src = attributes.getNamedItem('src')?.textContent;
-      if (src === '.diploi/icon.svg') {
-        return node.parentNode!.removeChild(node);
+      if (src === '.diploi/icon.svg' && node.parentNode) {
+        return node.parentNode.removeChild(node);
       }
     }
   }

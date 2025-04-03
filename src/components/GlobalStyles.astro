@@ -323,10 +323,40 @@
   }
 
   .markdown-body {
+    width: 100%;
     background-color: transparent !important;
 
     a {
       color: var(--color-accent-primary-text) !important;
+    }
+
+    ul,
+    ol {
+      list-style: initial;
+    }
+
+    li {
+      display: list-item;
+      color: var(--color-text-secondary);
+    }
+
+    hr {
+      display: block;
+      margin: 0 auto;
+      background: white;
+      border: none;
+      height: 1px !important;
+      position: relative;
+      width: 100%;
+      max-width: var(--max-width-page-section);
+      background: linear-gradient(to left, transparent 0%, var(--color-border) 50%, transparent 100%) left bottom transparent no-repeat !important;
+      background-size: 100% 1px;
+    }
+
+    .article-body-image-wrapper {
+      img {
+        object-fit: contain;
+      }
     }
   }
 </style>
