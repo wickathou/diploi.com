@@ -26,7 +26,7 @@ const { title, description = defaultDescription, ogTitle = 'Diploi' } = Astro.pr
     <link rel="icon" type="image/svg" href={icon.src} />
 
     {/* Open Graph (social media link previews eg.) */}
-    <meta property="og:title" content="Diploi" />
+    <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://diploi.com/" />
