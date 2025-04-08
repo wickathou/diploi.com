@@ -19,7 +19,7 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<Layout title={`Diploi – ${entry.data.title}`}>
+<Layout title={`Diploi – ${entry.data.title}`} ogTitle={entry.data.title}>
   <Navigation selected="blog" />
   <main>
     <Section>

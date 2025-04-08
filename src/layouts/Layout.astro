@@ -7,11 +7,12 @@ import GlobalStyles from '../components/GlobalStyles.astro';
 interface Props {
   title: string;
   description?: string;
+  ogTitle?: string;
 }
 
 const defaultDescription = 'Single SaaS service for managing, developing and hosting your full application.';
 
-const { title, description = defaultDescription } = Astro.props;
+const { title, description = defaultDescription, ogTitle = 'Diploi' } = Astro.props;
 ---
 
 <!doctype html>
