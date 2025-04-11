@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import GlobalStyles from '../../components/GlobalStyles.astro';
-import Hero from '../landing/sections/Hero.astro';
+import Hero from './sections/Hero.astro';
 import { Lifecycle } from '../../components/react';
 import {
   Navigation,
@@ -16,6 +16,7 @@ import {
   Chart,
   ImpactMetric,
   EffortlessDevelopment,
+  Video,
 } from '../../components';
 import { featureCards, chart, content } from '../../content';
 ---
@@ -30,6 +31,7 @@ import { featureCards, chart, content } from '../../content';
     </Section>
     <hr />
     <Section {...content.develop}>
+      <Video />
       <EffortlessDevelopment {...content.develop.effortlessDevelopment} />
       <FeatureMasonry />
       <SubSection {...content.develop.developerFaq}>

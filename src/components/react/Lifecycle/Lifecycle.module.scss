@@ -70,12 +70,16 @@
 
   > svg {
     @include mixins.card-bg-icon;
-    fill: var(--color-text-tertiary);
+
+    & {
+      fill: var(--color-text-tertiary);
+    }
   }
 
   * {
     cursor: inherit;
   }
+
   > div {
     @include mixins.gradient-border(
       var(--color-accent-primary),
@@ -110,9 +114,6 @@
   justify-content: center;
   border-radius: 50%;
   background-color: var(--color-bg);
-
-  > span {
-  }
 }
 
 .pointBg {

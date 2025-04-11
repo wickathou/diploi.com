@@ -1,3 +1,27 @@
 [[redirects]]
   from = "/survey"
-  to = "https://c8t6ztfj4ah.typeform.com/to/NWH0UIER"
+  to = "https://c8t6ztfj4ah.typeform.com/to/nblWkc7m"
+
+[[redirects]]
+  from = "/yaml"
+  to = "https://docs.diploi.com/guides/diploiyaml/"
+
+[[redirects]]
+  from = "/launch"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/launch/astro"
+  to = "/component/astro"
+  status = 301
+
+[[redirects]]
+  from = "/launch/next"
+  to = "/component/next"
+  status = 301
+
+[[redirects]]
+  from = "/launch/sveltekit"
+  to = "/component/sveltekit"
+  status = 301

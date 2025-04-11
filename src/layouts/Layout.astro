@@ -7,11 +7,14 @@ import GlobalStyles from '../components/GlobalStyles.astro';
 interface Props {
   title: string;
   description?: string;
+  ogTitle?: string;
 }
 
 const defaultDescription = 'Single SaaS service for managing, developing and hosting your full application.';
 
-const { title, description = defaultDescription } = Astro.props;
+const { title, description = defaultDescription, ogTitle = 'Diploi' } = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -23,45 +26,57 @@ const { title, description = defaultDescription } = Astro.props;
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg" href={icon.src} />
+    <link rel="canonical" href={canonicalUrl} />
 
-    <meta property="og:title" content="Diploi" />
+    {/* Open Graph (social media link previews eg.) */}
+    <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://diploi.com/" />
     <meta property="og:image" content={og.src} />
     <meta property="og:image:alt" content="Diploi logo" />
 
+    {/* Sitemap */}
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    {/* Google fonts */}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" -->
-    <!--   rel="stylesheet" -->
-    <!-- /> -->
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
-        rel="stylesheet"
-        type="text/css"
-      />
-    </noscript>
 
-    <link rel="sitemap" href="/sitemap-index.xml" />
-
-    <link rel="stylesheet" href="/styles/mixins/breakpoints.scss" />
-
+    {/* Google site verification */}
     <meta name="google-site-verification" content="XopKlvNBmdLaTZtElCt9bkAVDuqrRL-5Ist_6Ecth-o" />
-    <!-- Umami tag -->
+
+    {/* Reddit pixel */}
+    <script defer>
+      !(function (w, d) {
+        if (!w.rdt) {
+          var p = (w.rdt = function () {
+            p.sendEvent ? p.sendEvent.apply(p, arguments) : p.callQueue.push(arguments);
+          });
+          p.callQueue = [];
+          var t = d.createElement('script');
+          (t.src = 'https://www.redditstatic.com/ads/pixel.js'), (t.async = !0);
+          var s = d.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(t, s);
+        }
+      })(window, document);
+      rdt('init', 'a2_gryyzgsjf5fb');
+      rdt('track', 'PageVisit');
+    </script>
+
+    {/* Umami tag */}
     <script defer src="https://umami.console.diploi.com/script.js" data-website-id="745bea8d-6998-4bb9-ae81-9369864e5aaa"></script>
   </head>
   <body class="body">
     <slot />
 
     <Gradient />
-    <!-- Google tag (gtag.js) -->
+
+    {/* Google tag (gtag.js) */}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-182JME5104"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
@@ -81,6 +96,11 @@ const { title, description = defaultDescription } = Astro.props;
 </html>
 
 <script>
+  // Disable Umami for localhost
+  if (window && window.location.hostname === 'localhost') {
+    localStorage.setItem('umami.disabled', '1');
+  }
+
   window.addEventListener('DOMContentLoaded', () => {
     const targets = document.querySelectorAll('.on-scroll');
 
@@ -112,8 +132,11 @@ const { title, description = defaultDescription } = Astro.props;
 
     events.forEach((element) =>
       element.addEventListener('click', () => {
+        const event = element.getAttribute('data-event');
         // @ts-ignore
-        gtag('event', element.getAttribute('data-event'));
+        umami.track(event);
+        // @ts-ignore
+        gtag('event', event);
       })
     );
   });

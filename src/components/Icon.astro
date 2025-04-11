@@ -1,6 +1,6 @@
 ---
 import * as icons from '@phosphor-icons/react';
-import type { IconProps } from '@phosphor-icons/react';
+import type { IconProps, Icon as IconComponent } from '@phosphor-icons/react';
 
 type Props = {
   name: keyof typeof icons;
@@ -12,19 +12,12 @@ type Props = {
   sizeRem?: number;
 };
 
-const {
-  size = 24,
-  sizeRem = 1.5,
-  isGradient = false,
-  class: className,
-  weight = 'light',
-  color,
-} = Astro.props;
+const { size = 24, sizeRem = 1.5, isGradient = false, class: className, weight = 'light', color } = Astro.props;
 
-const Icon = icons[Astro.props.name];
+const Component = icons[Astro.props.name] as IconComponent;
 ---
 
-<Icon
+<Component
   size={size}
   weight={weight}
   className={`icon${isGradient ? ' gradient' : ''} ${className || ''}`}

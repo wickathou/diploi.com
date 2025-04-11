@@ -8,6 +8,14 @@ import { Canvas, BlobCanvas } from '../../../components/react';
     <BlobCanvas client:load />
   </div>
   <div class="content">
+    <a
+      data-event="news_stackbuilder_click"
+      class="news"
+      target="_blank"
+      href="https://dev.to/diploi/easily-create-complex-stacks-in-just-a-few-clicks-new-release-3gdl"
+    >
+      <Icon name="Sparkle" weight="duotone" sizeRem={1} /> Stack Builder Released <Icon name="ArrowSquareOut" sizeRem={1} />
+    </a>
     <h1 class="main-heading">
       <div class="diploi-canvas-container">
         <Canvas client:load />
@@ -19,17 +27,17 @@ import { Canvas, BlobCanvas } from '../../../components/react';
     <p class="subtitle">
       <span>Manage, develop and host full applications.</span>
     </p>
-    <a href="https://console.diploi.com">
+    <a data-event="hero_cta_click" href="#StackBuilder">
       <button>Get Started</button>
     </a>
     <ul class="links">
-      <a target="_blank" href="https://github.com/diploi">
+      <a data-event="github_click" target="_blank" href="https://github.com/diploi">
         <li>
           <Icon name="GithubLogo" sizeRem={1.275} /> GitHub
           <Icon name="ArrowSquareOut" sizeRem={1} />
         </li>
       </a>
-      <a target="_blank" href="https://discord.gg/vvgQxVjC8G">
+      <a data-event="discord_click" target="_blank" href="https://discord.gg/vvgQxVjC8G">
         <li>
           <Icon name="DiscordLogo" sizeRem={1.275} /> Discord
           <Icon name="ArrowSquareOut" sizeRem={1} />
@@ -42,13 +50,15 @@ import { Canvas, BlobCanvas } from '../../../components/react';
 <style lang="scss">
   @use '../../../styles/mixins';
   .hero {
+    position: relative;
     display: flex;
     align-items: center;
+    padding-top: 40px;
     max-width: 100vw;
-    text-align: center;
-    height: calc(100vh - var(--header-height-px) * 2);
+    height: calc(100vh - (var(--header-height-px) + var(--space-huge) + var(--main-gap) + 24px));
+    min-height: 500px;
     max-height: 1000px;
-    position: relative;
+    text-align: center;
   }
 
   .blobs {
@@ -75,9 +85,49 @@ import { Canvas, BlobCanvas } from '../../../components/react';
       animation-delay: 500ms;
     }
 
-    > button {
+    button {
       width: fit-content;
       cursor: pointer;
+    }
+  }
+
+  .news {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding: 6px 12px;
+    border-radius: 1000px;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    z-index: 2;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      inset: 0;
+      background:
+        linear-gradient(black, black) padding-box,
+        linear-gradient(45deg, var(--color-accent-primary), var(--color-accent-secondary)) border-box;
+      border: 1px solid transparent;
+      border-radius: 1000px;
+      filter: saturate(2);
+      z-index: -1;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      inset: 1px;
+      background:
+        radial-gradient(circle at 0, var(--color-accent-primary), transparent 100px),
+        radial-gradient(circle at 100%, var(--color-accent-secondary), transparent 100px);
+      border-radius: 1000px;
+      opacity: 0.4;
+      z-index: -1;
     }
   }
 
@@ -92,6 +142,7 @@ import { Canvas, BlobCanvas } from '../../../components/react';
     z-index: -1;
     animation: moveUpDown 8000ms ease-in-out infinite;
     animation-delay: 2000ms;
+    pointer-events: none;
   }
 
   .main-heading {
