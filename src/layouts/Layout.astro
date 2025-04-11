@@ -13,6 +13,8 @@ interface Props {
 const defaultDescription = 'Single SaaS service for managing, developing and hosting your full application.';
 
 const { title, description = defaultDescription, ogTitle = 'Diploi' } = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -24,6 +26,7 @@ const { title, description = defaultDescription, ogTitle = 'Diploi' } = Astro.pr
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg" href={icon.src} />
+    <link rel="canonical" href={canonicalUrl} />
 
     {/* Open Graph (social media link previews eg.) */}
     <meta property="og:title" content={ogTitle} />
