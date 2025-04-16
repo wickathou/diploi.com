@@ -111,6 +111,12 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
     localStorage.setItem('umami.disabled', '1');
   }
 
+  // Save information about AD campanings for later (this will be used when launching)
+  if (window && window.location && window.localStorage) {
+    const params = Object.fromEntries(new URLSearchParams(document.location.search));
+    window.localStorage.setItem('utm', JSON.stringify({ params, time: Date.now() }));
+  }
+
   window.addEventListener('DOMContentLoaded', () => {
     const targets = document.querySelectorAll('.on-scroll');
 
