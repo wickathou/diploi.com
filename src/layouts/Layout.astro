@@ -40,12 +40,22 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     {/* Google fonts */}
+    {/* https://stackoverflow.com/questions/45983301/google-pagespeed-eliminate-render-blocking-resources-above-the-fold-caused-fro */}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
-      rel="stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet"
+        type="text/css"
+      />
+    </noscript>
 
     {/* Google site verification */}
     <meta name="google-site-verification" content="XopKlvNBmdLaTZtElCt9bkAVDuqrRL-5Ist_6Ecth-o" />
