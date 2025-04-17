@@ -1,21 +1,9 @@
 import { useEffect, useRef } from 'react';
 import useMeasure from 'react-use-measure';
-import {
-  animateBlobs,
-  INITIAL_LEFT_BLOB_DEFAULT,
-  INITIAL_RIGHT_BLOB_DEFAULT,
-} from './lib';
 import styles from './BlobCanvas.module.scss';
+import { animateBlobs, INITIAL_LEFT_BLOB_DEFAULT, INITIAL_RIGHT_BLOB_DEFAULT } from './lib';
 
-const BlobCanvasComponent = ({
-  width,
-  height,
-  leftOnly = false,
-}: {
-  width: number;
-  height: number;
-  leftOnly: boolean;
-}) => {
+const BlobCanvasComponent = ({ width, height, leftOnly = false }: { width: number; height: number; leftOnly: boolean }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   const baseRadius = width < 500 ? 100 : 200;
@@ -39,7 +27,6 @@ const BlobCanvasComponent = ({
   return (
     <canvas
       ref={canvasRef}
-      id="myCanvas"
       width={width}
       height={height}
       style={{
@@ -62,13 +49,7 @@ export const BlobCanvas = ({ leftOnly = false }: BlobCanvasProps) => {
 
   return (
     <div ref={containerRef} className={styles.blobCanvas}>
-      {bounds.width && bounds.height && (
-        <BlobCanvasComponent
-          width={bounds.width}
-          height={bounds.height}
-          leftOnly={leftOnly}
-        />
-      )}
+      {bounds.width && bounds.height && <BlobCanvasComponent width={bounds.width} height={bounds.height} leftOnly={leftOnly} />}
     </div>
   );
 };

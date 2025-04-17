@@ -1,14 +1,7 @@
 import { useEffect, useRef } from 'react';
 import useMeasure from 'react-use-measure';
-import {
-  cubeMeth,
-  drawCubeLeft,
-  drawCubeRight,
-  drawCubeTop,
-  drawPackPlaneBottom,
-  drawPackPlaneLeft,
-} from './lib';
 import styles from './DiploiCanvas.module.scss';
+import { cubeMeth, drawCubeLeft, drawCubeRight, drawCubeTop, drawPackPlaneBottom, drawPackPlaneLeft } from './lib';
 
 const START_OFFSET = 50;
 const DURATION_MS = 2500;
@@ -24,12 +17,7 @@ const easeOutCubic = (t: number): number => --t * t * t + 1;
 const cos30 = Math.cos(Math.PI / 6); // ≈ 0.866
 const sin30 = Math.sin(Math.PI / 6); // = 0.5
 
-const draw = (
-  ctx: CanvasRenderingContext2D,
-  path: Path2D,
-  transform: { x: number; y: number },
-  fillStyle = 'transparent',
-) => {
+const draw = (ctx: CanvasRenderingContext2D, path: Path2D, transform: { x: number; y: number }, fillStyle = 'transparent') => {
   ctx.save();
   ctx.translate(transform.x, transform.y);
   ctx.beginPath();
@@ -42,12 +30,7 @@ const draw = (
   ctx.restore();
 };
 
-const animateCubeAssembly = (
-  ctx: CanvasRenderingContext2D,
-  startX: number,
-  startY: number,
-  sideLength: number,
-) => {
+const animateCubeAssembly = (ctx: CanvasRenderingContext2D, startX: number, startY: number, sideLength: number) => {
   const duration = DURATION_MS;
   let animationStartTime: number | null = null;
 
@@ -107,20 +90,10 @@ const animateCubeAssembly = (
     draw(ctx, cubeTopPath, { x: 0, y: currentTopOffsetY }, BACKGROUND);
 
     // Left face
-    draw(
-      ctx,
-      cubeLeftPath,
-      { x: currentLeftOffsetX, y: currentLeftOffsetY },
-      BACKGROUND,
-    );
+    draw(ctx, cubeLeftPath, { x: currentLeftOffsetX, y: currentLeftOffsetY }, BACKGROUND);
 
     // Right face
-    draw(
-      ctx,
-      cubeRightPath,
-      { x: currentRightOffsetX, y: currentRightOffsetY },
-      BACKGROUND,
-    );
+    draw(ctx, cubeRightPath, { x: currentRightOffsetX, y: currentRightOffsetY }, BACKGROUND);
 
     if (progress < 1) {
       requestAnimationFrame(animate);
@@ -130,13 +103,7 @@ const animateCubeAssembly = (
   requestAnimationFrame(animate);
 };
 
-export const CanvasComponent = ({
-  width,
-  height,
-}: {
-  width: number;
-  height: number;
-}) => {
+export const CanvasComponent = ({ width, height }: { width: number; height: number }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   const sideLength = width < 500 ? 100 : SIDE_LENGTH;
@@ -156,7 +123,6 @@ export const CanvasComponent = ({
   return (
     <canvas
       ref={canvasRef}
-      id="myCanvas"
       width={width}
       height={width}
       style={{
@@ -176,9 +142,7 @@ export const Canvas = () => {
 
   return (
     <div ref={containerRef} className={styles.diploiCanvas}>
-      {bounds.width && bounds.height && (
-        <CanvasComponent width={bounds.width} height={bounds.height} />
-      )}
+      {bounds.width && bounds.height && <CanvasComponent width={bounds.width} height={bounds.height} />}
     </div>
   );
 };

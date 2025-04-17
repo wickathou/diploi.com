@@ -1,12 +1,14 @@
-
 .diploiCanvas {
   position: absolute;
   inset: 0;
   color: transparent;
   z-index: -1;
   pointer-events: none;
-  opacity: 0;
-  animation: fadeIn 1500ms ease 1 forwards;
+
+  > canvas {
+    opacity: 0;
+    animation: fadeIn 1500ms ease 1 forwards;
+  }
 }
 
 @keyframes fadeIn {
