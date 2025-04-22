@@ -8,6 +8,7 @@
   animation: fadeIn 5000ms ease 1 forwards;
   animation-delay: 500ms;
   filter: blur(100px);
+  user-select: none;
 }
 
 @keyframes fadeIn {
