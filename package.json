@@ -15,6 +15,7 @@
     "@astrojs/sitemap": "^3.3.0",
     "@phosphor-icons/react": "^2.1.7",
     "@react-spring/web": "^9.7.5",
+    "@sentry/astro": "^9.13.0",
     "@shikijs/langs": "^3.0.0",
     "@types/d3": "^7.4.3",
     "@types/react": "^18.2.48",
