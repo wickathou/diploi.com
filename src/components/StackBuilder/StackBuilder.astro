@@ -91,6 +91,8 @@ const yamlHtml = componentsToYamlHtmlBuildTime({ selectedComponentIds: defaultCo
   </div>
 </div>
 <script>
+  import { componentsToYamlHtml } from './yamlFormatter';
+
   let preview = document.querySelector('pre.shiki')?.parentNode as HTMLElement;
   const buttons = document.querySelectorAll('.stack-builder-button');
 
@@ -103,7 +105,7 @@ const yamlHtml = componentsToYamlHtmlBuildTime({ selectedComponentIds: defaultCo
   const launchButton = document.getElementById('button-launch-stack') as HTMLButtonElement;
   launchButton.disabled = selectedComponentIds.length === 0;
 
-  const { componentsToYamlHtml } = await import('./yamlFormatter');
+  // const { componentsToYamlHtml } = await import('./yamlFormatter');
 
   const toggleSelection = (currentSelectedIds: number[], id: number) => {
     let nextSelectedIds = currentSelectedIds;
