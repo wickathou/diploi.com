@@ -61,22 +61,26 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
     <meta name="google-site-verification" content="XopKlvNBmdLaTZtElCt9bkAVDuqrRL-5Ist_6Ecth-o" />
 
     {/* Reddit pixel */}
-    <script defer>
-      !(function (w, d) {
-        if (!w.rdt) {
-          var p = (w.rdt = function () {
-            p.sendEvent ? p.sendEvent.apply(p, arguments) : p.callQueue.push(arguments);
-          });
-          p.callQueue = [];
-          var t = d.createElement('script');
-          (t.src = 'https://www.redditstatic.com/ads/pixel.js'), (t.async = !0);
-          var s = d.getElementsByTagName('script')[0];
-          s.parentNode.insertBefore(t, s);
-        }
-      })(window, document);
-      rdt('init', 'a2_gryyzgsjf5fb');
-      rdt('track', 'PageVisit');
-    </script>
+    {
+      /*
+        <script defer>
+          !(function (w, d) {
+            if (!w.rdt) {
+              var p = (w.rdt = function () {
+                p.sendEvent ? p.sendEvent.apply(p, arguments) : p.callQueue.push(arguments);
+              });
+              p.callQueue = [];
+              var t = d.createElement('script');
+              (t.src = 'https://www.redditstatic.com/ads/pixel.js'), (t.async = !0);
+              var s = d.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(t, s);
+            }
+          })(window, document);
+          rdt('init', 'a2_gryyzgsjf5fb');
+          rdt('track', 'PageVisit');
+        </script>
+      */
+    }
 
     {/* Umami tag */}
     <script defer src="https://umami.console.diploi.com/script.js" data-website-id="745bea8d-6998-4bb9-ae81-9369864e5aaa"></script>
