@@ -162,9 +162,9 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
       element.addEventListener('click', () => {
         const event = element.getAttribute('data-event');
         // @ts-ignore
-        umami.track(event);
+        if (umami) umami.track(event);
         // @ts-ignore
-        gtag('event', event);
+        if (gtag) gtag('event', event);
       })
     );
   });

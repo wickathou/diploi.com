@@ -151,10 +151,16 @@ const yamlHtml = componentsToYamlHtmlBuildTime({ selectedComponentIds: defaultCo
     launchStack({ button: launchButton, componentIds: selectedComponentIds, apiUrl: launchButton.getAttribute('data-url') || '' });
 
     // @ts-ignore
-    umami.track('launch', { page: location.pathname, componentIds: selectedComponentIds });
+    if (umami) {
+      // @ts-ignore
+      umami.track('launch', { page: location.pathname, componentIds: selectedComponentIds });
+    }
 
     // @ts-ignore
-    gtag('event', 'conversion_event_default_1', { page: location.pathname, componentIds: selectedComponentIds });
+    if (gtag) {
+      // @ts-ignore
+      gtag('event', 'conversion_event_default_1', { page: location.pathname, componentIds: selectedComponentIds });
+    }
   });
 </script>
 
