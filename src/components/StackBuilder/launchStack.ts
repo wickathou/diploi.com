@@ -15,15 +15,13 @@ export const launchStack = async ({
   try {
     if (window && window.localStorage) {
       try {
+        utm = {
+          page: document.location.pathname,
+        };
+
         const { params, time } = JSON.parse(window.localStorage.getItem('utm') || '{}');
         if (Date.now() - time < 24 * 60 * 60 * 1000) {
-          utm = params;
-        } else {
-          utm = {
-            search: document.location.search,
-            localStorage: window.localStorage.getItem('utm') || '',
-            page: document.location.pathname,
-          };
+          utm = Object.assign({}, utm, params);
         }
       } catch (error) {
         console.error('Unable to parse UTM', error);
