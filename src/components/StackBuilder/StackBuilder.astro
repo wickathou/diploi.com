@@ -144,6 +144,7 @@ const yamlHtml = componentsToYamlHtmlBuildTime({ selectedComponentIds: defaultCo
   });
 
   launchButton.addEventListener('click', async () => {
+    if (launchButton.disabled) return;
     launchButton.disabled = true;
 
     const { launchStack } = await import('./launchStack');

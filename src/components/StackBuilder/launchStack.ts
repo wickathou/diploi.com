@@ -7,7 +7,6 @@ export const launchStack = async ({
   componentIds: number[];
   apiUrl: string;
 }) => {
-  if (button.disabled) return;
   button.disabled = true;
 
   // Check if this user came from an AD campaing
