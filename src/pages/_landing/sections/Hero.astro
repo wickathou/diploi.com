@@ -152,6 +152,10 @@ import { Canvas, BlobCanvas } from '../../../components/react';
     line-height: 1.1;
     font-weight: 600;
     position: relative;
+
+    @include mixins.respond-to('mobile') {
+      font-size: 6rem;
+    }
   }
 
   .links {

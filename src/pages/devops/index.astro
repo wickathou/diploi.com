@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import GlobalStyles from '../../components/GlobalStyles.astro';
+import { Lifecycle } from '../../components/react';
+import {
+  Navigation,
+  DeveloperFaq,
+  StackBuilder,
+  FeatureMasonry,
+  FeatureCards,
+  GetStarted,
+  Footer,
+  Section,
+  SubSection,
+  Chart,
+  ImpactMetric,
+  EffortlessDevelopment,
+  Video,
+} from '../../components';
+import { featureCards, chart, content } from '../../content';
+import DevopsHero from './_components/DevopsHero.astro';
+---
+
+<GlobalStyles />
+<Layout title="Diploi – Magical Developer Experience">
+  <Navigation />
+  <main>
+    <DevopsHero />
+    <Section id="StackBuilder" {...content.pickStack}>
+      <StackBuilder />
+    </Section>
+    <hr />
+    <Section {...content.develop}>
+      <Video />
+      <EffortlessDevelopment {...content.develop.effortlessDevelopment} />
+      <FeatureMasonry />
+      <SubSection {...content.develop.developerFaq}>
+        <DeveloperFaq />
+      </SubSection>
+    </Section>
+    <hr />
+    <Section {...content.publishApp} isWide>
+      <Lifecycle client:load />
+    </Section>
+    <hr />
+    <Section {...content.timeAndResources}>
+      <FeatureCards items={featureCards} />
+      <Chart {...chart.newProjectStartUp} />
+      <Chart {...chart.developerOnboarding} />
+      <Chart {...chart.creatingTestEnvironment} />
+      <Chart {...chart.updatingProduction} />
+      <ImpactMetric {...content.timeAndResources.impactMetric} />
+    </Section>
+    <Section>
+      <GetStarted />
+    </Section>
+  </main>
+</Layout>
+<Footer />
