@@ -33,9 +33,7 @@ const BlobCanvasComponent = ({ width, height, leftOnly = false }: { width: numbe
         position: 'absolute',
         left: 0,
       }}
-    >
-      You need a browser that supports HTML5!
-    </canvas>
+    />
   );
 };
 

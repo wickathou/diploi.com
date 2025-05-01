@@ -1,28 +1,16 @@
 ---
-import { createSparkles } from './lib'
+import { createSparkles } from './lib';
+
 type Props = {
-  sparkleCount?: number
-  minSize?: number
-  maxSize?: number
-  topMax?: number
-  leftMax?: number
-  topMin?: number
-  leftMin?: number
-  isGradientSparkles?: boolean
-}
+  sparkleCount?: number;
+  minSize?: number;
+  maxSize?: number;
+  isGradientSparkles?: boolean;
+};
 
-const {
-  minSize = 1,
-  maxSize = 1.5,
-  sparkleCount = 6,
-  topMin = 2,
-  topMax = 98,
-  leftMin = -2,
-  leftMax = 98,
-  isGradientSparkles = false,
-} = Astro.props
+const { minSize = 1, maxSize = 1.5, sparkleCount = 6, isGradientSparkles = false } = Astro.props;
 
-const sparkles = createSparkles(sparkleCount, minSize, maxSize, 0, 100, 0, 100)
+const sparkles = createSparkles(sparkleCount, minSize, maxSize);
 ---
 
 <div class="sparkle-element">
@@ -62,6 +50,7 @@ const sparkles = createSparkles(sparkleCount, minSize, maxSize, 0, 100, 0, 100)
     transform-box: fill-box;
     transform-origin: center;
     position: absolute;
+
     > path {
       opacity: 0;
       animation: sparkle 5000ms linear infinite;

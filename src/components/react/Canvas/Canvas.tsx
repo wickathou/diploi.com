@@ -131,9 +131,7 @@ export const CanvasComponent = ({ width, height }: { width: number; height: numb
         position: 'absolute',
         color: 'transparent',
       }}
-    >
-      You need a browser that supports HTML5!
-    </canvas>
+    />
   );
 };
 
