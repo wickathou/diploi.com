@@ -1,5 +1,5 @@
 ---
-import { BlobCanvas } from './react';
+import { BlobCanvas } from './BlobCanvas';
 import Icon from './Icon.astro';
 type Props = {
   title: string;
@@ -37,7 +37,7 @@ const { title, description, points } = Astro.props;
       }
     </ul>
   </div>
-  <BlobCanvas client:visible />
+  <BlobCanvas size={150} />
 </div>
 
 <style lang="scss">

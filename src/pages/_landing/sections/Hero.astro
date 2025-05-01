@@ -1,11 +1,12 @@
 ---
 import { Icon, SparkleElement } from '../../../components';
-import { Canvas, BlobCanvas } from '../../../components/react';
+import { Canvas } from '../../../components/react/Canvas';
+import { BlobCanvas } from '../../../components/BlobCanvas';
 ---
 
 <div class="hero">
   <div class="blobs">
-    <BlobCanvas client:idle />
+    <BlobCanvas />
   </div>
   <div class="content">
     <a
@@ -64,7 +65,7 @@ import { Canvas, BlobCanvas } from '../../../components/react';
 
   .blobs {
     position: absolute;
-    inset: 0;
+    inset: 0 -16px;
     top: calc(var(--header-height-px) * -2);
     pointer-events: none;
     user-select: none;
