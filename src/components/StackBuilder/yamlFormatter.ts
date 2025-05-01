@@ -1,35 +1,3 @@
-import yaml from '@shikijs/langs/yaml';
-import { stringify as stringifyYaml } from 'json-to-pretty-yaml';
-import { createHighlighterCore } from 'shiki/core';
-import { createOnigurumaEngine } from 'shiki/engine/oniguruma';
-import wasm from 'shiki/wasm';
-
-const highlighter = await createHighlighterCore({
-  langs: [yaml],
-  engine: createOnigurumaEngine(wasm),
-  themes: [
-    {
-      name: 'diploi',
-      settings: [
-        {
-          scope: ['entity'],
-          settings: {
-            foreground: 'var(--color-secondary)',
-          },
-        },
-        {
-          scope: ['string'],
-          settings: {
-            foreground: 'var(--color-text-secondary)',
-          },
-        },
-      ],
-      fg: 'var(--color-text-secondary)',
-      bg: 'transparent',
-    },
-  ],
-});
-
 interface ComponentsToYamlHtmlParams {
   selectedComponentIds: number[];
   components: { componentID: number; type: 'component' | 'addon'; identifier: string; name: string; url: string }[];
@@ -38,27 +6,41 @@ interface ComponentsToYamlHtmlParams {
 export const componentsToYamlHtml = ({ selectedComponentIds, components }: ComponentsToYamlHtmlParams) => {
   const items = components.filter((component) => selectedComponentIds.includes(component.componentID));
 
-  const config = {
-    diploiVersion: 'v1.0' as const,
-    template: undefined as string | undefined,
-    components: items
-      .filter((item) => item.type === 'component')
-      .map((item) => ({
-        name: item.name,
-        identifier: item.identifier,
-        package: `${item.url}#main`,
-      })),
-    addons: items
-      .filter((item) => item.type === 'addon')
-      .map((item) => ({
-        name: item.name,
-        identifier: item.identifier,
-        package: `${item.url}#main`,
-      })),
+  const content = document.createElement('pre');
+
+  const createField = ({ name: nameString, content, prefix = '' }: { name: string; content?: string; prefix?: string }) => {
+    const field = document.createElement('span');
+    field.append(':');
+    if (content) field.append(` "${content}"`);
+
+    const name = document.createElement('b');
+    name.innerText = nameString;
+
+    field.prepend(name);
+    field.prepend(prefix);
+    field.append('\n');
+
+    return field;
   };
 
-  return highlighter.codeToHtml(stringifyYaml(config), {
-    lang: 'yaml',
-    theme: 'diploi',
-  });
+  const createComponent = (component: ComponentsToYamlHtmlParams['components'][number]) => [
+    createField({ name: 'name', content: component.name, prefix: '  - ' }),
+    createField({ name: 'identifier', content: component.identifier, prefix: '    ' }),
+    createField({ name: 'package', content: `${component.url}#main`, prefix: '    ' }),
+  ];
+
+  content.append(createField({ name: 'diploiVersion', content: 'v1.0' }));
+  content.append(createField({ name: 'components' }));
+
+  for (const item of items.filter((item) => item.type === 'component')) {
+    content.append(...createComponent(item));
+  }
+
+  content.append(createField({ name: 'addons' }));
+
+  for (const item of items.filter((item) => item.type === 'addon')) {
+    content.append(...createComponent(item));
+  }
+
+  return content;
 };

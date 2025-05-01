@@ -2,7 +2,7 @@
 import StackBuilderBlockButton from './StackBuilderBlockButton.astro';
 import SubSectionHeader from '../SubSectionHeader.astro';
 import Icon from '../Icon.astro';
-import { componentsToYamlHtml as componentsToYamlHtmlBuildTime } from './yamlFormatter';
+import StackBuilderYaml from './StackBuilderYaml.astro';
 
 interface Props {
   launchButtonText?: string;
@@ -27,28 +27,34 @@ const components = data.components as {
   name: string;
   url: string;
 }[];
-
-const yamlHtml = componentsToYamlHtmlBuildTime({ selectedComponentIds: defaultComponentIds, components });
 ---
 
 <div class="stack-builder" data-components={JSON.stringify(components)} data-components-defaults={JSON.stringify(defaultComponentIds)}>
   <div class="grid">
     <div class="list">
-      {!hideComponents && <>
-        <div class="header components">
-          <SubSectionHeader title="Components" description="Base blocks of your Stack. All code is editable." class="header-components" />
-        </div>
-        <div class="blocks-container components">
-          <div class="blocks components">
-            {
-              components
-                .filter((component) => component.type === 'component')
-                .map((component) => <StackBuilderBlockButton {...component} class="component" />)
-            }
-          </div>
-          <!-- <ArrowLink href={import.meta.env.VITE_API_URL} text="Browse All" /> -->
-        </div>
-      </>}
+      {
+        !hideComponents && (
+          <>
+            <div class="header components">
+              <SubSectionHeader
+                title="Components"
+                description="Base blocks of your Stack. All code is editable."
+                class="header-components"
+              />
+            </div>
+            <div class="blocks-container components">
+              <div class="blocks components">
+                {components
+                  .filter((component) => component.type === 'component')
+                  .map((component) => (
+                    <StackBuilderBlockButton {...component} class="component" />
+                  ))}
+              </div>
+              {/* <ArrowLink href={import.meta.env.VITE_API_URL} text="Browse All" /> */}
+            </div>
+          </>
+        )
+      }
       <div class="header addons">
         <slot name="addons-header">
           <SubSectionHeader title="Add-ons" description="Complementary services. Configurable with config." />
@@ -62,19 +68,10 @@ const yamlHtml = componentsToYamlHtmlBuildTime({ selectedComponentIds: defaultCo
               .map((addon) => <StackBuilderBlockButton {...addon} class="addon" />)
           }
         </div>
-        <!-- <ArrowLink href={import.meta.env.VITE_API_URL} text="Browse All" /> -->
+        {/* <ArrowLink href={import.meta.env.VITE_API_URL} text="Browse All" /> */}
       </div>
     </div>
-    {
-      !hideYaml && (
-        <div class="code-side">
-          <article class="code-card">
-            <label>config.yaml</label>
-            <Fragment set:html={yamlHtml} />
-          </article>
-        </div>
-      )
-    }
+    {!hideYaml && <StackBuilderYaml />}
   </div>
   <div class="ctas">
     <button id="button-launch-stack" class="secondary" data-url={import.meta.env.VITE_API_URL} disabled>
@@ -90,13 +87,9 @@ const yamlHtml = componentsToYamlHtmlBuildTime({ selectedComponentIds: defaultCo
     <p class="small"><Icon name="Info" sizeRem={1} /> Instant launch. No sign-up required.</p>
   </div>
 </div>
+
 <script>
-  import { componentsToYamlHtml } from './yamlFormatter';
-
-  let preview = document.querySelector('pre.shiki')?.parentNode as HTMLElement;
   const buttons = document.querySelectorAll('.stack-builder-button');
-
-  const components = JSON.parse((document.querySelector('[data-components]') as HTMLElement).getAttribute('data-components') || '');
 
   let selectedComponentIds: number[] = JSON.parse(
     (document.querySelector('[data-components-defaults]') as HTMLElement).getAttribute('data-components-defaults') || '[]'
@@ -104,8 +97,6 @@ const yamlHtml = componentsToYamlHtmlBuildTime({ selectedComponentIds: defaultCo
 
   const launchButton = document.getElementById('button-launch-stack') as HTMLButtonElement;
   launchButton.disabled = selectedComponentIds.length === 0;
-
-  // const { componentsToYamlHtml } = await import('./yamlFormatter');
 
   const toggleSelection = (currentSelectedIds: number[], id: number) => {
     let nextSelectedIds = currentSelectedIds;
@@ -134,10 +125,8 @@ const yamlHtml = componentsToYamlHtmlBuildTime({ selectedComponentIds: defaultCo
 
       selectedComponentIds = toggleSelection(selectedComponentIds, id);
 
-      if (preview) {
-        preview.querySelector('.shiki')?.remove();
-        preview.insertAdjacentHTML('beforeend', componentsToYamlHtml({ selectedComponentIds, components }));
-      }
+      const componentsEvent = new CustomEvent('components', { detail: selectedComponentIds });
+      window.dispatchEvent(componentsEvent);
 
       launchButton.disabled = selectedComponentIds.length === 0;
     });
@@ -167,45 +156,6 @@ const yamlHtml = componentsToYamlHtmlBuildTime({ selectedComponentIds: defaultCo
 
 <style lang="scss">
   @use '../../styles/mixins';
-
-  .code-side {
-    display: none;
-    margin-top: calc(64.8px + var(--space-l));
-    width: 440px;
-    max-height: 340px;
-    overflow: hidden;
-    mask-image: linear-gradient(to bottom, white 80%, transparent);
-
-    @include mixins.respond-to('tablet') {
-      display: block;
-    }
-  }
-
-  .code-card {
-    @include mixins.card-desktop;
-    height: fit-content;
-    background-color: var(--color-bg-secondary-20);
-
-    > label {
-      position: absolute;
-      background: var(--color-bg-secondary);
-      top: 0;
-      right: 0;
-      padding: 0 var(--space-s);
-      border-bottom-left-radius: var(--border-radius-medium);
-      line-height: 1.5rem;
-      color: var(--color-text-secondary);
-      font-weight: 400;
-      font-family: var(--font-body);
-      font-size: 0.875rem;
-    }
-
-    :global(pre) {
-      margin: 0 !important;
-      font-size: 1rem !important;
-      white-space: pre-wrap;
-    }
-  }
 
   .stack-builder {
     display: flex;
@@ -389,10 +339,10 @@ const yamlHtml = componentsToYamlHtmlBuildTime({ selectedComponentIds: defaultCo
     }
 
     .small {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
 
     @include mixins.respond-to('tablet') {
       align-items: center;

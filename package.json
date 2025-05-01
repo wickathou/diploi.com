@@ -16,7 +16,6 @@
     "@phosphor-icons/react": "^2.1.7",
     "@react-spring/web": "^9.7.5",
     "@sentry/astro": "^9.13.0",
-    "@shikijs/langs": "^3.0.0",
     "@types/d3": "^7.4.3",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
@@ -24,15 +23,11 @@
     "d3": "^7.9.0",
     "github-markdown-css": "^5.8.1",
     "isomorphic-dompurify": "^2.22.0",
-    "json-to-pretty-yaml": "^1.2.2",
-    "leva": "^0.10.0",
     "marked": "^15.0.7",
-    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-use-measure": "^2.1.1",
     "sass": "^1.83.4",
-    "shiki": "^2.2.0",
     "simplex-noise": "^4.0.3"
   },
   "devDependencies": {
