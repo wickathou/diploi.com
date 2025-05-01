@@ -30,19 +30,14 @@ const { title, description, points } = Astro.props;
               <span>...........................................</span>
             </div>
             <span class="icon-container">
-              <Icon
-                name="CheckSquare"
-                color="#53B365"
-                weight="regular"
-                sizeRem={2}
-              />
+              <Icon name="CheckSquare" color="#53B365" weight="regular" sizeRem={2} />
             </span>
           </li>
         ))
       }
     </ul>
   </div>
-  <BlobCanvas client:load />
+  <BlobCanvas client:idle />
 </div>
 
 <style lang="scss">
@@ -123,7 +118,8 @@ const { title, description, points } = Astro.props;
           color: var(--color-text-primary);
           font-family: monospace;
           font-size: 1.125rem;
-          &::before, &::after {
+          &::before,
+          &::after {
             padding-right: var(--space-s);
             color: var(--color-text-tertiary);
             font-weight: 600;
