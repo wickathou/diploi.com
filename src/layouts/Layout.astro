@@ -1,4 +1,5 @@
 ---
+import { Font } from 'astro:assets';
 import Gradient from '../components/Gradient.astro';
 import icon from '../images/logo-icon.svg';
 import og from '../images/og.png';
@@ -39,23 +40,9 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
     {/* Sitemap */}
     <link rel="sitemap" href="/sitemap-index.xml" />
 
-    {/* Google fonts */}
-    {/* https://stackoverflow.com/questions/45983301/google-pagespeed-eliminate-render-blocking-resources-above-the-fold-caused-fro */}
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
-        rel="stylesheet"
-        type="text/css"
-      />
-    </noscript>
+    {/* Fonts */}
+    <Font cssVariable="--font-header" preload />
+    <Font cssVariable="--font-body" preload />
 
     {/* Save information about AD campaigns for later (this will be used when launching) */}
     <script is:inline>

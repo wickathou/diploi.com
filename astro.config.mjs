@@ -2,7 +2,7 @@ import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import sentry from '@sentry/astro';
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,4 +25,20 @@ export default defineConfig({
       },
     }),
   ],
+  experimental: {
+    fonts: [
+      {
+        provider: fontProviders.google(),
+        name: 'Montserrat',
+        cssVariable: '--font-header',
+        weights: ['600 800'],
+      },
+      {
+        provider: fontProviders.google(),
+        name: 'Source Sans 3',
+        cssVariable: '--font-body',
+        weights: ['200 900'],
+      },
+    ],
+  },
 });
