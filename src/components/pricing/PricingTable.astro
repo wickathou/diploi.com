@@ -1,186 +1,166 @@
 ---
-import Spacer from '../Spacer.astro'
+import Spacer from '../Spacer.astro';
 
 interface Props {
   pricing: {
-    averageDaysInMonth: number
-    storagePerGiB: number
+    averageDaysInMonth: number;
+    storagePerGiB: number;
     coreInstancePrice: {
-      name: string
-      price: number
-      rootStorageSizeGiB: number
-      memoryGiB: number
-      vCpu: number
-    }[]
-  }
+      name: string;
+      price: number;
+      rootStorageSizeGiB: number;
+      memoryGiB: number;
+      vCpu: number;
+    }[];
+  };
 }
 
-const { pricing } = Astro.props
+const { pricing } = Astro.props;
 
-const { averageDaysInMonth, storagePerGiB } = pricing
+const { averageDaysInMonth, storagePerGiB } = pricing;
 
 const formatter = new Intl.NumberFormat('fi-FI', {
   style: 'currency',
   currency: 'EUR',
   minimumFractionDigits: 2,
-})
+});
 
 const formatterLong = new Intl.NumberFormat('fi-FI', {
   style: 'currency',
   currency: 'EUR',
   minimumFractionDigits: 3,
-})
+});
 ---
 
 <div>
-<table>
-  <colgroup>
-    <col span="1" style="width: 26%" />
-    <col span="1" style="width: 16%;" />
-    <col span="1" style="width: 14%;" />
-    <col span="1" style="width: 22%;" />
-    <col span="1" style="width: 22%;" />
-  </colgroup>
-  <thead>
-    <tr>
-      <th>Cluster size</th>
-      <th>Memory</th>
-      <th>vCPU</th>
-      <th>€/hour</th>
-      <th>€/month</th>
-    </tr>
-  </thead>
-  <tbody>
-    {
-      pricing.coreInstancePrice.map((core) => (
-        <tr>
-          <td>{core.name}</td>
-          <td>{core.memoryGiB} GB</td>
-          <td>{core.vCpu}</td>
-          <td>
-            <span>{formatterLong.format(core.price)}</span>
-            <!-- <span class="help">/ hour</span> -->
-          </td>
-          <td>
-            <span data-cluster-price={core.price}>
-              {formatter.format(core.price)}
-            </span>
-            <!-- <span class="help">/ month</span> -->
-          </td>
-        </tr>
-      ))
-    }
-  </tbody>
-</table>
+  <table>
+    <colgroup>
+      <col span="1" style="width: 26%" />
+      <col span="1" style="width: 16%;" />
+      <col span="1" style="width: 14%;" />
+      <col span="1" style="width: 22%;" />
+      <col span="1" style="width: 22%;" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Cluster size</th>
+        <th>Memory</th>
+        <th>vCPU</th>
+        <th>€/hour</th>
+        <th>€/month</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        pricing.coreInstancePrice.map((core) => (
+          <tr>
+            <td>{core.name}</td>
+            <td>{core.memoryGiB} GB</td>
+            <td>{core.vCpu}</td>
+            <td>
+              <span>{formatterLong.format(core.price)}</span>
+            </td>
+            <td>
+              <span data-cluster-price={core.price} />
+            </td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
 
-<Spacer size="medium" />
+  <Spacer size="medium" />
 
-<table>
-  <colgroup>
-    <col span="1" style="width: 26%" />
-    <col span="1" style="width: 30%;" />
-    <col span="1" style="width: 25%;" />
-    <col span="1" style="width: 22%;" />
-  </colgroup>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Size</th>
-      <th>€/GB/hour</th>
-      <th>€/month</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Storage</td>
-      <td>
-        <input id="storage" type="number" value="10" />
-      </td>
-      <td>
-        <span id="storage-price-hour">
-          {formatter.format(pricing.storagePerGiB)}
-        </span>
-        <!-- <span class="help">/ GB / hour</span> -->
-      </td>
-      <td>
-        <span id="storage-price-month">
-          {
-            formatter.format(
-              pricing.storagePerGiB * 10 * averageDaysInMonth * 24,
-            )
-          }
-        </span>
-        <!-- <span class="help"> / month</span> -->
-      </td>
-    </tr>
-  </tbody>
-</table>
+  <table>
+    <colgroup>
+      <col span="1" style="width: 26%" />
+      <col span="1" style="width: 30%;" />
+      <col span="1" style="width: 25%;" />
+      <col span="1" style="width: 22%;" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Size</th>
+        <th>€/GB/hour</th>
+        <th>€/month</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Storage</td>
+        <td>
+          <input id="storage" type="number" value="10" />
+        </td>
+        <td>
+          <span id="storage-price-hour">
+            {formatter.format(pricing.storagePerGiB)}
+          </span>
+        </td>
+        <td>
+          <span id="storage-price-month">
+            {formatter.format(pricing.storagePerGiB * 10 * averageDaysInMonth * 24)}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <script define:vars={{ averageDaysInMonth, storagePerGiB }}>
-  const storageInput = document.getElementById('storage')
-  const storagePriceHourElement = document.getElementById('storage-price-hour')
-  const storagePriceMonthElement = document.getElementById(
-    'storage-price-month',
-  )
+  const storageInput = document.getElementById('storage');
+  const storagePriceHourElement = document.getElementById('storage-price-hour');
+  const storagePriceMonthElement = document.getElementById('storage-price-month');
 
   const formatter = new Intl.NumberFormat('fi-FI', {
     style: 'currency',
     currency: 'EUR',
     minimumFractionDigits: 2,
-  })
+  });
 
   const formatterLong = new Intl.NumberFormat('fi-FI', {
     style: 'currency',
     currency: 'EUR',
     minimumFractionDigits: 3,
-  })
+  });
 
-  const getHours = () =>
-    parseFloat(
-      document.querySelector('[data-hours]')?.getAttribute('data-hours'),
-    )
+  const getHours = () => parseFloat(document.querySelector('[data-hours]')?.getAttribute('data-hours'));
 
   const getStoragePrice = () => {
-    let price = parseFloat(storageInput.value) * storagePerGiB
-    if (isNaN(price) || price < 0) price = 0
-    return price
-  }
+    let price = parseFloat(storageInput.value) * storagePerGiB;
+    if (isNaN(price) || price < 0) price = 0;
+    return price;
+  };
 
   const updateStoragePrice = () => {
-    const price = getStoragePrice()
+    const price = getStoragePrice();
 
-    storagePriceHourElement.innerHTML = formatterLong.format(price)
-    storagePriceMonthElement.innerHTML = formatter.format(
-      price * averageDaysInMonth * 24,
-    )
-  }
+    storagePriceHourElement.innerHTML = formatterLong.format(price);
+    storagePriceMonthElement.innerHTML = formatter.format(price * averageDaysInMonth * 24);
+  };
 
   const updateClusterPrice = () => {
-    const hours = getHours()
+    const hours = getHours();
 
     document.querySelectorAll('[data-cluster-price]').forEach((element) => {
-      const clusterPrice = parseFloat(
-        element.getAttribute('data-cluster-price'),
-      )
-      element.innerHTML = formatter.format(clusterPrice * hours)
-    })
-  }
+      const clusterPrice = parseFloat(element.getAttribute('data-cluster-price'));
+      element.innerHTML = formatter.format(clusterPrice * hours);
+    });
+  };
 
-  updateStoragePrice()
-  updateClusterPrice()
+  updateStoragePrice();
+  updateClusterPrice();
 
   document.addEventListener('pricing-update', () => {
-    updateStoragePrice()
-    updateClusterPrice()
-  })
+    updateStoragePrice();
+    updateClusterPrice();
+  });
 
-  const dispatchUpdateEvent = () =>
-    document.dispatchEvent(new Event('pricing-update'))
+  const dispatchUpdateEvent = () => document.dispatchEvent(new Event('pricing-update'));
 
-  storageInput.addEventListener('input', dispatchUpdateEvent)
-  storageInput.addEventListener('change', dispatchUpdateEvent)
-  storageInput.value = '10'
+  storageInput.addEventListener('input', dispatchUpdateEvent);
+  storageInput.addEventListener('change', dispatchUpdateEvent);
+  storageInput.value = '10';
 </script>
 
 <style>
@@ -244,11 +224,9 @@ const formatterLong = new Intl.NumberFormat('fi-FI', {
     }
   }
 
-
   input {
     width: 100%;
     padding: 0;
     border-radius: var(--border-radius-medium);
-
   }
 </style>
