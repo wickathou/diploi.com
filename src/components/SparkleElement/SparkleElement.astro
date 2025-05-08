@@ -43,8 +43,6 @@ const sparkles = createSparkles(sparkleCount, minSize, maxSize);
     display: inline;
     position: relative;
     width: fit-content;
-    user-select: none;
-    pointer-events: none;
   }
 
   .sparkle {
@@ -53,6 +51,8 @@ const sparkles = createSparkles(sparkleCount, minSize, maxSize);
     transform-box: fill-box;
     transform-origin: center;
     opacity: 1 !important;
+    user-select: none;
+    pointer-events: none;
 
     > path {
       opacity: 0;
