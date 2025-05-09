@@ -61,7 +61,7 @@ const embedSrcDoc = `
   </style>
 
   <a href='${embedUrl}'>
-    <img src='${thumbnailImage.src}' alt='Diploi Introduction'>
+    <img loading='lazy' src='${thumbnailImage.src}' alt='Diploi Introduction'>
     <span>
       <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" fill="url(#gradient)" viewBox="0 0 256 256"><path d="M234.49,111.07,90.41,22.94A20,20,0,0,0,60,39.87V216.13a20,20,0,0,0,30.41,16.93l144.08-88.13a19.82,19.82,0,0,0,0-33.86ZM84,208.85V47.15L216.16,128Z"></path></svg>
     </span>
@@ -88,6 +88,7 @@ const embedSrcDoc = `
 
 <article>
   <iframe
+    loading="lazy"
     srcdoc={embedSrcDoc}
     frameborder="0"
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
