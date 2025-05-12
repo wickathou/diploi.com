@@ -67,7 +67,7 @@ export function blogLoader({ apiKey }: { apiKey: string }): Loader {
           },
         });
 
-        await delay(1000);
+        await delay(500);
       }
 
       const entries = [...localEntries, ...blogEntries].sort(

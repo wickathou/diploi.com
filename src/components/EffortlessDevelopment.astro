@@ -102,6 +102,7 @@ const { title, description, points } = Astro.props;
       display: grid;
       grid-template-columns: auto auto;
       align-items: center;
+
       @include mixins.respond-to('tablet') {
         grid-template-columns: 512px 1fr;
       }
@@ -109,15 +110,23 @@ const { title, description, points } = Astro.props;
       > div {
         display: flex;
         overflow: hidden;
+
         > span {
+          display: none;
           transform: translateY(5px);
           color: var(--color-text-tertiary);
+
+          @include mixins.respond-to('tablet') {
+            display: block;
+          }
         }
+
         > p {
           flex-shrink: 0;
           color: var(--color-text-primary);
           font-family: monospace;
           font-size: 1.125rem;
+
           &::before,
           &::after {
             padding-right: var(--space-s);
@@ -125,6 +134,7 @@ const { title, description, points } = Astro.props;
             font-weight: 600;
             font-size: 1.25rem;
           }
+
           &::before {
             content: '[';
             padding-right: var(--space-s);
@@ -140,11 +150,16 @@ const { title, description, points } = Astro.props;
   }
 
   .icon-container {
+    display: none !important;
     padding-left: var(--space-s);
     padding: 0;
     display: flex;
     height: 100%;
     transform: translateY(-3px);
+
+    @include mixins.respond-to('tablet') {
+      display: block !important;
+    }
   }
 
   .blob-canvas {
