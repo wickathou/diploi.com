@@ -44,6 +44,8 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
     <Font cssVariable="--font-header" preload />
     <Font cssVariable="--font-body" preload />
 
+    <slot name="head" />
+
     {/* Save information about AD campaigns for later (this will be used when launching) */}
     <script is:inline>
       try {

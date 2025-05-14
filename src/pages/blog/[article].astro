@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import { User, CalendarBlank, DevToLogo, ArrowSquareOut } from '@phosphor-icons/react';
 import Layout from '../../layouts/Layout.astro';
 import { Navigation, Footer, GetStarted, Section } from '../../components';
+import { createBlogPostSchema } from './_utils/createBlogPostSchema';
 
 import 'github-markdown-css/github-markdown.css';
 
@@ -17,9 +18,16 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 
 const { Content } = await render(entry);
+
+const schema = createBlogPostSchema({
+  ...entry.data,
+  url: new URL(Astro.url.pathname, Astro.site),
+  externalUrl: entry.data.url,
+});
 ---
 
 <Layout title={`Diploi – ${entry.data.title}`} ogTitle={entry.data.title}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
   <Navigation selected="blog" />
   <main>
     <Section>

@@ -5,11 +5,22 @@ import Navigation from '../../components/Navigation.astro';
 import Footer from '../../components/Footer.astro';
 import Article from '../../components/blog/Article.astro';
 import { Section, GetStarted, PageTitle } from '../../components';
+import { createBlogSchema } from './_utils/createBlogSchema';
 
 const articles = await getCollection('blog');
+
+const schema = createBlogSchema({
+  url: new URL(Astro.url.pathname, Astro.site),
+  blogPosts: articles.map((article) => ({
+    ...article.data,
+    url: new URL(`/blog/${article.id}`, Astro.site),
+    externalUrl: article.data.url,
+  })),
+});
 ---
 
 <Layout title="Diploi – Blog">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
   <Navigation selected="blog" />
   <main>
     <Section>
