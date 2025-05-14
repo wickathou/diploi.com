@@ -1,4 +1,4 @@
-import { createOrganizationSchema } from './createOrganizationSchema';
+import { createOrganizationSchema } from '../../../utils/createOrganizationSchema';
 
 export interface CreateBlogPostSchemaParams {
   title: string;

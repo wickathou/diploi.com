@@ -1,8 +1,14 @@
 ---
+import { createWebsiteSchema } from '../utils/createWebsiteSchema';
 import Landing from './_landing/index.astro';
 import Hero from './_landing/sections/Hero.astro';
+
+const schema = createWebsiteSchema();
 ---
 
 <Landing>
+  {/* Organization schema for Google */}
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
+
   <Hero slot="hero" />
 </Landing>

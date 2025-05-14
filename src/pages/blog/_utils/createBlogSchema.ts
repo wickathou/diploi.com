@@ -1,5 +1,5 @@
+import { createOrganizationSchema } from '../../../utils/createOrganizationSchema';
 import { type CreateBlogPostSchemaParams, createBlogPostSchema } from './createBlogPostSchema';
-import { createOrganizationSchema } from './createOrganizationSchema';
 
 interface CreateBlogSchemaParams {
   url: URL | string;
