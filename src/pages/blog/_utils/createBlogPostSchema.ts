@@ -17,7 +17,7 @@ export const createBlogPostSchema = ({ title, description, image, url, externalU
   description,
   ...(image
     ? {
-        thumbnailUrl: image,
+        image,
       }
     : {}),
   url,
@@ -31,7 +31,8 @@ export const createBlogPostSchema = ({ title, description, image, url, externalU
   author: {
     '@type': 'Person',
     name: author,
+    url: 'https://diploi.com/',
   },
   sourceOrganization: createOrganizationSchema(),
-  datePublished: new Date(timestamp).toISOString().substring(0, 10),
+  datePublished: new Date(timestamp).toISOString(),
 });
