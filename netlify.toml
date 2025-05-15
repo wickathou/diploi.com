@@ -7,6 +7,10 @@
   to = "https://docs.diploi.com/guides/diploiyaml/"
 
 [[redirects]]
+  from = "/dev"
+  to = "https://docs.diploi.com/guides/remote-development/"
+
+[[redirects]]
   from = "/launch"
   to = "/"
   status = 301
