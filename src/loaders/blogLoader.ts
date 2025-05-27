@@ -13,7 +13,10 @@ export function blogLoader({ apiKey }: { apiKey: string }): Loader {
       // Load local blogs into the store
       await glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/blog' }).load(context);
 
-      const localEntries = store.entries().map(([id, entry]) => entry);
+      const localEntries = store
+        .entries()
+        .map(([id, entry]) => entry)
+        .filter((entry) => entry.rendered?.metadata?.frontmatter?.draft !== true);
 
       // FIXME: Pagination!
       const blogsResponse = await fetch(`https://dev.to/api/articles?username=diploi&state=all&page=1&per_page=20`, {
@@ -77,13 +80,19 @@ export function blogLoader({ apiKey }: { apiKey: string }): Loader {
       store.clear();
 
       for (const entry of entries) {
+        let id = entry.id;
+        // For local posts, only pick the last section of the path to be the post ID
+        if (id.includes('/')) {
+          id = id.split('/').pop() as string;
+        }
+
         const entryData = await parseData({
-          id: entry.id,
+          id,
           data: entry.data,
         });
 
         store.set({
-          id: entry.id,
+          id,
           data: entryData,
           body: entry.body,
           rendered: entry.rendered,
