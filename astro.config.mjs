@@ -28,7 +28,7 @@ export default defineConfig({
     playformInline({
       Beasties: {
         fonts: false,
-        allowRules: ['.text-gradient', '.title-and-description'],
+        allowRules: ['.text-gradient', '.title-and-description', '.button'],
       },
     }),
   ],
