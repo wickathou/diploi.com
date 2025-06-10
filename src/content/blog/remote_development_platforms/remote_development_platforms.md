@@ -4,7 +4,7 @@ description: 'We discuss 7 remote development platforms that you can use in 2025
 author: 'Javier'
 timestamp: '2025-06-10T07:11:05.573Z'
 devtoUrl: 'https://dev.to/diploi/7-remote-development-platforms-in-2025-to-code-without-a-local-setup-1ig1-temp-slug-9219074?preview=7d07ad0852d2fdf3274c046298a0692c33f311d8a9599747521218afa6d78289f72881f27ac1d45867ce0061ab6e0225e7a162066f84a2bc7339f3c0'
-draft: false
+draft: true
 ---
 
 ###### If you code locally, probably you heard this at least once
