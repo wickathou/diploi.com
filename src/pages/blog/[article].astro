@@ -26,7 +26,7 @@ const schema = createBlogPostSchema({
 });
 ---
 
-<Layout title={`Diploi – ${entry.data.title}`} ogTitle={entry.data.title}>
+<Layout title={`Diploi – ${entry.data.title}`} ogTitle={entry.data.title} ogCoverImage={entry.data.social_image||entry.data.image}>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
   <Navigation selected="blog" />
   <main>
