@@ -9,12 +9,12 @@ interface Props {
   title: string;
   description?: string;
   ogTitle?: string;
-  ogCoverImage?: string | null;
+  ogSocialImage?: string | null;
 }
 
 const defaultDescription = 'Single SaaS service for managing, developing and hosting your full application.';
 
-const { title, description = defaultDescription, ogTitle = 'Diploi', ogCoverImage } = Astro.props;
+const { title, description = defaultDescription, ogTitle = 'Diploi', ogSocialImage } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -35,8 +35,8 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://diploi.com/" />
-    <meta property="og:image" content={ogCoverImage || og.src} />
-    <meta property="og:image:alt" content={ogCoverImage ? `Cover image - ${ogTitle}` : 'Diploi logo'} />
+    <meta property="og:image" content={ogSocialImage || og.src} />
+    <meta property="og:image:alt" content={ogSocialImage ? `Cover image - ${ogTitle}` : 'Diploi logo'} />
 
     {/* X twitter preview */}
     <meta name="twitter:card" content="summary_large_image" />
@@ -47,7 +47,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
       name="twitter:description"
       content={description}
     />
-    <meta name="twitter:image" content={ogCoverImage || og.src} />
+    <meta name="twitter:image" content={ogSocialImage || og.src} />
 
     {/* Sitemap */}
     <link rel="sitemap" href="/sitemap-index.xml" />
