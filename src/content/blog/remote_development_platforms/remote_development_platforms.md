@@ -56,7 +56,7 @@ This way I can start coding without running anything locally, and I can share my
 
 For example, while writing this blog, I created a new remote development environment to show how it works in about 60 seconds:
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=Xu96kVVzgqY" title="How to start a Remote Development Environment and code in the Browser using Diploi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Xu96kVVzgqY?si=aSJHztxYhP_Y6umV" title="How to start a Remote Development Environment and code in the Browser using Diploi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 As you can see, no local setup is required. I simply created a new deployment, and I can start coding right away. But that's not why you are here, you want to know which remote development platforms are available, so let's get to it!
 
@@ -115,6 +115,7 @@ You can launch workspaces on DevZero in different regions. The region where a wo
 #### Video demo?
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ft6ilE0OjTI?si=bVmlEXnPRI9DQkma" title="Introduction to Cloud Development Environments with DevZero" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 ***
 
