@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { Section, SubSection, SubSectionHeader, Icon, Navigation, Footer, PageTitle } from '../../components';
+import { ArrowRight } from '@phosphor-icons/react';
 ---
 
 <Layout title="Diploi – Jobs">
@@ -48,14 +49,14 @@ import { Section, SubSection, SubSectionHeader, Icon, Navigation, Footer, PageTi
         <SubSectionHeader title="Open Positions" icon="UserCircleDashed" />
         <ul class="positions">
           <hr />
-          <li>
+          <a href="/jobs/ai" aria-role="listitem">
             <Icon name="CodeBlock" weight="regular" sizeRem={2} class="job-position-icon" />
-            <h3>Full-Stack/AI Engineer</h3>
+            <h3>Full-Stack / AI Engineer <ArrowRight size={24} /></h3>
             <p>
               Work across frontend & backend to enhance our solution. Enhancing our the AI capabilites of Diploi will be a big part of your
               work.
             </p>
-          </li>
+          </a>
 
           <hr />
           <li>
@@ -63,13 +64,16 @@ import { Section, SubSection, SubSectionHeader, Icon, Navigation, Footer, PageTi
             <h3>Backend / DevOps Engineer</h3>
             <p>Focus on performance, reliability, and cloud automation.</p>
           </li>
-          <!--<hr />
-          <li>
-            <Icon name="RocketLaunch" weight="regular" sizeRem={2} class="job-position-icon" />
-            <h3>Growth Hacker</h3>
-            <p>Help optimize our go-to-market strategy.</p>
-          </li>
-           -->
+          {
+            /*
+              <hr />
+              <li>
+                <Icon name="RocketLaunch" weight="regular" sizeRem={2} class="job-position-icon" />
+                <h3>Growth Hacker</h3>
+                <p>Help optimize our go-to-market strategy.</p>
+              </li>
+            */
+          }
           <hr />
         </ul>
         <p>
@@ -147,15 +151,18 @@ import { Section, SubSection, SubSectionHeader, Icon, Navigation, Footer, PageTi
     padding: 0;
     list-style: none;
 
-    > li {
+    > li,
+    > a {
+      position: relative;
       display: flex;
       flex-direction: column;
+      gap: var(--space-s);
       align-items: flex-start;
       background: transparent;
       padding: 0;
       padding: var(--space-xxl) 0;
-      position: relative;
       overflow: hidden;
+      text-decoration: none;
 
       :global(.job-position-icon) {
         @include mixins.card-bg-icon;
@@ -175,7 +182,14 @@ import { Section, SubSection, SubSectionHeader, Icon, Navigation, Footer, PageTi
       }
 
       > h3 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
         font-size: 24px;
+
+        > svg {
+          opacity: 0.5;
+        }
       }
 
       > h3,
