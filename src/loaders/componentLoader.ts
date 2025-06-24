@@ -1,7 +1,6 @@
 import type { Loader } from 'astro/loaders';
 import { z } from 'astro:content';
 import DOMPurify from 'isomorphic-dompurify';
-import { marked } from 'marked';
 
 // Remove component icon from the README.md
 DOMPurify.addHook('uponSanitizeElement', function (node, data) {
@@ -19,7 +18,7 @@ DOMPurify.addHook('uponSanitizeElement', function (node, data) {
 export function componentLoader({ apiUrl, apiKey }: { apiUrl: string; apiKey: string }): Loader {
   return {
     name: 'component-loader',
-    load: async ({ store, logger, parseData, meta, generateDigest }) => {
+    load: async ({ store, logger, parseData, meta, generateDigest, renderMarkdown }) => {
       const {
         result: { data },
       } = await fetch(`${apiUrl}/api/trpc/stack.listPreviewComponents`).then((response) => response.json());
@@ -59,7 +58,7 @@ export function componentLoader({ apiUrl, apiKey }: { apiUrl: string; apiKey: st
 
         const body = Buffer.from(entry.readme, 'base64').toString();
         const rendered = {
-          html: DOMPurify.sanitize(await marked.parse(body)),
+          html: DOMPurify.sanitize((await renderMarkdown(body)).html),
         };
 
         const entryData = await parseData({
