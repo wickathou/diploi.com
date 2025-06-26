@@ -104,29 +104,33 @@ const { pricing } = Astro.props;
   </ul>
 </div>
 
-<!-- <script>
-  const toggle = document.getElementById('toggle');
-  const hourly = document.querySelectorAll('.clusters.hourly');
-  const monthly = document.querySelectorAll('.clusters.monthly');
+{
+  /*
+    <script>
+      const toggle = document.getElementById('toggle');
+      const hourly = document.querySelectorAll('.clusters.hourly');
+      const monthly = document.querySelectorAll('.clusters.monthly');
 
-  (toggle as HTMLInputElement).checked = false;
+      (toggle as HTMLInputElement).checked = false;
 
-  toggle?.addEventListener('change', event => {
-    let hourlyDisplay = 'flex';
-    let monthlyDisplay = 'none';
-    if ((event.target as HTMLInputElement)?.checked) {
-      hourlyDisplay = 'none';
-      monthlyDisplay = 'flex';
-    }
+      toggle?.addEventListener('change', event => {
+        let hourlyDisplay = 'flex';
+        let monthlyDisplay = 'none';
+        if ((event.target as HTMLInputElement)?.checked) {
+          hourlyDisplay = 'none';
+          monthlyDisplay = 'flex';
+        }
 
-    hourly.forEach(item =>
-      item.setAttribute('style', `display: ${hourlyDisplay}`)
-    );
-    monthly.forEach(item =>
-      item.setAttribute('style', `display: ${monthlyDisplay}`)
-    );
-  });
-</script> -->
+        hourly.forEach(item =>
+          item.setAttribute('style', `display: ${hourlyDisplay}`)
+        );
+        monthly.forEach(item =>
+          item.setAttribute('style', `display: ${monthlyDisplay}`)
+        );
+      });
+    </script>
+  */
+}
 
 <style lang="scss">
   @use '../styles/mixins';
