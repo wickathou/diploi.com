@@ -19,6 +19,8 @@ export function componentLoader({ apiUrl, apiKey }: { apiUrl: string; apiKey: st
   return {
     name: 'component-loader',
     load: async ({ store, logger, parseData, meta, generateDigest, renderMarkdown }) => {
+      logger.info(`Loading a list of components from "${apiUrl}"...`);
+
       const {
         result: { data },
       } = await fetch(`${apiUrl}/api/trpc/stack.listPreviewComponents`).then((response) => response.json());
@@ -31,10 +33,12 @@ export function componentLoader({ apiUrl, apiKey }: { apiUrl: string; apiKey: st
         identifier: string;
       }[];
 
+      logger.info(`Found ${data.components.length} components!`);
+
       store.clear();
 
       for (const component of components) {
-        if (component.type !== 'component') continue;
+        logger.info(`Loading data for the "${component.identifier}" component...`);
 
         const {
           result: { data },
