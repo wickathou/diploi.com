@@ -1,7 +1,11 @@
 ---
-import { Icon, SparkleElement } from '../../../components';
+import { Icon } from '../../../components';
 import { Canvas } from '../../../components/react/Canvas';
 import { BlobCanvas } from '../../../components/BlobCanvas';
+import { getCollection } from 'astro:content';
+
+const components = await getCollection('component');
+const icons = components.map((component) => component.data.icon);
 ---
 
 <div class="hero">
@@ -16,13 +20,42 @@ import { BlobCanvas } from '../../../components/BlobCanvas';
       <div class="diploi-canvas-container">
         <Canvas client:idle />
       </div>
-      <SparkleElement sparkleCount={4} minSize={0.5} maxSize={1.25}>
-        <span class="text-gradient">Magical</span>
-      </SparkleElement> Developer Experience
+      <span class="text-gradient">Developer,</span><br />
+      Welcome Home
     </h1>
     <p class="subtitle">
-      <span>Manage, develop and host full applications.</span>
+      Diploi is the place to
+      <span class="scroller">
+        <span>develop</span>
+        <span>prompt</span>
+        <span>test</span>
+        <span>release</span>
+        <span>host</span>
+        <span>develop</span>
+      </span>
     </p>
+    <div class="icons">
+      <ul>
+        {
+          icons.map((icon) => (
+            <li>
+              <img alt="component icon" src={`data:image/svg+xml;base64,${icon}`} width={40} height={40} />
+            </li>
+          ))
+        }
+      </ul>
+      <div>
+        <ul>
+          {
+            icons.map((icon) => (
+              <li>
+                <img alt="component icon" src={`data:image/svg+xml;base64,${icon}`} width={40} height={40} />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
     <a data-event="hero_cta_click" href="#StackBuilder">
       <button>Get Started</button>
     </a>
@@ -43,7 +76,29 @@ import { BlobCanvas } from '../../../components/BlobCanvas';
   </div>
 </div>
 
+<script>
+  const scroller = document.querySelector('.scroller');
+  if (scroller) {
+    const items = scroller.querySelectorAll('span');
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % items.length;
+      scroller.setAttribute('style', `--offset:${-items[index].offsetTop}px`);
+      scroller.setAttribute('data-animate', `${index !== 0}`);
+
+      if (index === items.length - 1) {
+        setTimeout(() => {
+          index = 0;
+          scroller.setAttribute('data-animate', 'false');
+          scroller.setAttribute('style', `--offset:0px`);
+        }, 1000);
+      }
+    }, 2000);
+  }
+</script>
+
 <style lang="scss">
+  @use 'sass:math';
   @use '../../../styles/mixins';
 
   .hero {
@@ -80,9 +135,13 @@ import { BlobCanvas } from '../../../components/BlobCanvas';
     }
 
     > * {
-      // opacity: 0;
-      // animation: fadeIn 1000ms ease 1 forwards;
-      // animation-delay: 500ms;
+      opacity: 0;
+      animation: fadeIn 1000ms ease 1 forwards;
+      animation-delay: 200ms;
+
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
     }
 
     button {
@@ -150,14 +209,120 @@ import { BlobCanvas } from '../../../components/BlobCanvas';
     pointer-events: none;
   }
 
+  @keyframes shake {
+    0% {
+      rotate: 10deg;
+    }
+    50% {
+      rotate: 20deg;
+    }
+    100% {
+      rotate: 10deg;
+    }
+  }
+
   .main-heading {
     font-size: 3rem;
     line-height: 1.1;
     font-weight: 700;
     position: relative;
 
+    .text-gradient {
+      display: inline-block;
+      translate: 6px 0;
+    }
+
     @include mixins.respond-to('mobile') {
       font-size: 6rem;
+    }
+  }
+
+  .subtitle {
+    position: relative;
+    padding-right: 80px;
+
+    .scroller {
+      position: absolute;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 4px;
+      height: 100%;
+
+      mask-image: linear-gradient(to bottom, transparent, white 20%, white 80%, transparent);
+
+      > span {
+        display: inline-block;
+        font-weight: 600;
+        color: var(--color-secondary);
+        translate: 0 var(--offset);
+
+        @for $i from 1 through 5 {
+          &:nth-child(#{$i}) {
+            color: color-mix(in lab, var(--color-secondary), var(--color-primary) ($i - 1) * math.div(100%, 5));
+          }
+        }
+      }
+
+      &[data-animate='true'] {
+        > span {
+          transition: translate 400ms ease-in-out;
+
+          @media (prefers-reduced-motion: reduce) {
+            transition: none;
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes scroll {
+    0% {
+      translate: 0 0 10px;
+    }
+    100% {
+      translate: calc((100% + 16px) * -1) 0 10px;
+    }
+  }
+
+  .icons {
+    position: relative;
+    display: flex;
+    margin-bottom: var(--space-xxl);
+    width: min(600px, 90vw);
+    user-select: none;
+    pointer-events: none;
+
+    mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+
+    > ul,
+    > div > ul {
+      display: flex;
+      gap: 16px;
+      margin-right: 16px;
+
+      animation: scroll 30s linear infinite;
+
+      > li {
+        opacity: 0;
+        animation: fadeIn 1000ms ease 1 forwards;
+        animation-delay: 200ms;
+
+        @media (prefers-reduced-motion: reduce) {
+          animation: none;
+        }
+
+        @for $i from 1 through 20 {
+          &:nth-child(#{$i}) {
+            animation-delay: (200ms + ($i * 50ms));
+          }
+        }
+      }
+    }
+
+    > div {
+      position: absolute;
+      translate: 100% 0;
     }
   }
 
