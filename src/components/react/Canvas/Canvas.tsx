@@ -140,7 +140,7 @@ export const Canvas = () => {
 
   return (
     <div ref={containerRef} className={styles.diploiCanvas}>
-      {bounds.width && bounds.height && <CanvasComponent width={bounds.width} height={bounds.height} />}
+      {bounds.width > 0 && bounds.height > 0 && <CanvasComponent width={bounds.width} height={bounds.height} />}
     </div>
   );
 };
