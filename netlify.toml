@@ -4,11 +4,11 @@
 
 [[redirects]]
   from = "/yaml"
-  to = "https://docs.diploi.com/guides/diploiyaml/"
+  to = "https://docs.diploi.com/reference/diploi-yaml"
 
 [[redirects]]
   from = "/dev"
-  to = "https://docs.diploi.com/guides/remote-development/"
+  to = "https://docs.diploi.com/building/remote-development"
 
 [[redirects]]
   from = "/launch"
