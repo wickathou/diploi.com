@@ -58,7 +58,9 @@ If you would like to test out how these frameworks work together with other fram
 2. Select all the components and add-ons
 3. That's it, click `Launch Stack`
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rsnqJ2QzMIY?si=viHBaXGC1zoiKB2f" title="Code remotely and deploy with one click using this platform" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div style="display:flex; justify-content:center; width:100%">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/rsnqJ2QzMIY?si=viHBaXGC1zoiKB2f" title="Code remotely and deploy with one click using this platform" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 Diploi will then start a remote development environment that allows you to code in the browser and your application is deployed online. If you would like to start your application with a GitHub repository, all you need to do is register using GitHub and you will be able to start a new repository with your new application
 
