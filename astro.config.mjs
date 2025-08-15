@@ -4,12 +4,19 @@ import sitemap from '@astrojs/sitemap';
 import playformInline from '@playform/inline';
 import sentry from '@sentry/astro';
 import { defineConfig, fontProviders } from 'astro/config';
+import astroLLMsGenerator from 'astro-llms-generate';
+import llmsTxtReplacer from './buildUtils/llmsTxtReplacer'
+import { diploiDescription } from './buildUtils/seoVariables';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://diploi.com',
   trailingSlash: 'never',
   integrations: [
+    astroLLMsGenerator({
+      description: diploiDescription,
+    }),
+    llmsTxtReplacer(),
     react({
       include: ['**/react/*'],
     }),
