@@ -1,6 +1,6 @@
 ---
-title: 'Ship new React + Vite apps using Diploi and skip the server config'
-description: 'Create your next React + Vite app using Diploi to skip any DevOps work and focus only on the code'
+title: 'Ship new React apps using Diploi and skip the server config'
+description: 'Create your next React app using Diploi to skip any DevOps work and focus only on the code'
 author: 'Javier'
 timestamp: '2025-08-12T07:16:05.573Z'
 # devtoUrl: ''
@@ -9,11 +9,11 @@ social_image: 'https://diploi.com/blog/hosting_react_apps/hosting_react_apps_og.
 draft: false
 ---
 
-###### Getting started with React + Vite on Diploi
+###### Getting started with React on Diploi
 
-React in Vite is one of the fastest ways to build modern web frontends, and with Diploi you can host your new React+Vite just as fast as you can build.
+React one of the most used and fastest way to build modern web frontends, and with Diploi you can host your new React apps faster than with any other hosting service.
 
-In this guide, you’ll learn how to launch a fresh React + Vite app that’s live online in seconds, all without yaml files or server config work.
+In this guide, you’ll learn how to launch a fresh React app, using Vite as the default bundler for your app. Using Diploi, your app will be live online in seconds, and best of  all, without creating yaml files or doing any server config work.
 
 ---
 
