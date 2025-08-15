@@ -11,7 +11,7 @@ draft: false
 
 ###### Getting started with Next.js, without Vercel
 
-If you have used Next.js, I'm sure you will be familiar with Vercel. For the most part, Vercel provides a good hosting service, but if you need to use Next.js along other frameworks on a monorepo, then it is not so good, but Diploi is 😌
+If you have used Next.js, I'm sure you will be familiar with Vercel. For the most part, Vercel provides a good hosting service, but if you need to use Next.js along with other frameworks on a monorepo, then it is not so good, but Diploi is 😌
 
 In this post, we'll go over how to create production-ready Next.js apps, with a great deployment experience and support for complex monorepo apps.
 
@@ -28,7 +28,8 @@ In this post, we'll go over how to create production-ready Next.js apps, with a 
 
 1. In the Dashboard, click **Create Project +**
 2. Under **Pick Components**, choose **Next.js**
-   You can add other frameworks from this page, if you want to create a monorepo application, eg. Next.js + Bun for backend.
+
+   You can add other frameworks from this page if you want to create a monorepo application, eg, Next.js + Bun for backend.
 3. In **Pick Add-ons**, select any databases or extra tools you need.
 4. Choose **Create Repository** so Diploi generates a new GitHub repo for your project.
 5. Click **Launch Stack**
@@ -50,13 +51,13 @@ When your Next.js app is ready, you can start a Production deployment by followi
 6. Customize any necessary **environment variables**
 7. Click **Create Deployment +**
 
-Now your Next.js app will be deployed in Production, and ready to serve users.
+Now your Next.js app will be deployed in Production and ready to serve users.
 
 ---
 
 ## Configuring a custom domain for your Next.js app in Production
 
-By default, your app will use a `.diploi.app` URL, for which you can customize it's subdomain, but if you want to switch to a fully custom domain:
+By default, your app will use a `.diploi.app` URL, for which you can customize its subdomain, but if you want to switch to a fully custom domain:
 
 1. Head to your Production Deployment’s **Options** tab, or go directly to:
    `https://console.diploi.com/<YOUR_USERNAME>/project/<YOUR_PROJECT_ID>/deployment/<YOUR_DEPLOYMENT_ID>/options`
@@ -75,14 +76,16 @@ The change is usually instant, but sometimes it can take up to 30 minutes for DN
 If you want to try Next.js without having to run a single `npm` command, you can do it using Diploi by either:
 
 * **Starting a trial without registering an account**
-  Go to [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) to launch a trial project, or by visiting the Next.js component page [https://diploi.com/component/next](https://diploi.com/component/next)
+
+   Go to [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) to launch a trial project, or visit the Next.js component page [https://diploi.com/component/next](https://diploi.com/component/next)
 
 * **Starting a Quick Launch if you have an account on Diploi**
-  Create a new project and in the **Repository** section, select **Quick Launch**. This gives you a temporary environment to explore Next.js without connecting a repo.
+
+   Create a new project and in the **Repository** section, select **Quick Launch**. This gives you a temporary environment to explore Next.js without connecting a repo.
 
 ---
 
-What other frameworks, databases or services should we support next on Diploi? Let us know on Discord!
+What other frameworks, databases, or services should we support next on Diploi? Let us know on Discord!
 
 ---
 

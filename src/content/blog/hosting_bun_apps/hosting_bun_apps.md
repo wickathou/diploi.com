@@ -13,9 +13,9 @@ draft: false
 
 There are thousands of tutorials going over how to create a Bun app and then host it online. This is not that 😎
 
-In this tutorial we will show you how to completely skip any DevOps work that you usually need to put your apps online by using Diploi, so that you can create Bun applications that can be launched to production in seconds.
+In this tutorial, we will show you how to completely skip any DevOps work that you usually need to put your apps online by using Diploi, so that you can create Bun applications that can be launched to production in seconds.
 
-And yes, I'm not exagerating.
+And yes, I'm not exaggerating.
 
 ---
 
@@ -30,14 +30,14 @@ And yes, I'm not exagerating.
 
 1. In the Dashboard, click **Create Project +**
 2. Under **Pick Components**, choose **Bun**
-   You can add other frameworks from this page, if you want to create a monorepo application, eg. Bun for API + React for frontend.
+ You can add other frameworks from this page if you want to create a monorepo application, eg, Bun for API + React for frontend.
 3. In **Pick Add-ons**, select any databases you need.
-4. Choose **Create Repository** which will generate a new GitHub repo.
-5. Finally click **Launch Stack**
+4. Choose **Create Repository**, which will generate a new GitHub repo.
+5. Finally, click **Launch Stack**
 
 This will create a new Project using Bun, which will also start a new Development environment for your Bun app.
 
-You will be able to preview your Bun online, customize its URL and even start coding in the browser using our built-in IDE, or by connecting remotely with SSH, using VS Code, Cursor, or any dev container–friendly IDE to start coding remotely from your desktop, without having to install anything locally.
+You will be able to preview your Bun online, customize its URL, and even start coding in the browser using our built-in IDE, or by connecting remotely with SSH, using VS Code, Cursor, or any dev container–friendly IDE to start coding remotely from your desktop, without having to install anything locally.
 
 ---
 
@@ -60,7 +60,7 @@ This will create a new Production deployment for your Bun app.
 
 ## Configuring a custom domain for your Bun app in Production
 
-By default, all applications built on Diploi, use a `.diploi.app` URL. You can customize the subdomain, eg. `foo.diploi.app` to `foobar.diploi.app`, but if you want to switch to a fully custom domain, this is what you need to do:
+By default, all applications built on Diploi use a `.diploi.app` URL. You can customize the subdomain, eg, `foo.diploi.app` to `foobar.diploi.app`, but if you want to switch to a fully custom domain, this is what you need to do:
 
 1. Head to your Production Deployment’s **Options** tab, or go directly to:
    `https://console.diploi.com/<YOUR_USERNAME>/project/<YOUR_PROJECT_ID>/deployment/<YOUR_DEPLOYMENT_ID>/options`
@@ -77,12 +77,14 @@ This change is usually instant, but it can take up to 30 minutes for DNS and SSL
 ## Trying out Bun for the first time?
 
 Supposing you haven't ever used Bun, here's how to try it out without even running an `npm` command:
-
+  
 * Option 1: **Starting a trial without registering an account**
-  Go to [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) to launch a trial project, or by visiting the Next.js component page [https://diploi.com/component/bun](https://diploi.com/component/bun)
+   
+   Go to [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) to launch a trial project, or visit the Next.js component page [https://diploi.com/component/bun](https://diploi.com/component/bun)
 
 * Option 2: **Starting a Quick Launch if you have an account on Diploi**
-  Create a new project and in the **Repository** section, select **Quick Launch**. This gives you a temporary environment to explore Bun without connecting a repo.
+
+   Create a new project and in the **Repository** section, select **Quick Launch**. This gives you a temporary environment to explore Bun without connecting a repo.
 
 ---
 

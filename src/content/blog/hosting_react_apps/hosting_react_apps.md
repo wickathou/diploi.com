@@ -11,9 +11,9 @@ draft: false
 
 ###### Getting started with React on Diploi
 
-React one of the most used and fastest way to build modern web frontends, and with Diploi you can host your new React apps faster than with any other hosting service.
+React is one of the most used and fastest ways to build modern web frontends, and with Diploi, you can host your new React apps faster than with any other hosting service.
 
-In this guide, you’ll learn how to launch a fresh React app, using Vite as the default bundler for your app. Using Diploi, your app will be live online in seconds, and best of  all, without creating yaml files or doing any server config work.
+In this guide, you’ll learn how to launch a fresh React app, using Vite as the default bundler for your app. Using Diploi, your app will be live online in seconds, and best of all, without creating YAML files or doing any server config work.
 
 ---
 
@@ -27,16 +27,16 @@ In this guide, you’ll learn how to launch a fresh React app, using Vite as the
 ## How to create an app with React + Vite
 
 2. In the Dashboard, click **Create Project +**
-3. Under **Pick Components**, choose **React + Vite**. Here you can also add a backend framework to create a monorepo app, eg. React+Vite for frontend and Hono for backend
+3. Under **Pick Components**, choose **React + Vite**. Here you can also add a backend framework to create a monorepo app, eg, React+Vite for frontend and Hono for backend
 4. In **Pick Add-ons**, you can add one or multiple databases to your app
 5. Choose **Create Repository** to generate a new GitHub repo
-6. Finally click **Launch Stack**
+6. Finally, click **Launch Stack**
 
 You’ve now got a new React+Vite project running on Diploi. By default, every new project starts with a fresh Development deployment.
 
-Under the hood, Diploi uses Kubernetes to spin up the infrastructure for your deployment. Think of it like having your own virtual machine, dedicated to running your React + Vite app and serving it online over an SSL-protected URL.
+Under the hood, Diploi uses Kubernetes to spin up the infrastructure for your deployment. Think of it like having a virtual machine dedicated to running your React + Vite app and serving it online over an SSL-protected URL.
 
-You can start coding right away without touching your local machine by using Diploi’s browser IDE, or connecting your local code editor directly to the remote development environment, no `git clone` or `npm install` to get started coding.
+You can start coding right away without touching your local machine by using Diploi’s browser IDE, or connecting your local code editor directly to the remote development environment, without `git clone` or `npm install` to get started coding.
 
 ---
 
@@ -59,19 +59,19 @@ That's all it takes to get your app on Production. Let's now talk about how you 
 
 ## Configuring a custom domain for your React + Vite app in Production
 
-When you launch a new deployment, Diploi automatically creates a SSL-protected URL ending on `.diploi.app`. To instead use a custom domain, you need to do the following:
+When you launch a new deployment, Diploi automatically creates an SSL-protected URL that ends in `.diploi.app`. To instead use a custom domain, you need to do the following:
 
-1. Go to the **Options** tab which you can find by navigating to the dashboard of the Deployment. The URL will look something like:
-   ```
-   https://console.diploi.com/<YOUR_USERNAME>/project/<YOUR_PROJECT_ID>/deployment/<YOUR_DEPLOYMENT_ID>/options
-   ```
+1. Go to the **Options** tab, which you can find by navigating to the dashboard of the Deployment. The URL will look something like:
+ ```
+ https://console.diploi.com/<YOUR_USERNAME>/project/<YOUR_PROJECT_ID>/deployment/<YOUR_DEPLOYMENT_ID>/options
+ ```
 2. Scroll to the **Endpoints** section and turn off **Use Auto-Generated Endpoints**
 3. You’ll now see a field showing your current deployment subdomain. Check **Use custom domain**, then type in the domain name you want to use
 4. Scroll to the bottom and click **Save Changes**
 5. In your domain provider’s DNS settings, create a **CNAME** record that points your domain to:
-   ```
-   edge.diploi.com
-   ```
+ ```
+ edge.diploi.com
+ ```
 
 ✅ **Done!**
 
@@ -84,15 +84,17 @@ This update will take effect instantly, but allow up to 30 minutes for DNS and S
 If this is your first time trying React + Vite, you might not want to bother with all the usual setup and configuration. With Diploi, you can skip the boring parts and jump straight into coding, so no local install is required. You’ve got two easy options using Diploi:
 
 **Option 1 – Start a trial without an account**
-Head to [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) to launch a trial project instantly. You can also go directly to the React + Vite component page:
-[https://diploi.com/component/react-vite](https://diploi.com/component/react-vite)
+   
+   Head to [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) to launch a trial project instantly. You can also go directly to the React + Vite component page:
+   [https://diploi.com/component/react-vite](https://diploi.com/component/react-vite)
 
 **Option 2 – Quick Launch with a Diploi account**
-If you already have an account, create a new project and in the **Repository** section choose **Quick Launch**. This gives you a temporary environment to experiment with React + Vite without connecting a repo.
+
+   If you already have an account, create a new project and in the **Repository** section choose **Quick Launch**. This gives you a temporary environment to experiment with React + Vite without connecting a repo.
 
 ---
 
-Now you know the easiest way to take a new React + Vite app from first commit to production, and best part **no DevOps required**. If you want to get involved with Diploi, join our Discord. We’d love to hear from you! 🙂
+Now you know the easiest way to take a new React + Vite app from first commit to production, and the best part is that **no DevOps required**. If you want to get involved with Diploi, join our Discord. We’d love to hear from you! 🙂
 
 ---
 
