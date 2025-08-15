@@ -3,9 +3,9 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import playformInline from '@playform/inline';
 import sentry from '@sentry/astro';
-import { defineConfig, fontProviders } from 'astro/config';
 import astroLLMsGenerator from 'astro-llms-generate';
-import llmsTxtReplacer from './buildUtils/llmsTxtReplacer'
+import { defineConfig, fontProviders } from 'astro/config';
+import llmsTxtReplacer from './buildUtils/llmsTxtReplacer';
 import { diploiDescription } from './buildUtils/seoVariables';
 
 // https://astro.build/config
@@ -20,7 +20,9 @@ export default defineConfig({
     react({
       include: ['**/react/*'],
     }),
-    sitemap(),
+    sitemap({
+      customPages: ['https://diploi.com/llms.txt', 'https://diploi.com/llms-small.txt', 'https://diploi.com/llms-full.txt'],
+    }),
     mdx(),
     sentry({
       dsn: 'https://df15d51df97371766b31299d9a5614a1@o4509195528437760.ingest.de.sentry.io/4509195529879632',
