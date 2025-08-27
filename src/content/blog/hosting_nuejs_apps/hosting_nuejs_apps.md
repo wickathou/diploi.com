@@ -2,7 +2,7 @@
 title: 'Start new apps with Nuejs quickly on Diploi'
 description: 'Learn how to create new Nuejs apps easily and host them online without struggling with server config'
 author: 'Javier'
-timestamp: '2025-07-21T08:11:05.573Z'
+timestamp: '2025-08-20T08:11:05.573Z'
 # devtoUrl: ''
 image: '/blog/hosting_nuejs_apps/hosting_nuejs_apps_cover.png'
 social_image: 'https://diploi.com/blog/hosting_nuejs_apps/hosting_nuejs_apps_og.png'
@@ -58,12 +58,12 @@ Your Nue.js application will be live, and ready to serve users!
 
 ## Configuring a custom domain for your Nue.js application in Production
 
-By default, your production deployment uses a `.diploi.app` domain. To swap in your own:
+By default, your production deployment uses a `.diploi.me` domain. To swap in your own:
 
 1. On your Production Deployment’s **Options** tab (or via
    `https://console.diploi.com/<YOUR_USERNAME>/project/<YOUR_PROJECT_ID>/deployment/<YOUR_DEPLOYMENT_ID>/options`), find **Endpoints**.
 2. Click **Use Auto‑Generated Endpoints** to disable it.
-3. An input field will appear showing your `.diploi.app` URL plus a checkbox for **Custom Domain**. Enable that checkbox and enter your domain.
+3. An input field will appear showing your `.diploi.me` URL plus a checkbox for **Custom Domain**. Enable that checkbox and enter your domain.
 4. Scroll down and click **Save Changes**.
 5. In your DNS provider’s dashboard, create a **CNAME** record pointing your domain to **edge.diploi.com**.
 
@@ -86,7 +86,7 @@ Diploi lets you test Nue.js without installing anything locally. Two ways to spi
 
 ---
 
-Are there other frameworks or languages you’d like us to support? Let us know on Discord!
+Are there other frameworks or languages you’d like us to support? Let us know on [Discord](https://discord.gg/vvgQxVjC8G)!
 
 ---
 

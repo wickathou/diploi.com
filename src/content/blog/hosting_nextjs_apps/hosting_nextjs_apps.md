@@ -2,7 +2,7 @@
 title: 'Creating ready-for-Production Next.js apps using Diploi'
 description: 'Launching Next.js faster than using Vercel and with support for monorepo apps'
 author: 'Javier'
-timestamp: '2025-08-12T07:12:05.573Z'
+timestamp: '2025-08-22T07:12:05.573Z'
 # devtoUrl: ''
 image: '/blog/hosting_nextjs_apps/hosting_nextjs_apps_cover.png'
 social_image: 'https://diploi.com/blog/hosting_nextjs_apps/hosting_nextjs_apps_og.png'
@@ -57,7 +57,7 @@ Now your Next.js app will be deployed in Production and ready to serve users.
 
 ## Configuring a custom domain for your Next.js app in Production
 
-By default, your app will use a `.diploi.app` URL, for which you can customize its subdomain, but if you want to switch to a fully custom domain:
+By default, your app will use a `.diploi.me` URL, for which you can customize its subdomain, but if you want to switch to a fully custom domain:
 
 1. Head to your Production Deployment’s **Options** tab, or go directly to:
    `https://console.diploi.com/<YOUR_USERNAME>/project/<YOUR_PROJECT_ID>/deployment/<YOUR_DEPLOYMENT_ID>/options`
@@ -85,7 +85,7 @@ If you want to try Next.js without having to run a single `npm` command, you can
 
 ---
 
-What other frameworks, databases, or services should we support next on Diploi? Let us know on Discord!
+What other frameworks, databases, or services should we support next on Diploi? Let us know on [Discord](https://discord.gg/vvgQxVjC8G)!
 
 ---
 

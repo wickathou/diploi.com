@@ -2,7 +2,7 @@
 title: 'Launching SvelteKit apps, from Development to Production using Diploi'
 description: 'With the convenience of Vercel and the flexibility of Replit, all in a single platform, to create SvelteKit-powered apps super fast'
 author: 'Javier'
-timestamp: '2025-07-18T07:11:05.573Z'
+timestamp: '2025-08-18T07:11:05.573Z'
 # devtoUrl: ''
 image: '/blog/hosting_svelte_apps/hosting_svelte_apps_cover.png'
 social_image: 'https://diploi.com/blog/hosting_svelte_apps/hosting_svelte_apps_og.png'
@@ -55,11 +55,11 @@ And now your SvelteKit app is ready to receive users!
 
 ## Configuring a custom domain for your SvelteKit application in Production
 
-At this point, your application will be using a `.diploi.app` domain by default, which you can change instead to use a custom domain. To configure use a custom domain for your Production Deployment, you need to:
+At this point, your application will be using a `.diploi.me` domain by default, which you can change instead to use a custom domain. To configure use a custom domain for your Production Deployment, you need to:
 
 - Go to your Production Deployment's options tab, visible from the dashboard or by going directly to its URL, eg. `https://console.diploi.com/<YOUR_USERNAME>/project/<YOUR_PROJECT_ID>/deployment/<YOUR_DEPLOYMENT_ID>/options`
 - Find the section "Endpoints", where you will see the option "Use Auto-Generated Endpoints" enabled by default. Click on it to disable it.
-- An input field with your current `.diploi.app` URL will appear with a checkbox below to enable a custom domain. When you click on it, you'll be able to change your domain.
+- An input field with your current `.diploi.me` URL will appear with a checkbox below to enable a custom domain. When you click on it, you'll be able to change your domain.
 - When you are done, scroll down the page and click "Save Changes"
 - Next, you need to go to your domain's DNS settings and create a new CNAME record that points to **edge.diploi.com**
 
@@ -77,7 +77,7 @@ On Diploi, you have the option to test-drive tools without having to install any
 
 ---
 
-Are there other frameworks or languages you would like us to add? Feel free to share it with us on Discord.
+Are there other frameworks or languages you would like us to add? Feel free to share it with us on [Discord](https://discord.gg/vvgQxVjC8G).
 
 ---
 

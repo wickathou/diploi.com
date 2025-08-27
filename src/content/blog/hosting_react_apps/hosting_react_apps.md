@@ -2,7 +2,7 @@
 title: 'Ship new React apps using Diploi and skip the server config'
 description: 'Create your next React app using Diploi to skip any DevOps work and focus only on the code'
 author: 'Javier'
-timestamp: '2025-08-12T07:16:05.573Z'
+timestamp: '2025-08-19T07:16:05.573Z'
 # devtoUrl: ''
 image: '/blog/hosting_react_apps/hosting_react_apps_cover.png'
 social_image: 'https://diploi.com/blog/hosting_react_apps/hosting_react_apps_og.png'
@@ -59,7 +59,7 @@ That's all it takes to get your app on Production. Let's now talk about how you 
 
 ## Configuring a custom domain for your React + Vite app in Production
 
-When you launch a new deployment, Diploi automatically creates an SSL-protected URL that ends in `.diploi.app`. To instead use a custom domain, you need to do the following:
+When you launch a new deployment, Diploi automatically creates an SSL-protected URL that ends in `.diploi.me`. To instead use a custom domain, you need to do the following:
 
 1. Go to the **Options** tab, which you can find by navigating to the dashboard of the Deployment. The URL will look something like:
  ```
@@ -94,7 +94,7 @@ If this is your first time trying React + Vite, you might not want to bother wit
 
 ---
 
-Now you know the easiest way to take a new React + Vite app from first commit to production, and the best part is that **no DevOps required**. If you want to get involved with Diploi, join our Discord. We’d love to hear from you! 🙂
+Now you know the easiest way to take a new React + Vite app from first commit to production, and the best part is that **no DevOps required**. If you want to get involved with Diploi, join our [Discord](https://discord.gg/vvgQxVjC8G). We’d love to hear from you! 🙂
 
 ---
 

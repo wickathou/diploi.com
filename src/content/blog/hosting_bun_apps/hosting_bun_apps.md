@@ -2,7 +2,7 @@
 title: 'Starting a new Bun app on Diploi'
 description: 'Explore how to create new Bun applications readily online, without any server config'
 author: 'Javier'
-timestamp: '2025-08-12T07:13:05.573Z'
+timestamp: '2025-08-25T07:13:05.573Z'
 # devtoUrl: ''
 image: '/blog/hosting_bun_apps/hosting_bun_apps_cover.png'
 social_image: 'https://diploi.com/blog/hosting_bun_apps/hosting_bun_apps_og.png'
@@ -60,7 +60,7 @@ This will create a new Production deployment for your Bun app.
 
 ## Configuring a custom domain for your Bun app in Production
 
-By default, all applications built on Diploi use a `.diploi.app` URL. You can customize the subdomain, eg, `foo.diploi.app` to `foobar.diploi.app`, but if you want to switch to a fully custom domain, this is what you need to do:
+By default, all applications built on Diploi use a `.diploi.me` URL. You can customize the subdomain, eg, `foo.diploi.me` to `foobar.diploi.me`, but if you want to switch to a fully custom domain, this is what you need to do:
 
 1. Head to your Production Deployment’s **Options** tab, or go directly to:
    `https://console.diploi.com/<YOUR_USERNAME>/project/<YOUR_PROJECT_ID>/deployment/<YOUR_DEPLOYMENT_ID>/options`
@@ -88,7 +88,7 @@ Supposing you haven't ever used Bun, here's how to try it out without even runni
 
 ---
 
-What else should we add to Diploi? Message us on Discord!
+What else should we add to Diploi? Message us on [Discord](https://discord.gg/vvgQxVjC8G)!
 
 ---
 
