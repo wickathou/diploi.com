@@ -1,5 +1,5 @@
 ---
-title: 'Hosting a Ghost blog in seconds on Diploi, with enhanced development for custom development'
+title: 'Hosting a Ghost blog in seconds on Diploi, with support for custom development'
 description: 'Learn how to create blogs and websites with Ghost using Diploi'
 author: 'Javier'
 timestamp: '2025-08-27T07:11:05.573Z'
