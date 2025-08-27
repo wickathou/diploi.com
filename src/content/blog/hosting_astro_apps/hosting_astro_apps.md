@@ -2,7 +2,7 @@
 title: 'Create Astro apps quickly, from Development to Production on Diploi'
 description: 'Bring the versatility of platforms like Heroku to your Astro development workflow'
 author: 'Javier'
-timestamp: '2025-07-21T07:11:05.573Z'
+timestamp: '2025-08-26T07:11:05.573Z'
 # devtoUrl: ''
 image: '/blog/hosting_astro_apps/hosting_astro_apps_cover.png'
 social_image: 'https://diploi.com/blog/hosting_astro_apps/hosting_astro_apps_og.png'
@@ -58,7 +58,7 @@ Your Astro site is now fully deployed and ready to scale!
 
 ## Configuring a custom domain for your Astro site in Production
 
-By default, your site will use a `.diploi.app` URL. To switch to a custom domain:
+By default, your site will use a `.diploi.me` URL. To switch to a custom domain:
 
 1. Head to your Production Deployment’s **Options** tab, or go directly to:
    `https://console.diploi.com/<YOUR_USERNAME>/project/<YOUR_PROJECT_ID>/deployment/<YOUR_DEPLOYMENT_ID>/options`
@@ -85,7 +85,7 @@ You don’t need to install anything, just try Astro in the cloud on Diploi in t
 
 ---
 
-Want to see other frameworks supported on Diploi? Let us know on Discord!
+Want to see other frameworks supported on Diploi? Let us know on [Discord](https://discord.gg/vvgQxVjC8G)!
 
 ---
 

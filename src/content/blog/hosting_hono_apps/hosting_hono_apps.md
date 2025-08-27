@@ -2,7 +2,7 @@
 title: 'How to create Hono apps that are ready for Production using Diploi'
 description: 'Make your Hono development as seamless as deploying on Heroku'
 author: 'Javier'
-timestamp: '2025-08-12T07:11:05.573Z'
+timestamp: '2025-08-23T07:11:05.573Z'
 # devtoUrl: ''
 image: '/blog/hosting_hono_apps/hosting_hono_apps_cover.png'
 social_image: 'https://diploi.com/blog/hosting_hono_apps/hosting_hono_apps_og.png'
@@ -59,7 +59,7 @@ Your Hono app will now be deployed in Production mode!
 
 ## Configuring a custom domain for your Hono app in Production
 
-By default, your app will use a `.diploi.app` URL, for which you can customize its subdomain, but if you want to switch to a fully custom domain:
+By default, your app will use a `.diploi.me` URL, for which you can customize its subdomain, but if you want to switch to a fully custom domain:
 
 1. Head to your Production Deployment’s **Options** tab, or go directly to:
    `https://console.diploi.com/<YOUR_USERNAME>/project/<YOUR_PROJECT_ID>/deployment/<YOUR_DEPLOYMENT_ID>/options`
@@ -88,7 +88,7 @@ You don’t want to run anything locally, and you just want to try Hono, you can
 
 ---
 
-Want to see other frameworks supported on Diploi? Let us know on Discord!
+Want to see other frameworks supported on Diploi? Let us know on [Discord](https://discord.gg/vvgQxVjC8G)!
 
 ---
 

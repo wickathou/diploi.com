@@ -2,7 +2,7 @@
 title: 'The best way to start new Django apps and host them online'
 description: 'Use Django on Diploi to skip server config and focus only on the code, no DevOps'
 author: 'Javier'
-timestamp: '2025-08-12T07:15:05.573Z'
+timestamp: '2025-08-24T07:15:05.573Z'
 # devtoUrl: ''
 image: '/blog/hosting_django_apps/hosting_django_apps_cover.png'
 social_image: 'https://diploi.com/blog/hosting_django_apps/hosting_django_apps_og.png'
@@ -61,7 +61,7 @@ This will create a new Production deployment for your Django app, ready to serve
 
 ## Configuring a custom domain for your Django app in Production
 
-Any deployment created will be launched with a generic SSL-protected `.diploi.app` URL to expose your app online, but probably you would like to use a custom domain instead. To add a custom domain, do the following:
+Any deployment created will be launched with a generic SSL-protected `.diploi.me` URL to expose your app online, but probably you would like to use a custom domain instead. To add a custom domain, do the following:
 
 1. Navigate to the **Options** tab of the Deployment you want to assign a custom domain to. The URL should look like this:
    `https://console.diploi.com/<YOUR_USERNAME>/project/<YOUR_PROJECT_ID>/deployment/<YOUR_DEPLOYMENT_ID>/options`
@@ -87,7 +87,7 @@ In case this is your first time exploring Django and how it works, you might wan
 
 ---
 
-Now you know the easiest way to launch new Django apps from start to production, without doing any DevOps work. If you would like to get involved with Diploi, join our Discord. We would like to hear from you 🙂‍↕️
+Now you know the easiest way to launch new Django apps from start to production, without doing any DevOps work. If you would like to get involved with Diploi, join our [Discord](https://discord.gg/vvgQxVjC8G). We would like to hear from you 🙂‍↕️
 
 ---
 
