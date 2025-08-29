@@ -26,11 +26,11 @@ In this guide, you’ll learn how to launch a fresh React app, using Vite as the
 
 ## How to create an app with React + Vite
 
-2. In the Dashboard, click **Create Project +**
-3. Under **Pick Components**, choose **React + Vite**. Here you can also add a backend framework to create a monorepo app, eg, React+Vite for frontend and Hono for backend
-4. In **Pick Add-ons**, you can add one or multiple databases to your app
-5. Choose **Create Repository** to generate a new GitHub repo
-6. Finally, click **Launch Stack**
+1. In the Dashboard, click **Create Project +**
+2. Under **Pick Components**, choose **React + Vite**. Here you can also add a backend framework to create a monorepo app, eg, React+Vite for frontend and Hono for backend
+3. In **Pick Add-ons**, you can add one or multiple databases to your app
+4. Choose **Create Repository** to generate a new GitHub repo
+5. Finally, click **Launch Stack**
 
 You’ve now got a new React+Vite project running on Diploi. By default, every new project starts with a fresh Development deployment.
 
