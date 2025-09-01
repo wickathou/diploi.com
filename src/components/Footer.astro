@@ -1,6 +1,8 @@
 ---
 import Icon from './Icon.astro';
 import Logo from './Logo.astro';
+import TinyLaunchSoon from '../images/tinylaunch-soon.svg';
+import { Image } from 'astro:assets';
 ---
 
 <footer>
@@ -73,7 +75,14 @@ import Logo from './Logo.astro';
       </div>
       <div>
         <a href="https://tinylaunch.com" target="_blank" rel="noopener">
-          <img src="https://tinylaunch.com/tinylaunch_badge_launching_soon.svg" alt="TinyLaunch Badge" style="width:202px; height:auto;" />
+          <Image alt="TinyLaucnh Badge" src={TinyLaunchSoon} height={64} />
+        </a>
+        <a href="https://launchvault.dev/projects/diploi" target="_blank" title="Launch Vault Top 2 Daily Winner">
+          <img
+            src="https://launchvault.dev/images/badges/top2.png"
+            alt="Launch Vault Top 2 Daily Winner"
+            style="width: auto; height: 64px;"
+          />
         </a>
       </div>
     </div>
@@ -250,6 +259,12 @@ import Logo from './Logo.astro';
       > svg {
         fill: currentColor;
       }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .links.socials {
+      margin-left: unset;
     }
   }
 </style>
