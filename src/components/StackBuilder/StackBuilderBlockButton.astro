@@ -27,8 +27,7 @@ const imageSrc = `https://diploi.b-cdn.net/component/${owner}/${repo}/icon.svg?r
 <button class:list={['stack-builder-button', className]} data-id={componentID}>
   <div class="label">
     <Image alt={`${type} icon`} src={imageSrc} class="icon" width={28} height={28} />
-
-    {name}
+    <span>{name}</span>
   </div>
   <Checkbox id={`${componentID}-checkbox`} tabIndex={-1} checked={className.includes('is-selected')} />
 </button>
@@ -45,6 +44,7 @@ const imageSrc = `https://diploi.b-cdn.net/component/${owner}/${repo}/icon.svg?r
     font-size: 1rem;
     background: var(--color-bg-secondary);
     cursor: pointer;
+    min-width: 0;
 
     @include mixins.respond-to('tablet') {
       padding: var(--space-l);
@@ -72,7 +72,15 @@ const imageSrc = `https://diploi.b-cdn.net/component/${owner}/${repo}/icon.svg?r
     display: flex;
     align-items: center;
     gap: var(--space-l);
+    min-width: 0;
+
+    > span {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
   }
+
   .icon {
     width: 1.75rem;
     height: 1.75rem;
