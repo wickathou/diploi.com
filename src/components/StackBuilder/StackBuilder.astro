@@ -17,16 +17,20 @@ const {
   result: { data },
 } = await fetch(`${import.meta.env.VITE_API_URL}/api/trpc/stack.listPreviewComponents`).then((response) => response.json());
 if (!data || data.status !== 'ok') {
-  throw new Error(`Failed to load pricing (${data})`);
+  throw new Error(`Failed to load components (${data})`);
 }
 
-const components = data.components as {
+interface Component {
   componentID: number;
   type: 'component' | 'addon';
   identifier: string;
   name: string;
   url: string;
-}[];
+  count?: number;
+  badge?: 'new' | 'beta';
+}
+
+const components = data.components as Component[];
 ---
 
 <div class="stack-builder" data-components={JSON.stringify(components)} data-components-defaults={JSON.stringify(defaultComponentIds)}>
@@ -152,6 +156,36 @@ const components = data.components as {
       gtag('event', 'conversion_event_default_1', { page: location.pathname, componentIds: selectedComponentIds });
     }
   });
+</script>
+
+<script>
+  import { VITE_API_URL } from 'astro:env/client';
+
+  const {
+    result: { data },
+  } = await fetch(`${VITE_API_URL}/api/trpc/stack.listPreviewComponents`).then((response) => response.json());
+  if (!data || data.status !== 'ok') {
+    throw new Error(`Failed to load components (${data})`);
+  }
+
+  interface Component {
+    componentID: number;
+    count?: number;
+    badge?: 'new' | 'beta';
+  }
+
+  const components = data.components as Component[];
+
+  const numberFormatter = new Intl.NumberFormat('fi-FI', {
+    style: 'decimal',
+  });
+
+  for (const component of components) {
+    if (!component.count) continue;
+    const countElement = document.querySelector(`[data-component-count="${component.componentID}"]`);
+    if (!countElement) continue;
+    countElement.textContent = numberFormatter.format(component.count);
+  }
 </script>
 
 <style lang="scss">

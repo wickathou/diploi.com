@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import playformInline from '@playform/inline';
 import sentry from '@sentry/astro';
 import astroLLMsGenerator from 'astro-llms-generate';
-import { defineConfig, fontProviders } from 'astro/config';
+import { defineConfig, fontProviders, envField } from 'astro/config';
 import llmsTxtReplacer from './buildUtils/llmsTxtReplacer';
 import { diploiDescription } from './buildUtils/seoVariables';
 
@@ -12,6 +12,13 @@ import { diploiDescription } from './buildUtils/seoVariables';
 export default defineConfig({
   site: 'https://diploi.com',
   trailingSlash: 'never',
+  env: {
+    schema: {
+      VITE_API_URL: envField.string({ context: 'client', access: 'public', optional: false }),
+      API_KEY: envField.string({ context: 'server', access: 'secret', optional: false }),
+      DEVTO_API_KEY: envField.string({ context: 'server', access: 'secret', optional: false }),
+    },
+  },
   integrations: [
     astroLLMsGenerator({
       description: diploiDescription,
