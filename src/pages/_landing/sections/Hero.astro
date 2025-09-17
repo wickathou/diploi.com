@@ -3,10 +3,6 @@ import { Icon } from '../../../components';
 import { Canvas } from '../../../components/react/Canvas';
 import { BlobCanvas } from '../../../components/BlobCanvas';
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
-import peerlistLogo from '../../../images/peerlist-logo.svg';
-import peerlistStaffPickLogo from '../../../images/peerlist-staff-pick.png';
-import peerlistOrnament from '../../../images/peerlist-ornament.png';
 
 const components = await getCollection('component');
 const icons = components.map((component) => component.data.icon);
@@ -17,11 +13,8 @@ const icons = components.map((component) => component.data.icon);
     <BlobCanvas />
   </div>
   <div class="content">
-    <a data-event="news_peerlist_click" class="pick" href="https://peerlist.io/wickathou/project/diploi">
-      <Image alt="Award ornament" src={peerlistOrnament} height={56} />
-      <Image alt="Peerlist Staff Pick -badge" width={56} height={56} src={peerlistStaffPickLogo} class="badge" />
-      <Image alt="Peerlist logo" src={peerlistLogo} height={42} />
-      <Image alt="Award ornament" src={peerlistOrnament} height={56} />
+    <a data-event="news_launchweek_click" class="news" href="/launchweek">
+      <Icon name="RocketLaunch" weight="fill" sizeRem={1} /> Launch Week <Icon name="ArrowUpRight" weight="bold" sizeRem={1} />
     </a>
     <h1 class="main-heading">
       <div class="diploi-canvas-container">

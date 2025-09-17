@@ -1,0 +1,84 @@
+---
+import { BookBookmark, ClockCountdown, GitFork, Lightning, Square } from '@phosphor-icons/react';
+import Tag from '../../../components/Tag.astro';
+---
+
+<section class="main">
+  <ol>
+    <li>
+      <h3><ClockCountdown /> Monday <Tag primary>Releasing soon!</Tag></h3>
+      <time>22.9.2025</time>
+      <Square weight="duotone" className="bg" />
+    </li>
+    <li>
+      <h3><ClockCountdown /> Tuesday</h3>
+      <time>23.9.2025</time>
+      <Square weight="duotone" className="bg" />
+    </li>
+    <li>
+      <h3><ClockCountdown /> Wednesday</h3>
+      <time>24.9.2025</time>
+      <GitFork weight="duotone" className="bg" />
+    </li>
+    <li>
+      <h3><ClockCountdown /> Thursday</h3>
+      <time>25.9.2025</time>
+      <Lightning weight="duotone" className="bg" />
+    </li>
+    <li>
+      <h3><ClockCountdown /> Friday</h3>
+      <time>26.9.2025</time>
+      <BookBookmark weight="duotone" className="bg" />
+    </li>
+  </ol>
+</section>
+
+<style lang="scss">
+  @use '../../../styles/mixins';
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: var(--max-width-page-section);
+  }
+
+  ol {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > li {
+      @include mixins.card-desktop;
+      padding: 48px;
+      background-color: var(--color-bg);
+
+      > h3 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      > time {
+        font-size: 1.25rem;
+        font-weight: 350;
+        color: var(--color-text-secondary);
+      }
+
+      > .bg {
+        position: absolute;
+        top: -20px;
+        right: 0;
+        width: 400px;
+        height: 400px;
+        color: var(--color-text-secondary);
+        opacity: 0.1;
+      }
+    }
+  }
+</style>

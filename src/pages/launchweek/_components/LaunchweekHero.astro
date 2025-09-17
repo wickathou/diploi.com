@@ -1,0 +1,159 @@
+---
+import { Heart, RocketLaunch } from '@phosphor-icons/react';
+import { createStackBackgroundUri } from '../../ai/_components/aiUtils';
+import logo from '../../../../public/logo-icon.svg';
+import { Image } from 'astro:assets';
+
+const background = createStackBackgroundUri({
+  size: 16,
+  primary: 'rgba(255, 255, 255, 0.05)',
+  secondary: 'rgba(255, 255, 255, 0.05)',
+  chance: 0.4,
+});
+const backgroundColor = createStackBackgroundUri({ size: 16, primary: '#6650fa', secondary: '#ec609c', chance: 0.8 });
+---
+
+<header>
+  <div class="background" inert aria-hidden></div>
+  <section>
+    <div>
+      <Image src={logo} alt="Diploi logo" width={64 + 16} height={64 + 16} />
+      <Heart size={32} weight="fill" />
+      <RocketLaunch size={64 + 16} weight="duotone" style={{ fill: 'url(#gradient-one)' }} />
+    </div>
+    <h1>Launch Week</h1>
+    <p>
+      Launch Week is here! We're rolling out new features and components to make your development flow smoother, faster, and more magical.
+    </p>
+  </section>
+</header>
+
+<style lang="scss" define:vars={{ background, backgroundColor }}>
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: var(--max-width-page-section);
+  }
+
+  header .text-gradient {
+    --accent-gradient: linear-gradient(45deg, var(--color-primary), var(--color-secondary), var(--color-primary), var(--color-secondary));
+
+    background-size: 400%;
+    animation: gradient-animation 8s infinite alternate cubic-bezier(0.65, 0, 0.35, 1);
+
+    @keyframes gradient-animation {
+      0% {
+        background-position: 0%;
+      }
+      100% {
+        background-position: 100%;
+      }
+    }
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 64px 0;
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+
+      > svg:first-of-type {
+        color: var(--color-secondary);
+      }
+    }
+
+    > h1 {
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    > p {
+      text-align: center;
+    }
+
+    > .button {
+      margin: 32px 0 16px 0;
+    }
+  }
+
+  @property --size {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 65vh;
+    overflow: hidden;
+    z-index: -1;
+
+    mask-image: linear-gradient(to bottom, white 50%, transparent);
+
+    @keyframes background-animation {
+      0% {
+        --size: 50%;
+        opacity: 1;
+      }
+      50% {
+        --size: 60%;
+        opacity: 0.5;
+      }
+      100% {
+        --size: 50%;
+        opacity: 1;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      inset: 0;
+      background-image: var(--background);
+      background-size: 896px;
+      // transform: rotate(8deg);
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      display: block;
+      inset: 0;
+      background-image: var(--backgroundColor);
+      background-size: 896px;
+      // transform: rotate(8deg);
+
+      --highlight-color: white;
+      @media (max-width: 860px) {
+        --highlight-color: rgba(255, 255, 255, 0.3);
+      }
+
+      mask-image: radial-gradient(
+        circle at center,
+        transparent,
+        transparent calc(var(--size) - 50px),
+        var(--highlight-color) var(--size),
+        transparent calc(var(--size) + 200px),
+        transparent
+      );
+
+      animation: background-animation 8s infinite ease;
+    }
+  }
+</style>
