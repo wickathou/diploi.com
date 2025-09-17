@@ -17,8 +17,8 @@
 
 [[redirects]]
   from = "/in"
-  to = "/"
-  status = 307
+  to = "/?utm=in"
+  status = 302!
 
 [[redirects]]
   from = "/launch/astro"
