@@ -1,6 +1,6 @@
 ---
 title: 'Exploring 7 Lesser Known AI Coding Extensions for VS Code'
-description: 'Exploring Visual Studio Marketplace to find interesting alternatives to the popular AI coding tools out there'
+description: 'In this article, we check interesting AI coding alternatives to the popular AI coding tools in the Visual Studio Marketplace'
 author: 'Javier'
 timestamp: '2025-09-18T15:54:05.000Z'
 # devtoUrl: ''
