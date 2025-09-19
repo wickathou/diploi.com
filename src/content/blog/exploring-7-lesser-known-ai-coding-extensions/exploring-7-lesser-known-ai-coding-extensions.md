@@ -29,17 +29,19 @@ In this post, I explore seven AI coding extensions for VS Code that you probably
 
 And at the end, I provide a short conclusion based on the findings.
 
+[TLDR? Check the comparison tables](#comparing-the-extensions)
+
 ## List of AI coding extensions explored in this article
 
 We'll go over the following extensions:
 
-- **Sixth AI** - https://trysixth.com/ - https://marketplace.visualstudio.com/items?itemName=Sixth.sixth-ai
-- **Code Web Chat** - https://codeweb.chat/ - https://marketplace.visualstudio.com/items?itemName=robertpiosik.gemini-coder
-- **Syntx Agentic workflow** - https://syntx.dev/ - https://marketplace.visualstudio.com/items?itemName=OrangecatTechPvtLtd.syntx
-- **Tabby** - https://www.tabbyml.com/ - https://marketplace.visualstudio.com/items?itemName=TabbyML.vscode-tabby
-- **Augment code** - https://www.augmentcode.com/ - https://marketplace.visualstudio.com/items?itemName=augment.vscode-augment
-- **GoCodeo** - https://www.gocodeo.com/ - https://marketplace.visualstudio.com/items?itemName=GoCodeo.gocodeo
-- **Vibe Coder** - https://deepgram.com/learn/introducing-vibe-coder-voice-driven-coding - https://marketplace.visualstudio.com/items?itemName=Deepgram.vibe-coder
+- [**Sixth AI**](#sixth-ai---the-all-in-one-coding-agent)
+- [**Code Web Chat**](#code-web-chat-cwc---chatgpt-in-your-vs-code)
+- [**Syntx Agentic workflow**](#syntx---autonomous-ai-agent-in-your-editor)
+- [**Tabby**](#tabby---self-hosted-copilot-alternative)
+- [**Augment code**](#augment-code---the-professionals-ai-copilot-with-superpowers)
+- [**GoCodeo**](#gocodeo---build--ship-apps-with-an-ai-agent)
+- [**Vibe Coder**](#vibe-coder---voice-driven-coding-with-ai)
 
 **Let's get started!**
 
