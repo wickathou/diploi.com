@@ -5,7 +5,7 @@ author: 'Javier'
 timestamp: '2025-09-18T15:54:05.000Z'
 # devtoUrl: ''
 image: '/blog/exploring-7-lesser-known-ai-coding-extensions/exploring-7-lesser-known-ai-coding-extensions_cover.png'
-# social_image: 'https://diploi.com/blog/exploring-7-lesser-known-ai-coding-extensions/exploring-7-lesser-known-ai-coding-extensions_og.png'
+social_image: 'https://diploi.com/blog/exploring-7-lesser-known-ai-coding-extensions/exploring-7-lesser-known-ai-coding-extensions_og.png'
 draft: false
 ---
 
