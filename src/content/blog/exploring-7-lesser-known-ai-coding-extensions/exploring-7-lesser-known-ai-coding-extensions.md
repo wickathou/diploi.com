@@ -140,7 +140,7 @@ The full list of models supported by Sixth include:
 
 When you use **Sixth**, you get a two-phase workflow and editor-native helpers:
 
-* **Plan & Act modes**
+* **Plan and Act modes**
 
   * **Plan**
 
@@ -152,9 +152,9 @@ When you use **Sixth**, you get a two-phase workflow and editor-native helpers:
 
 * **Editor integrations**
 
-  * **Inline/CodeLens actions & code commands** for explanations, fixes, and refactors directly in the file.
+  * **Inline/CodeLens actions and code commands** for explanations, fixes, and refactors directly in the file.
   * **Terminal helper (“See Terminal”)** to generate shell commands from natural language.
-  * **Project-aware chat & codebase indexing** so the agent can navigate and modify multiple files in one flow.
+  * **Project-aware chat and codebase indexing** so the agent can navigate and modify multiple files in one flow.
 
 Under the hood, Sixth can **read/write files, run commands, use a browser tool, and extend itself via MCP servers**, which all require explicit approvals unless you enable auto-approve.
 
@@ -612,7 +612,7 @@ Other features include:
 
 - **Next Edit:** This feature is a guided workflow for multi-step code changes, for example, if renaming a function might require updating references, docs, tests, the workflow walks you through each update required.
 
-- **Inline Instructions & Completions:** You can use natural language to modify code directly inside your files, similar to how GitHub Copilot works. It can also do autocompletions as you type, which are based on the overall context of your project, rather than standalone suggestions.
+- **Inline Instructions and Completions:** You can use natural language to modify code directly inside your files, similar to how GitHub Copilot works. It can also do autocompletions as you type, which are based on the overall context of your project, rather than standalone suggestions.
 
 #### Pricing
 
@@ -664,7 +664,7 @@ I suspect that the Community tier is no longer available, but some users might s
 
 #### Conclusion
 
-Augment positions itself as an agentic coding platform for large codebases, where you pay per user message, while “Next Edits” & completions are unlimited. Their Context Engine pulls the code, docs, and commit history into its responses, which adds an extra layer of accuracy.
+Augment positions itself as an agentic coding platform for large codebases, where you pay per user message, while “Next Edits” and completions are unlimited. Their Context Engine pulls the code, docs, and commit history into its responses, which adds an extra layer of accuracy.
 
 Additionally, their MCP support and integrations with other dev tools make it easy to wire build systems, databases, and deployment platforms to extend Augment's capabilities beyond just coding.
 
@@ -768,7 +768,7 @@ GoCodeo's features cover a wide range of tasks, from general Q&A to full-stack a
 
     Used to generate unit tests in multiple languages, and execute them with a built-in runner (e.g., Python/JS/Java/Go). You get **AI debugging insights**, and can apply **auto-fixes** when reviewing the results.
 
-- GoCodeo supports MCP servers, which can be declared in a `mcp.json` file, and allows you to add **Global MCP servers**, browse **community MCP servers**, and let the agent **auto-select** tools per request. You get **inline logs & reasoning** for each tool call.
+- GoCodeo supports MCP servers, which can be declared in a `mcp.json` file, and allows you to add **Global MCP servers**, browse **community MCP servers**, and let the agent **auto-select** tools per request. You get **inline logs and reasoning** for each tool call.
 
 - **Context handling** by using **@Files** and **@Code** to reference file paths or specific code sections, plus the option to attach **documents/images** as context to generate answers.
 
@@ -875,7 +875,7 @@ Since I couldn't test the Vibe mode, I can only speak about the Code mode with c
 
 - Vibe mode (voice agent): Brainstorm ideas, validate approaches, and even ask it to generate a product spec at the end of the conversation or code snippets. As I mentioned before, I couldn't get this mode to work, so I can't speak about its capabilities.
 
-- Voice commands & navigation: Sample commands include “open the file index.js,” “create a new file,” “show explorer,” “tell me about this codebase.”
+- Voice commands and navigation: Sample commands include “open the file index.js,” “create a new file,” “show explorer,” “tell me about this codebase.”
 
 Besides these features, DeepGram claims in the Vibe Coder marketplace listing to be working on other future improvements like adding project context and MCP capabilities, but the last update of their extension was in February 2025, so I'm not sure if they are still actively working on it.
 
