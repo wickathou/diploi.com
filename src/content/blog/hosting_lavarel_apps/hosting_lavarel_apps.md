@@ -6,7 +6,7 @@ timestamp: '2025-09-22T02:11:05.573Z'
 # devtoUrl: ''
 image: '/blog/hosting_lavarel_apps/hosting_lavarel_apps_cover.png'
 social_image: 'https://diploi.com/blog/hosting_lavarel_apps/hosting_lavarel_apps_og.png'
-draft: true
+draft: false
 ---
 
 Updated <time datetime="2025-09-22T03:00:05.000Z">September 22, 2025</time>

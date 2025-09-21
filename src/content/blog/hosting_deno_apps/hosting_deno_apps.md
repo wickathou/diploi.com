@@ -6,7 +6,7 @@ timestamp: '2025-09-22T01:00:05.000Z'
 # devtoUrl: ''
 image: '/blog/hosting_deno_apps/hosting_deno_apps_cover.png'
 social_image: 'https://diploi.com/blog/hosting_deno_apps/hosting_deno_apps_og.png'
-draft: true
+draft: false
 ---
 
 Updated <time datetime="2025-09-22T01:00:05.000Z">September 22, 2025</time>
