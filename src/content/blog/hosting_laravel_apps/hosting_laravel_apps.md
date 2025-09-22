@@ -1,11 +1,11 @@
 ---
 title: 'How to create Laravel apps that are ready for Production using Diploi'
-description: 'In this tutorial guide we go over the process of creating and hosting an application using Lavarel in Diploi'
+description: 'In this tutorial guide we go over the process of creating and hosting an application using Laravel in Diploi'
 author: 'Javier'
 timestamp: '2025-09-22T02:11:05.573Z'
 # devtoUrl: ''
-image: '/blog/hosting_lavarel_apps/hosting_lavarel_apps_cover.png'
-social_image: 'https://diploi.com/blog/hosting_lavarel_apps/hosting_lavarel_apps_og.png'
+image: '/blog/hosting_laravel_apps/hosting_laravel_apps_cover.png'
+social_image: 'https://diploi.com/blog/hosting_laravel_apps/hosting_laravel_apps_og.png'
 draft: false
 ---
 
@@ -13,14 +13,14 @@ Updated <time datetime="2025-09-22T03:00:05.000Z">September 22, 2025</time>
 
 ###### Getting started with Laravel, but in easy-mode
 
-If you are part of the PHP world, you must have heard of Lavarel. A very flexible framework to build web applications with PHP, very popular around the world.
+If you are part of the PHP world, you must have heard of Laravel. A very flexible framework to build web applications with PHP, very popular around the world.
 
-You probably know how to start a new Laravel app running `composer create-project laravel/laravel`, that's not a problem really. What it is a problem, is getting your new Lavarel app online, with CI/CD and SSL-protected.
+You probably know how to start a new Laravel app running `composer create-project laravel/laravel`, that's not a problem really. What it is a problem, is getting your new Laravel app online, with CI/CD and SSL-protected.
 
 In this guide, we’ll show you how to get your new Laravel app not only setup while skipping the local install, but also get it online in record time by using Diploi, all without setting up servers or manipulating YAML files.
 
 <div style="display:flex; justify-content:center; width:100%">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/A9SRN3mq0EY?si=neZQyfphSPVTVrO2" title="Launching a Lavarel app with Diploi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/A9SRN3mq0EY?si=neZQyfphSPVTVrO2" title="Launching a Laravel app with Diploi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ---
@@ -49,9 +49,9 @@ If you have that, you are ready.
 
 1.  In the Diploi Dashboard, click **Create Project +**.
 2.  Under **Pick Components**, choose **Laravel**. You can add other frameworks on this page too, if you want to create a multi-component app, for example, a Laravel backend with a React frontend.
-    ![Selecting the Lavarel component](selecting-the-lavarel-component.png)
+    ![Selecting the Laravel component](selecting-the-laravel-component.png)
 3.  In **Pick Add-ons**, select any databases or extra services your app needs (for example, add a MariaDB or PostgreSQL database if your Laravel app will use one).
-    ![Adding a database to Lavarel](adding-a-database-to-lavarel.png)
+    ![Adding a database to Laravel](adding-a-database-to-laravel.png)
 4.  In the **Repository** section, choose **Create Repository** to have Diploi generate a new GitHub repository for your project.
 5.  Finally, click **Launch Stack**.
 
@@ -101,7 +101,7 @@ Once it’s done, your Laravel app will be accessible at your own domain with HT
 If you’re new to Laravel or just want to see it in action without setting up anything locally, Diploi gives you a couple of easy ways to test-drive Laravel in the cloud:
 
 - **Starting a trial without registering an account**
-  Go to our homepage [https://diploi.com/#stackbuilder](https://diploi.com/#stackbuilder) and the choose Lavarel plus any other components you would like to try out. You can also visit [https://diploi.com/component/laravel](https://diploi.com/component/laravel)
+  Go to our homepage [https://diploi.com/#stackbuilder](https://diploi.com/#stackbuilder) and the choose Laravel plus any other components you would like to try out. You can also visit [https://diploi.com/component/laravel](https://diploi.com/component/laravel)
 
 - **Starting a Quick Launch with an account**
   If you already have a Diploi account, you can create a new project and, in the **Repository** section, select **Quick Launch**. This will give you a temporary development environment to play with Laravel, without connecting to any Git repository.
@@ -116,7 +116,7 @@ What other frameworks or services would you like to see supported on Diploi? Joi
 
 ## References
 
-- Official Lavarel Documentation https://laravel.com/docs/12.x
-- Lavarel in Diploi http://diploi.com/component/lavarel
+- Official Laravel Documentation https://laravel.com/docs/12.x
+- Laravel in Diploi http://diploi.com/component/laravel
 - Diploi Components https://docs.diploi.com/building/components
 - Custom Domains https://docs.diploi.com/deploying/custom-domain/
