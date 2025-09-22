@@ -22,7 +22,7 @@ We’ll create your FastAPI project in Diploi, promote it to production, and the
 Let’s get started.
 
 <div style="display:flex; justify-content:center; width:100%">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/mNJpQ-_r9rs?si=5eSJB8LBJaiIHyJ5" title="Using FastAPI in Diploi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/zi0ZVOIQTt4?si=DGIhtm7KByKZSyr8" title="Using FastAPI in Diploi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ---

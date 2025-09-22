@@ -22,7 +22,7 @@ We’ll go from creating your Flask project in Diploi, to launching it to produc
 Let’s begin.
 
 <div style="display:flex; justify-content:center; width:100%">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/mNJpQ-_r9rs?si=5eSJB8LBJaiIHyJ5" title="Launching a Flask application with Diploi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/IaK1I37tHGE?si=eTwLhYkY4P86an-p" title="Launching a Flask application with Diploi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 ---
