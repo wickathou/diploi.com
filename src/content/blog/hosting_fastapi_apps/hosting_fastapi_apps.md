@@ -30,9 +30,9 @@ Let’s get started.
 ## Table of contents
 
 - [Getting started with FastAPI on Diploi](#getting-started-with-fastapi-on-diploi)
-- [Launching your FastAPI app to Production](#launching-your-fastapi-app-to-production)
-- [Configuring a custom domain for your FastAPI app](#configuring-a-custom-domain-for-your-fastapi-app)
-- [Trying out FastAPI for the first time?](#new-to-fastapi)
+- [Launching your FastAPI app to Production](#launching-fastapi-to-production)
+- [Configuring a custom domain for your FastAPI app](#using-a-custom-domain-with-your-fastapi-app)
+- [Trying out FastAPI for the first time?](#just-exploring-fastapi)
 - [References](#references)
 
 ---
