@@ -32,7 +32,7 @@ Let’s begin.
 - [Getting started with Flask on Diploi](#getting-started-with-flask-on-diploi)
 - [Launching your Flask app to Production](#launching-your-flask-app-to-production)
 - [Configuring a custom domain for your Flask app](#configuring-a-custom-domain-for-your-flask-app)
-- [Trying out Flask for the first time?](#trying-out-flask-for-the-first-time)
+- [Trying out Flask for the first time?](#new-to-flask)
 - [References](#references)
 
 ---
