@@ -145,6 +145,7 @@ Happy automating 🤖
 ## References
 
 - Official n8n Documentation https://docs.n8n.io/  
-- Diploi n8n Component (GitHub) https://github.com/diploi/component-n8n  
+- Diploi's implementation for n8n https://github.com/diploi/component-n8n  
+- Trial launch page for n8n https://diploi.com/component/n8n  
 - Diploi Components https://docs.diploi.com/building/components  
 - Custom Domains https://docs.diploi.com/deploying/custom-domain/
