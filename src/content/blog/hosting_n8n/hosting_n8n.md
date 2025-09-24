@@ -15,9 +15,9 @@ Updated <time datetime="2025-09-24T01:00:05.000Z">September 24, 2025</time>
 
 n8n is an open-source workflow automation tool with a visual editor and lots of integrations. In this guide, we’ll create an instance of n8n and get it running on Diploi in minutes. Diploi handles the build, configuration, and runtime, so you can focus on your automations, and not managing infrastructure.
 
-<div style="display:flex; justify-content:center; width:100%">
+<!-- <div style="display:flex; justify-content:center; width:100%">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/IaK1I37tHGE?si=eTwLhYkY4P86an-p" title="Launching n8n on Diploi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
+</div> -->
 
 ---
 
