@@ -1,5 +1,5 @@
 ---
-import { BookBookmark, ClockCountdown, GitFork, Lightning, RocketLaunch, SealCheck, Square } from '@phosphor-icons/react';
+import { BookBookmark, ClockCountdown, RocketLaunch, SealCheck } from '@phosphor-icons/react';
 import Tag from '../../../components/Tag.astro';
 import { getCollection } from 'astro:content';
 import AiLink from '../../ai/_components/AiLink.astro';
@@ -11,6 +11,7 @@ const denoComponent = components.find((component) => component.id === 'deno')!.d
 const fastapiComponent = components.find((component) => component.id === 'fastapi')!.data;
 const flaskComponent = components.find((component) => component.id === 'flask')!.data;
 const n8nComponent = components.find((component) => component.id === 'n8n')!.data;
+const supabaseComponent = components.find((component) => component.id === 'supabase')!.data;
 ---
 
 <section class="main">
@@ -100,13 +101,33 @@ const n8nComponent = components.find((component) => component.id === 'n8n')!.dat
       </ul>
       <RocketLaunch weight="duotone" className="bg" />
     </li>
-    <li>
-      <h3><ClockCountdown /> Thursday <Tag primary>Releasing soon!</Tag></h3>
-      <time>25.9.2025</time>
-      <Lightning weight="duotone" className="bg" />
+    <li class="released">
+      <h3><SealCheck weight="bold" style={{ fill: 'url(#gradient-two)' }} /> Thursday</h3>
+      <p>
+        Day four brings our biggest component yet: <a href="/component/supabase">Supabase</a>! With a full Postgres database, built-in
+        authentication, powerful storage, and edge functions, Supabase makes it effortless to add <strong
+          >a complete backend to your project</strong
+        >. From idea to production, you now have everything you need with zero-setup.
+      </p>
+      <ul>
+        <li class="wide">
+          <h4>
+            <img alt="n8n icon" src={`data:image/svg+xml;base64,${supabaseComponent.icon}`} width={32} height={32} />
+            {supabaseComponent.name}
+            <Tag primary>New</Tag>
+          </h4>
+          <p>
+            Start your project with a Postgres database, Authentication, instant APIs, Edge Functions, Realtime subscriptions, Storage, and
+            Vector embeddings.
+          </p>
+          <AiLink href="/component/supabase">Launch Supabase</AiLink>
+          {/*<AiLink href="/blog/hosting_n8n">Read guide</AiLink>*/}
+        </li>
+      </ul>
+      <RocketLaunch weight="duotone" className="bg" />
     </li>
     <li>
-      <h3><ClockCountdown /> Friday</h3>
+      <h3><ClockCountdown /> Friday <Tag primary>Releasing soon!</Tag></h3>
       <time>26.9.2025</time>
       <BookBookmark weight="duotone" className="bg" />
     </li>
