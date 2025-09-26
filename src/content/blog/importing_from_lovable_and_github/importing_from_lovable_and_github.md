@@ -11,6 +11,20 @@ draft: false
 
 Updated <time datetime="2025-09-26T19:30:00.000Z">September 26, 2025</time>
 
+## Table of contents
+
+- [Import Lovable apps from GitHub Repositories](#import-lovable-apps-from-github-repositories)
+  - [Getting started with a Development environment](#getting-started-with-a-development-environment)
+    - [Creating a new project](#creating-a-new-project)
+    - [Start a New Project with Import Repository](#start-a-new-project-with-import-repository)
+    - [Adding Components and Add-ons (for public repositories)](#adding-components-and-add-ons-for-public-repositories)
+    - [Starting the imported project](#starting-the-imported-project)
+    - [Starting your first deployment](#starting-your-first-deployment)
+  - [Creating a Production Deployment](#creating-a-production-deployment)
+- [Using a custom domain with imported applications](#using-a-custom-domain-with-imported-applications)
+- [Supported frameworks](#supported-frameworks)
+- [References](#references)
+
 ## Import Lovable apps from GitHub Repositories
 
 We are releasing today the capability to **import apps built using Lovable**, all you need is to import from your GitHub account or if it is a public project in GitHub, you can import it via URL.
