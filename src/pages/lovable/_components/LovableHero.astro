@@ -46,14 +46,12 @@ const icons = components.filter((component) => !component.data.hidden).map((comp
       </div>
     </div>
     <div class="flex-col-center cta-actions">
-      <a id="lovable-import-link" data-event="launch_lovable_import" href="#LovableImport">
-        <button id="lovable-import-btn">Import from Lovable</button>
-      </a>
-
-      <div id="lovable-form-container" class="display-none">
-        <div class="ml-embedded" data-form="EBPLSy"></div>
+      <div class="flex-col-center cta-alt-actions">
+        <a id="lovable-import-link" data-event="launch_lovable_import" href="https://console.diploi.com/create/project/create">
+          <button id="lovable-import-btn">Import from Lovable</button>
+        </a>
+        <p class="cta-notice">No credit card required.</p>
       </div>
-
       <div class="flex-col-center cta-alt-actions">
         <p class="cta-notice">Prefer to try out Diploi first?</p>
         <a data-event="hero_cta_click" href="#StackBuilder"> Launch an instant trial </a>
@@ -76,38 +74,6 @@ const icons = components.filter((component) => !component.data.hidden).map((comp
     </ul>
   </div>
 </div>
-
-<!-- MailerLite Universal -->
-<script type="module">
-  const btn = document.getElementById('lovable-import-btn');
-  const btnLink = document.getElementById('lovable-import-link');
-  const formContainer = document.getElementById('lovable-form-container');
-
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    btnLink.classList.add('hide');
-    setTimeout(() => {
-      btnLink.classList.add('display-none');
-      formContainer.classList.remove('display-none');
-    }, 300);
-    formContainer.classList.add('show');
-  });
-
-  (function (w, d, e, u, f, l, n) {
-    (w[f] =
-      w[f] ||
-      function () {
-        (w[f].q = w[f].q || []).push(arguments);
-      }),
-      (l = d.createElement(e)),
-      (l.async = 1),
-      (l.src = u),
-      (n = d.getElementsByTagName(e)[0]),
-      n.parentNode.insertBefore(l, n);
-  })(window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
-  ml('account', '906912');
-</script>
-<!-- End MailerLite Universal -->
 
 <style lang="scss">
   @use 'sass:math';
@@ -139,7 +105,7 @@ const icons = components.filter((component) => !component.data.hidden).map((comp
     align-items: center;
   }
   .cta-actions {
-    gap: 24px;
+    gap: 32px;
 
     .cta-notice {
       margin-bottom: 0px;
