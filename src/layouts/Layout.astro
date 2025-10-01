@@ -14,9 +14,14 @@ interface Props {
 
 const defaultDescription = 'Single SaaS service for managing, developing and hosting your full application.';
 
-const { title, description = defaultDescription, ogTitle = 'Diploi', ogSocialImage } = Astro.props;
+const { title, description = defaultDescription, ogTitle = 'Diploi', ogSocialImage: ogSocialImageProp } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const ogSocialImage = ogSocialImageProp
+  ? ogSocialImageProp?.startsWith('http')
+    ? ogSocialImageProp
+    : `${Astro.site}${ogSocialImageProp}`
+  : undefined;
 ---
 
 <!doctype html>
@@ -43,10 +48,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
     <meta name="twitter:site" content="@DiploiDev" />
     <meta name="twitter:creator" content="@DiploiDev" />
     <meta name="twitter:title" content={ogTitle} />
-    <meta
-      name="twitter:description"
-      content={description}
-    />
+    <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogSocialImage || og.src} />
 
     {/* Sitemap */}
