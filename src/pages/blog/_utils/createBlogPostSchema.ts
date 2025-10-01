@@ -1,9 +1,10 @@
 import { createOrganizationSchema } from '../../../utils/createOrganizationSchema';
+import { getFullImageUrl } from '../../../utils/ogUtils';
 
 export interface CreateBlogPostSchemaParams {
   title: string;
   description: string;
-  image?: { src: string } | null;
+  image?: { src?: string } | null;
   author: string;
   timestamp: string;
   url: URL | string;
@@ -15,9 +16,9 @@ export const createBlogPostSchema = ({ title, description, image, url, externalU
   '@type': 'BlogPosting',
   headline: title,
   description,
-  ...(image && image.src
+  ...(image
     ? {
-        image: image.src.startsWith('http') ? image.src : `https://diploi.com${image.src}`,
+        image: getFullImageUrl({ imageUrl: image.src }),
       }
     : {}),
   url,

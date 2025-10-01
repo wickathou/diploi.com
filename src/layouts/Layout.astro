@@ -4,6 +4,7 @@ import Gradient from '../components/Gradient.astro';
 import icon from '../images/logo-icon.svg';
 import og from '../images/og.png';
 import GlobalStyles from '../components/GlobalStyles.astro';
+import { getFullImageUrl } from '../utils/ogUtils';
 
 interface Props {
   title: string;
@@ -17,11 +18,7 @@ const defaultDescription = 'Single SaaS service for managing, developing and hos
 const { title, description = defaultDescription, ogTitle = 'Diploi', ogSocialImage: ogSocialImageProp } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
-const ogSocialImage = ogSocialImageProp
-  ? ogSocialImageProp?.startsWith('http')
-    ? ogSocialImageProp
-    : `${Astro.site}${ogSocialImageProp}`
-  : undefined;
+const ogSocialImage = getFullImageUrl({ siteUrl: Astro.url.origin, imageUrl: ogSocialImageProp });
 ---
 
 <!doctype html>
