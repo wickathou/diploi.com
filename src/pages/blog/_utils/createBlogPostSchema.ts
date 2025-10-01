@@ -15,7 +15,7 @@ export const createBlogPostSchema = ({ title, description, image, url, externalU
   '@type': 'BlogPosting',
   headline: title,
   description,
-  ...(image
+  ...(image && image.src
     ? {
         image: image.src.startsWith('http') ? image.src : `https://diploi.com${image.src}`,
       }
