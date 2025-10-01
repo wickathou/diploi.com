@@ -4,8 +4,8 @@ description: 'We discuss 7 remote development platforms that you can use in 2025
 author: 'Javier'
 timestamp: '2025-06-10T07:11:05.573Z'
 devtoUrl: 'https://dev.to/diploi/7-remote-development-platforms-in-2025-to-code-without-a-local-setup-1f92'
-image: '/blog/remote_development_platforms/remote_development_platforms_cover.png'
-social_image: 'https://diploi.com/blog/remote_development_platforms/remote_development_platforms_og.png'
+image: './remote_development_platforms_cover.png'
+social_image: './remote_development_platforms_og.png'
 draft: false
 ---
 
@@ -13,11 +13,11 @@ draft: false
 
 [Jump to the list of remote development platforms](#top-7-remote-development-platforms-in-2025)
 
-![It works on my machine](<works_on_my_machine.png>)
+![It works on my machine](works_on_my_machine.png)
 
 Or maybe your version of `node/python/<insert other languages, runtime or framework>` is too old or too new to run the application you are working on, so you need to install an additional tool to manage different versions of said tool
 
-When it is not an issue with the tooling necessary to run your application, it can be a config issue or environment variables missing 
+When it is not an issue with the tooling necessary to run your application, it can be a config issue or environment variables missing
 
 Well, there are ways to avoid the additional work required to run an application locally. One example that blew my mind was how the team at OkTurtles handles all of their config, where you don't need any `.env` files or special config for one of their very complex projects, [Group Income](https://github.com/okTurtles/group-income), where they put a lot of effort to make the process of onboarding new people and working collaboratively as seamless as possible
 
@@ -29,13 +29,14 @@ So what about us? I don't want to spend time doing that and chances are you neit
 
 This leads me to introduce you to:
 
-***
+---
 
 ## Remote Development Environments
 
 Remote development environments are platforms that allow you to code, run, and test your applications in the cloud, eliminating the need for local setup and configuration. This means you can work from anywhere, on any device (even from your mobile browser although with limitations), without worrying about compatibility issues or missing dependencies
 
 The benefits of using remote development platforms include:
+
 - **Consistency**: Ensures that everyone on your team is using the same environment, reducing the "it works on my machine" problem
 - **Accessibility**: Access your development environment from any device with an internet connection, making it easier to work on the go
 - **Resource Management**: Offload resource-intensive tasks to the cloud, freeing up your local machine
@@ -60,11 +61,11 @@ For example, while writing this blog, I created a new remote development environ
 
 As you can see, no local setup is required. I simply created a new deployment, and I can start coding right away. But that's not why you are here, you want to know which remote development platforms are available, so let's get to it!
 
-***
+---
 
 ## Top 7 Remote Development Platforms in 2025
 
-***
+---
 
 ### DevZero
 
@@ -93,15 +94,19 @@ DevZero used to offer a free tier, but it seems that they have moved away from t
 DevZero no longer showcases its pricing plans on its website, and the latest information available online comes from SaaSworthy which lists the following plans:
 
 **Starter Plan**: Allows up to 2 users per team and 2 workspaces per user
+
 - **Price**: $0/month
 
-**Pro Plan**: Includes custom roles, up to 15 users, 2 active workspaces per user, and 30 workspaces per team  
-- **Price**: $39.95 per user per month  
+**Pro Plan**: Includes custom roles, up to 15 users, 2 active workspaces per user, and 30 workspaces per team
 
-**Growth Plan**: Offers storage volumes/buckets, integrations with existing infrastructure, up to 15 teams (max 15 users per team), administrative dashboards, usage controls/policies, and dedicated support SLA  
-- **Price**: $429.95 per team per month  
+- **Price**: $39.95 per user per month
 
-**Enterprise Plan**: Provides self-hosted options, SSO support, external secret manager, APM, full RBAC, and dedicated support rep with SLA  
+**Growth Plan**: Offers storage volumes/buckets, integrations with existing infrastructure, up to 15 teams (max 15 users per team), administrative dashboards, usage controls/policies, and dedicated support SLA
+
+- **Price**: $429.95 per team per month
+
+**Enterprise Plan**: Provides self-hosted options, SSO support, external secret manager, APM, full RBAC, and dedicated support rep with SLA
+
 - **Price**: Custom pricing
 
 https://www.saasworthy.com/product/devzero-io/pricing
@@ -116,8 +121,7 @@ You can launch workspaces on DevZero in different regions. The region where a wo
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ft6ilE0OjTI?si=bVmlEXnPRI9DQkma" title="Introduction to Cloud Development Environments with DevZero" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-
-***
+---
 
 ### Codeanywhere
 
@@ -129,11 +133,11 @@ Codeanywhere is a cross-platform cloud-integrated development environment (IDE) 
 
 ![Codeanywhere dashboard screenshot](codeanywhere.png)
 
-The platform offers features such as real-time collaboration, version control integration with GitHub, GitLab, and Bitbucket, and the ability to connect to remote file systems via SFTP.  Codeanywhere supports DevContainer.json for standardized workspace configurations which you can customize in multiple ways
+The platform offers features such as real-time collaboration, version control integration with GitHub, GitLab, and Bitbucket, and the ability to connect to remote file systems via SFTP. Codeanywhere supports DevContainer.json for standardized workspace configurations which you can customize in multiple ways
 
 #### IDE options supported
 
-Codeanywhere provides a browser-based IDE powered by Visual Studio Code where you can import your own VS Code extensions, themes, and settings. Additionally, it offers AI-powered code completion and suggestions using the [Continue.dev](https://www.continue.dev/) extension 
+Codeanywhere provides a browser-based IDE powered by Visual Studio Code where you can import your own VS Code extensions, themes, and settings. Additionally, it offers AI-powered code completion and suggestions using the [Continue.dev](https://www.continue.dev/) extension
 
 #### Anything free?
 
@@ -144,26 +148,30 @@ Codeanywhere offers a free tier with an allowance of 20 hours of use, so users c
 Codeanywhere has monthly, annual, and 2-year plans, with the following options:
 
 **Free Plan**: One-time usage with essential features for getting started
+
 - **Price**: $0 (one-time usage)
 
 **Basic Plan**: Ideal for growing teams with more flexibility and workspace options
+
 - **Price**: $12 monthly | $9.60 per member/month, billed annually | $8.40 per member/month, billed every 2 years
 
 **Premium Plan**: Maximum value for teams needing more resources and parallel workspaces
+
 - **Price**: $29 monthly | $23 per member/month, billed annually | $20 per member/month, billed every 2 years
 
 **Enterprise Plan**: Custom solutions for organizations with on-premise or cloud deployment need
+
 - **Price**: Custom pricing (contact sales)
 
 #### Something else?
 
-Codeanywhere supports on-premises deployment options, allowing users to host the platform within their own infrastructure.  The platform is also SOC2 Type II, ISO 27001, and GDPR compliant, ensuring high standards of security and data protection
+Codeanywhere supports on-premises deployment options, allowing users to host the platform within their own infrastructure. The platform is also SOC2 Type II, ISO 27001, and GDPR compliant, ensuring high standards of security and data protection
 
 #### Video demo?
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/h-vXh88gvaE?si=xEbCm0pSJE-spBjb" title="Codeanywhere Commercial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-***
+---
 
 ### Coder
 
@@ -190,9 +198,11 @@ Coder is open‑source and allows you to self-host so you would only worry about
 Coder is open source and it is available in two editions
 
 **Community**: Open-source edition, self-hosted, and free to use
+
 - **Price**: Free
 
 **Premium**: Paid edition with additional features such as global support, access controls, audit logging, workspace autoscaling and proxying, branding, and enterprise-grade governance
+
 - **Price**: Custom pricing
 
 #### Something else?
@@ -203,7 +213,7 @@ As I mentioned before, Coder also has a web-based IDE called Coder-server which 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zzxnEeSkU5w?si=85aTWGNz8KjueKQK" title="Favorite Features and Use Cases in Coder" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-***
+---
 
 ### GitHub Codespaces
 
@@ -234,21 +244,27 @@ Personal GitHub accounts receive 120 hours of free Codespaces usage per month an
 Codespaces bills based on the number of core hours used and the storage consumed:
 
 **Codespaces compute (2 core)**:
+
 - **Price**: $0.18 per 1 hour
 
 **Codespaces compute (4 core)**:
+
 - **Price**: $0.36 per 1 hour
 
 **Codespaces compute (8 core)**:
+
 - **Price**: $0.72 per 1 hour
 
 **Codespaces compute (16 core)**:
+
 - **Price**: $1.44 per 1 hour
 
 **Codespaces compute (32 core)**:
+
 - **Price**: $2.88 per 1 hour
 
 **Codespaces storage**: Storage resource for Codespaces
+
 - **Price**: $0.07 per 1 GB-month
 
 #### Something else?
@@ -259,7 +275,7 @@ Codespaces can be used for pull requests, allowing you to review and test change
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sYJ3CHtT6WM?si=-pPqysORlEF4hfP7" title="What is Codespaces" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-***
+---
 
 ### DevPod
 
@@ -299,7 +315,7 @@ Provider configurations are defined in a `provider.yaml` file, and you can learn
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/87oHtFO5lkc?si=BKpFnu6uH93PE0G9" title="Introducing DevPod - Codespaces but Open Source" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-***
+---
 
 ### Gitpod
 
@@ -325,13 +341,16 @@ Gitpod has a free tier that allows you to run up to 10 development environments
 
 Gitpod has three tiers:
 
-**Free**: Best for individuals and testing the waters  
-- **Price**: Free  
+**Free**: Best for individuals and testing the waters
 
-**Core**: Coming soon, best for heavy users and small teams  
-- **Price**: Not yet available  
+- **Price**: Free
 
-**Enterprise**: Best for large organizations with additional compliance requirements  
+**Core**: Coming soon, best for heavy users and small teams
+
+- **Price**: Not yet available
+
+**Enterprise**: Best for large organizations with additional compliance requirements
+
 - **Price**: Custom pricing
 
 #### Something else?
@@ -342,7 +361,7 @@ Gitpod provides an SDK that allows developers to interact programmatically with 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/R6FQ39sitAQ?si=6s4mU0X33jMtBfpg" title="Gitpod in under 120 seconds" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-***
+---
 
 ### Diploi
 
@@ -360,7 +379,7 @@ Using a visual stack builder, developers select components (e.g., Next.js, Astro
 
 #### IDE options supported
 
-Using Diploi you can start coding in the browser using our implementation of Code-server to code in browser and we also support VS Code and Cursor out of the box, or if you use another IDE, you can connect via SSH 
+Using Diploi you can start coding in the browser using our implementation of Code-server to code in browser and we also support VS Code and Cursor out of the box, or if you use another IDE, you can connect via SSH
 
 #### Anything free?
 
@@ -371,18 +390,23 @@ Diploi offers €50 free credits upon signup to explore and experiment with the 
 Diploi operates on a pay-as-you-go model, with no fixed monthly fees. You only pay for the time your environments are active and the size of the cluster you use for your deployments:
 
 **Diploi Cluster (S)**: 2 vCPUs, 4 GB RAM
+
 - **Price**: €0.026 per 1 hour
 
 **Diploi Cluster (M)**: 2 vCPUs, 8 GB RAM
+
 - **Price**: €0.048 per 1 hour
 
 **Diploi Cluster (L)**: 4 vCPUs, 16 GB RAM
+
 - **Price**: €0.089 per 1 hour
 
 **Diploi Cluster (XL)**: 8 vCPUs, 32 GB RAM
+
 - **Price**: €0.182 per 1 hour
 
 **Diploi Storage**: Persistent storage for your deployments
+
 - **Price**: €0.002 per 1 GB-hour
 
 #### Something else?
@@ -395,37 +419,38 @@ Here’s a quick intro to using Diploi:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/X-olQzRPZMY?si=v1zl7D4QxnOvhgPG" title="Diploi features explained in 60 seconds" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-***
+---
 
 ## Choosing the Right Platform
 
 What remote development platform works best, depends on your specific needs, stack, and budget. Here’s a quick summary to help you decide:
 
-* **Diploi:** Best for developers who not only want to code without local setup but also want a simplified deployment process for their application's lifecycle, especially if you want to launch full-stack applications quickly with minimal configuration
+- **Diploi:** Best for developers who not only want to code without local setup but also want a simplified deployment process for their application's lifecycle, especially if you want to launch full-stack applications quickly with minimal configuration
 
-* **DevZero:** Best for teams needing production-like environments with dynamic scaling and isolated workspaces, especially if you want to self-host
+- **DevZero:** Best for teams needing production-like environments with dynamic scaling and isolated workspaces, especially if you want to self-host
 
-* **Codeanywhere:** Best for those who want a cross-platform cloud IDE with real-time collaboration and version control integration, especially if you want to use AI-powered code completion
+- **Codeanywhere:** Best for those who want a cross-platform cloud IDE with real-time collaboration and version control integration, especially if you want to use AI-powered code completion
 
-* **Coder:** Best for teams looking for a self-hosted solution to manage their own development environments with full control over configurations and IDE options
+- **Coder:** Best for teams looking for a self-hosted solution to manage their own development environments with full control over configurations and IDE options
 
-* **GitHub Codespaces:** Best for developers who want seamless integration with GitHub and prefer using VS Code in the browser or locally, especially if you want to use pre-configured devcontainers
+- **GitHub Codespaces:** Best for developers who want seamless integration with GitHub and prefer using VS Code in the browser or locally, especially if you want to use pre-configured devcontainers
 
-* **DevPod:** Best for those who want an open-source, client-only solution to create reproducible development environments using DevContainer standards, especially if you want to self-host or run locally
+- **DevPod:** Best for those who want an open-source, client-only solution to create reproducible development environments using DevContainer standards, especially if you want to self-host or run locally
 
-* **Gitpod:** Best for teams needing fully automated, ephemeral workspaces with prebuilds and support for multiple IDEs, especially if you want to use a wide range of IDEs and code editors
+- **Gitpod:** Best for teams needing fully automated, ephemeral workspaces with prebuilds and support for multiple IDEs, especially if you want to use a wide range of IDEs and code editors
 
-***
+---
 
 Do you have a favorite remote development platform? Or maybe you are using one that is not listed here? Let me know in the comments
 
-***
+---
 
 In case you are curious, [Test-drive Diploi ✨](https://diploi.com/), no registration required
 
-***
+---
 
 **References:**
+
 - [DevZero](https://www.devzero.io/)
 - [Codeanywhere](https://codeanywhere.com/)
 - [Coder](https://coder.com/)

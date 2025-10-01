@@ -4,8 +4,8 @@ description: 'Create your next React app using Diploi to skip any DevOps work an
 author: 'Javier'
 timestamp: '2025-08-19T07:16:05.573Z'
 # devtoUrl: ''
-image: '/blog/hosting_react_apps/hosting_react_apps_cover.png'
-social_image: 'https://diploi.com/blog/hosting_react_apps/hosting_react_apps_og.png'
+image: './hosting_react_apps_cover.png'
+social_image: './hosting_react_apps_og.png'
 draft: false
 ---
 
@@ -32,8 +32,8 @@ In this guide, you’ll learn how to launch a fresh React app, using Vite as the
 
 ## What you need
 
-* A **GitHub account** - No account? Click here > [https://github.com/signup](https://github.com/signup)
-* A **Diploi account** - Need one? Click here > [https://console.diploi.com/](https://console.diploi.com/)
+- A **GitHub account** - No account? Click here > [https://github.com/signup](https://github.com/signup)
+- A **Diploi account** - Need one? Click here > [https://console.diploi.com/](https://console.diploi.com/)
 
 ---
 
@@ -75,16 +75,19 @@ That's all it takes to get your app on Production. Let's now talk about how you 
 When you launch a new deployment, Diploi automatically creates an SSL-protected URL that ends in `.diploi.me`. To instead use a custom domain, you need to do the following:
 
 1. Go to the **Options** tab, which you can find by navigating to the dashboard of the Deployment. The URL will look something like:
- ```
- https://console.diploi.com/<YOUR_USERNAME>/project/<YOUR_PROJECT_ID>/deployment/<YOUR_DEPLOYMENT_ID>/options
- ```
+
+```
+https://console.diploi.com/<YOUR_USERNAME>/project/<YOUR_PROJECT_ID>/deployment/<YOUR_DEPLOYMENT_ID>/options
+```
+
 2. Scroll to the **Endpoints** section and turn off **Use Auto-Generated Endpoints**
 3. You’ll now see a field showing your current deployment subdomain. Check **Use custom domain**, then type in the domain name you want to use
 4. Scroll to the bottom and click **Save Changes**
 5. In your domain provider’s DNS settings, create a **CNAME** record that points your domain to:
- ```
- edge.diploi.com
- ```
+
+```
+edge.diploi.com
+```
 
 ✅ **Done!**
 
@@ -97,13 +100,13 @@ This update will take effect instantly, but allow up to 30 minutes for DNS and S
 If this is your first time trying React + Vite, you might not want to bother with all the usual setup and configuration. With Diploi, you can skip the boring parts and jump straight into coding, so no local install is required. You’ve got two easy options using Diploi:
 
 **Option 1 – Start a trial without an account**
-   
-   Head to [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) to launch a trial project instantly. You can also go directly to the React + Vite component page:
-   [https://diploi.com/component/react-vite](https://diploi.com/component/react-vite)
+
+Head to [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) to launch a trial project instantly. You can also go directly to the React + Vite component page:
+[https://diploi.com/component/react-vite](https://diploi.com/component/react-vite)
 
 **Option 2 – Quick Launch with a Diploi account**
 
-   If you already have an account, create a new project and in the **Repository** section choose **Quick Launch**. This gives you a temporary environment to experiment with React + Vite without connecting a repo.
+If you already have an account, create a new project and in the **Repository** section choose **Quick Launch**. This gives you a temporary environment to experiment with React + Vite without connecting a repo.
 
 ---
 

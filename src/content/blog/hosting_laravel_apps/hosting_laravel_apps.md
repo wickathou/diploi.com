@@ -4,8 +4,8 @@ description: 'In this tutorial guide we go over the process of creating and host
 author: 'Javier'
 timestamp: '2025-09-22T02:11:05.573Z'
 # devtoUrl: ''
-image: '/blog/hosting_laravel_apps/hosting_laravel_apps_cover.png'
-social_image: 'https://diploi.com/blog/hosting_laravel_apps/hosting_laravel_apps_og.png'
+image: './hosting_laravel_apps_cover.png'
+social_image: './hosting_laravel_apps_og.png'
 draft: false
 ---
 

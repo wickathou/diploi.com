@@ -4,8 +4,8 @@ description: 'Make your Hono development as seamless as deploying on Heroku'
 author: 'Javier'
 timestamp: '2025-08-23T07:11:05.573Z'
 # devtoUrl: ''
-image: '/blog/hosting_hono_apps/hosting_hono_apps_cover.png'
-social_image: 'https://diploi.com/blog/hosting_hono_apps/hosting_hono_apps_og.png'
+image: './hosting_hono_apps_cover.png'
+social_image: './hosting_hono_apps_og.png'
 draft: false
 ---
 
@@ -30,8 +30,8 @@ You probably know how to start a new Hono app just using `npm create hono@latest
 
 ## What you need
 
-* A GitHub account, sign up here if you don't have one yet: [https://github.com/signup](https://github.com/signup)
-* A Diploi account, sign up for a free Diploi account at [https://console.diploi.com/](https://console.diploi.com/)
+- A GitHub account, sign up here if you don't have one yet: [https://github.com/signup](https://github.com/signup)
+- A Diploi account, sign up for a free Diploi account at [https://console.diploi.com/](https://console.diploi.com/)
 
 ---
 
@@ -40,16 +40,16 @@ You probably know how to start a new Hono app just using `npm create hono@latest
 1. **Sign up** for a free Diploi account at [https://console.diploi.com/](https://console.diploi.com/)
 2. In the Dashboard, click **Create Project +**
 3. Under **Pick Components**, choose **Hono**
- You can add other frameworks from this page.
+   You can add other frameworks from this page.
 4. In **Pick Add-ons**, select any databases or extra tools you need.
 5. Choose **Create Repository** so Diploi generates a new GitHub repo for your project.
 6. Click **Launch Stack**
 
 Diploi then starts a Development environment for your new Hono app, from which you can:
 
-* Preview your Hono endpoints live instantly
-* Code directly in the browser using the built-in IDE
-* Or connect remotely via SSH using VS Code, Cursor, or any dev container–friendly IDE
+- Preview your Hono endpoints live instantly
+- Code directly in the browser using the built-in IDE
+- Or connect remotely via SSH using VS Code, Cursor, or any dev container–friendly IDE
 
 ---
 
@@ -90,14 +90,13 @@ The change can be instant, but in some cases, it can take up to 30 minutes for D
 
 You don’t want to run anything locally, and you just want to try Hono, you can do it in the cloud using Diploi in one of these two ways:
 
-* **Starting a trial without registering an account**
+- **Starting a trial without registering an account**
 
-   Head to [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) to launch a trial project, or go straight to the Hono component page:
-   [https://diploi.com/component/hono](https://diploi.com/component/hono)
+  Head to [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) to launch a trial project, or go straight to the Hono component page:
+  [https://diploi.com/component/hono](https://diploi.com/component/hono)
 
-* **Starting a Quick Launch if you have an account on Diploi**
-   
-   Create a new project and in the **Repository** section, select **Quick Launch**. This gives you a temporary environment to explore Hono without connecting a repo.
+- **Starting a Quick Launch if you have an account on Diploi**
+  Create a new project and in the **Repository** section, select **Quick Launch**. This gives you a temporary environment to explore Hono without connecting a repo.
 
 ---
 

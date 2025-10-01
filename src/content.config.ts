@@ -7,6 +7,16 @@ const blogCollection = defineCollection({
   loader: blogLoader({
     apiKey: import.meta.env.DEVTO_API_KEY,
   }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      image: image().nullable().optional(),
+      social_image: image().nullable().optional(),
+      author: z.string(),
+      timestamp: z.string(),
+      url: z.string().optional(),
+    }),
 });
 
 const componentCollection = defineCollection({

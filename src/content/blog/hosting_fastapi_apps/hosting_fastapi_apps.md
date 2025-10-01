@@ -4,8 +4,8 @@ description: 'Start a FastAPI service with remote development, live previews, an
 author: 'Javier'
 timestamp: '2025-09-22T18:01:05.000Z'
 # devtoUrl: ''
-image: '/blog/hosting_fastapi_apps/hosting_fastapi_apps_cover.png'
-social_image: 'https://diploi.com/blog/hosting_fastapi_apps/hosting_fastapi_apps_og.png'
+image: './hosting_fastapi_apps_cover.png'
+social_image: './hosting_fastapi_apps_og.png'
 draft: false
 ---
 
@@ -90,7 +90,6 @@ When your FastAPI application is ready to go live in a production environment, f
 
 - Open your project dashboard: In the Diploi console, navigate to your FastAPI project’s page.
   ![Project dashboard for your FastAPI app](fastapi-project-dashboard.png)
-  
 - Create a new deployment: Click **Create Deployment +** and choose **Production** for the stage.  
   ![Launching a Production stage](../../../images/blog/production-stage.png)
 
@@ -143,7 +142,7 @@ You can try FastAPI on Diploi in seconds without even registering an account. He
 
 - Option 2 - Quick Launch with your Diploi account
   If you are logged in, create a new project and in the **Repository** section, choose **Quick Launch** instead of creating a GitHub repository. Diploi provisions a ready-to-use FastAPI app so you can experiment immediately.  
-    ![Quick launch](../../../images/blog/quick-launch.png)
+   ![Quick launch](../../../images/blog/quick-launch.png)
 
 These options are great for testing and learning. For production, create a full project and repository. Remember FastAPI exposes interactive docs at `/docs` out of the box.
 

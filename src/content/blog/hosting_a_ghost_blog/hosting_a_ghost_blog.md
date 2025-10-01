@@ -4,8 +4,8 @@ description: 'Learn how to create blogs and websites with Ghost using Diploi'
 author: 'Javier'
 timestamp: '2025-08-27T07:11:05.573Z'
 # devtoUrl: ''
-image: '/blog/hosting_a_ghost_blog/hosting_a_ghost_blog_cover.png'
-social_image: 'https://diploi.com/blog/hosting_a_ghost_blog/hosting_a_ghost_blog_og.png'
+image: './hosting_a_ghost_blog_cover.png'
+social_image: './hosting_a_ghost_blog_og.png'
 draft: false
 ---
 
@@ -39,7 +39,7 @@ If you're interested in self-hosting open-source services, this guide will be us
 1. **Sign up** for Diploi at `https://console.diploi.com/` using your GitHub account.
 2. In your dashboard, click **Create Project +**
 3. Under **Pick Components**, choose **Ghost**  
- If you want to expand your Ghost blog with other tools, like a backend framework to add an API, in this section, you can add them. They will all be hosted on a single server, reducing costs and complexity.
+   If you want to expand your Ghost blog with other tools, like a backend framework to add an API, in this section, you can add them. They will all be hosted on a single server, reducing costs and complexity.
 4. In **Pick Add-ons**, select any databases or tools you want to include.
 5. In **Repository**, choose **Create Repository** which will generate a new GitHub repo for you.
 6. Click **Launch Stack**
@@ -92,10 +92,10 @@ Allow up to ~30 minutes for DNS and SSL to propagate.
 You don’t need a local setup to explore Ghost on Diploi:
 
 - **No account yet?**  
- Use the **Stack Builder** to spin up a temporary environment and test the workflow [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) without registering for an account and for free.
+  Use the **Stack Builder** to spin up a temporary environment and test the workflow [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) without registering for an account and for free.
 
 - **Already signed in?**  
- Create a new project and select **Quick Launch** in the **Repository** section to start experimenting without wiring up a new repository.
+  Create a new project and select **Quick Launch** in the **Repository** section to start experimenting without wiring up a new repository.
 
 ---
 

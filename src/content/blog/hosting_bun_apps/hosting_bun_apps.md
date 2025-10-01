@@ -4,8 +4,8 @@ description: 'Explore how to create new Bun applications readily online, without
 author: 'Javier'
 timestamp: '2025-08-25T07:13:05.573Z'
 # devtoUrl: ''
-image: '/blog/hosting_bun_apps/hosting_bun_apps_cover.png'
-social_image: 'https://diploi.com/blog/hosting_bun_apps/hosting_bun_apps_og.png'
+image: './hosting_bun_apps_cover.png'
+social_image: './hosting_bun_apps_og.png'
 draft: false
 ---
 
@@ -34,8 +34,8 @@ And yes, I'm not exaggerating.
 
 ## What you need
 
-* A **GitHub account**, sign up here if you don't have one yet, [https://github.com/signup](https://github.com/signup)
-* A **Diploi account**, sign up for a free Diploi account at [https://console.diploi.com/](https://console.diploi.com/)
+- A **GitHub account**, sign up here if you don't have one yet, [https://github.com/signup](https://github.com/signup)
+- A **Diploi account**, sign up for a free Diploi account at [https://console.diploi.com/](https://console.diploi.com/)
 
 ---
 
@@ -43,7 +43,7 @@ And yes, I'm not exaggerating.
 
 1. In the Dashboard, click **Create Project +**
 2. Under **Pick Components**, choose **Bun**
- You can add other frameworks from this page if you want to create a monorepo application, eg, Bun for API + React for frontend.
+   You can add other frameworks from this page if you want to create a monorepo application, eg, Bun for API + React for frontend.
 3. In **Pick Add-ons**, select any databases you need.
 4. Choose **Create Repository**, which will generate a new GitHub repo.
 5. Finally, click **Launch Stack**
@@ -90,14 +90,14 @@ This change is usually instant, but it can take up to 30 minutes for DNS and SSL
 ## Trying out Bun for the first time?
 
 Supposing you haven't ever used Bun, here's how to try it out without even running an `npm` command:
-  
-* Option 1: **Starting a trial without registering an account**
-   
-   Go to [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) to launch a trial project, or visit the Next.js component page [https://diploi.com/component/bun](https://diploi.com/component/bun)
 
-* Option 2: **Starting a Quick Launch if you have an account on Diploi**
+- Option 1: **Starting a trial without registering an account**
 
-   Create a new project and in the **Repository** section, select **Quick Launch**. This gives you a temporary environment to explore Bun without connecting a repo.
+  Go to [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) to launch a trial project, or visit the Next.js component page [https://diploi.com/component/bun](https://diploi.com/component/bun)
+
+- Option 2: **Starting a Quick Launch if you have an account on Diploi**
+
+  Create a new project and in the **Repository** section, select **Quick Launch**. This gives you a temporary environment to explore Bun without connecting a repo.
 
 ---
 

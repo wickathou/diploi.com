@@ -3,7 +3,7 @@ import { createOrganizationSchema } from '../../../utils/createOrganizationSchem
 export interface CreateBlogPostSchemaParams {
   title: string;
   description: string;
-  image?: string | null;
+  image?: { src: string } | null;
   author: string;
   timestamp: string;
   url: URL | string;
@@ -17,7 +17,7 @@ export const createBlogPostSchema = ({ title, description, image, url, externalU
   description,
   ...(image
     ? {
-        image,
+        image: image.src,
       }
     : {}),
   url,

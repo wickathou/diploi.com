@@ -4,8 +4,8 @@ description: 'Discover how to spin up apps in seconds using Diploi with Hono and
 author: 'Javier'
 timestamp: '2025-06-26T07:11:05.573Z'
 devtoUrl: 'https://dev.to/diploi/the-easiest-way-to-start-new-django-and-hono-apps-literally-one-click-141e'
-image: '/blog/hono_and_django_support/hono_and_django_support_cover.png'
-social_image: 'https://diploi.com/blog/hono_and_django_support/hono_and_django_support_og.png'
+image: './hono_and_django_support_cover.png'
+social_image: './hono_and_django_support_og.png'
 draft: false
 ---
 
@@ -17,10 +17,9 @@ These frameworks are now officially supported, meaning you can deploy, host, and
 
 **TLDR?** Sure, to launch a **Hono** app, go to https://diploi.com/component/hono and for **Django** apps, go to https://diploi.com/component/django
 
-***
+---
 
 ## What is Hono?
-
 
 From their [docs](https://hono.dev/docs/),
 
@@ -32,7 +31,7 @@ Hono aims to make your life easier by enabling API Spec and type inference via H
 
 To launch a Hono app instantly, check out this link https://diploi.com/component/hono
 
-***
+---
 
 ## What is Django?
 
@@ -48,7 +47,7 @@ Fun fact: Before this blog, I didn't know that Django has been around since 2005
 
 Start a new Django application with Diploi, here https://diploi.com/component/django
 
-***
+---
 
 ## Using Django and Hono with other frameworks in Diploi
 
@@ -64,17 +63,18 @@ If you would like to test out how these frameworks work together with other fram
 
 Diploi will then start a remote development environment that allows you to code in the browser and your application is deployed online. If you would like to start your application with a GitHub repository, all you need to do is register using GitHub and you will be able to start a new repository with your new application
 
-***
+---
 
 What frameworks should we support next? Let me know in the comments!
 
-***
+---
 
 You can start new apps on [Diploi for free without registration](https://diploi.com/) and if you sign up, you will get 50€ in free credits
 
-***
+---
 
 **References:**
+
 - https://hono.dev/
 - https://www.djangoproject.com/
 - https://docs.diploi.com/

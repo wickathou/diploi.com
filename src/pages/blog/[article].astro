@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
 import { User, CalendarBlank, DevToLogo, ArrowSquareOut } from '@phosphor-icons/react';
 import Layout from '../../layouts/Layout.astro';
 import { Navigation, Footer, GetStarted, Section } from '../../components';
@@ -26,11 +27,16 @@ const schema = createBlogPostSchema({
 });
 ---
 
-<Layout title={`Diploi – ${entry.data.title}`} ogTitle={entry.data.title} ogSocialImage={entry.data.social_image||entry.data.image}>
+<Layout
+  title={`Diploi – ${entry.data.title}`}
+  ogTitle={entry.data.title}
+  ogSocialImage={entry.data.social_image?.src || entry.data.image?.src}
+>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
   <Navigation selected="blog" />
   <main>
     <Section>
+      {entry.data.image && <Image class="cover" alt="Cover image" layout="full-width" width={1000} height={420} src={entry.data.image} />}
       <div class="title">
         <h1 class="text-gradient">{entry.data.title}</h1>
         <div class="info">
@@ -84,8 +90,7 @@ const schema = createBlogPostSchema({
   .title h1 {
     position: relative;
     margin: 0;
-    margin-top: 80px;
-    max-width: 14ch;
+    max-width: 22ch;
     text-align: center;
     font-size: var(--font-header-size);
     font-weight: bold;
@@ -129,6 +134,14 @@ const schema = createBlogPostSchema({
     align-items: center;
     gap: 6px;
     text-decoration: none;
+  }
+
+  .cover {
+    align-self: center;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    border-radius: 12px;
   }
 
   .article {

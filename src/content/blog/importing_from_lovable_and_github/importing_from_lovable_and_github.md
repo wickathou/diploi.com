@@ -4,8 +4,8 @@ description: 'You can now import apps directly from your GitHub account or publi
 author: 'Javier'
 timestamp: '2025-09-26T18:00:05.000Z'
 # devtoUrl: ''
-image: '/blog/importing_from_lovable_and_github/importing_from_lovable_and_github_cover.png'
-social_image: 'https://diploi.com/blog/importing_from_lovable_and_github/importing_from_lovable_and_github_og.png'
+image: './importing_from_lovable_and_github_cover.png'
+social_image: './importing_from_lovable_and_github_og.png'
 draft: false
 ---
 
@@ -115,8 +115,9 @@ For the rest of this walkthrough, we'll use a public Repository that we don't ow
 You might notice that Postgres and MariaDB were added too, which come bundled by default as they are required by n8n and Ghost, respectively.
 
 **Note**
+
 > For projects created using Diploi, the process is more straightforward, since the system can use the `diploi.yaml` file directly, so the import will be guaranteed to work.
-> 
+>
 > ![Importing an application built with Diploi](importing-application-built-with-diploi.png)
 
 Once you are ready, just click **Launch Stack** to start a Development environment.
@@ -207,7 +208,7 @@ We created this table to explain how well supported each framework is.
 
 | Framework / Tooling | Support Level   | Recommended for Production |
 | ------------------- | --------------- | -------------------------- |
-| Diploi             | Fully supported | ✅                         |
+| Diploi              | Fully supported | ✅                         |
 | Lovable             | Fully supported | ✅                         |
 | React-Vite          | Fully supported | ✅                         |
 | Node.js             | Fully supported | ✅                         |

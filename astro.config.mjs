@@ -19,6 +19,15 @@ export default defineConfig({
       DEVTO_API_KEY: envField.string({ context: 'server', access: 'secret', optional: false }),
     },
   },
+  image: {
+    domains: ['media2.dev.to', 'dev.to'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.dev.to',
+      },
+    ],
+  },
   integrations: [
     astroLLMsGenerator({
       description: diploiDescription,

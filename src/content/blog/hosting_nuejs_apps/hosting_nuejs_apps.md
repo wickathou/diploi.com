@@ -4,8 +4,8 @@ description: 'Learn how to create new Nuejs apps easily and host them online wit
 author: 'Javier'
 timestamp: '2025-08-20T08:11:05.573Z'
 # devtoUrl: ''
-image: '/blog/hosting_nuejs_apps/hosting_nuejs_apps_cover.png'
-social_image: 'https://diploi.com/blog/hosting_nuejs_apps/hosting_nuejs_apps_og.png'
+image: './hosting_nuejs_apps_cover.png'
+social_image: './hosting_nuejs_apps_og.png'
 draft: false
 ---
 
@@ -30,7 +30,7 @@ There are plenty of ways to kick off a Nue.js application, cloning a template fr
 
 ## What you need
 
-* A GitHub account. If you don’t have one yet, sign up here: [https://github.com/signup](https://github.com/signup)
+- A GitHub account. If you don’t have one yet, sign up here: [https://github.com/signup](https://github.com/signup)
 
 ---
 
@@ -46,9 +46,9 @@ There are plenty of ways to kick off a Nue.js application, cloning a template fr
 
 Diploi will provision a full development environment for your Nue.js app. You’ll be able to:
 
-* Preview your app live in the browser.
-* Edit code directly via the Browser IDE.
-* Connect over SSH for remote development with VS Code, WebStorm, or any IDE that supports SSH and dev containers.
+- Preview your app live in the browser.
+- Edit code directly via the Browser IDE.
+- Connect over SSH for remote development with VS Code, WebStorm, or any IDE that supports SSH and dev containers.
 
 ---
 
@@ -88,13 +88,13 @@ It can take up to 30 minutes for DNS propagation and SSL certificate to be rea
 
 Diploi lets you test Nue.js without installing anything locally. Two ways to spin up a sandbox:
 
-* **Not yet on Diploi?**
+- **Not yet on Diploi?**
   Launch a free trial from the Diploi Stack Builder:
   [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder)
   or go straight to the Nue.js component page:
   [https://diploi.com/component/nue](https://diploi.com/component/nue)
 
-* **Already a Diploi user?**
+- **Already a Diploi user?**
   Create a new project, then under **Repository** select **Quick Launch**, you’ll get a throwaway environment preconfigured with Nue.js and any add‑ons you choose, no Git repo required.
 
 ---

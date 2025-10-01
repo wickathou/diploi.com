@@ -4,8 +4,8 @@ description: 'Use Diploi to run and iterate on Flask without touching servers'
 author: 'Javier'
 timestamp: '2025-09-22T18:00:05.000Z'
 # devtoUrl: ''
-image: '/blog/hosting_flask_apps/hosting_flask_apps_cover.png'
-social_image: 'https://diploi.com/blog/hosting_flask_apps/hosting_flask_apps_og.png'
+image: './hosting_flask_apps_cover.png'
+social_image: './hosting_flask_apps_og.png'
 draft: false
 ---
 
@@ -94,7 +94,6 @@ When you’re happy with your Flask app and it’s time to promote it to a produ
 
 - Open your project dashboard: In the Diploi console, navigate to your Flask project’s page.
   ![Project dashboard for your Flask app](flask-project-dashboard.png)
-  
 - Create a new deployment: Click **Create Deployment +** and the select **Production** for the stage.
   ![Launching a Production stage for your Flask app](../../../images/blog/production-stage.png)
 
@@ -147,7 +146,7 @@ You can spin up a temporary Flask environment on Diploi and explore what's possi
 
 - Option 2 - Quick Launch with your Diploi account
   If you’re logged in, create a new project as usual and, in the **Repository** step, choose **Quick Launch** instead of linking GitHub. Diploi will provision a ready-to-use Flask app so you can experiment immediately, no permanent repo until you decide to create one.
-    ![Quick launch](../../../images/blog/quick-launch.png)
+  ![Quick launch](../../../images/blog/quick-launch.png)
 
 With that, you can go from zero to a deployed Flask service on Diploi, although keep in mind that these options are not meant for production apps, they are only for testing.
 

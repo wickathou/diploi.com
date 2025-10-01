@@ -4,8 +4,8 @@ description: 'How to get started with Supabase, using Diploi to host a project.'
 author: 'Javier'
 timestamp: '2025-09-25T07:00:05.000Z'
 # devtoUrl: ''
-image: '/blog/hosting_supabase/hosting_supabase_cover.png'
-social_image: 'https://diploi.com/blog/hosting_supabase/hosting_supabase_og.png'
+image: './hosting_supabase_cover.png'
+social_image: './hosting_supabase_og.png'
 draft: false
 ---
 

@@ -4,8 +4,8 @@ description: 'With the convenience of Vercel and the flexibility of Replit, all 
 author: 'Javier'
 timestamp: '2025-08-18T07:11:05.573Z'
 # devtoUrl: ''
-image: '/blog/hosting_svelte_apps/hosting_svelte_apps_cover.png'
-social_image: 'https://diploi.com/blog/hosting_svelte_apps/hosting_svelte_apps_og.png'
+image: './hosting_svelte_apps_cover.png'
+social_image: './hosting_svelte_apps_og.png'
 draft: false
 ---
 

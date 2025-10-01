@@ -4,8 +4,8 @@ description: 'Launching Next.js faster than using Vercel and with support for mo
 author: 'Javier'
 timestamp: '2025-08-22T07:12:05.573Z'
 # devtoUrl: ''
-image: '/blog/hosting_nextjs_apps/hosting_nextjs_apps_cover.png'
-social_image: 'https://diploi.com/blog/hosting_nextjs_apps/hosting_nextjs_apps_og.png'
+image: './hosting_nextjs_apps_cover.png'
+social_image: './hosting_nextjs_apps_og.png'
 draft: false
 ---
 
@@ -32,8 +32,8 @@ In this post, we'll go over how to create production-ready Next.js apps, with a 
 
 ## What you need
 
-* A **GitHub account**, sign up here if you don't have one yet, [https://github.com/signup](https://github.com/signup)
-* A **Diploi account**, sign up for a free Diploi account at [https://console.diploi.com/](https://console.diploi.com/)
+- A **GitHub account**, sign up here if you don't have one yet, [https://github.com/signup](https://github.com/signup)
+- A **Diploi account**, sign up for a free Diploi account at [https://console.diploi.com/](https://console.diploi.com/)
 
 ---
 
@@ -43,6 +43,7 @@ In this post, we'll go over how to create production-ready Next.js apps, with a 
 2. Under **Pick Components**, choose **Next.js**
 
    You can add other frameworks from this page if you want to create a monorepo application, eg, Next.js + Bun for backend.
+
 3. In **Pick Add-ons**, select any databases or extra tools you need.
 4. Choose **Create Repository** so Diploi generates a new GitHub repo for your project.
 5. Click **Launch Stack**
@@ -88,13 +89,13 @@ The change is usually instant, but sometimes it can take up to 30 minutes for DN
 
 If you want to try Next.js without having to run a single `npm` command, you can do it using Diploi by either:
 
-* **Starting a trial without registering an account**
+- **Starting a trial without registering an account**
 
-   Go to [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) to launch a trial project, or visit the Next.js component page [https://diploi.com/component/next](https://diploi.com/component/next)
+  Go to [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) to launch a trial project, or visit the Next.js component page [https://diploi.com/component/next](https://diploi.com/component/next)
 
-* **Starting a Quick Launch if you have an account on Diploi**
+- **Starting a Quick Launch if you have an account on Diploi**
 
-   Create a new project and in the **Repository** section, select **Quick Launch**. This gives you a temporary environment to explore Next.js without connecting a repo.
+  Create a new project and in the **Repository** section, select **Quick Launch**. This gives you a temporary environment to explore Next.js without connecting a repo.
 
 ---
 

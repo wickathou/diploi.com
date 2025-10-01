@@ -4,8 +4,8 @@ description: 'Bring the versatility of platforms like Heroku to your Astro devel
 author: 'Javier'
 timestamp: '2025-08-26T07:11:05.573Z'
 # devtoUrl: ''
-image: '/blog/hosting_astro_apps/hosting_astro_apps_cover.png'
-social_image: 'https://diploi.com/blog/hosting_astro_apps/hosting_astro_apps_og.png'
+image: './hosting_astro_apps_cover.png'
+social_image: './hosting_astro_apps_og.png'
 draft: false
 ---
 
@@ -30,7 +30,7 @@ You can start an Astro project in several ways, by using the official CLI, grabb
 
 ## What you need
 
-* A GitHub account, sign up here if you don't have one yet: [https://github.com/signup](https://github.com/signup)
+- A GitHub account, sign up here if you don't have one yet: [https://github.com/signup](https://github.com/signup)
 
 ---
 
@@ -46,9 +46,9 @@ You can start an Astro project in several ways, by using the official CLI, grabb
 
 Diploi will spin up a full Development environment in the cloud where you can:
 
-* Preview your Astro site live instantly
-* Code directly in the browser using the built-in IDE
-* Or connect remotely via SSH using VS Code, Cursor, or any dev container–friendly IDE
+- Preview your Astro site live instantly
+- Code directly in the browser using the built-in IDE
+- Or connect remotely via SSH using VS Code, Cursor, or any dev container–friendly IDE
 
 ---
 
@@ -89,11 +89,11 @@ Give it up to 30 minutes for DNS and SSL propagation to complete.
 
 You don’t need to install anything, just try Astro in the cloud on Diploi in two simple ways:
 
-* **Not signed up yet?**
+- **Not signed up yet?**
   Head to [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) to launch a trial project, or go straight to the Astro component page:
   [https://diploi.com/component/astro](https://diploi.com/component/astro)
 
-* **Already have a Diploi account?**
+- **Already have a Diploi account?**
   Create a new project and in the **Repository** section, select **Quick Launch**. This gives you a temporary environment to explore Astro without connecting a repo.
 
 ---

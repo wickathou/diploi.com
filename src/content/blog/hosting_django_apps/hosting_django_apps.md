@@ -4,8 +4,8 @@ description: 'Use Django on Diploi to skip server config and focus only on the c
 author: 'Javier'
 timestamp: '2025-08-24T07:15:05.573Z'
 # devtoUrl: ''
-image: '/blog/hosting_django_apps/hosting_django_apps_cover.png'
-social_image: 'https://diploi.com/blog/hosting_django_apps/hosting_django_apps_og.png'
+image: './hosting_django_apps_cover.png'
+social_image: './hosting_django_apps_og.png'
 draft: false
 ---
 
@@ -32,8 +32,8 @@ In this guide, I’ll walk you through spinning up a brand-new Django app on Dip
 
 ## What you need
 
-* A **GitHub account** - [https://github.com/signup](https://github.com/signup)
-* A **Diploi account** - [https://console.diploi.com/](https://console.diploi.com/)
+- A **GitHub account** - [https://github.com/signup](https://github.com/signup)
+- A **Diploi account** - [https://console.diploi.com/](https://console.diploi.com/)
 
 ---
 
@@ -90,12 +90,12 @@ When you use a custom domain, the update usually happens instantly, but it can t
 
 In case this is your first time exploring Django and how it works, you might want to skip any config work usually required to get started. With Diploi, you can skip all the boring config work and jump straight to test-drive Django without having to install anything locally in two ways:
 
-* Option 1 - **Starting a trial without registering an account**
+- Option 1 - **Starting a trial without registering an account**
 
   Go to [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) to launch a trial project, or visit the Next.js component page [https://diploi.com/component/django](https://diploi.com/component/django)
 
-* Option 2 - **Starting a Quick Launch Project if you have an account on Diploi**
-  
+- Option 2 - **Starting a Quick Launch Project if you have an account on Diploi**
+
   Create a new project and in the **Repository** section, select **Quick Launch**. This gives you a temporary environment to explore Django without connecting to a repo.
 
 ---

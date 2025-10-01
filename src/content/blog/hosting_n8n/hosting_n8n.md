@@ -4,8 +4,8 @@ description: 'Spin up n8n: Build automations, preview, and ship without DevOps.'
 author: 'Javier'
 timestamp: '2025-09-23T18:00:05.000Z'
 # devtoUrl: ''
-image: '/blog/hosting_n8n/hosting_n8n_cover.png'
-social_image: 'https://diploi.com/blog/hosting_n8n/hosting_n8n_og.png'
+image: './hosting_n8n_cover.png'
+social_image: './hosting_n8n_og.png'
 draft: false
 ---
 
@@ -35,7 +35,7 @@ n8n is an open-source workflow automation tool with a visual editor and lots of 
 
 ### What you need
 
-- A GitHub account  
+- A GitHub account
 - A Diploi account
 
 You can create a Diploi account for free, no credit card required.
@@ -144,8 +144,8 @@ Happy automating 🤖
 
 ## References
 
-- Official n8n Documentation https://docs.n8n.io/  
-- Diploi's implementation for n8n https://github.com/diploi/component-n8n  
-- Trial launch page for n8n https://diploi.com/component/n8n  
-- Diploi Components https://docs.diploi.com/building/components  
+- Official n8n Documentation https://docs.n8n.io/
+- Diploi's implementation for n8n https://github.com/diploi/component-n8n
+- Trial launch page for n8n https://diploi.com/component/n8n
+- Diploi Components https://docs.diploi.com/building/components
 - Custom Domains https://docs.diploi.com/deploying/custom-domain/

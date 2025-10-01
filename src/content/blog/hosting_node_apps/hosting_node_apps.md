@@ -4,8 +4,8 @@ description: 'Build your next Node.js app with Diploi and have it live right awa
 author: 'Javier'
 timestamp: '2025-08-21T07:14:05.573Z'
 # devtoUrl: ''
-image: '/blog/hosting_node_apps/hosting_node_apps_cover.png'
-social_image: 'https://diploi.com/blog/hosting_node_apps/hosting_node_apps_og.png'
+image: './hosting_node_apps_cover.png'
+social_image: './hosting_node_apps_og.png'
 draft: false
 ---
 
@@ -32,8 +32,8 @@ In this guide, I'll show how easy it is to create a new Node app that is hosted 
 
 ## What you need
 
-* A **GitHub account**, don't have one yet? Click here [https://github.com/signup](https://github.com/signup)
-* A **Diploi account**, you can get a free Diploi account here [https://console.diploi.com/](https://console.diploi.com/)
+- A **GitHub account**, don't have one yet? Click here [https://github.com/signup](https://github.com/signup)
+- A **Diploi account**, you can get a free Diploi account here [https://console.diploi.com/](https://console.diploi.com/)
 
 ---
 
@@ -88,11 +88,11 @@ Modifying your domain usually happens instantly, but in some cases, it can take 
 
 If you haven't worked with Node.js before and you would like to try it without having to set up folders, repos, or IDEs, you can start a Node project on Diploi in two ways:
 
-* 1) **Starting a trial without registering an account**
+- 1. **Starting a trial without registering an account**
 
   Go to [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) to launch a trial project, or visit the Node component page [https://diploi.com/component/node](https://diploi.com/component/node)
 
-* 2) **Starting a Quick Launch Project if you have an account on Diploi**
+- 2. **Starting a Quick Launch Project if you have an account on Diploi**
 
   Create a new project and in the **Repository** section, select **Quick Launch**. This gives you a temporary environment to explore Node.js without connecting to a repo.
 

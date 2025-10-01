@@ -6,7 +6,7 @@ type Props = {
   id: string;
   title: string;
   description: string;
-  image?: string | null;
+  image?: ImageMetadata | null;
   url?: string;
   timestamp: string;
   author: string;
@@ -18,10 +18,7 @@ const { id, title, description, image, url, timestamp, author } = Astro.props;
 <a href={`/blog/${id}`}>
   <article>
     {image && <Image src={image} inferSize width={500} height={300} alt="Article image" />}
-    <h3>
-      {title}
-      <!-- {url.includes('https://') && <ArrowSquareOut /> } -->
-    </h3>
+    <h3>{title}</h3>
     <p>{description}</p>
     <footer>
       <p class="small"><User /> {author}</p>

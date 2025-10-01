@@ -4,8 +4,8 @@ description: 'In this article, we check interesting AI coding alternatives to th
 author: 'Javier'
 timestamp: '2025-09-18T15:54:05.000Z'
 # devtoUrl: ''
-image: '/blog/exploring-7-lesser-known-ai-coding-extensions/exploring-7-lesser-known-ai-coding-extensions_cover.png'
-social_image: 'https://diploi.com/blog/exploring-7-lesser-known-ai-coding-extensions/exploring-7-lesser-known-ai-coding-extensions_og.png'
+image: './exploring-7-lesser-known-ai-coding-extensions_cover.png'
+social_image: './exploring-7-lesser-known-ai-coding-extensions_og.png'
 draft: false
 ---
 
@@ -153,21 +153,21 @@ The full list of models supported by Sixth include:
 
 When you use **Sixth**, you get a two-phase workflow and editor-native helpers:
 
-* **Plan and Act modes**
+- **Plan and Act modes**
 
-  * **Plan**
+  - **Plan**
 
     > Sixth reads your codebase, asks clarifying questions, and helps design an approach without touching files. It’s meant for scoping, exploring structure, and de-risking changes.
 
-  * **Act**
+  - **Act**
 
     > Once you’re happy with the plan, Sixth can implement it, making edits across files while keeping the planning context. You approve changes as it go.
 
-* **Editor integrations**
+- **Editor integrations**
 
-  * **Inline/CodeLens actions and code commands** for explanations, fixes, and refactors directly in the file.
-  * **Terminal helper (“See Terminal”)** to generate shell commands from natural language.
-  * **Project-aware chat and codebase indexing** so the agent can navigate and modify multiple files in one flow.
+  - **Inline/CodeLens actions and code commands** for explanations, fixes, and refactors directly in the file.
+  - **Terminal helper (“See Terminal”)** to generate shell commands from natural language.
+  - **Project-aware chat and codebase indexing** so the agent can navigate and modify multiple files in one flow.
 
 Under the hood, Sixth can **read/write files, run commands, use a browser tool, and extend itself via MCP servers**, which all require explicit approvals unless you enable auto-approve.
 
@@ -233,6 +233,7 @@ https://github.com/robertpiosik/CodeWebChat
 Code Web Chat is a free, open-source VS Code extension that connects your editor to AI chatbots in your web browser, which acts as a bridge between VS Code and all those web AI chat interfaces (ChatGPT, Claude, Bard/Gemini, etc.).
 
 Instead of copying code to ChatGPT and back, CWC lets you do it in one flow:
+
 - You select files or code in VS Code
 - Type an instruction (like “Optimize this function” or “Explain this code”),
 - And it will automatically open your browser and initialize a chat with the AI of your choice, pre-loaded with the selected code and prompt
@@ -240,8 +241,7 @@ Instead of copying code to ChatGPT and back, CWC lets you do it in one flow:
 
 ![Code Web Chat Demo](./code-web-chat-demo.gif)
 
-*Source:https://codeweb.chat/*
-
+_Source:https://codeweb.chat/_
 
 To use CWC, you need to install the VS Code extension and then install the browser extension, because as I mentioned above, your prompt and context will be sent to the chatbot you choose to use. For example, you can use regular ChatGPT (free or Plus version) or other free chatbots via their web interfaces, without API keys or payments to the AI provider needed. Essentially, if there’s a web-based AI that can help with coding, CWC likely supports it.
 ed AI models
@@ -357,47 +357,47 @@ The complete list of API providers includes:
 
 If you use Syntx as your default provider, you can use the following models:
 
-* claude-opus-4-20250514
-* claude-sonnet-4-20250514
-* claude-3-7-sonnet-latest
-* claude-3-5-sonnet-latest
-* claude-3-5-haiku-latest
-* claude-opus-4-20250514-thinking
-* claude-sonnet-4-20250514-thinking
-* claude-3-7-sonnet-latest-thinking
-* gpt-5
-* gpt-4.1
-* gpt-4.1-mini
-* gpt-4.1-nano
-* o3-mini
-* o4-mini
-* llama-3.3-70b-versatile
-* meta-llama/llama-4-scout-17b-16e-instruct
-* qwen-qwq-32b
-* deepseek-r1-distill-llama-70b
-* Kimi-K2
-* perplexity-sonar-pro
-* perplexity-sonar
-* perplexity-sonar-premium
-* perplexity-r1-1776
-* perplexity-sonar-reasoning-pro
-* perplexity-sonar-reasoning
-* gemini-2.5-flash
-* gemini-2.5-pro
-* gemini-2.5-flash-thinking
-* gemini-2.5-pro-thinking
-* deepseek-v3
-* deepseek-v3-premium
-* Grok-4
-* openrouter-deepseek-r1
-* openrouter-claude-sonnet-4
-* openrouter-gemini-2.5-pro
-* openrouter-codestral-2501
-* openrouter-magistral-medium-thinking
-* openrouter-devstral-small
-* GLM-4.5
-* qwen3-coder
-* gpt-oss
+- claude-opus-4-20250514
+- claude-sonnet-4-20250514
+- claude-3-7-sonnet-latest
+- claude-3-5-sonnet-latest
+- claude-3-5-haiku-latest
+- claude-opus-4-20250514-thinking
+- claude-sonnet-4-20250514-thinking
+- claude-3-7-sonnet-latest-thinking
+- gpt-5
+- gpt-4.1
+- gpt-4.1-mini
+- gpt-4.1-nano
+- o3-mini
+- o4-mini
+- llama-3.3-70b-versatile
+- meta-llama/llama-4-scout-17b-16e-instruct
+- qwen-qwq-32b
+- deepseek-r1-distill-llama-70b
+- Kimi-K2
+- perplexity-sonar-pro
+- perplexity-sonar
+- perplexity-sonar-premium
+- perplexity-r1-1776
+- perplexity-sonar-reasoning-pro
+- perplexity-sonar-reasoning
+- gemini-2.5-flash
+- gemini-2.5-pro
+- gemini-2.5-flash-thinking
+- gemini-2.5-pro-thinking
+- deepseek-v3
+- deepseek-v3-premium
+- Grok-4
+- openrouter-deepseek-r1
+- openrouter-claude-sonnet-4
+- openrouter-gemini-2.5-pro
+- openrouter-codestral-2501
+- openrouter-magistral-medium-thinking
+- openrouter-devstral-small
+- GLM-4.5
+- qwen3-coder
+- gpt-oss
 
 #### Features
 
@@ -406,19 +406,21 @@ If you use Syntx as your default provider, you can use the following models:
 When you use Syntx, you’re not limited to one mode of operation. It provides multiple “Modes” or personas you can switch between depending on what you need. The available modes are:
 
 - Plan
-    > Intended to first prepare the assistant, based on your app's context, and it prepares the actions that the agent must follow
+
+  > Intended to first prepare the assistant, based on your app's context, and it prepares the actions that the agent must follow
 
 - Code
-    > Allows for code editing and generation inside your files
+
+  > Allows for code editing and generation inside your files
 
 - Chat
-    > Which lets you make questions about your code
+
+  > Which lets you make questions about your code
 
 - Debug
-    > Used for code reviewing and fixing issues
-    
+  > Used for code reviewing and fixing issues
 - Orchestrator
-    > Which can be used to combine the other modes to execute complex operations
+  > Which can be used to combine the other modes to execute complex operations
 
 Additionally, it allows you to create custom modes, so you could, for example, create a mode to generate documentation or security audits. The use of modes gives Syntx the possibility to adapt its style and the tools it uses based on context.
 
@@ -460,7 +462,7 @@ One important security aspect is that because Syntx can run commands and edit fi
 
 Syntx offers code assistant capabilities, with a wide range of options and behaviours that allow for a lot of flexibility, for example, it figures out a plan and executes step by step, while confirming with you to make sure that it is only executing changes that you agree with.
 
-If you want to evaluate different models in your code or use different models for various tasks within your code, then Syntx will be an interesting option for you. 
+If you want to evaluate different models in your code or use different models for various tasks within your code, then Syntx will be an interesting option for you.
 
 ---
 
@@ -494,34 +496,34 @@ They provide a Model Registry listing open source models that they support and t
 - StarCoder-7B
 - StarCoder2-3B
 - StarCoder2-7B
-- CodeLlama-7B 
-- CodeLlama-13B 
-- DeepSeekCoder-1.3B 
-- DeepSeekCoder-6.7B 
-- CodeGemma-2B 
-- CodeGemma-7B 
-- CodeQwen-7B 
-- Qwen2.5-Coder-0.5B 
-- Qwen2.5-Coder-1.5B 
-- Qwen2.5-Coder-3B 
-- Qwen2.5-Coder-7B 
-- Qwen2.5-Coder-14B 
-- Codestral-22B 
-- DeepSeek-Coder-V2-Lite 
+- CodeLlama-7B
+- CodeLlama-13B
+- DeepSeekCoder-1.3B
+- DeepSeekCoder-6.7B
+- CodeGemma-2B
+- CodeGemma-7B
+- CodeQwen-7B
+- Qwen2.5-Coder-0.5B
+- Qwen2.5-Coder-1.5B
+- Qwen2.5-Coder-3B
+- Qwen2.5-Coder-7B
+- Qwen2.5-Coder-14B
+- Codestral-22B
+- DeepSeek-Coder-V2-Lite
 
 ##### Chat models
 
-- Mistral-7B 
-- CodeGemma-7B-Instruct 
-- CodeQwen-7B-Chat 
-- Qwen2.5-Coder-0.5B-Instruct 
-- Qwen2.5-Coder-1.5B-Instruct 
-- Qwen2.5-Coder-7B-Instruct 
-- Qwen2.5-Coder-14B-Instruct 
-- Qwen2.5-Coder-32B-Instruct 
-- Qwen2-1.5B-Instruct 
-- Qwen3-0.6B 
-- Qwen3-1.7B 
+- Mistral-7B
+- CodeGemma-7B-Instruct
+- CodeQwen-7B-Chat
+- Qwen2.5-Coder-0.5B-Instruct
+- Qwen2.5-Coder-1.5B-Instruct
+- Qwen2.5-Coder-7B-Instruct
+- Qwen2.5-Coder-14B-Instruct
+- Qwen2.5-Coder-32B-Instruct
+- Qwen2-1.5B-Instruct
+- Qwen3-0.6B
+- Qwen3-1.7B
 - Qwen3-4B
 - Qwen3-8B
 - Qwen3-14B
@@ -529,7 +531,7 @@ They provide a Model Registry listing open source models that they support and t
 - Qwen3-30B-A3B
 - Qwen3-235B-A22B
 - Codestral-22B
-- Yi-Coder-9B-Chat	
+- Yi-Coder-9B-Chat
 
 ##### Embedding models
 
@@ -709,17 +711,17 @@ https://www.youtube.com/watch?v=3dNLxoinblU
 GoCodeo lets you pick models via a **Model Selector**, listing 4 providers and specific options that include:
 
 - Anthropic
-    - Claude 3.5 Sonnet
-    - Claude 4 Sonnet
+  - Claude 3.5 Sonnet
+  - Claude 4 Sonnet
 - OpenAI
-    - GPT-4.1
-    - o4-Mini
-    - GPT-4o Mini
+  - GPT-4.1
+  - o4-Mini
+  - GPT-4o Mini
 - Google
-    - Gemini-2.5-Pro
+  - Gemini-2.5-Pro
 - DeepSeek
-    - DeepSeek-R1
-    - DeepSeek-V3
+  - DeepSeek-R1
+  - DeepSeek-V3
 
 In GoCodeo, you need to bring your own API key for each provider you wish to use.
 
@@ -730,56 +732,58 @@ In GoCodeo, you need to bring your own API key for each provider you wish to use
 GoCodeo's features cover a wide range of tasks, from general Q&A to full-stack app development. Here's the full list of features:
 
 - Different modes for specific tasks within your code, which include:
-    - **ASK**
 
-        This allows you to chat with the agent to **ask over documents and images**, use a **Terminal Helper** for command suggestions and a **Terminal Debugger** for failed commands, and keep an organized **chat history**. There’s also an **Enhance Prompt** helper that expands simple asks into richer specs.
+  - **ASK**
 
-        To access the ASK mode, you can use the shortcut: **Ctrl/Cmd + Shift + L**
+    This allows you to chat with the agent to **ask over documents and images**, use a **Terminal Helper** for command suggestions and a **Terminal Debugger** for failed commands, and keep an organized **chat history**. There’s also an **Enhance Prompt** helper that expands simple asks into richer specs.
 
-    - **BUILD**
-    
-        Which is all about **scaffolding front-end and back-end codebases**, with the following frameworks:
+    To access the ASK mode, you can use the shortcut: **Ctrl/Cmd + Shift + L**
 
-        - **Front-end Templates**
-            - React
-            - Angular
-            - Vue.js
-            - Typescript
-            - Vite
-            - Next.js
-            - Astro
-            - Nuxt
-            - Svelte
-            - Remix
-            - Slidev
-            - Remotion
-            - Qwik
-            - Nativescript
+  - **BUILD**
 
-        - **Back-end Templates**
+    Which is all about **scaffolding front-end and back-end codebases**, with the following frameworks:
 
-            - Express.js
-            - node.js
-            - SpringBoot
-            - Django
-            - FastAPI
-            - ASP.net
-            - Ruby on Rails
-            - Laravel
-            - NestJS
-            - Flask
-            - Fastify
-            - Gin
-            - Echo
-            - koa
+    - **Front-end Templates**
 
-        You can also use a visual **scaffolding** panel, **dependency management**, **build history**, and **one-click deploy** to Vercel. It also supports **Supabase** for auth/data. You can attach an **image to generate code**, and use **@ references** to target files/symbols. 
-        
-        The BUILD mode shortcut is: **Ctrl/Cmd + Shift + K**
+      - React
+      - Angular
+      - Vue.js
+      - Typescript
+      - Vite
+      - Next.js
+      - Astro
+      - Nuxt
+      - Svelte
+      - Remix
+      - Slidev
+      - Remotion
+      - Qwik
+      - Nativescript
 
-    - **TEST**
+    - **Back-end Templates**
 
-    Used to generate unit tests in multiple languages, and execute them with a built-in runner (e.g., Python/JS/Java/Go). You get **AI debugging insights**, and can apply **auto-fixes** when reviewing the results.
+      - Express.js
+      - node.js
+      - SpringBoot
+      - Django
+      - FastAPI
+      - ASP.net
+      - Ruby on Rails
+      - Laravel
+      - NestJS
+      - Flask
+      - Fastify
+      - Gin
+      - Echo
+      - koa
+
+    You can also use a visual **scaffolding** panel, **dependency management**, **build history**, and **one-click deploy** to Vercel. It also supports **Supabase** for auth/data. You can attach an **image to generate code**, and use **@ references** to target files/symbols.
+
+    The BUILD mode shortcut is: **Ctrl/Cmd + Shift + K**
+
+  - **TEST**
+
+  Used to generate unit tests in multiple languages, and execute them with a built-in runner (e.g., Python/JS/Java/Go). You get **AI debugging insights**, and can apply **auto-fixes** when reviewing the results.
 
 - GoCodeo supports MCP servers, which can be declared in a `mcp.json` file, and allows you to add **Global MCP servers**, browse **community MCP servers**, and let the agent **auto-select** tools per request. You get **inline logs and reasoning** for each tool call.
 
@@ -800,8 +804,8 @@ There are **two stories** depending on where you look:
 - On the **VS Code Marketplace**, GoCodeo’s FAQ says it’s **“now completely free because you bring your own API keys”**, with no per-token charges, and you control provider costs.
 
 - On GoCodeo’s **website pricing page**, there are tiers:
-    - **Hobby (Free)** with quotas for premium model requests, autocompletions, and deployments
-    - **Starter ($9/month)** and **Pro ($19/month)**, with higher limits, including daily Claude Sonnet allowances.
+  - **Hobby (Free)** with quotas for premium model requests, autocompletions, and deployments
+  - **Starter ($9/month)** and **Pro ($19/month)**, with higher limits, including daily Claude Sonnet allowances.
 
 In practice, this suggests two pricing models, one free where you **bring your own API keys**, and the other, which is paid, where you access the models via **GoCodeo-metered usage**, if you want built-in usage without managing keys.
 
@@ -861,7 +865,7 @@ https://github.com/deepgram/vibe_coder
 
 ![Vibe Coder interface](vibe-coder-interface.png)
 
-Vibe Coder is a different flavor of AI coding assistant. Vibe Coder is a voice-first coding assistant by Deepgram, a company focused on voice assist. This extension lets you interact with VS Code and generate code using natural voice commands. 
+Vibe Coder is a different flavor of AI coding assistant. Vibe Coder is a voice-first coding assistant by Deepgram, a company focused on voice assist. This extension lets you interact with VS Code and generate code using natural voice commands.
 
 **Important**
 Vibe Coder seems to be in a very early stage and hasn't been updated in a while, which might explain why, while I was trying it, I couldn't get the Vibe mode to work, so I can't speak about its capabilities for vibe coding. The Code mode worked fine, and I'll try it out in my workflow when writing blogs.
@@ -923,7 +927,7 @@ DeepGram doesn't have a privacy policy or terms of service for Vibe Coder, so it
 
 #### Conclusion
 
-Vibe Coder is an interesting initiative to explore voice-first coding, but as I mentioned, the fact that the product hasn't been updated in the past months makes me question if it's still actively maintained. 
+Vibe Coder is an interesting initiative to explore voice-first coding, but as I mentioned, the fact that the product hasn't been updated in the past months makes me question if it's still actively maintained.
 
 If you want to experiment with voice coding, give Vibe Coder a try, although I couldn't get the Vibe mode to work on my machine. 🥲
 
@@ -935,15 +939,15 @@ In summary, let's compare all extensions:
 
 ### Pricing
 
-| Extension     | Plans                                                                                          |
-| ------------- | ---------------------------------------------------------------------------------------------- |
-| Sixth AI      | Free with limits and paid from $10/month or $7/month if you take the annual plans.             |
-| Code Web Chat | Free and also open source                                                                      |
+| Extension     | Plans                                                                                                                                               |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sixth AI      | Free with limits and paid from $10/month or $7/month if you take the annual plans.                                                                  |
+| Code Web Chat | Free and also open source                                                                                                                           |
 | Syntx         | Free if you bring your own API keys or paid if you use Syntx credits to access AI models, for $1 per credit + 15% platform fee + 3.37% Razorpay fee |
-| Tabby         | Self-hosted models only, Free for up to 5 users, paid for teams $19/user/month up to 50 users and custom pricing for Enterprise |
-| Augment Code  | No free plans, Entry tier $20/month, Developer $50/month, Pro $100/month, Max $250/month and Enterprise custom pricing |
-| GoCodeo       | Free with limits or fully free if you bring your own API keys, paid plans Starter $9/month or $85/year, and Pro $19/month or $182/year |
-| Vibe Coder    | Free to use, but you must bring your own API keys for Deepgram and OpenAI                       |
+| Tabby         | Self-hosted models only, Free for up to 5 users, paid for teams $19/user/month up to 50 users and custom pricing for Enterprise                     |
+| Augment Code  | No free plans, Entry tier $20/month, Developer $50/month, Pro $100/month, Max $250/month and Enterprise custom pricing                              |
+| GoCodeo       | Free with limits or fully free if you bring your own API keys, paid plans Starter $9/month or $85/year, and Pro $19/month or $182/year              |
+| Vibe Coder    | Free to use, but you must bring your own API keys for Deepgram and OpenAI                                                                           |
 
 ### Code base indexing and context window
 
@@ -955,30 +959,30 @@ In summary, let's compare all extensions:
 | Tabby         | No indexing, but you can add files to chat prompts                                                  |
 | Augment Code  | Context Engine indexes the project folder and you can link additional folders                       |
 | GoCodeo       | No indexing, but context can be added to prompts via @Files, @Code and attachments                  |
-| Vibe Coder    | No indexing, but in Vibe mode, the assistant should, in theory, be able to read files                 |
+| Vibe Coder    | No indexing, but in Vibe mode, the assistant should, in theory, be able to read files               |
 
 ### MCP, tools and integrations
 
-| Extension     | Summary                                                                                                   |
-| ------------- | --------------------------------------------------------------------------------------------------------- |
-| Sixth AI      | MCP servers supported, can read/write files, run commands, use browser tool and terminal helper           |
-| Code Web Chat | No MCP, browser connector to many chatbots                                                                |
-| Syntx         | MCP servers supported, file edits, shell and browser automation with step approvals                       |
-| Tabby         | No MCP, no browser tools or integrations                                                                  |
-| Augment Code  | MCP servers supported with easy integrations like CircleCI, MongoDB, and others                           |
-| GoCodeo       | MCP support via `mcp.json`                                                                                |
-| Vibe Coder    | No MCP or other integrations                                                                              |
+| Extension     | Summary                                                                                         |
+| ------------- | ----------------------------------------------------------------------------------------------- |
+| Sixth AI      | MCP servers supported, can read/write files, run commands, use browser tool and terminal helper |
+| Code Web Chat | No MCP, browser connector to many chatbots                                                      |
+| Syntx         | MCP servers supported, file edits, shell and browser automation with step approvals             |
+| Tabby         | No MCP, no browser tools or integrations                                                        |
+| Augment Code  | MCP servers supported with easy integrations like CircleCI, MongoDB, and others                 |
+| GoCodeo       | MCP support via `mcp.json`                                                                      |
+| Vibe Coder    | No MCP or other integrations                                                                    |
 
 ### Privacy and security
 
-| Extension     | Summary                                                                                                                        |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Sixth AI      | Doesn't sell data, and doesn't use your code for training, closed source, routes requests via vendor servers, no published privacy policy or terms of service |
-| Code Web Chat | Doesn't sell data, and doesn't use your code for training, open source, runs locally, sends code only to the chosen AI in your browser |
-| Syntx         | Doesn't sell data, and doesn't use your code for training, open source, confirms before performing actions                             |
-| Tabby         | Self-hosted, code stays in your environment                                                                                            |
-| Augment Code  | Closed source, states no training on your data, although there's a Community plan where user data is used for training, SOC 2 Type II   |
-| GoCodeo       | No dedicated privacy policy or terms on homepage noted in article, generic Terms of Use, usage data wording is unclear                 |
+| Extension     | Summary                                                                                                                                                              |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sixth AI      | Doesn't sell data, and doesn't use your code for training, closed source, routes requests via vendor servers, no published privacy policy or terms of service        |
+| Code Web Chat | Doesn't sell data, and doesn't use your code for training, open source, runs locally, sends code only to the chosen AI in your browser                               |
+| Syntx         | Doesn't sell data, and doesn't use your code for training, open source, confirms before performing actions                                                           |
+| Tabby         | Self-hosted, code stays in your environment                                                                                                                          |
+| Augment Code  | Closed source, states no training on your data, although there's a Community plan where user data is used for training, SOC 2 Type II                                |
+| GoCodeo       | No dedicated privacy policy or terms on homepage noted in article, generic Terms of Use, usage data wording is unclear                                               |
 | Vibe Coder    | Open source, audio is sent to Deepgram for processing and then directed to OpenAI, covered by Deepgram privacy policy, there's no separate Vibe Coder privacy policy |
 
 ## Closing thoughts
