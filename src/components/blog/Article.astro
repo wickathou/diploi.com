@@ -7,17 +7,22 @@ type Props = {
   title: string;
   description: string;
   image?: ImageMetadata | null;
+  external_image?: string | null;
   url?: string;
   timestamp: string;
   author: string;
 };
 
-const { id, title, description, image, url, timestamp, author } = Astro.props;
+const { id, title, description, image, external_image, url, timestamp, author } = Astro.props;
 ---
 
 <a href={`/blog/${id}`}>
   <article>
-    {image && <Image src={image} inferSize width={500} height={300} alt="Article image" />}
+    {
+      (image || external_image) && (
+        <Image src={(image || external_image) as string} inferSize width={500} height={300} alt="Article image" />
+      )
+    }
     <h3>{title}</h3>
     <p>{description}</p>
     <footer>

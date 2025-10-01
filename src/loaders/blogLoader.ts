@@ -67,7 +67,7 @@ export function blogLoader({ apiKey }: { apiKey: string }): Loader {
           data: {
             title: blog.title,
             description: blog.description,
-            image: blog.cover_image,
+            external_image: blog.cover_image,
             author: firstName,
             timestamp: blog.published_timestamp,
             url: blog.url,
@@ -119,6 +119,7 @@ export function blogLoader({ apiKey }: { apiKey: string }): Loader {
         description: z.string(),
         image: z.string().nullable().optional(),
         social_image: z.string().nullable().optional(),
+        external_image: z.string().nullable().optional(),
         author: z.string(),
         timestamp: z.string(),
         url: z.string().optional(),

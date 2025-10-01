@@ -30,13 +30,24 @@ const schema = createBlogPostSchema({
 <Layout
   title={`Diploi – ${entry.data.title}`}
   ogTitle={entry.data.title}
-  ogSocialImage={entry.data.social_image?.src || entry.data.image?.src}
+  ogSocialImage={entry.data.social_image?.src || entry.data.image?.src || entry.data.external_image}
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />
   <Navigation selected="blog" />
   <main>
     <Section>
-      {entry.data.image && <Image class="cover" alt="Cover image" layout="full-width" width={1000} height={420} src={entry.data.image} />}
+      {
+        (entry.data.image || entry.data.external_image) && (
+          <Image
+            class="cover"
+            alt="Cover image"
+            layout="full-width"
+            width={1000}
+            height={420}
+            src={(entry.data.image || entry.data.external_image) as string}
+          />
+        )
+      }
       <div class="title">
         <h1 class="text-gradient">{entry.data.title}</h1>
         <div class="info">
