@@ -1,0 +1,171 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { StackIcon } from '@phosphor-icons/react';
+import AiSectionHeader from '../../ai/_components/AiSectionHeader.astro';
+import AiHr from '../../ai/_components/AiHr.astro';
+import AiLink from '../../ai/_components/AiLink.astro';
+import cursorLogo from '../../../images/cursor-logo.webp';
+import vscodeLogo from '../../../images/vscode-logo.svg';
+import zedLogo from '../../../images/zed-logo.svg';
+
+const articles = await getCollection('blog');
+const linkedFilterWords = ['supabase', 'n8n', 'node', 'ghost', 'laravel', 'postgres'];
+const linkedArticles = articles
+  .filter((article) => linkedFilterWords.some((word) => article.data.title.toLowerCase().includes(word)))
+  .slice(0, 4);
+
+const components = await getCollection('component');
+const lovable = components.find((component) => component.data.identifier === 'lovable')!;
+const supabase = components.find((component) => component.data.identifier === 'supabase')!;
+const n8n = components.find((component) => component.data.identifier === 'n8n')!;
+const node = components.find((component) => component.data.identifier === 'node')!;
+const ghost = components.find((component) => component.data.identifier === 'ghost')!;
+const laravel = components.find((component) => component.data.identifier === 'laravel')!;
+const postgres = components.find((component) => component.data.identifier === 'postgres')!;
+---
+
+<section class="main">
+  <AiSectionHeader>
+    <StackIcon />
+    <h2>Support For Any Stack</h2>
+    <p>
+      Build your stack your way. Diploi supports any combination of services, from Lovable apps to databases, APIs, and more. Below are a
+      few examples you can run with Diploi.
+    </p>
+  </AiSectionHeader>
+  <section class="list">
+    <article>
+      <ul>
+        <li>
+          <Image width={32} height={32} src={cursorLogo} alt="cursor logo" />
+          <span>Cursor for development</span>
+        </li>
+        <hr />
+        <li>
+          <img alt="lovable icon" src={`data:image/svg+xml;base64,${lovable.data.icon}`} width={32} height={32} />
+          <span>Frontend created with Lovable</span>
+        </li>
+        <li>
+          <img alt="supabase icon" src={`data:image/svg+xml;base64,${supabase.data.icon}`} width={32} height={32} />
+          <span>Self-hosted <a href="/component/supabase">Supabase</a> as the backend</span>
+        </li>
+        <li>
+          <img alt="n8n icon" src={`data:image/svg+xml;base64,${n8n.data.icon}`} width={32} height={32} />
+          <span><a href="/component/n8n">n8n</a> for AI automation</span>
+        </li>
+      </ul>
+    </article>
+    <AiHr vertical />
+    <article>
+      <ul>
+        <li>
+          <Image width={32} height={32} src={zedLogo} alt="zed logo" />
+          <span>Zed for development</span>
+        </li>
+        <hr />
+        <li>
+          <img alt="lovable icon" src={`data:image/svg+xml;base64,${lovable.data.icon}`} width={32} height={32} />
+          <span>Frontend created with Lovable</span>
+        </li>
+        <li>
+          <img alt="node icon" src={`data:image/svg+xml;base64,${node.data.icon}`} width={32} height={32} />
+          <span> Custom <a href="/component/node">Node.js</a> backend</span>
+        </li>
+        <li>
+          <img alt="ghost icon" src={`data:image/svg+xml;base64,${ghost.data.icon}`} width={32} height={32} />
+          <span><a href="/component/ghost">Ghost</a> as a CMS</span>
+        </li>
+      </ul>
+    </article>
+    <AiHr vertical />
+    <article>
+      <ul>
+        <li>
+          <Image width={32} height={32} src={vscodeLogo} alt="vs code logo" />
+          <span>VS Code for development</span>
+        </li>
+        <hr />
+        <li>
+          <img alt="lovable icon" src={`data:image/svg+xml;base64,${lovable.data.icon}`} width={32} height={32} />
+          <span>Frontend created with Lovable</span>
+        </li>
+        <li>
+          <img alt="laravel icon" src={`data:image/svg+xml;base64,${laravel.data.icon}`} width={32} height={32} />
+          <span>An API created with <a href="/component/laravel">Laravel</a></span>
+        </li>
+        <li>
+          <img alt="postgres icon" src={`data:image/svg+xml;base64,${postgres.data.icon}`} width={32} height={32} />
+          <span>PostgreSQL for data storage</span>
+        </li>
+      </ul>
+    </article>
+  </section>
+  <div class="links">
+    <AiHr />
+    {linkedArticles.map((article) => <AiLink href={`/blog/${article.id}`}>{article.data.title}</AiLink>)}
+  </div>
+</section>
+
+<style lang="scss">
+  @use '../../../styles/mixins';
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: var(--max-width-page-section);
+  }
+
+  .list {
+    display: flex;
+    gap: 32px;
+
+    @media (max-width: 860px) {
+      flex-direction: column;
+    }
+
+    article {
+      flex: 1;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      li {
+        gap: 0;
+
+        img {
+          margin-right: 12px;
+        }
+
+        a {
+          font-size: 1rem;
+          font-weight: inherit;
+          text-underline-offset: 4px;
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    :global(hr) {
+      margin: 0;
+      margin-bottom: 32px;
+      max-width: 500px;
+    }
+
+    :global(a) {
+      color: var(--color-text-secondary);
+    }
+  }
+</style>
