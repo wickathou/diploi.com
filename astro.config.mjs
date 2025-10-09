@@ -40,12 +40,12 @@ export default defineConfig({
       customPages: ['https://diploi.com/llms.txt', 'https://diploi.com/llms-small.txt', 'https://diploi.com/llms-full.txt'],
     }),
     mdx(),
-    sentry({
-      sourceMapsUploadOptions: {
-        project: 'website',
-        authToken: process.env.SENTRY_AUTH_TOKEN,
-      },
-    }),
+    // sentry({
+    //   sourceMapsUploadOptions: {
+    //     project: 'website',
+    //     authToken: process.env.SENTRY_AUTH_TOKEN,
+    //   },
+    // }),
     playformInline({
       Beasties: {
         fonts: false,
