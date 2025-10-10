@@ -2,7 +2,7 @@ import type { Loader } from 'astro/loaders';
 import { z } from 'astro:content';
 import DOMPurify from 'isomorphic-dompurify';
 
-// Remove component icon from the README.md
+// Remove component icon from README.md
 DOMPurify.addHook('uponSanitizeElement', function (node, data) {
   if (data.tagName === 'img') {
     const attributes = (node as any).attributes as NamedNodeMap;
@@ -10,6 +10,25 @@ DOMPurify.addHook('uponSanitizeElement', function (node, data) {
       const src = attributes.getNamedItem('src')?.textContent;
       if (src === '.diploi/icon.svg' && node.parentNode) {
         return node.parentNode.removeChild(node);
+      }
+    }
+  }
+});
+
+// Remove component badges from README.md
+DOMPurify.addHook('uponSanitizeElement', function (node, data) {
+  if (data.tagName === 'img') {
+    const attributes = (node as any).attributes as NamedNodeMap;
+    if ('src' in attributes) {
+      const src = attributes.getNamedItem('src')?.textContent || '';
+      const isBadge =
+        src === 'https://diploi.com/launch.svg' || src === 'https://diploi.com/component.svg' || src.startsWith('https://badgen.net');
+      if (isBadge && node.parentNode) {
+        if (node.parentElement?.tagName === 'A' && node.parentNode.parentNode) {
+          return node.parentNode.parentNode.removeChild(node.parentNode);
+        } else {
+          return node.parentNode.removeChild(node);
+        }
       }
     }
   }
