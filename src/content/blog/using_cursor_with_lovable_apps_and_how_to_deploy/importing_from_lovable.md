@@ -36,31 +36,31 @@ Updated <time datetime="2025-10-17T15:30:00.000Z">October 17, 2025</time>
 
 When you create a new application with Lovable, you get a lot done for you with just one prompt, which is great to get your project going, but! If you are here, it is because you also noticed that this is not enough.
 
-Maybe you reached the limits of what's possible with Lovable, got tired of context polution or limited branching support when deploying your app.
+Maybe you reached the limits of what's possible with Lovable, got tired of context pollution, or limited branching support when deploying your app.
 
-Lovable's context can get poluted and after a few chats, you end up either spending credits to fix bugs that the AI has introduced as it goes or looking for ways to restore your app to a point when it was working.
+Lovable's context can get polluted, and after a few chats, you end up either spending credits to fix bugs that the AI has introduced as it goes or looking for ways to restore your app to a point when it was working.
 
 Other times, you might want to use tools like Cursor, so you can target specific areas of your codebase and work along with Cursor's AI to improve your product, but since Lovable has it's own cloud and environment settings, you might cause unnintended issues, when your app is not able to run on Lovable and you need to find an alternative to host it.
 
-Becuase of these issues we decided to create something to help people who uses Lovable extensively, by adding a way to import apps built with Lovable on Diploi. As a developer platform, with Diploi we give you a way to host and code without the usual work of running apps locally or setting up servers.
+Because of these issues, we decided to create something to help people who use Lovable extensively by adding a way to import apps built with Lovable on Diploi. As a developer platform, with Diploi, we give you a way to host and code without the usual work of running apps locally or setting up servers.
 
 ## What is possible with Diploi
 
-Not only you can import your apps or start from zero, but you can also expand what's possible for your apps by using Diploi, where you can:
+Not only can you import your apps or start from zero, but you can also expand what's possible for your apps by using Diploi, where you can:
 - add a backend for your imported apps,
 - migrate from paid Supabase to open-source Supabase,
 - add additional databases,
 - add blogging with Ghost,
-- and add automate tasks with n8n,
+- and add automated tasks with n8n,
 
-Best part is that you can host all of these services along your Lovable app, within the same server cluster, so you only pay for one service, rather than paying for multiple servers to host each part of your full stack application.
+The best part is that you can host all of these services along your Lovable app, within the same server cluster, so you only pay for one service, rather than paying for multiple servers to host each part of your full-stack application.
 
-You get a smooth hosting experience, where you can add custom domains, and the option to deploy preview or production environments for your app without having to setup CI/CD pipelines or SSL certificates.
+You get a smooth hosting experience, where you can add custom domains, and the option to deploy preview or production environments for your app without having to set up CI/CD pipelines or SSL certificates.
 
 You can add components and add-ons in Diploi just by modifying a [diploi.yaml](https://docs.diploi.com/reference/diploi-yaml) file, which is created when you import an app from Lovable.
 
-So let's go over a walkthrough
-In this blog, we'll show you how to import an created using Lovable. Let's get going 👨‍🏭
+So let's go over a walkthrough.
+In this blog, we'll show you how to import an application created using Lovable. Let's get going 👨‍🏭
 
 ---
 
@@ -88,7 +88,7 @@ Now you'll need to create an account in Diploi, which is free. You can do it fro
 
 #### 2. Create a new project
 
-Once you finish creating an account, you will be welcomed with the Stack Builder, which is the place to create a new application from zero or importing a repository from GitHub.
+Once you finish creating an account, you will be welcomed with the Stack Builder, which is the place to create a new application from zero or import a repository from GitHub.
 
 ![Import Repository tab](diploi-import-repository-tab.png)
 
@@ -114,7 +114,7 @@ If the analysis is successful, you will get a notification indicating that your 
 
 #### 5. Launching the application
 
-Something we must note is that depending of the ownership of the repository, the steps after the repository has been analyzed are different.
+Something we must note is that depending on the ownership of the repository, the steps after the repository has been analyzed are different.
 
 ##### If you are the owner of the imported repository
 
@@ -144,7 +144,7 @@ Now your application should be running, and you should see something like this:
 
 ![Deployment dashboard](deployment-dashboard.png)
 
-From here you can preview the your application live, by clicking on **"View App"**.
+From here you can preview the application live, by clicking on **"View App"**.
 
 ![App live preview link](app-live-preview-link.png)
 
@@ -152,32 +152,32 @@ And you can also access the Remote Development environment where you can start c
 
 ![Accesing the remote development environment](accesing-the-remote-development-environment.png)
 
-Now, we want to connect Cursor, so to do that we need first need to add an SSH key to connect your computer to the Remote Development environment, here's what you need to do.
+Now, we want to connect Cursor, so we need first to add an SSH key to connect your computer to the Remote Development environment. Here's what you need to do.
 
-#### 1. Create a SSH key
+#### 1. Create an SSH key
 
 There are multiple ways to generate an SSH key, but in my opinion the easiest way to do it is by using the command `ssh-keygen` from whatever Terminal application you have available in your computer. The steps you must follow are:
 
 1. Open a Terminal
-   - in **Linux** you can open the terminal by pressing `Ctrl`+`Alt`+`T`
+   - in **Linux**, you can open the terminal by pressing `Ctrl`+`Alt`+`T`
       ![Linux terminal](terminal.png)
-   - in **Mac** open the Spotlight Search by pressing `Command`+`Space` and then typing "terminal".
+   - in **Mac**, open the Spotlight Search by pressing `Command`+`Space` and then typing "terminal".
       ![mac terminal](terminal-mac.png)
-   - in **Windows** you can open the terminal by opening Git Bash from your apps (If you don't have it, you can download it here https://git-scm.com/downloads)
+   - in **Windows**, you can open the terminal by opening Git Bash from your apps (If you don't have it, you can download it here https://git-scm.com/downloads)
 
-2. Then type the command `ssh-keygen`, which will generate an SSH key, which by default will have the name `id_ed25519` but you can assign a different name and store it on different folder. For convenience, use the default filename and location, since Cursor by default will use the same filename and location to fetch your SSH keys.
+2. Then type the command `ssh-keygen`, which will generate an SSH key, which by default will have the name `id_ed25519`, but you can assign a different name and store it on a different folder. For convenience, use the default filename and location, since Cursor by default will use the same filename and location to fetch your SSH keys.
 
 3. After the filename has been assigned, you will have the option to assign a passphrase to use your SSH key. You can leave it empty by just pressing enter.
 
 #### 2. Add the SSH Public Key in Diploi
 
-By now, `ssh-keygen` would have generated 2 files. If you used the default name, the filenames would be `id_ed25519`, which stores your Private Key and ``id_ed25519.pub` which stores your Public Key.
+By now, `ssh-keygen` would have generated 2 files. If you used the default name, the filenames would be `id_ed25519`, which stores your Private Key and ``id_ed25519.pub`, which stores your Public Key.
 
-The next steps are to copy your Public Key, which you can do by reading and copying the contents from `id_ed25519.pub`, and the pasting them in your Diploi account settings.
+The next steps are to copy your Public Key, which you can do by reading and copying the contents from `id_ed25519.pub`, and pasting them in your Diploi account settings.
 
 1. To copy the contents of your Public Keyu file, you can use any text editor to open and copy the contents of the file, or from the terminal, you can use the command **cat**, so if you used the default name and location, the command would look like this: `cat ~/.ssh/id_ed25519.pub`, and after pressing enter you should see in the terminal something like this:
    ![Result from using the cat command on the .pub key generated](result-from-using-the-cat-command-on-the-pub-key-generated.png)
-   From there you can just select the text starting from "ssh-ed25519..." and then press `Ctrl`+`Shift`+`C`
+   From there, you can just select the text starting from "ssh-ed25519..." and then press `Ctrl`+`Shift`+`C`
 
 2. Now you need to add the copied text in Diploi, which you can do from the settings page at `https://console.diploi.com/<YOUR_USERNAME>/settings`, scroll down to the **"authentication"** section, and then click on **"Add New SSH Key"**.
    ![SSH keys gallery](ssh-keys-gallery.png)
@@ -208,11 +208,11 @@ And that's it! Now you can connect Cursor to any other app you import or create 
 
 ## Creating a Production deployment for your Lovable app
 
-Once you get your application to a stage where it is ready to be launched in Production, you can create a new deployment that will be used for that specific case. Before getting started, you must first push your updates to GitHUb, so your application has your changes plus the files that Diploi added to your repository in order to be able to run your application.
+Once you get your application to a stage where it is ready to be launched in Production, you can create a new deployment that will be used for that specific case. Before getting started, you must first push your updates to GitHub, so your application has your changes plus the files that Diploi added to your repository in order to be able to run your application.
 
 ![Pushing updates to GitHub before starting a Production deployment](diploi-pending-changes.png)
 
-If you don't push files that Diploi creates for your repository, the your Production deployment will fail to start.
+If you don't push files that Diploi creates for your repository, then your Production deployment will fail to start.
 
 #### 1. Create a new deployment
 
@@ -228,7 +228,7 @@ On the deployment creation page, select the stage for the deployment as **"Produ
 
 #### 3. Choose the size for the cluster
 
-You can choose between 4 cluster specs, in general we recommend you start with **S** size clusters when launching Lovable apps to Production since you can always resize the cluster later if your application starts getting a lot of traffic.
+You can choose between 4 cluster specs, and in general we recommend you start with **S** size clusters when launching Lovable apps to Production, since you can always resize the cluster later if your application starts getting a lot of traffic.
 
 ![Cluster size selection](../../../images/blog/cluster-size-selection.png)
 
@@ -240,13 +240,13 @@ If you have your production version for your app on a different branch than main
 
 #### 5. Configure the environment variables for Production
 
-If you Lovable app has environment variables, in this section you can add them.
+If your Lovable app uses environment variables, in this section you can add them.
 
 ![Lovable environment variables](imported-env-variables.png)
 
 ---
 
-And that should be all you need to setup your new **"Production"** deployment, just click **Create Deployment** and you'll have a Production environment live.
+And that should be all you need to set up your new **"Production"** deployment, just click **Create Deployment** and you'll have a Production environment live.
 
 ![Create Deployment](../../../images/blog/creating-deployment.png)
 
@@ -255,9 +255,9 @@ And that should be all you need to setup your new **"Production"** deployment, j
 
 ## Adding a custom domain to your deployed Lovable app
 
-Now that your app is in Production, you probably want to use a custom domain too, let's walkthrough over the steps you need to follow.
+Now that your app is in Production, you probably want to use a custom domain too. Let's walk through over the steps you need to follow.
 
-#### 1. Open the Options tab from your the Production deployment dashboard
+#### 1. Open the Options tab from the Production deployment dashboard
 
 ![Accessing deployment options](../../../images/blog/deployment-options.png)
 
@@ -273,7 +273,7 @@ Now that your app is in Production, you probably want to use a custom domain too
 
 ---
 
-It is common for the custom domain to be fully setup within 1 to 2 minutes, but it can take up to 30 minutes for the update to propagate and for your website to be reachable and SSL-protected.
+It is common for the custom domain to be fully set up within 1 to 2 minutes, but it can take up to 30 minutes for the update to propagate and for your website to be reachable and SSL-protected.
 
 ---
 
@@ -294,11 +294,11 @@ components:
 addons: []
 ```
 
-The `diploi.yaml` tells Diploi how to build your app's environment. Each component and addon defined for your app, has a name, identifier, and a package URL pointing to the Diploi component repository.
+The `diploi.yaml` tells Diploi how to build your app's environment. Each component and addon defined for your app has a name, identifier, and a package URL pointing to the Diploi component repository.
 
 #### 2. Add new components and addons to your Lovable add
 
-To add a new component for your app's stack, all you need to do is add a new entry to the components or addons list with all of the properties required to define them. For example, let's say we want to add **FastAPI**, **Postgres** and **Redis**, your `diploi.yaml` would then look like this:
+To add a new component for your app's stack, all you need to do is add a new entry to the components or addons list with all of the properties required to define them. For example, let's say we want to add **FastAPI**, **Postgres**, and **Redis**, your `diploi.yaml` would then look like this:
 
 ```yaml
 diploiVersion: v1.0
@@ -333,19 +333,19 @@ By clicking **"Apply Changes"**, Diploi will proceed to start additional contain
 
 In summary, importing a Lovable app into Diploi would allow you to elevate what your apps can do and how you can host them, without having to do manual work setting up servers or configuring anything manually.
 
-For more detail about the `diploi.yaml` syntax and available components/add-ons, check the Diploi docs
+For more details about the `diploi.yaml` syntax and available components/add-ons, check the Diploi docs.
 
 https://docs.diploi.com
 
 By importing your Lovable app into Diploi, you effectively upgrade it from a frontend prototype into a full-stack, production-ready app, without leaving the Diploi console. You get one-click deployments, remote dev environments, and pay-as-you-go hosting all in one place.
 
-And the best part is that you can still continue using the Lovable AI chat for your frontend, because the changes that Diploi makes on your repository's folder structure and the files added, do not conflict with Lovable's system.
+And the best part is that you can still continue using the Lovable AI chat for your frontend, because the changes that Diploi makes on your repository's folder structure and the files added do not conflict with Lovable's system.
 
 ---
 
 If you are building something using Lovable and Diploi, please let us know!
 
-You can connect with us directly on Discord or via email, we'll be happy to talk with you and help however we can.
+You can connect with us directly on Discord or via email. We'll be happy to talk with you and help however we can.
 
 Until the next one! 😎
 
