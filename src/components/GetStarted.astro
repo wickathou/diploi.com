@@ -1,27 +1,23 @@
 ---
-import Icon from './Icon.astro'
-import { AirplaneTakeoff, ArrowRight } from '@phosphor-icons/react'
+import Icon from './Icon.astro';
+import { ArrowRightIcon } from '@phosphor-icons/react';
 ---
 
 <article class="large">
   <div class="title-and-description">
     <h2>
-      <Icon isGradient name="AirplaneTakeoff"  sizeRem={3} />
+      <Icon isGradient name="AirplaneTakeoff" sizeRem={3} />
       Get Started
     </h2>
     <p>
-      Sign up using your GitHub account and receive 50 € in free credits to
-      explore and experiment with. Development is about to get
+      Sign up using your GitHub account and receive 50 € in free credits to explore and experiment with. Development is about to get
       <strong class="text-gradient">magical</strong>.
     </p>
   </div>
 
-  <a
-    class="button"
-    data-event="signup_click"
-    href="https://console.diploi.com/sign-up"
+  <a class="button" data-event="signup_click" data-link="login" href="https://console.diploi.com/sign-up"
     >Sign Up
-    <ArrowRight weight="bold" />
+    <ArrowRightIcon weight="bold" />
   </a>
 </article>
 

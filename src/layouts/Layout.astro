@@ -102,6 +102,8 @@ const ogSocialImage = getFullImageUrl({ siteUrl: Astro.url.origin, imageUrl: ogS
 </html>
 
 <script>
+  import { getUtmParams } from '../utils/utmUtils';
+
   // Disable Umami for localhost
   if (window && window.location.hostname === 'localhost') {
     localStorage.setItem('umami.disabled', '1');
@@ -145,6 +147,21 @@ const ogSocialImage = getFullImageUrl({ siteUrl: Astro.url.origin, imageUrl: ogS
         if (gtag) gtag('event', event);
       })
     );
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const utm = getUtmParams();
+    const loginLinks = document.querySelectorAll('a[data-link="login"]');
+    loginLinks.forEach((element) => {
+      try {
+        const href = element.getAttribute('href') || '';
+        const url = new URL(href);
+        url.searchParams.append('utm', btoa(JSON.stringify(utm)));
+        element.setAttribute('href', url.toString());
+      } catch (error) {
+        console.error('Failed to add UTM to login link', error);
+      }
+    });
   });
 </script>
 

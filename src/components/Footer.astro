@@ -1,5 +1,5 @@
 ---
-import { ArrowUpRight, RocketLaunch } from '@phosphor-icons/react';
+import { ArrowUpRightIcon, RocketLaunchIcon } from '@phosphor-icons/react';
 import Icon from './Icon.astro';
 import Logo from './Logo.astro';
 import Tag from './Tag.astro';
@@ -11,7 +11,7 @@ import Tag from './Tag.astro';
       <div class="logo-and-socials">
         <Logo class="footer-logo" />
         <a class="launch-week" data-event="footer_launchweek_click" href="/launchweek">
-          <Tag><RocketLaunch weight="fill" /> Launch Week <ArrowUpRight /></Tag>
+          <Tag><RocketLaunchIcon weight="fill" /> Launch Week <ArrowUpRightIcon /></Tag>
         </a>
       </div>
       <div class="clickable">
@@ -30,7 +30,7 @@ import Tag from './Tag.astro';
             <a data-event="documentation_click" href="https://docs.diploi.com/">Documentation</a>
           </li>
           <li>
-            <a data-event="login_click" href="https://console.diploi.com/login">Login / Sign Up</a>
+            <a data-link="login" data-event="login_click" href="https://console.diploi.com/login">Login / Sign Up</a>
           </li>
         </ul>
 
