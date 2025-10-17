@@ -68,7 +68,7 @@ In this blog, we'll show you how to import an created using Lovable. Let's get g
 
 In this walkthrough, we'll be importing an application stored on GitHub and built with Lovable. The app has a soundboard interface where you can play sounds and it allows you to add new sounds to the list available.
 
-![Screenshot of soundboard app example](image.png)
+![Screenshot of soundboard app example](screenshot-of-soundboard-app-example.png)
 
 If you want to use this same application for testing, here's the public repository which you can use to import the app to your own Diploi account: http://github.com/wickathou/vibe-tune-podcast
 
@@ -90,27 +90,27 @@ Now you'll need to create an account in Diploi, which is free. You can do it fro
 
 Once you finish creating an account, you will be welcomed with the Stack Builder, which is the place to create a new application from zero or importing a repository from GitHub.
 
-![Import Repository tab](image-2.png)
+![Import Repository tab](diploi-import-repository-tab.png)
 
 #### 3. Select the repository you want to import
 
 From the Stack Builder, choose the option **Import Repository** and you have the option to:
 
 - Select the application you want to import from your list of repositories.
-![Selecting a repository from own list of repos](image-1.png)
+![Selecting a repository from own list of repos](selecting-a-repository-from-own-list-of-repos.png)
 
 - Importing from a URL, which allows you to use the URL from any repository you own or public repositories, even if you are not the owner.
-![Importing from URL](image-3.png)
+![Importing from URL](importing-from-url.png)
 
 #### 4. Analyze the repository
 
 To make sure that the repository will be able to run on Diploi, you must click **"Analyze repository"** so Diploi can check the configuration of your project and prepare your deployment environment.
 
-![Analyzing a repository to import](image-4.png)
+![Analyzing a repository to import](analyzing-a-repository-to-import.png)
 
 If the analysis is successful, you will get a notification indicating that your repository contains a Lovable application.
 
-![Repository analysis result](image-5.png)
+![Repository analysis result](repository-analysis-result.png)
 
 #### 5. Launching the application
 
@@ -120,7 +120,7 @@ Something we must note is that depending of the ownership of the repository, the
 
 You can just launch your application instantly, without having to configure additional settings for your deployment. Any updates you made to the code will be linked to the repository you imported.
 
-![Configuration of Diploi stack if imported repository belongs to the user](image-7.png)
+![Configuration of Diploi stack if imported repository belongs to the user](configuration-of-diploi-stack-if-imported-repository-belongs-to-the-user.png)
 
 ##### If you are importing a repository from someone else
 
@@ -128,7 +128,7 @@ You can customize the stack for your imported Lovable app, so you can add other 
 
 Diploi allows you to create a new repository for your application, since you don't own the imported repository.
 
-![Diploi stack customized for external public repositories](image-6.png)
+![Diploi stack customized for external public repositories](diploi-stack-customized-for-external-public-repositories.png)
 
 ---
 
@@ -142,15 +142,15 @@ At this stage your app should be ready to be launched, so all you need to do is 
 
 Now your application should be running, and you should see something like this:
 
-![Deployment dashboard](image-9.png)
+![Deployment dashboard](deployment-dashboard.png)
 
 From here you can preview the your application live, by clicking on **"View App"**.
 
-![App live preview link](image-10.png)
+![App live preview link](app-live-preview-link.png)
 
 And you can also access the Remote Development environment where you can start coding your application, that allows you to start coding without installing anything.
 
-![Accesing the remote development environment](image-11.png)
+![Accesing the remote development environment](accesing-the-remote-development-environment.png)
 
 Now, we want to connect Cursor, so to do that we need first need to add an SSH key to connect your computer to the Remote Development environment, here's what you need to do.
 
@@ -176,14 +176,14 @@ By now, `ssh-keygen` would have generated 2 files. If you used the default name,
 The next steps are to copy your Public Key, which you can do by reading and copying the contents from `id_ed25519.pub`, and the pasting them in your Diploi account settings.
 
 1. To copy the contents of your Public Keyu file, you can use any text editor to open and copy the contents of the file, or from the terminal, you can use the command **cat**, so if you used the default name and location, the command would look like this: `cat ~/.ssh/id_ed25519.pub`, and after pressing enter you should see in the terminal something like this:
-   ![Result from using the cat command on the .pub key generated](image-13.png)
+   ![Result from using the cat command on the .pub key generated](result-from-using-the-cat-command-on-the-pub-key-generated.png)
    From there you can just select the text starting from "ssh-ed25519..." and then press `Ctrl`+`Shift`+`C`
 
 2. Now you need to add the copied text in Diploi, which you can do from the settings page at `https://console.diploi.com/<YOUR_USERNAME>/settings`, scroll down to the **"authentication"** section, and then click on **"Add New SSH Key"**.
-   ![SSH keys gallery](image-14.png)
+   ![SSH keys gallery](ssh-keys-gallery.png)
 
 3. And the last step is to paste the contents we copied before inside the **"Public Key"** text field, and then press **"Add SSH Key"**.
-   ![Adding an SSH key](image-15.png)
+   ![Adding an SSH key](adding-an-ssh-key.png)
 
 Now we are ready to open the imported Lovable app with Cursor.
 
@@ -192,13 +192,13 @@ Now we are ready to open the imported Lovable app with Cursor.
 Now we are ready to open the imported app from Lovable using Cursor.
 
 1. Go to the deployment page and enable Cursor, from the **"Develop"** section, press the button **+** and you'll be able to see the **"Open in Cursor"** option.
-   ![Open in Cursor launch button](image-16.png)
+   ![Open in Cursor launch button](open-in-cursor-launch-button.png)
    
 2. To pin the **"Open in Cursor"** button to your deployment, just click on the pin icon next to the text.
-   ![Pinning Cursor to the deployment dashboard](image-17.png)
+   ![Pinning Cursor to the deployment dashboard](pinning-cursor-to-the-deployment-dashboard.png)
 
 3. When you click on the button to open Cursor, the app will use SSH to connect to the development environment.
-   ![Cursor connected to a remote development environment](image-8.png)
+   ![Cursor connected to a remote development environment](cursor-connected-to-a-remote-development-environment.png)
 
 ---
 
@@ -218,13 +218,13 @@ If you don't push files that Diploi creates for your repository, the your Produc
 
 Go to the project page, and click on the button **"Create Deployment"**.
 
-![Creating a new deployment from the project dashboard](image-18.png)
+![Creating a new deployment from the project dashboard](creating-a-new-deployment-from-the-project-dashboard.png)
 
 #### 2. Select the stage for the new deployment
 
 On the deployment creation page, select the stage for the deployment as **"Production"**. You can also choose "Staging" if you want to generate a deployment intended for testing.
 
-![Selecting the Production stage for a new deployment](image-19.png)
+![Selecting the Production stage for a new deployment](selecting-the-production-stage-for-a-new-deployment.png)
 
 #### 3. Choose the size for the cluster
 
@@ -263,11 +263,11 @@ Now that your app is in Production, you probably want to use a custom domain too
 
 #### 2. Turn off auto-generated endpoints
 
-![Disabling auto-generated endpoints](image-20.png)
+![Disabling auto-generated endpoints](disabling-auto-generated-endpoints.png)
 
 #### 3. Enable "Use Custom Domain" and enter your hostname
 
-![Assigning custom domains to imported app](image-21.png)
+![Assigning custom domains to imported app](assigning-custom-domains-to-imported-app.png)
 
 #### 4. Create a CNAME record from your domain's DNS settings, pointing to `edge.diploi.com`
 
@@ -321,11 +321,11 @@ addons:
 
 After modifying the `diploi.yaml` file, if you go back to your deployment's dashboard, you'll see a notice listing the pending changes for your environment.
 
-![Pending changes for a deployment](image-22.png)
+![Pending changes for a deployment](pending-changes-for-a-deployment.png)
 
 By clicking **"Apply Changes"**, Diploi will proceed to start additional containers to host the new component and addons as pods in the same cluster that already hosts your Lovable app.
 
-![Deployment running newly added components and addons](image-23.png)
+![Deployment running newly added components and addons](deployment-running-newly-added-components-and-addons.png)
 
 ---
 
