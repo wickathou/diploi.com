@@ -9,7 +9,7 @@ social_image: './exploring-7-lesser-known-ai-coding-extensions_og.png'
 draft: false
 ---
 
-Updated <time datetime="2025-09-20T15:00:05.000Z">September 20, 2025</time>
+Updated <time datetime="2025-10-27T11:00:05.000Z">October 27, 2025</time>
 
 ###### Beyond the popular tools that most people are using
 
