@@ -11,11 +11,12 @@ interface Props {
   description?: string;
   ogTitle?: string;
   ogSocialImage?: string | null;
+  ogUrlMatchCanonical?: boolean;
 }
 
 const defaultDescription = 'Single SaaS service for managing, developing and hosting your full application.';
 
-const { title, description = defaultDescription, ogTitle = 'Diploi', ogSocialImage: ogSocialImageProp } = Astro.props;
+const { title, description = defaultDescription, ogTitle = 'Diploi', ogSocialImage: ogSocialImageProp, ogUrlMatchCanonical = false } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 const ogSocialImage = getFullImageUrl({ siteUrl: Astro.url.origin, imageUrl: ogSocialImageProp });
@@ -36,7 +37,7 @@ const ogSocialImage = getFullImageUrl({ siteUrl: Astro.url.origin, imageUrl: ogS
     <meta property="og:title" content={ogTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://diploi.com/" />
+    <meta property="og:url" content={ogUrlMatchCanonical ? canonicalUrl : 'https://diploi.com/'} />
     <meta property="og:image" content={ogSocialImage || og.src} />
     <meta property="og:image:alt" content={ogSocialImage ? `Cover image - ${ogTitle}` : 'Diploi logo'} />
 
