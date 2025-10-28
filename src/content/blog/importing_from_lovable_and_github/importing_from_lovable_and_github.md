@@ -9,7 +9,7 @@ social_image: './importing_from_lovable_and_github_og.png'
 draft: false
 ---
 
-Updated <time datetime="2025-09-26T19:30:00.000Z">September 26, 2025</time>
+Updated <time datetime="2025-10-28T11:20:05.000Z">October 28, 2025</time>
 
 ## Table of contents
 

@@ -9,6 +9,8 @@ social_image: './remote_development_platforms_og.png'
 draft: false
 ---
 
+Updated <time datetime="2025-10-28T11:21:05.000Z">October 28, 2025</time>
+
 ###### If you code locally, probably you heard this at least once
 
 [Jump to the list of remote development platforms](#top-7-remote-development-platforms-in-2025)

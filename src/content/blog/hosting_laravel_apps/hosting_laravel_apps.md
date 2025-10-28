@@ -9,7 +9,7 @@ social_image: './hosting_laravel_apps_og.png'
 draft: false
 ---
 
-Updated <time datetime="2025-09-22T03:00:05.000Z">September 22, 2025</time>
+Updated <time datetime="2025-10-28T11:12:05.000Z">October 28, 2025</time>
 
 ###### Getting started with Laravel, but in easy-mode
 

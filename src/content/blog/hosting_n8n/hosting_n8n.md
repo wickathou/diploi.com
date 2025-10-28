@@ -9,7 +9,7 @@ social_image: './hosting_n8n_og.png'
 draft: false
 ---
 
-Updated <time datetime="2025-09-24T01:00:05.000Z">September 24, 2025</time>
+Updated <time datetime="2025-10-28T11:13:05.000Z">October 28, 2025</time>
 
 ###### Spin up n8n on Diploi with zero server configuration
 

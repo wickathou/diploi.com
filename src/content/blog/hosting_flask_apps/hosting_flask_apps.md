@@ -9,7 +9,7 @@ social_image: './hosting_flask_apps_og.png'
 draft: false
 ---
 
-Updated <time datetime="2025-09-23T01:00:05.000Z">September 23, 2025</time>
+Updated <time datetime="2025-10-28T11:10:05.000Z">October 28, 2025</time>
 
 ###### Launch new Flask apps on Diploi with zero server setup
 

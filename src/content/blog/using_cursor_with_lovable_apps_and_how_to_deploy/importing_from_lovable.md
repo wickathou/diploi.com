@@ -9,7 +9,7 @@ social_image: './deploying_lovable_apps_og.png'
 draft: false
 ---
 
-Updated <time datetime="2025-10-27T12:30:00.000Z">October 27, 2025</time>
+Updated <time datetime="2025-10-28T11:22:05.000Z">October 28, 2025</time>
 
 ---
 

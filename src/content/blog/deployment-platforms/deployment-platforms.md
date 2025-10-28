@@ -7,7 +7,7 @@ devtoUrl: 'https://dev.to/diploi/skip-the-yaml-and-server-configs-7-easy-deploym
 draft: false
 ---
 
-Updated <time datetime="2025-09-20T14:32:00+03:00">September 20, 2025</time>
+Updated <time datetime="2025-10-28T11:02:05.000Z">October 28, 2025</time>
 
 ###### DevOps can be painful. We know from experience 🤕
 

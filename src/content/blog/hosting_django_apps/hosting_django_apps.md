@@ -9,7 +9,7 @@ social_image: './hosting_django_apps_og.png'
 draft: false
 ---
 
-Updated <time datetime="2025-09-20T12:00:05.000Z">September 20, 2025</time>
+Updated <time datetime="2025-10-28T11:08:05.000Z">October 28, 2025</time>
 
 ###### Getting started with Django on Diploi
 

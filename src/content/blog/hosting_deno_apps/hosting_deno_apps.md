@@ -9,7 +9,7 @@ social_image: './hosting_deno_apps_og.png'
 draft: false
 ---
 
-Updated <time datetime="2025-09-22T01:00:05.000Z">September 22, 2025</time>
+Updated <time datetime="2025-10-28T11:07:05.000Z">October 28, 2025</time>
 
 ###### Ship new Deno apps using Diploi with zero server configuration
 

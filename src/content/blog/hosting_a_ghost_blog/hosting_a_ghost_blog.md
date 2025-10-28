@@ -9,7 +9,7 @@ social_image: './hosting_a_ghost_blog_og.png'
 draft: false
 ---
 
-Updated <time datetime="2025-09-20T15:01:05.000Z">September 20, 2025</time>
+Updated <time datetime="2025-10-28T11:04:05.000Z">October 28, 2025</time>
 
 ###### Launching a Ghost blog using Diploi to customize and host it
 
