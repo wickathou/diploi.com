@@ -18,10 +18,21 @@ import {
 } from '../../components';
 import { featureCards, chart, content } from '../../content';
 import StackBuilder from '../../components/StackBuilder/StackBuilder.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const defaultTitle = "Diploi - The App Development and Deployment Platform for Busy Agencies and Freelancers"
+const defaultDescription = 'Diploi is a platform that lets you build using remote development and host web apps online with one click, without configuring servers manually.'
+
+const { title=defaultTitle, description = defaultDescription } = Astro.props;
+
 ---
 
 <GlobalStyles />
-<Layout title="Diploi - The App Development and Deployment Platform for Busy Agencies and Freelancers" description='Diploi is a platform that lets you build using remote development and host web apps online with one click, without configuring servers manually.'>
+<Layout title={title} description={description}>
   <slot name="head" slot="head" />
   <Navigation />
   <main>
