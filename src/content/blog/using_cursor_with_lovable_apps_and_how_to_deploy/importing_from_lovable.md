@@ -70,7 +70,7 @@ In this walkthrough, we'll be importing an application stored on GitHub and buil
 
 ![Screenshot of soundboard app example](screenshot-of-soundboard-app-example.png)
 
-If you want to use this same application for testing, here's the public repository which you can use to import the app to your own Diploi account: http://github.com/wickathou/vibe-tune-podcast
+If you want to use this same application for testing, here's the public repository which you can use to import the app to your own Diploi account: https://github.com/wickathou/vibe-tune-podcast
 
 You can see the live app here: https://demo--soundboarded.diploi.me/
 
@@ -124,7 +124,7 @@ You can just launch your application instantly, without having to configure addi
 
 ##### If you are importing a repository from someone else
 
-You can customize the stack for your imported Lovable app, so you can add other services like [Bun](http://diploi.com/component/bun) to create a backend for your app or [Ghost](http://diploi.com/component/ghost) to add a blog.
+You can customize the stack for your imported Lovable app, so you can add other services like [Bun](https://diploi.com/component/bun) to create a backend for your app or [Ghost](https://diploi.com/component/ghost) to add a blog.
 
 Diploi allows you to create a new repository for your application, since you don't own the imported repository.
 

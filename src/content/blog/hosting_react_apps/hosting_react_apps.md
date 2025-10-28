@@ -99,12 +99,12 @@ This update will take effect instantly, but allow up to 30 minutes for DNS and S
 
 If this is your first time trying React + Vite, you might not want to bother with all the usual setup and configuration. With Diploi, you can skip the boring parts and jump straight into coding, so no local install is required. You’ve got two easy options using Diploi:
 
-**Option 1 – Start a trial without an account**
+**Option 1 - Start a trial without an account**
 
 Head to [https://diploi.com/#StackBuilder](https://diploi.com/#StackBuilder) to launch a trial project instantly. You can also go directly to the React + Vite component page:
 [https://diploi.com/component/react-vite](https://diploi.com/component/react-vite)
 
-**Option 2 – Quick Launch with a Diploi account**
+**Option 2 - Quick Launch with a Diploi account**
 
 If you already have an account, create a new project and in the **Repository** section choose **Quick Launch**. This gives you a temporary environment to experiment with React + Vite without connecting a repo.
 

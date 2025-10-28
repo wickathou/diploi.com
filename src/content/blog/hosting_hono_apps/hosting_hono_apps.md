@@ -49,7 +49,7 @@ Diploi then starts a Development environment for your new Hono app, from which y
 
 - Preview your Hono endpoints live instantly
 - Code directly in the browser using the built-in IDE
-- Or connect remotely via SSH using VS Code, Cursor, or any dev container–friendly IDE
+- Or connect remotely via SSH using VS Code, Cursor, or any dev container-friendly IDE
 
 ---
 

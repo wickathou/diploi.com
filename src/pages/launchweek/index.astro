@@ -13,8 +13,9 @@ const schema = createWebsiteSchema();
 ---
 
 <Layout
-  title="Diploi – Launch Week"
+  title="Diploi - Launch Week"
   description="Launch Week is here! We're rolling out new features and components to make your development flow smoother, faster, and more magical."
+  ogUrlMatchCanonical={true}
 >
   {/* Organization schema for Google */}
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(schema)} />

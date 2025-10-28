@@ -48,7 +48,7 @@ In this post, we'll go over how to create production-ready Next.js apps, with a 
 4. Choose **Create Repository** so Diploi generates a new GitHub repo for your project.
 5. Click **Launch Stack**
 
-This will create a new Project, and by default starts a new Development environment for your Next.js app, once it is ready you will be able to preview your Next.js online, and you can start coding directly in the browser using our built-in IDE, or by connecting remotely via SSH using VS Code, Cursor, or any dev container–friendly IDE.
+This will create a new Project, and by default starts a new Development environment for your Next.js app, once it is ready you will be able to preview your Next.js online, and you can start coding directly in the browser using our built-in IDE, or by connecting remotely via SSH using VS Code, Cursor, or any dev container-friendly IDE.
 
 ---
 
