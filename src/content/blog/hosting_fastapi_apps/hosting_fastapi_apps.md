@@ -9,7 +9,7 @@ social_image: './hosting_fastapi_apps_og.png'
 draft: false
 ---
 
-Updated <time datetime="2025-09-23T01:03:05.000Z">September 23, 2025</time>
+Updated <time datetime="2025-10-28T11:09:05.000Z">October 28, 2025</time>
 
 ###### Spin up FastAPI on Diploi with zero server configuration
 

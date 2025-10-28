@@ -9,6 +9,8 @@ social_image: './hono_and_django_support_og.png'
 draft: false
 ---
 
+Updated <time datetime="2025-10-28T11:03:05.000Z">October 28, 2025</time>
+
 ###### Hono and Django now available on Diploi
 
 There are two powerful new additions to Diploi, **Hono** and **Django**!

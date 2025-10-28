@@ -6,6 +6,8 @@ author: 'Patrik'
 timestamp: '2024-09-27T07:11:05.573Z'
 ---
 
+Updated <time datetime="2025-10-28T11:01:05.000Z">October 28, 2025</time>
+
 ![Diploi team in Slush 2024](/diploi-team-2024.jpg)
 
 Diploi, a SaaS service for managing, developing and hosting software applications, has completed its pre-seed funding round. Founded in 2024 by the team of _Marcus Ahlfors_, _Patrik Lindberg_, _Tuomas Pöyry_ and _Ville-Pekka Lahti_ with the ultimate goal of taking away the pain of software development by letting developers focus on their main task - developing new and better software. The team built a pilot of the cloud-based service in the spring of 2024, taking on trial users and its first customers.

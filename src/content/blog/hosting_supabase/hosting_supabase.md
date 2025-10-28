@@ -9,7 +9,7 @@ social_image: './hosting_supabase_og.png'
 draft: false
 ---
 
-Updated <time datetime="2025-09-25T10:14:05.000Z">September 25, 2025</time>
+Updated <time datetime="2025-10-28T11:18:05.000Z">October 28, 2025</time>
 
 ###### Deploy Supabase in minutes with Diploi, with PostgreSQL preconfigured, and DevOps not required.
 

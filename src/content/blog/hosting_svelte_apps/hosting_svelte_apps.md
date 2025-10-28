@@ -9,7 +9,7 @@ social_image: './hosting_svelte_apps_og.png'
 draft: false
 ---
 
-Updated <time datetime="2025-09-20T15:22:05.000Z">September 20, 2025</time>
+Updated <time datetime="2025-10-28T11:19:05.000Z">October 28, 2025</time>
 
 ###### Getting started with SvelteKit apps, the easy way
 
