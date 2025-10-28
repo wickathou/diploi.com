@@ -29,6 +29,7 @@ const schema = createBlogPostSchema({
 
 <Layout
   title={`Diploi - ${entry.data.title}`}
+  description={`${entry.data.description}`}
   ogTitle={entry.data.title}
   ogSocialImage={entry.data.social_image?.src || entry.data.image?.src || entry.data.external_image}
 >

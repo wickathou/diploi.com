@@ -22,7 +22,7 @@ export const featureMasonryItems: TFeatureMasonryItem[] = [
   {
     id: 'zero-install',
     title: 'Zero-Install Environments',
-    description: 'Spin up dev environments instantly—no local setup required.',
+    description: 'Spin up dev environments instantly, no local setup required.',
     gridArea: gridArea.topRight,
     color: '#FFC53D',
     icon: 'MagicWand',
