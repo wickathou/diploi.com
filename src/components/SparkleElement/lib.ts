@@ -30,7 +30,7 @@ const generateSparkle = (minSize: number, maxSize: number, idx: number) => {
   const duration = clamp(random(minDuration, maxDuration), 2000, 10000);
   const delay = clamp(random(0, 5000), 0, 5000);
 
-  // Positions in percentage (0–100), but skipping 10–90 range:
+  // Positions in percentage (0-100), but skipping 10-90 range:
   const isEven = idx % 2 === 0;
   const top = randomOutsideCenter(isEven);
   const left = randomOutsideCenter(isEven);

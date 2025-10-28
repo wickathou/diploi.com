@@ -50,7 +50,7 @@ And yes, I'm not exaggerating.
 
 This will create a new Project using Bun, which will also start a new Development environment for your Bun app.
 
-You will be able to preview your Bun online, customize its URL, and even start coding in the browser using our built-in IDE, or by connecting remotely with SSH, using VS Code, Cursor, or any dev container–friendly IDE to start coding remotely from your desktop, without having to install anything locally.
+You will be able to preview your Bun online, customize its URL, and even start coding in the browser using our built-in IDE, or by connecting remotely with SSH, using VS Code, Cursor, or any dev container-friendly IDE to start coding remotely from your desktop, without having to install anything locally.
 
 ---
 

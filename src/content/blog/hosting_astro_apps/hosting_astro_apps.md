@@ -48,7 +48,7 @@ Diploi will spin up a full Development environment in the cloud where you can:
 
 - Preview your Astro site live instantly
 - Code directly in the browser using the built-in IDE
-- Or connect remotely via SSH using VS Code, Cursor, or any dev container–friendly IDE
+- Or connect remotely via SSH using VS Code, Cursor, or any dev container-friendly IDE
 
 ---
 

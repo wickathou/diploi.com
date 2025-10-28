@@ -7,7 +7,7 @@ export const createWebsiteSchema = () => ({
     {
       '@type': 'WebPage',
       url: 'https://diploi.com/',
-      name: 'Diploi – Magical Developer Experience',
+      name: 'Diploi - Magical Developer Experience',
       about: { '@id': 'https://diploi.com/#organization' },
       image: og.src,
       description: 'Single SaaS service for managing, developing and hosting your full application.',
