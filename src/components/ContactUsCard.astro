@@ -1,6 +1,8 @@
 ---
-import { ChatsCircle, ArrowRight } from '@phosphor-icons/react';
+import { ArrowRightIcon } from '@phosphor-icons/react';
 import Icon from './Icon.astro';
+
+const calendlyUrl = import.meta.env.VITE_CALENDLY_URL;
 ---
 
 <article class="large">
@@ -15,6 +17,11 @@ import Icon from './Icon.astro';
 
     <a href="mailto:hello@diploi.com" class="email">hello@diploi.com</a>
   </div>
+
+  <a class="button" data-event="calendly_click" href={calendlyUrl} target="_blank"
+    >Book a Demo
+    <ArrowRightIcon weight="bold" />
+  </a>
 </article>
 
 <style lang="scss">

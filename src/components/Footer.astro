@@ -1,8 +1,10 @@
 ---
-import { ArrowUpRightIcon, RocketLaunchIcon } from '@phosphor-icons/react';
+import { ArrowUpRightIcon, PhoneIcon, RocketLaunchIcon } from '@phosphor-icons/react';
 import Icon from './Icon.astro';
 import Logo from './Logo.astro';
 import Tag from './Tag.astro';
+
+const calendlyUrl = import.meta.env.VITE_CALENDLY_URL;
 ---
 
 <footer>
@@ -46,7 +48,8 @@ import Tag from './Tag.astro';
 
         <address>
           <label>Contact</label>
-          <a href="mailto:hello@diploi.com" class="mail">hello@diploi.com</a><br />
+          <a href="mailto:hello@diploi.com" class="mail">hello@diploi.com</a>
+          <a data-event="calendly_click" href={calendlyUrl} target="_blank"><PhoneIcon /> Book a Demo</a>
         </address>
         <ul class="links socials">
           <label>Socials</label>
@@ -167,8 +170,14 @@ import Tag from './Tag.astro';
     gap: var(--space-s);
     align-items: flex-start;
     text-style: normal;
+
     > p {
       color: var(--color-text-primary);
+    }
+
+    svg {
+      vertical-align: sub;
+      color: var(--color-text-tertiary);
     }
   }
 
