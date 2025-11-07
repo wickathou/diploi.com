@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { Navigation, Footer, Section } from '../../components';
+import { User, CalendarBlank, DevToLogo, ArrowSquareOut } from '@phosphor-icons/react';
 
 import 'github-markdown-css/github-markdown.css';
 
@@ -23,6 +24,22 @@ const { Content } = await render(entry);
   <Navigation />
   <main>
     <Section>
+      <div class="title">
+        <h1 class="text-gradient">{entry.data.title}</h1>
+        <div class="info">
+          <p><User /> {entry.data.author}</p>
+          <p>
+            <CalendarBlank />
+            {
+              new Date(entry.data.timestamp).toLocaleDateString('en-US', {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric',
+              })
+            }
+          </p>
+        </div>
+      </div>
       <article class="article markdown-body">
         <Content />
       </article>
@@ -32,6 +49,56 @@ const { Content } = await render(entry);
 </Layout>
 
 <style>
+
+  .title {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .title h1 {
+    position: relative;
+    margin: 0;
+    max-width: 22ch;
+    text-align: center;
+    font-size: var(--font-header-size);
+    font-weight: bold;
+    font-family: var(--font-header);
+    line-height: 1.2;
+  }
+
+  .title h1::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(300px, 30vw);
+    aspect-ratio: 2/1;
+    background-image: url(/starfield.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    transform: translate(-50%, -50%) scale(6) rotate(45deg);
+    opacity: 0.2;
+  }
+
+  .title .info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    > p {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+  }
   .article {
     max-width: 768px;
     margin: 0 auto;

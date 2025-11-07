@@ -43,6 +43,7 @@ const alternativesCollection = defineCollection({
     description: z.string(),
     timestamp: z.string(),
     slug: z.string(),
+    author: z.string(),
     competitor: z.string(),
   }),
 })
