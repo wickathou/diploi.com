@@ -1,0 +1,91 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { Navigation, Footer, Section } from '../../components';
+
+import 'github-markdown-css/github-markdown.css';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('alternative');
+  return articles.map((article) => ({
+    params: { alternative: article.data.slug },
+    props: { entry: article },
+  }));
+}
+
+const { entry } = Astro.props;
+const alternative = entry.data;
+
+const { Content } = await render(entry);
+---
+
+<Layout title={alternative.title} description={alternative.description}>
+  <Navigation />
+  <main>
+    <Section>
+      <article class="article markdown-body">
+        <Content />
+      </article>
+    </Section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .article {
+    max-width: 768px;
+    margin: 0 auto;
+    p:has(img:first-child:last-child) {
+      margin: 0;
+      opacity: 1;
+    }
+
+    img {
+      width: auto;
+      max-width: 768px;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    p {
+      max-width: 100%;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+
+    figure {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-m);
+      margin: var(--space-xxl) 0;
+      width: 100%;
+
+      > img {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      > figcaption {
+        font-style: italic;
+        font-size: 16px;
+        opacity: 0.7;
+      }
+    }
+
+    hr {
+      display: flex;
+      justify-content: center;
+      border: none;
+      margin: 40px 0;
+
+      &::before {
+        content: '⁂';
+        color: white;
+        opacity: 0.2;
+      }
+    }
+  }
+</style>
