@@ -1,0 +1,36 @@
+---
+import Footer from '../../../components/Footer.astro';
+import Navigation from '../../../components/Navigation/Navigation.astro';
+import { features } from '../../../content/features';
+import Layout from '../../../layouts/Layout.astro';
+import LovableHr from '../../lovable/_components/LovableHr.astro';
+import FeaturesCallouts from '../_components/FeaturesCallouts.astro';
+import DevLifecycle from '../dev/_components/DevLifecycle.astro';
+import TeamsIntegration from '../teams/_components/TeamsIntegration.astro';
+import DevopsHero from './_components/DevopsHero.astro';
+import DevopsIac from './_components/DevopsIac.astro';
+import DevopsResources from './_components/DevopsResources.astro';
+
+const feature = features.find((feature) => feature.id === 'devops')!;
+---
+
+<Layout
+  title={`Diploi for ${feature.title} - ${feature.description}`}
+  description="Infrastructure that configures itself. Diploi gives you development, preview, and production environments with a single YAML file."
+  ogUrlMatchCanonical={true}
+>
+  <Navigation />
+  <main>
+    <DevopsHero />
+    <LovableHr />
+    <DevLifecycle />
+    <LovableHr />
+    <DevopsIac />
+    <LovableHr />
+    <TeamsIntegration />
+    <LovableHr />
+    <DevopsResources />
+    <FeaturesCallouts hide={['devops']} />
+  </main>
+  <Footer />
+</Layout>
