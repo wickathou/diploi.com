@@ -1,0 +1,165 @@
+---
+import { FileCodeIcon, MapPinAreaIcon, MapPinSimpleIcon } from '@phosphor-icons/react';
+import Help from '../../../../components/Help.astro';
+import FeaturesSection from '../../_components/FeaturesSection.astro';
+import FeaturesSectionHeader from '../../_components/FeaturesSectionHeader.astro';
+import locations from '../_content/cloudflare-edge-locations.json';
+import CloudflareLogo from '../_images/cloudflare-logo.svg';
+import World from '../_images/world.svg';
+
+const HIDE_LOCATIONS = [
+  'HNL',
+  'PPT',
+  'RUN',
+  'MRU',
+  'MLE',
+  'GUM',
+  'SUV',
+  'NOU',
+  'SZX',
+  'COK',
+  'TLV',
+  'JRS',
+  'SIN',
+  'BAH',
+  'GRU',
+  'JOI',
+  'NVT',
+];
+
+const ROBINSON_TABLE = [
+  { lat: 0, x: 1.0, y: 0.0 },
+  { lat: 5, x: 0.9986, y: 0.062 },
+  { lat: 10, x: 0.9954, y: 0.124 },
+  { lat: 15, x: 0.99, y: 0.186 },
+  { lat: 20, x: 0.9822, y: 0.248 },
+  { lat: 25, x: 0.973, y: 0.31 },
+  { lat: 30, x: 0.96, y: 0.372 },
+  { lat: 35, x: 0.9427, y: 0.434 },
+  { lat: 40, x: 0.9216, y: 0.4958 },
+  { lat: 45, x: 0.8962, y: 0.5571 },
+  { lat: 50, x: 0.8679, y: 0.6176 },
+  { lat: 55, x: 0.835, y: 0.6769 },
+  { lat: 60, x: 0.7986, y: 0.7346 },
+  { lat: 65, x: 0.7597, y: 0.7903 },
+  { lat: 70, x: 0.7186, y: 0.8435 },
+  { lat: 75, x: 0.6732, y: 0.8936 },
+  { lat: 80, x: 0.6213, y: 0.9394 },
+  { lat: 85, x: 0.5722, y: 0.9761 },
+  { lat: 90, x: 0.5322, y: 1.0 },
+];
+
+const TWO_PI = Math.PI * 2;
+const ROBINSON_Y_MAX = ROBINSON_TABLE[ROBINSON_TABLE.length - 1].y;
+
+const projectRobinson = (lng: number, lat: number) => {
+  const absLat = Math.min(Math.abs(lat), 90);
+  const index = Math.min(Math.floor(absLat / 5), ROBINSON_TABLE.length - 2);
+  const lower = ROBINSON_TABLE[index];
+  const upper = ROBINSON_TABLE[index + 1];
+  const interpolation = (absLat - lower.lat) / (upper.lat - lower.lat || 1);
+
+  const xCoeff = lower.x + (upper.x - lower.x) * interpolation;
+  const yValue = lower.y + (upper.y - lower.y) * interpolation;
+
+  const lambda = (lng * Math.PI) / 180;
+  const rawX = xCoeff * lambda;
+  const rawY = (lat < 0 ? -1 : 1) * yValue;
+
+  const xPercent = ((rawX + Math.PI) / TWO_PI) * 100;
+  const yPercent = ((ROBINSON_Y_MAX - rawY) / (2 * ROBINSON_Y_MAX)) * 100;
+
+  return { x: xPercent - 2.5, y: yPercent };
+};
+
+const markers = Object.entries(locations)
+  .filter(([code]) => !HIDE_LOCATIONS.includes(code))
+  .map(([code, data]) => {
+    const lng = data.longitude;
+    const lat = data.latitude;
+    const { x, y } = projectRobinson(lng, lat);
+
+    return {
+      id: code,
+      x,
+      y,
+    };
+  });
+---
+
+<FeaturesSection>
+  <section>
+    <FeaturesSectionHeader>
+      <MapPinAreaIcon />
+      <h2 id="cdn">Live on the Edge</h2>
+      <p>
+        All deployments automatically use <a target="_blank" href="https://www.cloudflare.com/application-services/products/cdn/"
+          >Cloudflare's global edge CDN</a
+        >, giving your users fast load times anywhere in the world.
+      </p>
+      <Help>
+        <CloudflareLogo height={38} slot="icon" />
+        Powered by Cloudflare
+      </Help>
+    </FeaturesSectionHeader>
+  </section>
+  <section class="map">
+    <div>
+      <World preserveAspectRatio="meet" />
+      {markers.map((marker) => <MapPinSimpleIcon weight="fill" style={{ left: `${marker.x}%`, top: `${marker.y}%` }} />)}
+    </div>
+  </section>
+</FeaturesSection>
+
+<style lang="scss">
+  section {
+    :global(.help) {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 16px;
+    }
+  }
+
+  .map {
+    position: relative;
+    display: flex;
+    margin-left: -256px;
+    width: calc(100% + (256px * 2));
+    overflow: hidden;
+
+    > div {
+      width: 100%;
+      translate: -1.7% 8%;
+      scale: 1.18;
+    }
+
+    > div > svg:first-of-type {
+      width: 100%;
+      height: auto;
+      opacity: 0.2;
+    }
+
+    > div > :global(svg):not(:first-of-type) {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      color: var(--color-primary);
+      transform: translate(-50%, -100%);
+
+      &:nth-of-type(2n) {
+        color: var(--color-secondary);
+      }
+    }
+
+    @media (max-width: calc(1152px + (256px * 2) + 64px)) {
+      margin-left: 0;
+      width: 100%;
+
+      > div > :global(svg):not(:first-of-type) {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+</style>

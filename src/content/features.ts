@@ -7,6 +7,7 @@ import {
   FileTextIcon,
   GitDiffIcon,
   GitPullRequestIcon,
+  GlobeIcon,
   HardDrivesIcon,
   LockSimpleIcon,
   PlayCircleIcon,
@@ -93,9 +94,9 @@ export const links = [
   },
   {
     id: 'ssh',
-    href: '/features/ai#editors',
-    title: 'SSH',
-    icon: TerminalIcon,
+    href: '/features/devops#cdn',
+    title: 'Global CDN',
+    icon: GlobeIcon,
   },
   {
     id: 'ssh',

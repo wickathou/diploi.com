@@ -7,6 +7,7 @@ import LovableHr from '../../lovable/_components/LovableHr.astro';
 import FeaturesCallouts from '../_components/FeaturesCallouts.astro';
 import DevLifecycle from '../dev/_components/DevLifecycle.astro';
 import TeamsIntegration from '../teams/_components/TeamsIntegration.astro';
+import DevopsCdn from './_components/DevopsCdn.astro';
 import DevopsHero from './_components/DevopsHero.astro';
 import DevopsIac from './_components/DevopsIac.astro';
 import DevopsResources from './_components/DevopsResources.astro';
@@ -28,6 +29,8 @@ const feature = features.find((feature) => feature.id === 'devops')!;
     <DevopsIac />
     <LovableHr />
     <TeamsIntegration />
+    <LovableHr />
+    <DevopsCdn />
     <LovableHr />
     <DevopsResources />
     <FeaturesCallouts hide={['devops']} />

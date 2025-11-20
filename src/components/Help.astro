@@ -1,9 +1,13 @@
 ---
 import { InfoIcon } from '@phosphor-icons/react';
+
+const { ...other } = Astro.props;
 ---
 
-<p class="help">
-  <InfoIcon />
+<p class:list={[other.class, 'help']}>
+  <slot name="icon">
+    <InfoIcon />
+  </slot>
   <slot />
 </p>
 
