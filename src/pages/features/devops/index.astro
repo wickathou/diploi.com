@@ -1,4 +1,5 @@
 ---
+import { DeveloperFaq, Section, SectionHeader } from '../../../components';
 import Footer from '../../../components/Footer.astro';
 import Navigation from '../../../components/Navigation/Navigation.astro';
 import { features } from '../../../content/features';
@@ -33,6 +34,11 @@ const feature = features.find((feature) => feature.id === 'devops')!;
     <DevopsCdn />
     <LovableHr />
     <DevopsResources />
+    <LovableHr />
+    <Section>
+      <SectionHeader title='FAQ' description="Frequently asked questions about Diploi within the context of DevOps"/>
+      <DeveloperFaq page='devops'/>
+    </Section>
     <FeaturesCallouts hide={['devops']} />
   </main>
   <Footer />

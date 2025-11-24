@@ -1,4 +1,5 @@
 ---
+import { DeveloperFaq, Section, SectionHeader } from '../../../components';
 import Footer from '../../../components/Footer.astro';
 import Navigation from '../../../components/Navigation/Navigation.astro';
 import { features } from '../../../content/features';
@@ -33,6 +34,11 @@ const feature = features.find((feature) => feature.id === 'teams')!;
     <TeamsGraphs />
     <LovableHr />
     <TeamsResources />
+    <LovableHr />
+    <Section>
+      <SectionHeader title='FAQ' description="Answers to common questions about Diploi's features for teams"/>
+      <DeveloperFaq page='teams'/>
+    </Section>
     <FeaturesCallouts hide={['teams']} />
   </main>
   <Footer />
