@@ -1,5 +1,5 @@
 ---
-import { ContactUsCard, Footer, GetStarted, PageTitle, Plans, PricingTable, PricingType, Section, SectionHeader } from '../../components';
+import { ContactUsCard, DeveloperFaq, Footer, GetStarted, PageTitle, Plans, PricingTable, PricingType, Section, SectionHeader } from '../../components';
 import Navigation from '../../components/Navigation/Navigation.astro';
 import Layout from '../../layouts/Layout.astro';
 import PricingDeployments from './_components/PricingDeployments.astro';
@@ -42,6 +42,10 @@ if (!pricing) {
 
         <PricingType pricing={pricing} />
         <PricingTable pricing={pricing} />
+      </Section>
+      <Section>
+        <SectionHeader title='FAQ' highlightedText='FAQ' description="Common questions about Diploi's pricing"/>
+        <DeveloperFaq page='pricing'/>
       </Section>
       <hr />
       <Section>

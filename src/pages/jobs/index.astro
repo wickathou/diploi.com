@@ -1,6 +1,6 @@
 ---
 import { ArrowRight } from '@phosphor-icons/react';
-import { Footer, Icon, PageTitle, Section, SubSection, SubSectionHeader } from '../../components';
+import { DeveloperFaq, Footer, Icon, PageTitle, Section, SectionHeader, SubSection, SubSectionHeader } from '../../components';
 import Navigation from '../../components/Navigation/Navigation.astro';
 import Layout from '../../layouts/Layout.astro';
 ---
@@ -108,6 +108,10 @@ import Layout from '../../layouts/Layout.astro';
             </p>
           </div>
         </article>
+      </SubSection>
+      <SubSection>
+        <SectionHeader title='FAQ' description="Frequently asked questions about our hiring practices"/>
+        <DeveloperFaq page='jobs'/>
       </SubSection>
     </Section>
   </main>

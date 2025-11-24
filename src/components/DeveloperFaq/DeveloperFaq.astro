@@ -1,11 +1,18 @@
 ---
 import { Minus, Plus } from '@phosphor-icons/react';
 import { developerFaqItems } from './data';
+import type { TDeveloperFaqItem } from './types';
+
+type Props = {
+  page: TDeveloperFaqItem['page'] ;
+};
+
+const { page } = Astro.props;
 ---
 
 <div class="developer-faq">
   {
-    developerFaqItems.map((item) => (
+    developerFaqItems.filter(item => item.page === page).map((item) => (
       <label class="developer-faq-item" for={item.id}>
         <div class="question">
           <Plus weight="regular" className="plus" />

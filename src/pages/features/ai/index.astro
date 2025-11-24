@@ -1,4 +1,5 @@
 ---
+import { DeveloperFaq, Section, SectionHeader } from '../../../components';
 import Footer from '../../../components/Footer.astro';
 import Navigation from '../../../components/Navigation/Navigation.astro';
 import { features } from '../../../content/features';
@@ -27,6 +28,10 @@ const feature = features.find((feature) => feature.id === 'ai')!;
     <LovableHr />
     <AiStackBuilder />
     <LovableHr />
+    <Section>
+      <SectionHeader title='FAQ' description="Answers to common questions about how AI can be used on Diploi"/>
+      <DeveloperFaq page='ai'/>
+    </Section>
     <FeaturesCallouts hide={['ai']} />
   </main>
   <Footer />
