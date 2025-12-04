@@ -1,6 +1,6 @@
 ---
-title: 'Using Cursor with apps built with Lovable, and hosting without Lovable Cloud'
-description: 'Import and deploy Lovable AI apps directly from your GitHub account or public repositories and code with Cursor'
+title: 'Exporting apps built with Lovable to Cursor, and hosting without Lovable Cloud'
+description: 'Export and deploy Lovable AI apps directly from your GitHub account or public repositories and code with Cursor'
 author: 'Javier'
 timestamp: '2025-10-17T12:00:05.000Z'
 devtoUrl: 'https://dev.to/diploi/using-cursor-with-apps-built-with-lovable-and-hosting-without-lovable-cloud-1m43'
@@ -8,10 +8,10 @@ image: './deploying_lovable_apps_cover.png'
 social_image: './deploying_lovable_apps_og.png'
 draft: false
 type: 'Guide'
-hightlight: true
+highlight: true
 ---
 
-Updated <time datetime="2025-10-28T11:22:05.000Z">October 28, 2025</time>
+Updated <time datetime="2025-11-25T15:49:05.000Z">November 25, 2025</time>
 
 ---
 

@@ -127,7 +127,7 @@ export function blogLoader({ apiKey }: { apiKey: string }): Loader {
         timestamp: z.string(),
         url: z.string().optional(),
         type: z.string().optional(),
-        hightlight: z.boolean().optional(),
+        highlight: z.boolean().optional(),
       }),
   };
 }

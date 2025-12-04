@@ -13,7 +13,7 @@ import { createBlogSchema } from './_utils/createBlogSchema';
 const articles = await getCollection('blog');
 
 const latest = articles[0];
-const highlight = articles.find((article) => article.data.hightlight === true && article.id !== latest.id);
+const highlight = articles.find((article) => article.data.highlight === true && article.id !== latest.id);
 const list = articles.filter((article) => ![latest.id, highlight?.id].includes(article.id));
 
 const schema = createBlogSchema({
