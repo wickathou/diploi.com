@@ -1,5 +1,5 @@
 ---
-// import { Font } from 'astro:assets';
+import { Font } from 'astro:assets';
 import GlobalStyles from '../components/GlobalStyles.astro';
 import Gradient from '../components/Gradient.astro';
 import icon from '../images/logo-icon.svg';
@@ -59,8 +59,8 @@ const ogSocialImage = getFullImageUrl({ siteUrl: Astro.url.origin, imageUrl: ogS
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     {/* Fonts */}
-    <!-- <Font cssVariable="--font-header" preload />
-    <Font cssVariable="--font-body" preload /> -->
+    <Font cssVariable="--font-header" preload />
+    <Font cssVariable="--font-body" preload />
 
     <slot name="head" />
 
