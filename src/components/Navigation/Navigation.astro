@@ -52,6 +52,16 @@ const isJobs = selected === 'jobs';
   </div>
 </header>
 
+<script>
+  const menu = document.getElementById('menu');
+  menu?.addEventListener('change', (event) => {
+    const open = (event.target as HTMLInputElement)?.checked;
+    if (open) document.body.classList.add('no-scroll');
+    else document.body.classList.remove('no-scroll');
+    console.log('open', open);
+  });
+</script>
+
 <style lang="scss">
   @use 'sass:math';
   @use '../../styles/mixins';
@@ -136,6 +146,7 @@ const isJobs = selected === 'jobs';
     background-color: var(--color-bg);
     box-sizing: border-box;
     height: 100vh;
+    height: 100dvh;
   }
 
   .links {
@@ -150,11 +161,14 @@ const isJobs = selected === 'jobs';
     background-color: var(--color-bg);
     box-sizing: border-box;
     height: 100vh;
+    height: 100dvh;
 
     @media (max-width: 899px) {
       padding-top: calc(64px + 32px) !important;
       justify-content: flex-start !important;
       gap: var(--space-m);
+      overflow-x: hidden;
+      overflow-y: scroll;
     }
 
     > button,
