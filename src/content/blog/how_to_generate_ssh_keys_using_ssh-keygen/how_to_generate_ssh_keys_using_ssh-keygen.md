@@ -15,13 +15,28 @@ Updated <time datetime="2025-12-04T12:44:00.000Z">December 04, 2025</time>
 
 ---
 
-SSH is the preferred way to connect two computers over the network, and to do that, you'll need an SSH key pair. We went over what SSH is in [a different article](/blog/what-is-ssh), so in this article, I'll jump straight to explaining how to generate key pairs.
+## Table of contents
+
+- [How to generate an SSH key-pair to connect to a server via SSH](#how-to-generate-an-ssh-key-pair-to-connect-to-a-server-via-ssh)
+  - [1. Open a terminal and run ssh-keygen](#1-open-a-terminal-and-run-ssh-keygen)
+  - [2. Adding the public key to a server or service using SSH for authentication](#2-adding-the-public-key-to-a-server-or-service-using-ssh-for-authentication)
+  - [3. Connecting to a service or server using SSH](#3-connecting-to-a-service-or-server-using-ssh)
+- [How to install openSSH](#how-to-install-openssh)
+  - [In Linux](#in-linux)
+  - [In Mac](#in-mac)
+  - [In Windows](#in-windows)
+- [Wrapping all up](#wrapping-all-up)
+- [References](#references)
+
+---
+
+SSH is the preferred way to connect two computers over the network, and to do that, you'll need an SSH key pair. We went over what SSH is in [a different article](/blog/what_is_ssh), so in this article, I'll jump straight to explaining how to generate key pairs.
 
 Let's go!
 
 ## How to generate an SSH key-pair to connect to a server via SSH
 
-To generate a set of SSH keys, we are going to use the tool `ssh-keygen`, which is part of `openssh`. For most operating systems, `ssh-keygen` is available by default, but in case you don't have it, you can install it by installing `openssh`, [here we explain how](#how-to-install-openssh-and-ssh-keygen).
+To generate a set of SSH keys, we are going to use the tool `ssh-keygen`, which is part of `openssh`. For most operating systems, `ssh-keygen` is available by default, but in case you don't have it, you can install it by installing `openssh`, [here we explain how](#how-to-install-openssh).
 
 Using `ssh-keygen` to generate keys should work on any modern OS, so this guide will work on Linux, Mac, and Windows.
 
@@ -114,6 +129,25 @@ bun@app-3:/app/bun$
 ```
 javi@diploi:~$ ssh-add ./files/my-ssh-key
 ```
+---
+
+## How to install openSSH
+
+In case your machine doesn't have `openssh`, you can installing by searching for the `openssh-client`. For servers, you'll want to use `openssh-server`, which is the package which includes the utilites necessary to be able to host connections from other clients.
+
+### In Linux
+
+All you need to do is to run the terminal command `sudo apt install openssh-client`. Yep, that's all. For more information about it, [check this article from LinuxCapable](https://linuxcapable.com/how-to-install-ssh-on-ubuntu-linux/) .
+
+### In Mac
+
+Most MacOS machines come with openSSH pre-installed by default, but in case it's missing for some reason, you can install it with Homebrew, by opening a terminal and running the command `brew install openssh`. For more info, [check this article from Homebrew Formulae](https://formulae.brew.sh/formula/openssh).
+
+### In Windows
+
+OpenSSH comes as an optional feature which you can activate from Windows Control Panel. Depending on your Windows version, the process is slighly different, but follows a similar formula. In Windows 11, go to *Settings*, then *System*, and then *View features* where you can search by writing `openssh` and you'll see the OpenSSH client listed. For more information about it and explanations for other versions of Windows, [check this article from Windows Club](https://www.thewindowsclub.com/openssh-on-windows-10).
+
+---
 ## Wrapping all up
 
 You now know how to connect to another computer, server or service using SSH, and in a nutshell, it all boils down to:
