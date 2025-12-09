@@ -15,6 +15,15 @@ Updated <time datetime="2025-12-04T12:43:00.000Z">December 04, 2025</time>
 
 ---
 
+## Table of contents
+
+- [What is randomart?](#what-is-randomart)
+  - [How randomart is generated](#how-randomart-is-generated)
+- [Closing thoughts](#closing-thoughts)
+- [References](#references)
+
+---
+
 Back when I was learning to code, one of the first things I did was to create a GitHub account and add a public key to connect via SSH. When I ran `ssh-keygen`, I thought that the output I should paste into GitHub was this peculiar-looking thing that showed up on my terminal:
 
 ```
