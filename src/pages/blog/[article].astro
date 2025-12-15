@@ -46,6 +46,8 @@ const schema = createBlogPostSchema({
             layout="full-width"
             width={1000}
             height={420}
+            loading="eager"
+            fetchpriority="high"
             src={(entry.data.image || entry.data.external_image) as string}
           />
         )
@@ -155,6 +157,7 @@ const schema = createBlogPostSchema({
     height: auto;
     max-width: 100%;
     border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   .article {
