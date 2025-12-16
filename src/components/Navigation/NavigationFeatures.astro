@@ -104,6 +104,14 @@ import lovableIcon from '../../images/lovable-icon.svg';
       --popover-offset: 50%;
     }
 
+    @supports (-webkit-hyphens: none) and (not (top: anchor(bottom))) {
+      // Safari centers popovers on the trigger, shift it fully below the button
+      --popover-offset: calc(50% + 32px);
+      margin-top: 0;
+      max-height: min(80vh, 560px);
+      height: auto;
+    }
+
     @supports (top: anchor(bottom)) {
       position: fixed;
       position-anchor: --features-anchor;
