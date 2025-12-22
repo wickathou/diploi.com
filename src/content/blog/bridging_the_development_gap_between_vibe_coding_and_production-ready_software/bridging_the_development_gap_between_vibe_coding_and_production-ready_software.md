@@ -59,9 +59,9 @@ Since this is a blog for all things Diploi, it makes sense to share the press re
 
 ### Diploi launches to bridge the development gap between vibe coding and production-ready software
 
-Vibe coding enables faster experimentation and idea deployment, but many popular tools lack the scope needed to take projects from prototype to production. Diploi bridges this gap, reducing DevOps overhead and enabling teams to build, test, and host on a single platform.
+[Link to the original post](https://news.cision.com/san-francisco-oy/r/diploi-launches-to-bridge-the-development-gap-between-vibe-coding-and-production-ready-software,c4285679).
 
-HELSINKI, Finland (18 December 2025) Helsinki-based developer platform Diploi today announced the full launch of Diploi.com, a single SaaS platform designed to streamline development, testing, and production for developers, teams, and agencies. By reducing environment setup headaches and DevOps overhead, Diploi empowers teams to build, test, and deploy software reliably and efficiently.
+**HELSINKI, Finland (18 December 2025)** Helsinki-based developer platform Diploi today announced the full launch of Diploi.com, a single SaaS platform designed to streamline development, testing, and production for developers, teams, and agencies. By reducing environment setup headaches and DevOps overhead, Diploi empowers teams to build, test, and deploy software reliably and efficiently.
 
 The path from experimenting quickly with vibe coding to working on production-ready apps requires significant effort to follow. While AI app-builders like Lovable make it easy for developers of all skill levels to create concepts, the end product suffers if prompts do not take architectural complexity into account, with small changes often leading to unexpected issues in the underlying code. 
 
