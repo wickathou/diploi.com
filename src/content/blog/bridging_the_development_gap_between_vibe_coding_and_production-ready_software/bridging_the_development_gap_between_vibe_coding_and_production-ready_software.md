@@ -38,7 +38,7 @@ Moving forward to now, at the beginning of December, we reached the mark of gett
 - Support for Python, PHP, C#, and .NET
 - Added Ghost, Supabase, and n8n, to build even more complex applications on Diploi
 - Launched MinIO as a file storage system and MariaDB for SQL-based backends
-- New ready-to-use LLM support with Claude, ChatGPT Codex, and Google's Gemini, to vibe-code within the browser IDE instantly
+- New ready-to-use LLM support with Claude, and ChatGPT Codex, to vibe-code within the browser IDE instantly
 - Implemented a way to import existing applications from Lovable, Next.js, React, and Node.js applications
 
 ![The full list of supported tech at Diploi 2025](tech-supported-diploi.png)
