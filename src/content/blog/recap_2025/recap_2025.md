@@ -1,6 +1,6 @@
 ---
-title: 'Closing 2025 loudly!'
-description: 'Our first press release and looking back to what happened in 2025.'
+title: 'The Diploi changelog'
+description: 'A look into what happened throughout 2025.'
 author: 'Javier'
 timestamp: '2025-12-29T10:00:00.000Z'
 # devtoUrl: ''

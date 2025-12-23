@@ -1,6 +1,6 @@
 ---
 title: 'Closing 2025 loudly!'
-description: 'Our first press release and looking back to what happened in 2025.'
+description: 'Our first press release.'
 author: 'Javier'
 timestamp: '2025-12-23T10:00:00.000Z'
 # devtoUrl: ''
@@ -45,7 +45,7 @@ A recent Diploi developer survey found 68% of respondents reported moderate to h
 
 ## Closing thoughts
 
-The publication already got attention from international outlets, talking about Diploi and our mission which made us very happy to see.
+The publication already got attention from international outlets, talking about Diploi and our mission, which made us very happy to see.
 
 If you would like to reach out for comment, send us an email at hello@diploi.com or message us on [Discord](https://discord.com/invite/vvgQxVjC8G).
 
