@@ -6,7 +6,7 @@ timestamp: '2025-12-29T10:00:00.000Z'
 # devtoUrl: ''
 image: './2025_recap_cover.png'
 social_image: './2025_recap_og.png'
-draft: true
+draft: false
 type: 'Recap'
 highlight: true
 ---
