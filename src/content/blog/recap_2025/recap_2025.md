@@ -25,7 +25,7 @@ Nice to meet you!
 
 ## What happened in 2025, a quick recap
 
-Diploi started in 2024, where the team was [only 3 people](/blog/hi-from-diploi-52j9), composed by [Tuomas](https://www.linkedin.com/in/munkkeli/), [Patrik](https://www.linkedin.com/in/patriklindberg/), [Marcus](https://www.linkedin.com/in/marcusahlfors/), focused on building a product that would help developers use their time to do more of the actual fun coding, and less of the boring and repetitive config work. And they were successful on that!
+Diploi started in 2024, when the team was [only 3 people](/blog/hi-from-diploi-52j9), composed by [Tuomas](https://www.linkedin.com/in/munkkeli/), [Patrik](https://www.linkedin.com/in/patriklindberg/), [Marcus](https://www.linkedin.com/in/marcusahlfors/), focused on building a product that would help developers use their time to do more of the actual fun coding, and less of the boring and repetitive config work. And they were successful on that!
 
 So when 2025 came around, the product reached a stage where it was ready for actual users, so the need of actively promoting the product to developers grew, which is why Javier ([I'm the one writing](https://www.linkedin.com/in/javierjhm/)) joined the team in February.
 
