@@ -30,7 +30,7 @@ const numberFormatter = new Intl.NumberFormat('fi-FI', {
 });
 ---
 
-<StackBuilderButton component="button" class={className} data-id={componentID}>
+<StackBuilderButton component="button" class={className} data-id={componentID} data-component={`${owner}/${repo}`}>
   {
     badge === 'new' && (
       <label class="new">
