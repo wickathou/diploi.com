@@ -8,10 +8,10 @@ image: './how_to_generate_ssh_keys_cover.png'
 social_image: './how_to_generate_ssh_keys_og.png'
 draft: false
 type: 'Guide'
-highlight: true
+highlight: false
 ---
 
-Updated <time datetime="2025-12-04T12:44:00.000Z">December 04, 2025</time>
+Updated <time datetime="2026-01-05T11:44:00.000Z">January 05, 2026</time>
 
 ---
 
