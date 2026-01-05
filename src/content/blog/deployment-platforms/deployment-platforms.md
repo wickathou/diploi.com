@@ -1,5 +1,5 @@
 ---
-title: 'Exploring 7 lesser known alternative to Vercel, Render, Heroku, and Railway you haven’t tried yet'
+title: 'Exploring 7 lesser known alternatives to Vercel, Render, Heroku, and Railway you haven’t tried yet'
 description: 'We created a list of deployment platforms (us included) which exclude the usual suspects when it comes to app hosting'
 author: 'Javier'
 timestamp: '2025-05-27T07:11:05.573Z'
