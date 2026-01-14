@@ -44,3 +44,23 @@
   from = "/devops"
   to = "/features/devops"
   status = 301
+
+[[redirects]]
+  from = "/blog/importing_from_lovable"
+  to = "/blog/importing_from_lovable_and_github"
+  status = 301
+
+[[redirects]]
+  from = "/blog/hosting_react_apps/hosting_react_apps"
+  to = "/blog/hosting_react_apps"
+  status = 301
+
+[[redirects]]
+  from = "/alternative/railway"
+  to = "/alternative/to-railway"
+  status = 301
+
+[[redirects]]
+  from = "/alternative/vercel"
+  to = "/alternative/to-vercel"
+  status = 301
