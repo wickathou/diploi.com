@@ -96,12 +96,14 @@ const lovableComponent = (data.components as Component[]).find((component) => co
         </span>
       </span>
     </button>
-    <p class="small"><Icon name="Info" sizeRem={1} /> Instant launch. No sign-up required.</p>
+    <p class="small"><Icon name="Info" sizeRem={1} /><span id="button-launch-stack-info">Instant launch. No sign-up required.</span></p>
   </div>
 </div>
 
 <script>
   const buttons = document.querySelectorAll('.stack-builder-button[data-id]');
+  const info = document.getElementById('button-launch-stack-info');
+  const defaultInfoText = info?.textContent;
 
   let selectedComponentIds: number[] = JSON.parse(
     (document.querySelector('[data-components-defaults]') as HTMLElement).getAttribute('data-components-defaults') || '[]'
@@ -140,7 +142,13 @@ const lovableComponent = (data.components as Component[]).find((component) => co
       const componentsEvent = new CustomEvent('components', { detail: selectedComponentIds });
       window.dispatchEvent(componentsEvent);
 
-      launchButton.disabled = selectedComponentIds.length === 0;
+      // Check that at least one component is selected
+      const isComponentSelected = !!document.querySelector('.stack-builder-button.component.is-selected[data-id]');
+      if (info) {
+        info.textContent = (isComponentSelected ? defaultInfoText : 'Please select at least one component') ?? null;
+      }
+
+      launchButton.disabled = selectedComponentIds.length === 0 || !isComponentSelected;
     });
   });
 
