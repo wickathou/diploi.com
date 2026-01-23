@@ -4,6 +4,7 @@ import SubSectionHeader from '../SubSectionHeader.astro';
 import StackBuilderButtonCallout from './StackBuilderButtonCallout.astro';
 import StackBuilderButtonComponent from './StackBuilderButtonComponent.astro';
 import StackBuilderYaml from './StackBuilderYaml.astro';
+import { ComponentType, type ComponentTypeLiteral } from './utils';
 
 interface Props {
   launchButtonText?: string;
@@ -24,7 +25,7 @@ if (!data || data.status !== 'ok') {
 
 interface Component {
   componentID: number;
-  type: 'component' | 'addon';
+  componentTypeID: ComponentTypeLiteral;
   identifier: string;
   name: string;
   url: string;
@@ -56,7 +57,7 @@ const lovableComponent = (data.components as Component[]).find((component) => co
             <div class="blocks-container components">
               <div class="blocks components">
                 {components
-                  .filter((component) => component.type === 'component')
+                  .filter((component) => component.componentTypeID === ComponentType.COMPONENT)
                   .map((component) => (
                     <StackBuilderButtonComponent {...component} class="component" />
                   ))}
@@ -75,7 +76,7 @@ const lovableComponent = (data.components as Component[]).find((component) => co
         <div class="blocks addons">
           {
             components
-              .filter((component) => component.type === 'addon')
+              .filter((component) => component.componentTypeID === ComponentType.ADDON)
               .map((addon) => <StackBuilderButtonComponent {...addon} class="addon" />)
           }
         </div>

@@ -3,13 +3,15 @@ import { Image } from 'astro:assets';
 import { DownloadSimpleIcon, FlaskIcon, SparkleIcon } from '@phosphor-icons/react';
 import Checkbox from '../Checkbox.astro';
 import StackBuilderButton from './StackBuilderButton.astro';
-import type { TStackBuilderBlock } from './types';
+import { componentTypeIDToString, type StackBuilderBlock } from './utils';
 
-type Props = TStackBuilderBlock & {
+type Props = StackBuilderBlock & {
   class: string;
 };
 
-const { componentID, type, identifier, name, url, class: className, badge, count } = Astro.props;
+const { componentID, componentTypeID, identifier, name, url, class: className, badge, count } = Astro.props;
+
+const type = componentTypeIDToString[componentTypeID];
 
 export const extractRepositoryOwnerAndRepo = (repositoryUrl: string) => {
   let url = repositoryUrl;

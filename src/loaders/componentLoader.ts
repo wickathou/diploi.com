@@ -2,6 +2,12 @@ import type { Loader } from 'astro/loaders';
 import { z } from 'astro:content';
 import DOMPurify from 'isomorphic-dompurify';
 
+const componentTypeIDToString = {
+  1: 'component',
+  2: 'addon',
+  3: 'starter',
+};
+
 // Remove component icon from README.md
 DOMPurify.addHook('uponSanitizeElement', function (node, data) {
   if (data.tagName === 'img') {
@@ -74,19 +80,24 @@ export function componentLoader({ apiUrl, apiKey }: { apiUrl: string; apiKey: st
         }
 
         const entry = data.component as {
+          componentTypeID: number;
           identifier: string;
           readme: string;
           icon: string;
         };
 
-        const body = Buffer.from(entry.readme, 'base64').toString();
+        const body = entry.readme;
         const rendered = {
           html: DOMPurify.sanitize((await renderMarkdown(body)).html),
         };
 
         const entryData = await parseData({
           id: entry.identifier,
-          data: entry,
+          data: {
+            ...entry,
+            icon: Buffer.from(entry.icon).toString('base64'),
+            type: componentTypeIDToString[entry.componentTypeID as keyof typeof componentTypeIDToString],
+          },
         });
 
         store.set({
@@ -100,7 +111,7 @@ export function componentLoader({ apiUrl, apiKey }: { apiUrl: string; apiKey: st
     schema: async () =>
       z.object({
         componentID: z.number().int(),
-        type: z.union([z.literal('component'), z.literal('addon')]),
+        type: z.union([z.literal('component'), z.literal('addon'), z.literal('starter')]),
         identifier: z.string(),
         name: z.string(),
         description: z.string(),
