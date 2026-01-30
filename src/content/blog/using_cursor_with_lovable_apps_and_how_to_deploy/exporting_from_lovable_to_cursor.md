@@ -76,7 +76,7 @@ In this walkthrough, we'll be importing an application stored on GitHub and buil
 
 If you want to use this same application for testing, here's the public repository which you can use to import the app to your own Diploi account: https://github.com/wickathou/vibe-tune-podcast
 
-You can see the live app here: https://demo--soundboarded.diploi.me/
+You can see the live app here: [https://soundboarded.enddesign.co/](https://soundboarded.enddesign.co/
 
 Let's get started by creating a new project and starting a Development environment, where you can start coding with Cursor right away.
 
