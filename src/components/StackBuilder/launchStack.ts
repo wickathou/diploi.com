@@ -31,8 +31,8 @@ export const launchStack = async ({
     clearUtmParams();
     window.location.href = `${apiUrl}/launch/${data.result.data.token}`;
   } else {
-    // FIXME: This is too ugly...
-    alert('Failed to start trial, please try again later...');
-    button.disabled = false;
+    // Move to the login screen as a fallback
+    // TODO: In the future, move to a different screen based on the error we throw (verification requred, over limit)
+    window.location.href = `${apiUrl}/login`;
   }
 };
