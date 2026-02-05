@@ -29,10 +29,13 @@ export const launchStack = async ({
   const data = await response.json();
   if (data.result.data.status === 'ok') {
     clearUtmParams();
-    window.location.href = `${apiUrl}/launch/${data.result.data.token}`;
+    if (data.result.data.isVerificationRequired) {
+      window.location.href = `${apiUrl}/launch/verify?t=${data.result.data.token}`;
+    } else {
+      window.location.href = `${apiUrl}/launch?t=${data.result.data.token}`;
+    }
   } else {
     // Move to the login screen as a fallback
-    // TODO: In the future, move to a different screen based on the error we throw (verification requred, over limit)
     window.location.href = `${apiUrl}/login`;
   }
 };
