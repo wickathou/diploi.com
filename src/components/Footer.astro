@@ -8,6 +8,8 @@ import Tag from './Tag.astro';
 
 const calendlyUrl = import.meta.env.VITE_CALENDLY_URL;
 
+const currentYear = new Date().getFullYear();
+
 const alternatives = (await getCollection('alternative'))
   .sort((a, b) => a.data.competitor.localeCompare(b.data.competitor))
   .map((entry) => ({
@@ -21,9 +23,9 @@ const alternatives = (await getCollection('alternative'))
     <div class="footer-content">
       <div class="logo-and-socials">
         <Logo class="footer-logo" />
-        <a class="launch-week" data-event="footer_launchweek_click" href="/launchweek">
+        <!-- ENABLE DURING LAUNCHWEEK <a class="launch-week" data-event="footer_launchweek_click" href="/launchweek">
           <Tag><RocketLaunchIcon weight="fill" /> Launch Week <ArrowUpRightIcon /></Tag>
-        </a>
+        </a> -->
       </div>
       <div class="clickable">
         <ul class="links">
@@ -42,6 +44,9 @@ const alternatives = (await getCollection('alternative'))
           </li>
           <li>
             <a data-event="glossary_click" href="https://docs.diploi.com/reference/glossary">Glossary</a>
+          </li>
+          <li>
+            <a data-event="faq_click" href="/faq">FAQ</a>
           </li>
           <li>
             <a data-link="login" data-event="login_click" href="https://console.diploi.com/login">Login / Sign Up</a>
@@ -65,6 +70,9 @@ const alternatives = (await getCollection('alternative'))
           <ul class="links">
             <label role="listitem">Legal</label>
             <li>
+              <a href="/about">About us</a>
+            </li>
+            <li>
               <a href="/privacy">Privacy Policy</a>
             </li>
             <li>
@@ -87,6 +95,7 @@ const alternatives = (await getCollection('alternative'))
 
         <address>
           <label>Contact</label>
+          <p>Malminkatu 30, Helsinki, Finland</p>
           <a href="mailto:hello@diploi.com" class="mail">hello@diploi.com</a>
           <a data-event="calendly_click" href={calendlyUrl} target="_blank"><PhoneIcon /> Book a Demo</a>
         </address>
@@ -124,7 +133,7 @@ const alternatives = (await getCollection('alternative'))
       <EuLogo width={156} height={32} style={{ opacity: 0.8 }} />
       <p class="small cp">
         <Icon name="Copyright" size={16} weight="light" />
-        2026 Diploi Oy
+        {currentYear} Diploi Oy
       </p>
     </div>
   </div>

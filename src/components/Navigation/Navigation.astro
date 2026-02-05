@@ -4,7 +4,7 @@ import Logo from '../Logo.astro';
 import NavigationFeatures from './NavigationFeatures.astro';
 
 interface Props {
-  selected?: 'home' | 'ai' | 'pricing' | 'blog' | 'jobs';
+  selected?: 'home' | 'ai' | 'pricing' | 'blog' | 'jobs' | 'about';
 }
 
 const { selected } = Astro.props;
@@ -13,6 +13,7 @@ const isHome = selected === 'home';
 const isAi = selected === 'ai';
 const isPricing = selected === 'pricing';
 const isBlog = selected === 'blog';
+const isAbout = selected === 'about';
 const isJobs = selected === 'jobs';
 ---
 
@@ -42,6 +43,10 @@ const isJobs = selected === 'jobs';
         <a data-event="documentation_click" href="https://docs.diploi.com/">
           <Icon name="BookBookmark" weight="regular" class="navigation-link-icon" />
           Documentation
+        </a>
+        <a data-event="about_click" href="/about" data-selected={`${isAbout}`}>
+          <Icon name="Building" weight={isAbout ? 'duotone' : 'regular'} class="navigation-link-icon" />
+          About us
         </a>
         <a data-link="login" data-event="login_click" href="https://console.diploi.com">
           <Icon name="SignIn" weight="regular" class="navigation-link-icon" />
@@ -163,7 +168,7 @@ const isJobs = selected === 'jobs';
     height: 100vh;
     height: 100dvh;
 
-    @media (max-width: 899px) {
+    @media (max-width: 1024px) {
       padding-top: calc(64px + 32px) !important;
       justify-content: flex-start !important;
       gap: var(--space-m);
@@ -232,7 +237,7 @@ const isJobs = selected === 'jobs';
         }
       }
 
-      @media (max-width: 899px) {
+      @media (max-width: 1024px) {
         gap: var(--space-s);
         width: 100%;
 
@@ -255,7 +260,7 @@ const isJobs = selected === 'jobs';
     }
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: 1025px) {
     #menu-label {
       display: none;
     }
