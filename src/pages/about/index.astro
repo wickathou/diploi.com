@@ -1,8 +1,8 @@
 ---
-import { Footer, ContactUsCard, PageTitle, Section, GetStarted, SubSection, SubSectionHeader } from '../../components';
+import { ContactUsCard, Footer, GetStarted, PageTitle, Section, SubSection, SubSectionHeader } from '../../components';
 import Navigation from '../../components/Navigation/Navigation.astro';
 import DiploiTeam from '../../images/diploi-team.jpg';
-import DiploiTeamMeeting from '../../images/team-meeting.jpg'
+import DiploiTeamMeeting from '../../images/team-meeting.jpg';
 import Layout from '../../layouts/Layout.astro';
 ---
 
@@ -106,12 +106,12 @@ import Layout from '../../layouts/Layout.astro';
         </figure>
       </SubSection>
     </Section>
-      <Section>
-        <div class="callout">
-          <GetStarted />
-          <ContactUsCard />
-        </div>
-      </Section>
+    <Section>
+      <div class="callout">
+        <GetStarted />
+        <ContactUsCard />
+      </div>
+    </Section>
   </main>
   <Footer />
 </Layout>
@@ -123,105 +123,8 @@ import Layout from '../../layouts/Layout.astro';
     max-width: unset;
   }
 
-  .title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-huge);
-
-    .title-and-description {
-      @include mixins.sparkle-bg;
-    }
-  }
-
   .full-width {
-    width: 100%
-  }
-
-  .checks {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    > li {
-      display: flex;
-      align-items: center;
-      gap: var(--space-l);
-      font-size: 1.5rem;
-    }
-  }
-
-  .positions {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    > li,
-    > a {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-s);
-      align-items: flex-start;
-      background: transparent;
-      padding: 0;
-      padding: var(--space-xxl) 0;
-      overflow: hidden;
-      text-decoration: none;
-
-      :global(.job-position-icon) {
-        @include mixins.card-bg-icon;
-        @include mixins.respond-to('tablet') {
-          left: unset;
-          right: 0;
-          width: 8rem !important;
-          height: 8rem !important;
-          top: 50%;
-          transform: translate(0%, -50%);
-        }
-      }
-
-      > svg {
-        margin-bottom: var(--space-m);
-        opacity: 0.5;
-      }
-
-      > h3 {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 24px;
-
-        > svg {
-          opacity: 0.5;
-        }
-      }
-
-      > h3,
-      p {
-        margin: 0;
-      }
-    }
-  }
-
-  .card {
-    @include mixins.card-desktop;
-    @include mixins.sparkle-bg(2);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-xxl);
-
-    @include mixins.respond-to('tablet') {
-      align-items: flex-start;
-    }
-
-    h2 {
-      display: flex;
-      align-items: center;
-      gap: var(--space-l);
-    }
+    width: 100%;
   }
 
   .callout {

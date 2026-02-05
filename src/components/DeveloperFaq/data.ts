@@ -277,7 +277,7 @@ export const developerFaqItems: TDeveloperFaqItem[] = [
  page: "faq",
  question: "What is Diploi?",
  answer:
-      "Diploi is a cloud development and hosting platform that eliminates all configuration work—so developers can start coding instantly, even when managing multiple projects with different tech stacks, databases, and dependencies. It's an all-in-one solution where developers can scaffold applications from zero, code without local setup using cloud development environments, and deploy staging and production environments instantly. All applications launched on Diploi come with a CI/CD pipeline by default, automatic SSL certificates, and zero-config cloud development environments.",
+      "Diploi is a cloud development and hosting platform that eliminates all configuration work, so developers can start coding instantly, even when managing multiple projects with different tech stacks, databases, and dependencies. It's an all-in-one solution where developers can scaffold applications from zero, code without local setup using cloud development environments, and deploy staging and production environments instantly. All applications launched on Diploi come with a CI/CD pipeline by default, automatic SSL certificates, and zero-config cloud development environments.",
   },
   {
  id: "faq-what-apps-can-you-build",
