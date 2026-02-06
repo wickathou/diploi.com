@@ -44,10 +44,6 @@ const isJobs = selected === 'jobs';
           <Icon name="BookBookmark" weight="regular" class="navigation-link-icon" />
           Documentation
         </a>
-        <a data-event="about_click" href="/about" data-selected={`${isAbout}`}>
-          <Icon name="Building" weight={isAbout ? 'duotone' : 'regular'} class="navigation-link-icon" />
-          About us
-        </a>
         <a data-link="login" data-event="login_click" href="https://console.diploi.com">
           <Icon name="SignIn" weight="regular" class="navigation-link-icon" />
           Login / Sign Up
@@ -168,7 +164,7 @@ const isJobs = selected === 'jobs';
     height: 100vh;
     height: 100dvh;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 899px) {
       padding-top: calc(64px + 32px) !important;
       justify-content: flex-start !important;
       gap: var(--space-m);
@@ -237,7 +233,7 @@ const isJobs = selected === 'jobs';
         }
       }
 
-      @media (max-width: 1024px) {
+      @media (max-width: 899px) {
         gap: var(--space-s);
         width: 100%;
 
@@ -260,7 +256,7 @@ const isJobs = selected === 'jobs';
     }
   }
 
-  @media (min-width: 1025px) {
+  @media (min-width: 900px) {
     #menu-label {
       display: none;
     }

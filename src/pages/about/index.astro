@@ -1,15 +1,13 @@
 ---
 import { ContactUsCard, Footer, GetStarted, PageTitle, Section, SubSection, SubSectionHeader } from '../../components';
 import Navigation from '../../components/Navigation/Navigation.astro';
+import Layout from '../../layouts/Layout.astro';
 import DiploiTeam from './diploi-team.jpg';
 import DiploiTeamMeeting from './team-meeting.jpg';
-import Layout from '../../layouts/Layout.astro';
 
-console.log(DiploiTeam)
-console.log(DiploiTeamMeeting)
 ---
 
-<Layout title="Diploi - About us" description="Get to know who we are, what's our story and mission.">
+<Layout title="Diploi - About us" description="Get to know who we are, what our story and mission are.">
   <Navigation selected="about" />
   <main>
     <Section isNarrow>
@@ -18,21 +16,21 @@ console.log(DiploiTeamMeeting)
         <SubSectionHeader title="Who We Are" icon="HandWaving" />
         <p>
           Happily based in <span class="text-gradient">Helsinki, Finland</span> 🇫🇮, we are an agile and very focused team, working since 2023
-          on removing all the busy work out of the developer workflow.
+          on removing all busy work from the developer workflow.
           <br /><br />
-          More specifically, the busy work we had to do regularly running a successful software agency. Things like:
+          More specifically, the busy work we had to do on a regular basis while running a successful software agency. Things like:
           <br /><br />
-          - <b>Every new project requires a fresh setup</b>, a new GitHub repo, add CI/CD, SSL certificates, Staging and Production
-          environments and a way to share test environments, plus setting up the initial scaffold that will be used as starting point.
+          - <b>Every new project requires a fresh setup</b>, a new GitHub repo, add CI/CD, SSL certificates, Staging, and Production
+          environments and a way to share test environments, plus setting up the initial scaffold that will be used as a starting point.
           <br /><br />
-          - <b>Developer environment drift</b>, which lead to the horrifying sentence "Works on my machine". ENV variables are not in sync,
-          dependencies where installed globally but not in the project.
+          - <b>Developer environment drift</b>, which led to the horrifying sentence "Works on my machine". ENV variables are not in sync,
+          dependencies were installed globally but not in the project.
           <br /><br />
           - <b>Onboarding being too slow</b>, so new team members spend a disproportionate amount of time configuring their environment,
           installing dependencies, and debugging setup issues instead of contributing.
           <br /><br />
           - <b>Context switching is fight</b>, for developers working across multiple projects, a "minor" change ends up being a major
-          struggle. They must switch Node versions, or activate the right virtual environment, or shutdown a docker container to enable a
+          struggle. They must switch Node versions, or activate the right virtual environment, or shut down a Docker container to enable a
           different one, or switch databases, and many more issues like that.
           <br /><br />
           Working on multiple projects, either as a freelancer or running an agency, comes with these "busy" work costs that add up quickly.
@@ -47,7 +45,7 @@ console.log(DiploiTeamMeeting)
         </blockquote>
         <b class="text-gradient">We set out to fix that.</b>
         <p>
-          With our small team, and ambition we created a platform we are proud of, fixing our own problem and making development much more
+          With our small team and ambition, we created a platform we are proud of, fixing our own problem and making development much more
           enjoyable.
         </p>
       </SubSection>
@@ -74,10 +72,12 @@ console.log(DiploiTeamMeeting)
       <SubSection>
         <SubSectionHeader title="Our Story" icon="BookBookmark" />
         <p>
-          Diploi began when Marcus, Patrik, and Tuomas, got tired of spending more time reconfiguring, than writing actual code. In early
-          2024, they got the MVP ready and started actively testing it and gathering feedback from early users.
+          Diploi began when Marcus, Patrik, and Tuomas, who wanted to spend more time shipping code than reconfiguring their local
+          environments every time they needed to switch projects. In early 2024, they got the MVP ready and started actively testing it and
+          gathering feedback from early users.
           <br /><br />
-          By September 2024, we'd completed our pre-seed funding round which allowed us to take the MVP into a polished product.
+          With the early success of the platform, the team raised pre-seed funding by September 2024, which allowed us to take the MVP into a
+          polished product.
           <br /><br />
           In 2025, the team grew! First, Javier joined to help spread the word, and Giao came on board to accelerate our development cycles.
           <br /><br />
@@ -93,8 +93,8 @@ console.log(DiploiTeamMeeting)
         <p>
           We trust the people in our team to do great work, without having anyone looking over their shoulders.
           <br /><br />
-          We despise micromanagement, we do not ask for constant check-ins, or wasting time with meetings to look busy. You own your work, you
-          manage your time, and you keep the team in the loop.
+          We do not like micromanagement, we do not ask for constant check-ins, or wasting time with meetings to look busy. You own your work,
+          you manage your time, and you keep the team in the loop.
           <br /><br />
           That's our way. 😌
           <br /><br />
