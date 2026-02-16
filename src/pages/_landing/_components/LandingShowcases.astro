@@ -171,7 +171,7 @@ const SHOWCASE_COMPONENTS: { [componentID: number]: { icon?: string; name: strin
           {/* Cover image */}
           <section class="image">
             {SHOWCASE_TAB_OVERRIDES[componentID]?.video && (
-              <video autoplay muted loop>
+              <video autoplay muted loop playsinline>
                 <source src={SHOWCASE_TAB_OVERRIDES[componentID].video} type="video/mp4" />
               </video>
             )}
