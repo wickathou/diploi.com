@@ -31,18 +31,12 @@ export const launchStack = async ({
     clearUtmParams();
 
     try {
-      // @ts-ignore
-      console.log('track', window.umami, window.gtag);
-
-      // @ts-ignore
-      if (umami) {
-        // @ts-ignore
+      const umami = (window as any).umami;
+      if (umami && typeof umami.track === 'function') {
         umami.track('launch', { page: location.pathname, componentIds });
       }
-
-      // @ts-ignore
-      if (gtag) {
-        // @ts-ignore
+      const gtag = (window as any).gtag;
+      if (typeof gtag === 'function') {
         gtag('event', 'conversion_event_default_1', { page: location.pathname, componentIds });
       }
     } catch (error) {
