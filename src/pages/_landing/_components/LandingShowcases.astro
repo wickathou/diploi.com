@@ -5,10 +5,11 @@ import { RocketIcon } from '@phosphor-icons/react';
 import StackBuilderLaunchButton from '../../../components/StackBuilder/StackBuilderLaunchButton.astro';
 import FeaturesSection from '../../features/_components/FeaturesSection.astro';
 import FeaturesSectionHeader from '../../features/_components/FeaturesSectionHeader.astro';
-import { chatPreview, chatPreviewVideo, drawPreview, webPreview } from '../_utils/showcaseContent';
+import { chatPreview, chatPreviewVideo, drawPreview, openclawPreview, webPreview } from '../_utils/showcaseContent';
 
 const SHOWCASE_COMPONENT_IDS = [
   110, // Chat App
+  // 111, // OpenClaw TODO: Disabled for now
   109, // Drawing App
   108, // Web App
 ];
@@ -30,17 +31,24 @@ const SHOWCASE_TAB_OVERRIDES: {
     color: 'dark',
     background: '#efeef1',
   },
+  108: {
+    description: 'Modern, production-ready full-stack React app.',
+    image: webPreview,
+    color: 'dark',
+    background: '#fafafa',
+  },
   110: {
     description: 'A Slack like chat app built with Next.js & Supabase.',
     image: chatPreview,
     background: '#1b2234',
     video: chatPreviewVideo,
   },
-  108: {
-    description: 'Modern, production-ready full-stack React app.',
-    image: webPreview,
-    color: 'dark',
+  111: {
+    name: 'OpenClaw',
+    description: 'Dedicaded OpenClaw instance with admin panel. Zero-config.',
+    image: openclawPreview,
     background: '#fafafa',
+    color: 'dark',
   },
 };
 
@@ -52,8 +60,22 @@ const showcases = components
 const supabaseIcon = components.find((component) => component.data.identifier === 'supabase')?.data.icon;
 const nextIcon = components.find((component) => component.data.identifier === 'next')?.data.icon;
 const reactIcon = components.find((component) => component.data.identifier === 'react-vite')?.data.icon;
+const openclawIcon = components.find((component) => component.data.identifier === 'openclaw')?.data.icon;
+const nodeIcon = components.find((component) => component.data.identifier === 'node')?.data.icon;
 
 const SHOWCASE_COMPONENTS: { [componentID: number]: { icon?: string; name: string; description: string }[] } = {
+  108: [
+    {
+      icon: reactIcon,
+      name: 'React (Vite)',
+      description: 'Blazing fast frontend',
+    },
+    {
+      icon: supabaseIcon,
+      name: 'Supabase',
+      description: 'Self-hosted backend',
+    },
+  ],
   109: [
     {
       icon: reactIcon,
@@ -78,16 +100,16 @@ const SHOWCASE_COMPONENTS: { [componentID: number]: { icon?: string; name: strin
       description: 'Self-hosted backend',
     },
   ],
-  108: [
+  111: [
     {
-      icon: reactIcon,
-      name: 'React (Vite)',
-      description: 'Blazing fast frontend',
+      icon: openclawIcon,
+      name: 'Openclaw Gateway',
+      description: 'Agent & Control UI',
     },
     {
-      icon: supabaseIcon,
-      name: 'Supabase',
-      description: 'Self-hosted backend',
+      icon: nodeIcon,
+      name: 'Wrapper Server',
+      description: 'Manages OpenClaw',
     },
   ],
 };

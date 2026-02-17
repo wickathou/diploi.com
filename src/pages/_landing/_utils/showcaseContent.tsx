@@ -1,5 +1,6 @@
 import chatPreview from '../_images/chat.png';
 import drawPreview from '../_images/draw.png';
+import openclawPreview from '../_images/openclaw.png';
 import webPreview from '../_images/web.png';
 import chatPreviewVideo from '../_videos/chat.mp4';
 
@@ -8,7 +9,8 @@ export const preloadContent = [
   { href: chatPreview.src, as: 'image', type: `image/${chatPreview.format}` },
   { href: drawPreview.src, as: 'image', type: `image/${drawPreview.format}` },
   { href: webPreview.src, as: 'image', type: `image/${webPreview.format}` },
+  { href: openclawPreview.src, as: 'image', type: `image/${openclawPreview.format}` },
   { href: chatPreviewVideo, as: 'video', type: 'video/mp4' },
 ];
 
-export { chatPreview, drawPreview, webPreview, chatPreviewVideo };
+export { chatPreview, drawPreview, webPreview, openclawPreview, chatPreviewVideo };
