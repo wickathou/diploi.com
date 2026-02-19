@@ -8,6 +8,7 @@ image: './hosting_openclaw_cover.png'
 social_image: './hosting_openclaw_og.png'
 draft: false
 type: 'Guide'
+highlight: true
 ---
 
 Updated <time datetime="2026-02-19T15:00:00.000Z">February 19, 2026</time>
