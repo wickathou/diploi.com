@@ -1,8 +1,8 @@
 ---
-title: 'Hosting OpenClaw in the easiest way possible'
-description: 'You can now use Diploi to host OpenClaw and manage assistants, connect your chat apps, and all without spending a second configuring servers.'
+title: 'Easiest OpenClaw available anywhere? Batteries included'
+description: 'Run OpenClaw on Diploi in a few clicks, even without adding your own AI keys.'
 author: 'Javier'
-timestamp: '2026-02-19T15:00:00.000Z'
+timestamp: '2026-02-20T15:00:00.000Z'
 # devtoUrl: ''
 image: './hosting_openclaw_cover.png'
 social_image: './hosting_openclaw_og.png'
@@ -11,19 +11,21 @@ type: 'Guide'
 highlight: true
 ---
 
-Updated <time datetime="2026-02-19T15:00:00.000Z">February 19, 2026</time>
+Updated <time datetime="2026-02-20T15:00:00.000Z">February 20, 2026</time>
 
 ---
 
 ###### Running your own AI assistant without touching any server config
 
-OpenClaw is an open-source, self-hosted gateway that connects multiple apps, with AI coding agents in an easy-to-use interface.
+OpenClaw is a popular open-source, self-hosted gateway that connects apps to AI coding agents through a simple interface. It's popular, but setting it up can be a bit tricky.
 
-One big issue with OpenClaw is security, which is why it is recommended to run it on a standalone server. Since our mission at Diploi is to make the process of hosting applications as easy as possible, we worked hard to add native support for OpenClaw.
+At Diploi, we're big fans of OpenClaw, and we set out to make it the easiest OpenClaw setup available anywhere. We think we pulled it off 😌
 
-And we did it ☺️
+A major challenge with OpenClaw is security. When you run it on Diploi, you don’t have to host it on your main laptop or home server. That gives you a safer, more isolated environment. Still, make sure you only connect it to services you’re comfortable letting AI interact with.
 
-In this guide, we'll deploy OpenClaw on Diploi using our official Starter Kit, and it's all done in less than one minute! Diploi takes care of the environment setup and runtime, so you can focus on your assistant's logic and integrations, while not worrying about the infrastructure.
+OpenClaw famously tells the AI: _“Don’t ask for permission. Just do it!”_ and that’s both what makes it great and what makes it risky. Still, people love it.
+
+In this guide, we'll deploy OpenClaw on Diploi using our official Starter Kit, and it's all done in less than one minute!
 
 ---
 
@@ -46,14 +48,6 @@ In this guide, we'll deploy OpenClaw on Diploi using our official Starter Kit, a
 You can create a Diploi account for free using your GitHub account, no credit card required to start a trial.
 
 ### Launching OpenClaw on Diploi
-
-#### Starting a Trial
-
-To begin with a trial, and no sign-up, just visit our homepage or visit the [OpenClaw Starter Kit page](https://diploi.com/starter-kit/openclaw), and then click **Launch OpenClaw Assistant**.
-
-![Launching a trial](./launching_trial.png)
-
-#### Starting a Project with Version Control
 
 To create a project with a repository, first you need to register for an account. Once you are logged in Diploi, follow these steps:
 
@@ -113,100 +107,6 @@ To access the OpenClaw dashboard, just click "Open OpenClaw Dashboard" from the 
 
 For more information about how to configure your OpenClaw instance, visit their official documentation at https://docs.openclaw.ai/
 
-#### Adding Components and Add-ons
-
-When you host on Diploi, you don't need to manage infrastructure manually, and instead, you alter your project's setup by modifying a single file called `diploi.yaml`, which you can find in the root of your Diploi project.
-
-You can find the necessary snippets to add any of our supported frameworks, languages, and databases directly on our documentation page.
-
-For components, visit https://docs.diploi.com/building/components/ and for add-ons, visit https://docs.diploi.com/building/add-ons
-
-![Diploi docs for components and add-ons](diploi-docs-components.png)
-
-By visiting the link explaining how to add the component or add-on you need, you will find the snippet you need to add to your project.
-
-*Example snippet for FastAPI*
-
-```yaml
-components:
- - name: FastAPI
-    identifier: fastapi
-    package: https://github.com/diploi/component-fastapi#main
-```
-
-Now you can copy the snippet and open your `diploi.yaml` file.
-
-*Example diploi.yaml in an OpenClaw Diploi project*
-
-```yaml
-diploiVersion: v1.0
-components:
- - name: OpenClaw
-    identifier: openclaw
-    folder: /
-    package: https://github.com/diploi/component-nodejs#v24.13.0
-    prebuildImage: public.ecr.aws/p8t2q7f4/diploi/starter-openclaw:[tag]
-    env:
-      include:
- - value: /app/openclaw.json
-          name: OPENCLAW_CONFIG_PATH
- - value: /app
-          name: OPENCLAW_STATE_DIR
- - value: '{diploi-ai-gateway-url}'
-          name: DIPLOI_AI_GATEWAY_URL
- - value: '{diploi-ai-gateway-token}'
-          name: DIPLOI_AI_GATEWAY_TOKEN
- - value: '{diploi-ai-gateway-token}'
-          name: DIPLOI_AI_GATEWAY_TOKEN
- - value: base64:${generate-random-bytes:32}
-          name: DIPLOI_LOGIN_SECRET
- - value: admin
-          name: DIPLOI_LOGIN_USERNAME
- - value: password
-          name: DIPLOI_LOGIN_PASSWORD
-addons: []
-```
-
-Now, to add FastAPI, just paste the snippet.
-
-*Snippet added to diploi.yaml*
-
-```yaml
-diploiVersion: v1.0
-components:
- - name: FastAPI
-    identifier: fastapi
-    package: https://github.com/diploi/component-fastapi#main
- - name: OpenClaw
-    identifier: openclaw
-    folder: /
-    package: https://github.com/diploi/component-nodejs#v24.13.0
-    prebuildImage: public.ecr.aws/p8t2q7f4/diploi/starter-openclaw:[tag]
-    env:
-      include:
- - value: /app/openclaw.json
-          name: OPENCLAW_CONFIG_PATH
- - value: /app
-          name: OPENCLAW_STATE_DIR
- - value: '{diploi-ai-gateway-url}'
-          name: DIPLOI_AI_GATEWAY_URL
- - value: '{diploi-ai-gateway-token}'
-          name: DIPLOI_AI_GATEWAY_TOKEN
- - value: '{diploi-ai-gateway-token}'
-          name: DIPLOI_AI_GATEWAY_TOKEN
- - value: base64:${generate-random-bytes:32}
-          name: DIPLOI_LOGIN_SECRET
- - value: admin
-          name: DIPLOI_LOGIN_USERNAME
- - value: password
-          name: DIPLOI_LOGIN_PASSWORD
-addons: []
-```
-
-And finally, visit the deployment's dashboard to tell Diploi to modify your environment with the newly added component.
-
-![FastAPI added to OpenClaw project](fastapi-added-to-project.png)
-
 ### Developing Custom Features for OpenClaw
 
 When you start a new project on Diploi, the first environment you get is a **Remote Development** environment with a public preview URL. You can use it via **Browser IDE** or by accessing remotely with **your local editor via SSH**.
@@ -216,56 +116,6 @@ When you start a new project on Diploi, the first environment you get is a **Rem
 This way, you can customize OpenClaw's config beyond what's possible using the CLI or the dashboard.
 
 ![OpenClaw open with the browser IDE](openclaw-browser-ide.png)
-
----
-
-## Launching your OpenClaw instance to Production
-
-When you're ready to run OpenClaw permanently as your always-on gateway, you need to follow these steps:
-
-- **Push the changes to GitHub.**
-
-- **Open your project dashboard:** Go to your OpenClaw project in the Diploi console and click **Create Deployment +**.
-
-  ![Creating a new deployment](creating-new-deployment.png)
-
-- **Configure your new deployment:** First, choose the stage, which in this case will be **Production**, pick a cluster size, and select the source branch.
-
-  ![Configuring a new deployment](configuring-new-deployment.png)
-
-- **Configure environment variables:** By default, Diploi manages a set of secrets for your OpenClaw instance, which you can't edit, but here you can add additional secrets you need.
-  
-  ![Environment variables for OpenClaw](environment-variables-openclaw.png)
-
-- **Finally, click create Deployment** and that's it. Diploi will launch a production build of your OpenClaw project.
-  
-  ![Creating the deployment](../../../images/blog/creating-deployment.png)
-
-All set! You can open the control UI and start onboarding your first agent, channels, and tools.
-
----
-
-## Configuring a custom domain for your OpenClaw gateway
-
-By default, your production instance runs on a `.diploi.me` subdomain (e.g., `https://my-dev--starter-a4vg.diploi.me/`). To use your own domain:
-
-- **Open the Options tab:** In your Production deployment, go to **Options**.
-  
-  ![Deployment options tab](../../../images/blog/deployment-options.png)
-
-- **Disable auto-generated endpoints** by scrolling to the Endpoints section and clicking on the toggle switch to turn them off.
-  
-  ![Disabling auto-generated endpoints](disabling-auto-generated-endpoints.png)
-
-- **Add your hostname:** By Enabling the **Use Custom Domain** options and then pasting your own domain.
-
-- **Save the changes**, by scrolling to the bottom of the options page.
-
-- **Edit your Domain DNS recods:** Create a **CNAME** or **Alias** record for your hostname pointing to **edge.diploi.com**.
-  
-  ![DNS settings example](dns-settings-example.png)
-
-The DNS records and SSL certificate spread quickly, but allow up to ~30 minutes for them to work properly. After that, your OpenClaw gateway will be live with your custom domain and with HTTPS handled automatically.
 
 ---
 
